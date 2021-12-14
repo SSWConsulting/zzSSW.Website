@@ -4,7 +4,7 @@
  * This injects Tailwind's base styles and any base styles registered by
  * plugins.
  */
-
+/*TODO: Remove all unnecessary garbage from this file. Declare any individual stylings next to the component.*/
  @tailwind base;
 
  @font-face {
@@ -1581,12 +1581,4 @@
  */
  
  @tailwind screens;
- 
-
- 
-
- 
-
- 
-
  
