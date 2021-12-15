@@ -29,6 +29,7 @@
     "gatsby-plugin-mdx": "^3.3.0",
     "gatsby-plugin-sharp": "^4.3.0",
     "gatsby-source-filesystem": "^4.3.0",
+    "gatsby-source-git": "^1.1.0",
     "gatsby-transformer-sharp": "^4.3.0",
     "preval.macro": "^5.0.0",
     "react": "^17.0.1",
