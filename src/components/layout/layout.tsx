@@ -53,14 +53,12 @@ const Layout = ({
             transform: isMenuOpened ? 'translateX(84%)' : 'translateX(0px)',
           }}
         >
-        <div className="flex flex-col min-h-screen main-container">
-            <title>{pageTitle}</title>
-            <TopBar />
-            <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
-            <main className="flex-1">
-                {children}
-            </main>
-            <br/>
+            <div className="flex flex-col min-h-screen main-container">
+                <title>{pageTitle}</title>
+                <TopBar />
+                <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
+                    {children}
+                <br/>
             </div>
             <Footer />
         </div>
