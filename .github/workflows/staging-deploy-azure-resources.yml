@@ -24,7 +24,7 @@ jobs:
       with:
         resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
         template: ./.azure/ssw-website.bicep
-        parameters: appName=sta, tenantId=${{ secrets.AZURE_TENANT }}
+        parameters: appName=sta tenantId=${{ secrets.AZURE_TENANT }}
        # inlineScript: |
         #  cd .azure
         #  az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file ssw-website.bicep --parameters appName=sta tenantId=${{ secrets.AZURE_TENANT }}
