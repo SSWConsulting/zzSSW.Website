@@ -183,3 +183,5 @@ resource sswwebsitestorage_default_web 'Microsoft.Storage/storageAccounts/blobSe
     storageAccount
   ]
 }
+
+output storageAccountName string = storageAccountName
