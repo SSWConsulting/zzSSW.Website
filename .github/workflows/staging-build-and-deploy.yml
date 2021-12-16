@@ -17,7 +17,7 @@ jobs:
     # Log into Azure
     - uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     
     # Install Node and install packages
     - name: Use Node.js
