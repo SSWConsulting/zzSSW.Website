@@ -6,6 +6,7 @@ exports.createPages = ({graphql, actions}) =>{
     const { createPage } = actions;
     const consultingTemplate = path.resolve(`src/templates/consultingTemplate.tsx`)
 
+    //TODO: Make this function generic enough to cater for all future pages
     return graphql(`
     query ContentNodesQuery {
         files: allFile(filter: {relativeDirectory: {glob: "consulting/**"}}) {
@@ -27,7 +28,7 @@ exports.createPages = ({graphql, actions}) =>{
 
         result.data.files.edges.forEach(edge => {
             var node = edge.node;
-            
+
             //Checks if this node has an mdx
             if(node.childMdx == null)
                 return;
