@@ -1,29 +1,46 @@
-name: Deploy to Azure
+# This is a basic workflow to help you get started with Actions
 
-on: [push]
+name: Blob storage website CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     
-    - name: Use Node.js ${{ matrix.node-version }}
+    # Log into Azure
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }
+    
+    # Install Node and install packages
+    - name: Use Node.js
       uses: actions/setup-node@v2.5.0
-
+      
     - name: Install dependencies
-      run: |
+      run: | 
         npm install
         npm install -g gatsby-cli
-    - name: Build with Gatsby
-      run: gatsby build
     
-    - name: Azure upload
+    # Run gatsby build
+    - name: Gatsby Build
+      run: gatsby build
+      
+    # Upload blob to Azure Blob Storage
+    - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.0.72
         inlineScript: |
-          az storage blob delete-batch -s "\$web" --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
-          az storage blob upload-batch -d "\$web" -s public --connection-string "${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}"
+            az storage blob upload-batch --account-name <STORAGE_ACCOUNT_NAME> --auth-mode key -d '$web' -s .
+      
+    # Log out of Azure
+    - name: logout
+      run: |
+            az logout
+      if: always()
