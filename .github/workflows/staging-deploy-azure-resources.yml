@@ -20,10 +20,17 @@ jobs:
     # Create Azure Deployment
     - name: Create Deployment Group
       uses: azure/CLI@v1
+      id: depAz
       with:
         inlineScript: |
           cd .azure
           az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file ssw-website.bicep --parameters appName=sta tenantId=${{ secrets.AZURE_TENANT }}
+
+    - name: Enable Static Website
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az storage blob service-properties update --acount-name ${{ steps.depAz.outputs.storageAccountName }} --static-website --index-document index.html --404-document 404.html
 
     # Log out of Azure
     - name: logout
