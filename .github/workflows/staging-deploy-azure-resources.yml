@@ -19,12 +19,15 @@ jobs:
     
     # Create Azure Deployment
     - name: Create Deployment Group
-      uses: azure/CLI@v1
+      uses: azure/arm-deploy@v1
       id: depAz
       with:
-        inlineScript: |
-          cd .azure
-          az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file ssw-website.bicep --parameters appName=sta tenantId=${{ secrets.AZURE_TENANT }}
+        resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
+        template: ./.azure/ssw-website.bicep
+        parameters: appName=sta, tenantId=${{ secrets.AZURE_TENANT }}
+       # inlineScript: |
+        #  cd .azure
+        #  az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file ssw-website.bicep --parameters appName=sta tenantId=${{ secrets.AZURE_TENANT }}
 
     - name: Enable Static Website
       uses: azure/CLI@v1
