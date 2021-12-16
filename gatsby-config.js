@@ -11,16 +11,16 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-image",
-    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
       resolve: `gatsby-source-git`,
       options:{
-        name: `consulting`,
+        name: 'content',
         remote: `https://github.com/SSWConsulting/SSW.Website.Content.git`,
         //optionally supply a branch otherwise default
-        branch: process.env.CONTENT_BRANCH
+        branch: process.env.CONTENT_BRANCH,
+        patterns: ['consulting/**/*']
       }
     },
     {
@@ -39,5 +39,6 @@ module.exports = {
       },
       __key: "pages",
     },
+    "gatsby-plugin-mdx",
   ],
 };
