@@ -179,9 +179,6 @@ resource sswwebsitestorage_default_web 'Microsoft.Storage/storageAccounts/blobSe
     denyEncryptionScopeOverride: false
     publicAccess: 'None'
   }
-  dependsOn: [
-    storageAccount
-  ]
 }
 
 output storageAccountName string = storageAccountName
