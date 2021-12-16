@@ -20,13 +20,11 @@ const ConsultingPage = ({data}) => {
 
 export const query = graphql`
     query ($title: String!){
-        mdx(frontmatter: {title: {eq: $title}, type: {eq: "consulting"}}) {
+        mdx(frontmatter: {title: {eq: $title}}) {
             frontmatter {
               title
-              type
             }
             body
-            mdxAST
         }
     }
 `;
