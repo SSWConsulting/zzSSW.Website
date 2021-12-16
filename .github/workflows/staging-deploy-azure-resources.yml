@@ -22,7 +22,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-          az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file .\.azure\ssw-website.bicep --parameters {appName=sta, tenantId=${{ secrets.AZURE_TENANT }}}
+          az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file ssw-website.bicep --parameters {appName=sta, tenantId=${{ secrets.AZURE_TENANT }}}
 
     # Log out of Azure
     - name: logout
