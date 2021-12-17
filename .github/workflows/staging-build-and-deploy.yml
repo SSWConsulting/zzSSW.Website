@@ -47,7 +47,6 @@ jobs:
       uses: actions/download-artifact@v2
       with:
        name: gatsby-build
-       path: .
    
     # Log into Azure
     - uses: azure/login@v1
