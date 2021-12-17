@@ -9,25 +9,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: 
+      name: staging
     steps:
     - uses: actions/checkout@v2
     
     # Log into Azure
     - uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        creds: ${{ env.AZURE_CREDENTIALS }}
     
     # Create Azure Deployment
     - name: Create Deployment Group
       uses: azure/arm-deploy@v1
       id: depAz
       with:
-        resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
+        resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
         template: ./.azure/ssw-website.bicep
-        parameters: appName=sta tenantId=${{ secrets.AZURE_TENANT }}
-       # inlineScript: |
-        #  cd .azure
-        #  az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file ssw-website.bicep --parameters appName=sta tenantId=${{ secrets.AZURE_TENANT }}
+        parameters: appName=${{ env.AZURE_APP_NAME }} tenantId=${{ env.AZURE_TENANT }}
 
     - name: Enable Static Website
       uses: azure/CLI@v1
