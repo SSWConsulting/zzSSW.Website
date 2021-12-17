@@ -34,7 +34,7 @@ jobs:
       with:
        name: gatsby-build
        path: public
-       retention-days: 7
+       retention-days: 1
         
   deploy:
     runs-on: ubuntu-latest
@@ -47,6 +47,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
        name: gatsby-build
+       path: .
    
     # Log into Azure
     - uses: azure/login@v1
