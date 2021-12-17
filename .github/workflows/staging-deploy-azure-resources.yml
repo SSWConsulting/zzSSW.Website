@@ -24,9 +24,9 @@ jobs:
       uses: azure/arm-deploy@v1
       id: depAz
       with:
-        resourceGroupName: ${{ env.AZURE_RESOURCE_GROUP }}
+        resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
         template: ./.azure/ssw-website.bicep
-        parameters: appName=${{ env.AZURE_APP_NAME }} tenantId=${{ env.AZURE_TENANT }}
+        parameters: appName=${{ secrets.AZURE_APP_NAME }} tenantId=${{ secrets.AZURE_TENANT }}
 
     - name: Enable Static Website
       uses: azure/CLI@v1
