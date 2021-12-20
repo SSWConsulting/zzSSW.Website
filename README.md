@@ -1,6 +1,7 @@
 # Overview 
 This template provides users with a default set of issue templates and labels to work with.
 
+[Definition of Done](_docs/definition-of-done.md)
 ## Issue Templates
 
 To see the reasoning behind these issue templates see the rule:
