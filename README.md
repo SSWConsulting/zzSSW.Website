@@ -14,7 +14,7 @@ This is a Gatsby website that fetches content from:
 
 - [Instructions - Compile (F5 Experience)](_docs/Instructions-Compile.md)
 - [Instructions - Deployment](_docs/Instructions-Deployment.md)
-- [Business](Business.md)
+- [Business](_docs/Business.md)
 - [Technologies and Architecture](_docs/Technologies-and-Architecture.md)
 - [Alternative Solutions Considered](_docs/Alternative-Solutions-Considered.md)
 - [Definition of Done](_docs/Definition-of-Done.md)
