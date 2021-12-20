@@ -1,15 +1,21 @@
-# Overview 
-This template provides users with a default set of issue templates and labels to work with.
+# SSW Website
 
-[Definition of Done](_docs/Definition-of-Done.md)
-## Issue Templates
+This repository is a v2 of the SSW Website.
 
-To see the reasoning behind these issue templates see the rule:
-https://www.ssw.com.au/rules/github-issue-templates
+This is a Gatsby website that fetches content from:
+- [SSW.Website.Content](https://github.com/SSWConsulting/SSW.Website.Content)
 
-## Labels
+## Architecture Overview
 
-To see the reasoning behind these labels refer to the rule: 
-https://www.ssw.com.au/rules/labels-in-github
+![SSW-Website-Architecture-v2](https://user-images.githubusercontent.com/17246482/146718281-d145fbbf-84bd-4db4-97eb-efce2b842d9b.png)
+**Figure: SSW Website architecture diagram**
 
-To add the default labels to your repo use Labeler. See Luke Parker's repo for instructions on how to set it up https://github.com/Hona/LabelTemplateRepository#readme
+## See the Important Documents
+
+- [Instructions - Compile (F5 Experience)](_docs/Instructions-Compile.md)
+- [Instructions - Deployment](_docs/Instructions-Deployment.md)
+- [Business](Business.md)
+- [Technologies and Architecture](_docs/Technologies-and-Architecture.md)
+- [Alternative Solutions Considered](_docs/Alternative-Solutions-Considered.md)
+- [Definition of Done](_docs/Definition-of-Done.md)
+- [Definition of Ready](_docs/Definition-of-Ready.md)
