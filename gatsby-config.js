@@ -1,3 +1,9 @@
+//TODO: Create a site config
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -5,9 +11,18 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-image",
-    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-git`,
+      options:{
+        name: 'content',
+        remote: `https://github.com/SSWConsulting/SSW.Website.Content.git`,
+        //optionally supply a branch otherwise default
+        branch: process.env.CONTENT_BRANCH,
+        patterns: ['consulting/**/*']
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -24,5 +39,6 @@ module.exports = {
       },
       __key: "pages",
     },
+    "gatsby-plugin-mdx",
   ],
 };
