@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Staging - Deploy Azure Resources
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: 
+      name: Staging
+    steps:
+    - uses: actions/checkout@v2
+    
+    # Log into Azure
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    # Create Azure Deployment
+    - name: Create Deployment Group
+      uses: azure/arm-deploy@v1
+      id: depAz
+      with:
+        resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
+        template: ./.azure/ssw-website.bicep
+        parameters: appName=${{ secrets.AZURE_APP_NAME }} tenantId=${{ secrets.AZURE_TENANT }}
+
+    - name: Enable Static Website
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az storage blob service-properties update --account-name ${{ steps.depAz.outputs.storageAccountName }} --static-website --index-document index.html --404-document 404.html
+
+    # Log out of Azure
+    - name: logout
+      run: |
+            az logout
+      if: always()

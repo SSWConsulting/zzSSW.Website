@@ -13,8 +13,8 @@ param location string = resourceGroup().location
 param appName string
 param tenantId string 
 
-var storageAccountName = '${appName}${uniqueString(resourceGroup().id)}'
-var keyVaultName = '${appName}${uniqueString(resourceGroup().id)}'
+var storageAccountName = '${appName}storage'
+var keyVaultName = '${appName}kv'
 
 resource keyVault 'Microsoft.KeyVault/vaults@2021-06-01-preview' = {
   name: keyVaultName
@@ -179,7 +179,6 @@ resource sswwebsitestorage_default_web 'Microsoft.Storage/storageAccounts/blobSe
     denyEncryptionScopeOverride: false
     publicAccess: 'None'
   }
-  dependsOn: [
-    storageAccount
-  ]
 }
+
+output storageAccountName string = storageAccountName
