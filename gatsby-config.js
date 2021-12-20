@@ -17,10 +17,9 @@ module.exports = {
       resolve: `gatsby-source-git`,
       options:{
         name: 'content',
-        remote: `https://github.com/SSWConsulting/SSW.Website.Content.git`,
-        //optionally supply a branch otherwise default
+        remote: process.env.CONTENT_REPO,
         branch: process.env.CONTENT_BRANCH,
-        patterns: ['consulting/**/*']
+        patterns: ['**/*.mdx']
       }
     },
     {
