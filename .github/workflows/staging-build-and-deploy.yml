@@ -58,7 +58,7 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: |
-            az storage blob upload-batch --account-name ${{ secrets.AZURE_STORAGE_NAME }} --auth-mode key -d '$web' -s .
+            az storage blob upload-batch --account-name ${{ secrets.AZURE_APP_NAME }}storage --auth-mode key -d '$web' -s .
 
     # Log out of Azure
     - name: logout
