@@ -59,8 +59,10 @@ const Layout = ({
                 <title>{pageTitle}</title>
                 <TopBar />
                 <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
+                </div>
+            <div className="flex flex-col min-h-screen main-container">        
+                {children}
             </div>
-            {children}
             <Footer />
         </div>
         <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>
