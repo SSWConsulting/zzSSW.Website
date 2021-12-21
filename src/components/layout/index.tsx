@@ -59,9 +59,8 @@ const Layout = ({
                 <title>{pageTitle}</title>
                 <TopBar />
                 <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
-                    {children}
-                <br/>
             </div>
+            {children}
             <Footer />
         </div>
         <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>

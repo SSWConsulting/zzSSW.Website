@@ -6,7 +6,8 @@ import { container } from './index.module.css';
 const { Item } = RawBreadcrumb;
 
 const Breadcrumb = ({ data }) => (
-    <RawBreadcrumb className={container}>
+    // TODO: Page Layout
+    <RawBreadcrumb className={`${container} main-container`}>
         {data.map(({ key, name, path }) => (
             <Item key={key || name}>
                 {path ? <Link to={path}>{name}</Link> : name}

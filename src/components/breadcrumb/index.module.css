@@ -1,4 +1,5 @@
 .container {
     font-size: 0.9rem;
-    margin: 12px 0 10px 0;
+    margin-top: 12px;
+    margin-bottom: 10px;
 }
