@@ -12,6 +12,6 @@ After following the steps below, you will be able to run the SSW.Website locally
 1. Clone the GitHub repository https://github.com/SSWConsulting/SSW.Website.git
 2. Run `yarn install` to install the required packages
 3. Create environment files (.env.development and .env.production) copying key values from `.env.template`
-    - Ask a member of the Website team (@pierssinclairssw, @tkapa) for the values of the environment keys
+    - Ask a member of the Website team (@pierssinclairssw, @tkapa, @AttackOnMorty) for the values of the environment keys
 4. Run `yarn develop` to start the development server
 5. You're good to go!
