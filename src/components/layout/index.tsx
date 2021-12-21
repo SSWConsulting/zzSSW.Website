@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { graphql, useStaticQuery } from 'gatsby';
-import './layout.css'
+import './index.css'
 import '../../style.css'
-import Footer from '../footer/footer';
+import Footer from '../footer';
 import Menu from '../../../lib/SSW.MegaMenu/menu/menu'
 import MobileMenu from '../../../lib/SSW.MegaMenu/mobile-menu/mobile-menu'
 import TopBar from "../../../lib/SSW.TopBar/top-bar";
