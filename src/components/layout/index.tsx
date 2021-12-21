@@ -8,6 +8,8 @@ import MobileMenu from '../../../lib/SSW.MegaMenu/mobile-menu/mobile-menu'
 import TopBar from "../../../lib/SSW.TopBar/top-bar";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
+import '../../styles/default.css'
+
 type LayoutProps ={
     pageTitle: string,
     children: JSX.Element 
