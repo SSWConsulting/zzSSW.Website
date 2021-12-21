@@ -1,32 +1,31 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Layout from '../components/layout';
 
-const Page = ({ data }) => {
-    const post = data.mdx;
-    const {
-        frontmatter: { title },
-        body,
-    } = post;
+import Consulting from '../templates/consulting';
+import NotFound from './404';
+import { PAGE_TYPE } from '../consts';
 
-    return (
-        <Layout pageTitle={title}>
-            <>
-                <h1>{title}</h1>
-                <MDXRenderer>{body}</MDXRenderer>
-            </>
-        </Layout>
-    );
+const Page = ({
+    data: {
+        mdx: { frontmatter },
+    },
+}) => {
+    const { type } = frontmatter;
+
+    if (type === PAGE_TYPE.Consulting) {
+        return <Consulting data={frontmatter} />;
+    }
+
+    return <NotFound />;
 };
 
 export const query = graphql`
     query PageById($id: String) {
         mdx(id: { eq: $id }) {
             frontmatter {
+                type
                 title
             }
-            body
         }
     }
 `;
