@@ -1,7 +1,4 @@
 #top-bar{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     margin-top: 5px;
     margin-bottom: 10px;
 }
@@ -19,12 +16,6 @@
     font-size: .9em;
     line-height: 1em;
     color: #666;
-    align-self: center;
-}
-
-#socials-bar{
-    display: inline-flex;
-    align-self: flex-end;
 }
 
 a.salesLink {
