@@ -1,0 +1,27 @@
+.container {
+    overflow: hidden;
+    background-attachment: fixed;
+    background-image: url('../../../../images/consulting/mvc-benefits-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100px;
+    text-align: center;
+    border-top: 4px solid #cc4141;
+    border-bottom: 4px solid #cc4141;
+}
+
+.title {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.benefit {
+    padding: 45px 55px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px dotted #9e9e9e;
+}

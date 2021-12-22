@@ -6,7 +6,7 @@ const Booking = () => (
         <div className="main-container">
             <h1 className={title}>
                 Want to build your web application in{' '}
-                <span style={{ color: '#cc4141' }}>React</span>?
+                <span className="red">React</span>?
             </h1>
 
             <h2 className={desc}>
