@@ -3,11 +3,16 @@ import {StaticImage} from "gatsby-plugin-image"
 import { Accordion} from "react-bootstrap"
 import Layout from "../components/layout"
 
+import '../styles/default.css';
+import '../styles/common.css';
+// TODO: Keep it temporarily for reference
+import '../style.css';
+
 // markup
 const IndexPage = () => {
   return (
     <Layout pageTitle="SSW Website">
-      <div id="container-fluid">
+      <div id="container-fluid" className="main-container">
         {/* TODO: Implement image carousel */}
         {/* TODO: Convert into components using Graphiql Query */}
         <div id="what-we-do" className="row">

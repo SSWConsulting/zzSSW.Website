@@ -15,11 +15,11 @@ const ConsultingServices = () => {
 
     return (
         <Layout pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics">
-            <>
+            <div className="main-container">
                 <Breadcrumb data={data} />
                 <h1>Consulting Services</h1>
-            </>
-            {/* TODO: Content */}
+                {/* TODO: Content */}
+            </div>
         </Layout>
     );
 };
