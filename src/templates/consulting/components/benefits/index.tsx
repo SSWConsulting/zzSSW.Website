@@ -8,6 +8,7 @@ import {
     video,
     play,
     benefit,
+    link,
 } from './index.module.css';
 
 const Benefits = () => (
@@ -106,7 +107,10 @@ const Benefits = () => (
 
             <h5>
                 Have a look at{' '}
-                <a href="https://rules.ssw.com.au/rules-to-better-react">
+                <a
+                    className={link}
+                    href="https://rules.ssw.com.au/rules-to-better-react"
+                >
                     SSW Rules to Better React
                 </a>
                 .
