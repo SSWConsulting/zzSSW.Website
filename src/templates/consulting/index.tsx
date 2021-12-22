@@ -1,5 +1,4 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 
 import Layout from '../../components/layout';
 import Breadcrumb from '../../components/breadcrumb';
@@ -11,9 +10,6 @@ import About from './components/about';
 import Clients from './components/clients';
 import Technologies from './components/technologies';
 import Solution from './components/solution';
-
-// TODO: This css file is for reference, delete it later
-// import './index.css';
 
 import './index.module.css';
 
