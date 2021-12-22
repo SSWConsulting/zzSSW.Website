@@ -6,6 +6,7 @@ import Breadcrumb from '../../components/breadcrumb';
 // import MVC_BACKGROUND from '../../videos/MVC_background.mp4';
 import Booking from './components/booking';
 import Benefits from './components/benefits';
+import Testimonials from './components/testimonials';
 
 // TODO: This css file is for reference, delete it later
 // import './index.css';
@@ -44,78 +45,7 @@ const Consulting = ({ data: { title } }) => {
 
                 <Benefits />
 
-                <div className="testimonials-section">
-                    <div className="container">
-                        <div className="col-md-4 testimonialCol">
-                            <div
-                                className="callout top-left"
-                                data-aos="flip-right"
-                            >
-                                <p>
-                                    It was a pleasure to have you in the office
-                                    again.
-                                </p>
-                                <p>
-                                    I continue to be impressed by the quality of
-                                    work and advice you provide.
-                                </p>
-                            </div>
-                            <StaticImage src="../../images/consulting/mark_p.jpg" />
-                            <div className="tName"> Mark Pigram</div>
-                            <div className="tCompany">Contracts Online</div>
-                        </div>
-
-                        <div className="col-md-4 testimonialCol">
-                            <div
-                                className="callout top-left"
-                                data-aos="flip-right"
-                            >
-                                <p>
-                                    We have dealt with several people at SSW
-                                    from a network tech helping us with a domain
-                                    issue, to a couple of graphic designers and
-                                    several programmers and they have ALL been
-                                    first rate.{' '}
-                                </p>
-                            </div>
-                            <StaticImage src="../../images/consulting/peter-dimaridis.jpg" />
-                            <div className="tName"> Peter Dimaridis</div>
-                            <div className="tCompany">AuctionsPlus</div>
-                        </div>
-
-                        <div className="col-md-4 testimonialCol">
-                            <div
-                                className="callout top-left"
-                                data-aos="flip-right"
-                            >
-                                <p>
-                                    ... out of all the developers I have used in
-                                    the past [SSW] provide the most complete
-                                    solutions and best outcomes.
-                                </p>
-                                <p>
-                                    Thanks for your attention to detail once
-                                    again.
-                                </p>
-                            </div>
-                            <StaticImage src="../../images/consulting/peter-m.jpg" />
-                            <div className="tName"> Peter McCurdy</div>
-                            <div className="tCompany">PDS</div>
-                        </div>
-
-                        <button
-                            type="button"
-                            className="button raised hoverable"
-                            data-toggle="modal"
-                            data-target="#myModal"
-                            data-aos="fade-up"
-                        >
-                            <div className="anim"></div>
-                            Book a FREE Initial Meeting
-                        </button>
-                        <h2>or call us on +61 2 9953 3000</h2>
-                    </div>
-                </div>
+                <Testimonials />
 
                 <div className="about-section">
                     <div className="container">

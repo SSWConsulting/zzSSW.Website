@@ -12,20 +12,14 @@
 }
 
 .desc {
-    margin-top: 1.43rem;
+    margin-top: 20px;
 }
 
 .booking {
-    width: 43%;
-    height: 90px;
-    margin-top: 3.57rem;
-    transition: all 0.1s;
-    background: #cc4141;
-    color: #fff;
-    font-size: 1.6rem;
-    border: 0;
+    composes: bookingButton from '../../index.module.css';
+    margin-top: 50px;
 }
 
 .contact {
-    margin-top: 2.86rem;
+    margin-top: 40px;
 }

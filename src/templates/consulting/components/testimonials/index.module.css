@@ -1,0 +1,67 @@
+.container h2 {
+    font-size: 2.2rem;
+    color: #000;
+}
+
+.testimonialContainer {
+    margin-bottom: 70px;
+    margin-top: 60px;
+    padding: 0 15px;
+}
+
+.testimonialContainer img {
+    border-radius: 30px;
+    float: left;
+    margin-right: 15px;
+}
+
+.callout {
+    background-color: #f5f5f5;
+    position: relative;
+    padding: 35px;
+    border-radius: 10px;
+    margin: 25px 0;
+    min-height: 433px;
+    font-size: 1.57rem;
+}
+
+.arrowDown::before {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border: 0.8em solid transparent;
+    border-top: 20px solid #f5f5f5;
+    position: absolute;
+    left: 20px;
+    bottom: -34px;
+}
+
+.avatar {
+    float: left;
+    border-radius: 30px;
+    margin-right: 15px;
+}
+
+.name {
+    font-weight: 600;
+    position: relative;
+    top: 5px;
+    font-size: 1.3rem;
+}
+
+.company {
+    position: relative;
+    top: 5px;
+    font-size: 1.3rem;
+}
+
+.contactContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact {
+    margin-top: 40px;
+}

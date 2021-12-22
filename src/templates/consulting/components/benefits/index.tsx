@@ -44,7 +44,7 @@ const Benefits = () => (
                 power native mobile apps using React Native.
             </h5>
 
-            <div className="flex">
+            <div className="flex-wrap">
                 <div className={`col-md-6 ${benefit}`} data-aos="fade-left">
                     <StaticImage
                         className="fl"
