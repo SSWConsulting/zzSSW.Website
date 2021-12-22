@@ -1,7 +1,14 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { container, benefit, title } from './index.module.css';
+import {
+    container,
+    title,
+    videoContainer,
+    video,
+    play,
+    benefit,
+} from './index.module.css';
 
 const Benefits = () => (
     <div className={container}>
@@ -11,8 +18,12 @@ const Benefits = () => (
                 <span className="red">UI in React</span> with SSW
             </h1>
             {/* TODO: */}
-            <div className="eric-video">
-                <div className="video-player"></div>
+            <div className={videoContainer}>
+                <div className={video}>
+                    <StaticImage src="../../../../images/consulting/maxresdefault.jpeg" />
+                    {/* TODO: Show video after clicking */}
+                    <div className={play}></div>
+                </div>
             </div>
             <h5>
                 React is a JavaScript library that combines the speed of
