@@ -1,0 +1,42 @@
+.container {
+    text-align: center;
+    min-height: 800px;
+    background: rgba(0, 0, 0, 0.75)
+        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+}
+
+.title {
+    padding-top: 10rem;
+}
+
+.desc {
+    margin-bottom: 3rem;
+}
+
+.contact {
+    margin-top: 2rem;
+}
+
+.booking {
+    width: 43%;
+    height: 90px;
+    transition: all 0.1s;
+    background: #cc4141;
+    color: #fff;
+    font-size: 1.6rem;
+    border: 0;
+}
+
+h1,
+h2 {
+    color: #fff;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 3.28rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
