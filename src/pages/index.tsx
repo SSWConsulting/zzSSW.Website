@@ -1,14 +1,53 @@
-import * as React from "react"
+import React from "react";
 import {StaticImage} from "gatsby-plugin-image"
-import { Accordion} from "react-bootstrap"
+import { Accordion, Carousel } from "react-bootstrap"
 import Layout from "../components/layout"
 
 // markup
 const IndexPage = () => {
+  //TODO: Look at breaking this down into components
   return (
     <Layout pageTitle="SSW Website">
       <div id="container-fluid">
-        {/* TODO: Implement image carousel */}
+        <Carousel>
+          <Carousel.Item>
+            <a className="lightbox ignore" href="https://vimeo.com/400817895">
+              <StaticImage
+                    className="d-block w-100"
+                    src="../images/index/carousel/why-ssw.jpg"
+                    alt="Why SSW"
+                />
+            </a>              
+          </Carousel.Item>
+          <Carousel.Item>
+            <a href="/consulting/case-study/sydney-uni">
+              <StaticImage
+                  className="d-block w-100"
+                  src="../images/index/carousel/Banner-BREAST-case-study.jpg"
+                  alt="BREAST case study"
+              />
+            </a>              
+          </Carousel.Item>
+          <Carousel.Item style={{height:'410px'}}>
+            <a href="https://tv.ssw.com/">
+              <StaticImage
+                  className="d-block"
+                  src="../images/index/carousel/Banner-SSWTV.png"
+                  alt="SSW TV"
+              />
+            </a>    
+          </Carousel.Item>
+          <Carousel.Item>
+            {/* TODO: Add the are you stuck page */}
+              <a href="/consulting/are-you-stuck">
+                <StaticImage
+                    className="d-block w-100"
+                    src="../images/index/carousel/Banner-Are-You-Stuck.jpg"
+                    alt="Are you stuck?"
+                />
+              </a>
+          </Carousel.Item>          
+        </Carousel>
         {/* TODO: Convert into components using Graphiql Query */}
         <div id="what-we-do" className="row">
           <h2>Consulting</h2>
@@ -53,7 +92,7 @@ const IndexPage = () => {
             <div className="row">
               <div className="col-sm-5">
                 <StaticImage 
-                src="../images/MicrosoftPartnerLogo-2021.png" 
+                src="../images/index/MicrosoftPartnerLogo-2021.png" 
                 alt="Microsoft Partner Logo 2021"/>
               </div> 
               <div className="col-sm-7">
@@ -67,7 +106,7 @@ const IndexPage = () => {
               <div className="col-sm-5">
                 <a href="https://www.firebootcamp.com">
                   <StaticImage 
-                  src="../images/ssw-mapa.jpg" 
+                  src="../images/index/ssw-mapa.jpg" 
                   alt="Microsoft Australia Partner Award"/>  
                 </a> 
               </div>              
