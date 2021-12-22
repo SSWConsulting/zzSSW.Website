@@ -27,7 +27,7 @@ const Testimonials = () => (
             <div>
                 <StaticImage
                     className={avatar}
-                    src="../../images/consulting/mark_p.jpg"
+                    src="../../../../images/consulting/mark_p.jpg"
                     alt="avatar"
                 />
                 <div className={name}> Mark Pigram</div>
@@ -48,7 +48,7 @@ const Testimonials = () => (
             <div>
                 <StaticImage
                     className={avatar}
-                    src="../../images/consulting/peter-dimaridis.jpg"
+                    src="../../../../images/consulting/peter-dimaridis.jpg"
                     alt="avatar"
                 />
                 <div className={name}> Peter Dimaridis</div>
@@ -67,7 +67,7 @@ const Testimonials = () => (
             <div>
                 <StaticImage
                     className={avatar}
-                    src="../../images/consulting/peter-m.jpg"
+                    src="../../../../images/consulting/peter-m.jpg"
                     alt="avatar"
                 />
                 <div className={name}> Peter McCurdy</div>
