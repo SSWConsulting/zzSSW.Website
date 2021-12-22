@@ -8,6 +8,7 @@ import Booking from './components/booking';
 import Benefits from './components/benefits';
 import Testimonials from './components/testimonials';
 import About from './components/about';
+import Clients from './components/clients';
 
 // TODO: This css file is for reference, delete it later
 // import './index.css';
@@ -50,34 +51,7 @@ const Consulting = ({ data: { title } }) => {
 
                 <About />
 
-                <div className="clients-section">
-                    <div className="container">
-                        <h1>Companies we have worked with</h1>
-                        <div className="row no-gutters">
-                            <div className="col-sm-4">
-                                <StaticImage
-                                    src="../../images/consulting/clients1.png"
-                                    alt="SSW Clients"
-                                    className="center-block"
-                                />
-                            </div>
-                            <div className="col-sm-4">
-                                <StaticImage
-                                    src="../../images/consulting/clients2.png"
-                                    alt="SSW Clients"
-                                    className="center-block"
-                                />
-                            </div>
-                            <div className="col-sm-4">
-                                <StaticImage
-                                    src="../../images/consulting/clients3.png"
-                                    alt="SSW Clients"
-                                    className="center-block"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Clients />
 
                 <div className="technologies-section">
                     <div className="container">
