@@ -5,9 +5,12 @@ import Layout from '../../components/layout';
 import Breadcrumb from '../../components/breadcrumb';
 // import MVC_BACKGROUND from '../../videos/MVC_background.mp4';
 import Booking from './components/booking';
+import Benefits from './components/benefits';
 
 // TODO: This css file is for reference, delete it later
 // import './index.css';
+
+import './index.module.css';
 
 const Consulting = ({ data: { title } }) => {
     const data = [
@@ -39,106 +42,7 @@ const Consulting = ({ data: { title } }) => {
                     </video>
                 </div> */}
 
-                <div className="benefits-section MVC-benefits-background">
-                    <div className="container">
-                        {/* TODO: */}
-                        {/* <a name="more"></a> */}
-                        <h1>
-                            The benefits of building your{' '}
-                            <span className="red">UI in React</span> with SSW
-                        </h1>
-                        <div className="eric-video">
-                            <div
-                                className="video-player"
-                                data-id="3K4Gb54BFMo"
-                            ></div>
-                        </div>
-                        <h5>
-                            React is a JavaScript library that combines the
-                            speed of JavaScript with new ways of rendering web
-                            pages, making them highly dynamic and responsive to
-                            user input. This technology significantly changed
-                            Facebook approach to development. After the library
-                            was released as an open-source tool, it became
-                            extremely popular due to its revolutionary approach
-                            to programming user interfaces.
-                        </h5>
-                        <h5>
-                            React encourages the creation of reusable UI
-                            components which present data that changes over
-                            time.
-                        </h5>
-                        <h5>
-                            React can also render on the server using Node.js,
-                            and it can power native mobile apps using React
-                            Native.
-                        </h5>
-
-                        <div className="row">
-                            <div
-                                className="col-md-6 benefitsBox noCorruptionBx"
-                                data-aos="fade-left"
-                            >
-                                <StaticImage src="../../images/consulting/Look-into-the-Future.png" />
-                                <h4>The Ecosystem</h4>
-                                <p>
-                                    As a free open source JavaScript library,
-                                    React is free to use. Even better, the
-                                    internet is full of high-quality content
-                                    that you can learn from.
-                                </p>
-                            </div>
-                            <div
-                                className="col-md-6 benefitsBox speedUpBx"
-                                data-aos="fade-right"
-                            >
-                                <StaticImage src="../../images/consulting/crm-integration.png" />
-                                <h4>Reusable Components</h4>
-                                <p>
-                                    Powered by JavaScript, React can help you
-                                    create reusable UI components and implement
-                                    a consistent look across the whole project.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div
-                                className="col-md-6 benefitsBox reportsBx"
-                                data-aos="fade-left"
-                            >
-                                <StaticImage src="../../images/consulting/Virtual-DOM.png" />
-                                <h4>The Virtual DOM</h4>
-                                <p>
-                                    Having a virtual DOM is not just a
-                                    performance enhancement, it also adds
-                                    additional functionality.
-                                    <br /> When rendering a JSX element, every
-                                    single virtual DOM object will get updated.
-                                </p>
-                            </div>
-                            <div
-                                className="col-md-6 benefitsBox fasterAccessBx"
-                                data-aos="fade-right"
-                            >
-                                <StaticImage src="../../images/consulting/Stable.png" />
-                                <h4>Stable code, stable project</h4>
-                                <p>
-                                    React uses downward data binding to ensure
-                                    that changes in child structures will not
-                                    affect their parents.
-                                </p>
-                            </div>
-                        </div>
-
-                        <h5>
-                            Have a look at{' '}
-                            <a href="https://rules.ssw.com.au/rules-to-better-react">
-                                SSW Rules to Better React
-                            </a>
-                            .
-                        </h5>
-                    </div>
-                </div>
+                <Benefits />
 
                 <div className="testimonials-section">
                     <div className="container">
