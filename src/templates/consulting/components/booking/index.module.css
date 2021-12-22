@@ -1,30 +1,33 @@
 .container {
     text-align: center;
     min-height: 800px;
+    overflow: hidden;
+    font-family: 'Open Sans';
     background: rgba(0, 0, 0, 0.75)
         url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
 }
 
 .title {
-    padding-top: 10rem;
+    margin-top: 4em;
 }
 
 .desc {
-    margin-bottom: 3rem;
-}
-
-.contact {
-    margin-top: 2rem;
+    margin-top: 1.43rem;
 }
 
 .booking {
     width: 43%;
     height: 90px;
+    margin-top: 3.57rem;
     transition: all 0.1s;
     background: #cc4141;
     color: #fff;
     font-size: 1.6rem;
     border: 0;
+}
+
+.contact {
+    margin-top: 2.86rem;
 }
 
 h1,
