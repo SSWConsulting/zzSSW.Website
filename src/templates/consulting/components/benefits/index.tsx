@@ -1,12 +1,11 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
+import { video, play } from '../../index.module.css';
 import {
     container,
     title,
     videoContainer,
-    video,
-    play,
     benefit,
     link,
 } from './index.module.css';

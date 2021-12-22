@@ -1,12 +1,3 @@
-.bookingButton {
-    width: 43%;
-    height: 90px;
-    border: 0;
-    background: #cc4141;
-    color: #fff;
-    font-size: 1.6rem;
-}
-
 h1,
 h2,
 h3,
@@ -44,4 +35,29 @@ h5 {
     width: 75%;
     margin: 0 auto;
     padding: 20px 0;
+}
+
+.bookingButton {
+    width: 43%;
+    height: 90px;
+    border: 0;
+    background: #cc4141;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.video {
+    position: relative;
+}
+
+.play {
+    height: 72px;
+    width: 72px;
+    margin-left: -36px;
+    margin-top: -36px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: url(../../images/consulting/play.png) no-repeat;
+    cursor: pointer;
 }

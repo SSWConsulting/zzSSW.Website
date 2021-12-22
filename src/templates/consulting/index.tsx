@@ -7,6 +7,7 @@ import Breadcrumb from '../../components/breadcrumb';
 import Booking from './components/booking';
 import Benefits from './components/benefits';
 import Testimonials from './components/testimonials';
+import About from './components/about';
 
 // TODO: This css file is for reference, delete it later
 // import './index.css';
@@ -47,35 +48,7 @@ const Consulting = ({ data: { title } }) => {
 
                 <Testimonials />
 
-                <div className="about-section">
-                    <div className="container">
-                        <h1>
-                            Why should you choose{' '}
-                            <span className="red">SSW</span>?
-                        </h1>
-                        <div className="col-md-6">
-                            <div
-                                className="video-player"
-                                data-id="Jveq6VFjWTA"
-                                data-youkuid=""
-                            ></div>
-                            {/* TODO: */}
-                            {/* <%--<iframe width="540" height="304" src="https://www.youtube.com/embed/eu0qhzevEXQ?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen data-aos="fade-up"></iframe>--%> */}
-                            {/* <%--<div className="video-player" data-id="Jveq6VFjWTA" data-youkuid=""></div>--%> */}
-                        </div>
-                        <div className="col-md-6">
-                            <p data-aos="fade-up">
-                                SSW's Consulting Services have delivered best of
-                                breed Microsoft solutions for more than 1,000
-                                clients in 15 countries. With 40+ consultants in
-                                five countries, SSW's developers are some of the
-                                best in the business. We have many Microsoft
-                                Certifications, three MVPs, and a Microsoft
-                                Regional Director.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <About />
 
                 <div className="clients-section">
                     <div className="container">

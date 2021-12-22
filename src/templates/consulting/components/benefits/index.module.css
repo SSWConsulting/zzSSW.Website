@@ -25,22 +25,6 @@
     text-align: center;
 }
 
-.video {
-    position: relative;
-}
-
-.play {
-    height: 72px;
-    width: 72px;
-    margin-left: -36px;
-    margin-top: -36px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    background: url(../../../../images/consulting/play.png) no-repeat;
-    cursor: pointer;
-}
-
 .benefit {
     padding: 45px 55px;
 }
