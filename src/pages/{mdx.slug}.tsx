@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Consulting from '../templates/consulting';
+import ConsultingTemplate from '../templates/consulting';
 import NotFound from './404';
 import { PAGE_TYPE } from '../consts';
 
@@ -13,7 +13,7 @@ const Page = ({
     const { type } = frontmatter;
 
     if (type === PAGE_TYPE.Consulting) {
-        return <Consulting data={frontmatter} />;
+        return <ConsultingTemplate data={frontmatter} />;
     }
 
     return <NotFound />;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Layout from '../../components/layout';
 import Breadcrumb from '../../components/breadcrumb';
-// import MVC_BACKGROUND from '../../videos/MVC_background.mp4';
+import MVC_BACKGROUND from '../../assets/videos/MVC_background.mp4';
 import Booking from './components/booking';
 import Benefits from './components/benefits';
 import Testimonials from './components/testimonials';
@@ -12,8 +12,9 @@ import Technologies from './components/technologies';
 import Solution from './components/solution';
 
 import './index.module.css';
+import { backgroundVideo } from './index.module.css';
 
-const Consulting = ({ data: { title } }) => {
+const ConsultingTemplate = ({ data: { title } }) => {
     const data = [
         {
             name: 'Home',
@@ -35,14 +36,6 @@ const Consulting = ({ data: { title } }) => {
 
                 <Booking />
 
-                {/* TODO: Add video background */}
-                {/* <div id="videocontainer">
-                    <video autoPlay muted loop>
-                        <source src={MVC_BACKGROUND} type="video/mp4" />
-                        Your browser does not support HTML5 video.
-                    </video>
-                </div> */}
-
                 <Benefits />
 
                 <Testimonials />
@@ -59,4 +52,4 @@ const Consulting = ({ data: { title } }) => {
     );
 };
 
-export default Consulting;
+export default ConsultingTemplate;

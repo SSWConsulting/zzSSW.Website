@@ -46,14 +46,9 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
                 onMouseDown={
                     isMenuOpened ? (event) => handleClick(event) : null
                 }
-                style={{
-                    transform: isMenuOpened
-                        ? 'translateX(84%)'
-                        : 'translateX(0px)',
-                }}
             >
                 <div style={{ backgroundColor: 'white' }}>
-                    <div className="flex flex-col min-h-screen main-container">
+                    <div className="flex flex-col min-h-screen main-container" style={{ overflow: 'hidden' }}>
                         <title>{pageTitle}</title>
                         <TopBar />
                         <Menu
