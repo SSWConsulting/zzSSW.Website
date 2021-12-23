@@ -19,3 +19,5 @@ On top of this, there were many pages on the old website that were outdated or n
 The intent of this project is to recreate the SSW Website using Gatsby 4. All approved content from the current website will be migrated into the [SSW.Website.Content](https://github.com/SSWConsulting/SSW.Website.Content) repository and used as data to create the pages for the website programatically. 
 
 At the current time, only the Consulting / Services pages will be transferred over to this new website. With the other sections planned to come at a later date.
+
+See [Alternative Solutions Considered](_docs/Alternative-Solutions-Considered.md) for more information.
