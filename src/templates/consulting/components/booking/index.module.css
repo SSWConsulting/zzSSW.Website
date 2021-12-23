@@ -1,0 +1,25 @@
+.container {
+    text-align: center;
+    min-height: 800px;
+    overflow: hidden;
+    font-family: 'Open Sans';
+    background: rgba(0, 0, 0, 0.75)
+        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+}
+
+.title {
+    margin-top: 4em;
+}
+
+.desc {
+    margin-top: 20px;
+}
+
+.booking {
+    composes: bookingButton from '../../index.module.css';
+    margin-top: 50px;
+}
+
+.contact {
+    margin-top: 40px;
+}

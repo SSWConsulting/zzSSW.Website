@@ -1,0 +1,25 @@
+.container {
+    overflow: hidden;
+    min-height: 537px;
+    padding-bottom: 100px;
+    text-align: center;
+    background-image: url('../../../../assets/images/consulting/about_bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.section {
+    padding: 0 15px;
+}
+
+.title {
+    margin: 100px 0 50px 0;
+}
+
+.description {
+    color: #fff;
+    text-align: left;
+    font-size: 1.2rem;
+}
