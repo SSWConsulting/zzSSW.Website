@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { video, play } from '../../index.module.css';
+import { videoImage, video, play } from '../../index.module.css';
 import {
     container,
     title,
@@ -23,28 +23,23 @@ const Benefits = () => {
                     <span className="red">UI in React</span> with SSW
                 </h1>
                 <div className={videoContainer}>
-                    <div className={video}>
-                        {videoClicked ? (
-                            <iframe
-                                width="100%"
-                                height="100%"
-                                src="https://www.youtube.com/embed/3K4Gb54BFMo?autoplay=1"
-                                allowFullScreen
-                            ></iframe>
-                        ) : (
-                            <>
-                                <StaticImage
-                                    className={image}
-                                    src="../../../../assets/images/consulting/react-vs-angular.jpeg"
-                                    alt="react vs angular"
-                                />
-                                <div
-                                    className={play}
-                                    onClick={() => setVideoClicked(true)}
-                                ></div>
-                            </>
-                        )}
-                    </div>
+                    {videoClicked ? (
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/3K4Gb54BFMo?autoplay=1"
+                            allowFullScreen
+                        ></iframe>
+                    ) : (
+                        <div onClick={() => setVideoClicked(true)}>
+                            <StaticImage
+                                className={videoImage}
+                                src="../../../../assets/images/consulting/react-vs-angular.jpeg"
+                                alt="react vs angular"
+                            />
+                            <div className={play}></div>
+                        </div>
+                    )}
                 </div>
                 <h5>
                     React is a JavaScript library that combines the speed of

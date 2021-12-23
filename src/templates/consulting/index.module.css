@@ -46,10 +46,10 @@ h5 {
     font-size: 1.6rem;
 }
 
-.video {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.videoImage:hover {
+    filter: brightness(75%);
+    cursor: pointer;
+    transition: 0.4s all;
 }
 
 .play {

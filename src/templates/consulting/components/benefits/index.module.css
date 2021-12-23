@@ -22,6 +22,7 @@
 }
 
 .videoContainer {
+    position: relative;
     width: 750px;
     height: 386px;
     padding-left: 15px;

@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { container, section, title, description } from './index.module.css';
-import { video, play } from '../../index.module.css';
+import { videoImage, play } from '../../index.module.css';
+import {
+    container,
+    section,
+    videoContainer,
+    title,
+    description,
+} from './index.module.css';
 
 const About = () => {
     const [videoClicked, setVideoClicked] = useState(false);
@@ -15,25 +21,23 @@ const About = () => {
                 </h1>
                 <div className="flex-wrap">
                     <div className={`col-md-6 ${section}`}>
-                        <div className={video}>
+                        <div className={videoContainer}>
                             {videoClicked ? (
                                 <iframe
-                                    width="540px"
-                                    height="300px"
+                                    width="100%"
+                                    height="100%"
                                     src="https://www.youtube.com/embed/Jveq6VFjWTA?autoplay=1"
                                     allowFullScreen
                                 ></iframe>
                             ) : (
-                                <>
+                                <div onClick={() => setVideoClicked(true)}>
                                     <StaticImage
+                                        className={videoImage}
                                         src="../../../../assets/images/consulting/why-should-you-choose-ssw.jpeg"
                                         alt="why should you choose ssw"
                                     />
-                                    <div
-                                        className={play}
-                                        onClick={() => setVideoClicked(true)}
-                                    ></div>
-                                </>
+                                    <div className={play}></div>
+                                </div>
                             )}
                         </div>
                     </div>
