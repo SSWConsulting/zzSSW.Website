@@ -48,6 +48,7 @@ const Benefits = () => (
                     <StaticImage
                         className="fl"
                         src="../../../../assets/images/consulting/Look-into-the-Future.png"
+                        alt="look into the future"
                     />
                     <div>
                         <h4>The Ecosystem</h4>
@@ -62,6 +63,7 @@ const Benefits = () => (
                     <StaticImage
                         className="fl"
                         src="../../../../assets/images/consulting/crm-integration.png"
+                        alt="crm integration"
                     />
                     <div>
                         <h4>Reusable Components</h4>
@@ -77,6 +79,7 @@ const Benefits = () => (
                     <StaticImage
                         className="fl"
                         src="../../../../assets/images/consulting/Virtual-DOM.png"
+                        alt="virtual dom"
                     />
                     <div>
                         <h4>The Virtual DOM</h4>
@@ -92,6 +95,7 @@ const Benefits = () => (
                     <StaticImage
                         className="fl"
                         src="../../../../assets/images/consulting/Stable.png"
+                        alt="stable"
                     />
                     <div>
                         <h4>Stable code, stable project</h4>
