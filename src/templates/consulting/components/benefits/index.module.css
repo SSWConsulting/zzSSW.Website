@@ -16,6 +16,11 @@
     margin-bottom: 50px;
 }
 
+.image {
+    width: 100%;
+    height: 100%;
+}
+
 .videoContainer {
     width: 750px;
     height: 386px;
