@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy Azure Resources
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-azure-resources-to-staging:
+    name: Deploy Azure Resources to Staging 
+    uses: SSWConsulting/SSW.Website/.github/workflows/setup-azure-resources.yml@main
+    with:
+      ENVIRONMENT: Staging
+    secrets:
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      AZURE_APP_NAME: ${{ secrets.AZURE_APP_NAME }}
+      AZURE_TENANT: ${{ secrets.AZURE_TENANT }}
+
+  deploy-azure-resources-to-production:
+    name: Deploy Azure Resources to Production 
+    uses: tkapa/SSW.Website/.github/workflows/setup-azure-resources.yml@main
+    with:
+      ENVIRONMENT: Production
+    secrets:
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      AZURE_APP_NAME: ${{ secrets.AZURE_APP_NAME }}
+      AZURE_TENANT: ${{ secrets.AZURE_TENANT }}

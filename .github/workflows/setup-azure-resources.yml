@@ -1,17 +1,27 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Staging - Deploy Azure Resources
+name: Reusable - Setup Azure Resources
 
 # Controls when the workflow will run
 on:
-  workflow_dispatch:
-
+  workflow_call:
+    inputs:
+      ENVIRONMENT:
+        required: true
+        type: string
+    secrets:
+      AZURE_RESOURCE_GROUP:
+        required: true
+      AZURE_CREDENTIALS:
+        required: true
+      AZURE_APP_NAME:
+        required: true
+      AZURE_TENANT:
+        required: true
+        
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: 
-      name: Staging
-    steps:
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:      
     - uses: actions/checkout@v2
     
     # Log into Azure
@@ -33,7 +43,7 @@ jobs:
       with:
         inlineScript: |
           az storage blob service-properties update --account-name ${{ steps.depAz.outputs.storageAccountName }} --static-website --index-document index.html --404-document 404.html
-
+    
     # Log out of Azure
     - name: logout
       run: |
