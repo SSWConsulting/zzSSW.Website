@@ -12,7 +12,7 @@ const Technologies = () => (
                 <div className={`col-md-6 ${skillContainer}`}>
                     <div className={skill} data-aos="flip-left">
                         <StaticImage
-                            src="../../../../images/consulting/angular-logo.png"
+                            src="../../../../assets/images/consulting/angular-logo.png"
                             alt="angular"
                         />
                         <p>
@@ -29,7 +29,7 @@ const Technologies = () => (
                 <div className={`col-md-6 ${skillContainer}`}>
                     <div className={skill} data-aos="flip-left">
                         <StaticImage
-                            src="../../../../images/consulting/jquery-logo.png"
+                            src="../../../../assets/images/consulting/jquery-logo.png"
                             alt="jquery"
                         />
                         <p>
@@ -46,7 +46,7 @@ const Technologies = () => (
                 <div className={`col-md-6 ${skillContainer}`}>
                     <div className={skill} data-aos="flip-left">
                         <StaticImage
-                            src="../../../../images/consulting/js-logo.png"
+                            src="../../../../assets/images/consulting/js-logo.png"
                             alt="javascript"
                         />
                         <p>
@@ -63,7 +63,7 @@ const Technologies = () => (
                 <div className={`col-md-6 ${skillContainer}`}>
                     <div className={skill} data-aos="flip-left">
                         <StaticImage
-                            src="../../../../images/consulting/net-logo.png"
+                            src="../../../../assets/images/consulting/net-logo.png"
                             alt=".net"
                         />
                         <p>
@@ -79,7 +79,7 @@ const Technologies = () => (
                 <div className={`col-md-12 ${skillContainer}`}>
                     <div className={skill} data-aos="flip-left">
                         <StaticImage
-                            src="../../../../images/consulting/react-native-logo.png"
+                            src="../../../../assets/images/consulting/react-native-logo.png"
                             alt="react-native"
                         />
                         <p>

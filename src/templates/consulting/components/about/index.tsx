@@ -14,7 +14,7 @@ const About = () => (
                 <div className={`col-md-6 ${section}`}>
                     <div className={video}>
                         <StaticImage
-                            src="../../../../images/consulting/why-should-you-choose-ssw.jpeg"
+                            src="../../../../assets/images/consulting/why-should-you-choose-ssw.jpeg"
                             alt="why should you choose ssw"
                         />
                         {/* TODO: Show video after clicking */}

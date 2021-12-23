@@ -1,7 +1,7 @@
 .container {
     overflow: hidden;
     background-attachment: fixed;
-    background-image: url('../../../../images/consulting/mvc-benefits-bg.jpg');
+    background-image: url('../../../../assets/images/consulting/mvc-benefits-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

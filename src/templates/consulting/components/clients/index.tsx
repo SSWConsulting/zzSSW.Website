@@ -10,21 +10,21 @@ const Clients = () => (
             <div className="row no-gutters">
                 <div className="col-sm-4">
                     <StaticImage
-                        src="../../../../images/consulting/clients1.png"
+                        src="../../../../assets/images/consulting/clients1.png"
                         alt="SSW Clients"
                         className={client}
                     />
                 </div>
                 <div className="col-sm-4">
                     <StaticImage
-                        src="../../../../images/consulting/clients2.png"
+                        src="../../../../assets/images/consulting/clients2.png"
                         alt="SSW Clients"
                         className={client}
                     />
                 </div>
                 <div className="col-sm-4">
                     <StaticImage
-                        src="../../../../images/consulting/clients3.png"
+                        src="../../../../assets/images/consulting/clients3.png"
                         alt="SSW Clients"
                         className={client}
                     />

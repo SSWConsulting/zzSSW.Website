@@ -20,7 +20,7 @@ const Benefits = () => (
             {/* TODO: */}
             <div className={videoContainer}>
                 <div className={video}>
-                    <StaticImage src="../../../../images/consulting/maxresdefault.jpeg" />
+                    <StaticImage src="../../../../assets/images/consulting/maxresdefault.jpeg" />
                     {/* TODO: Show video after clicking */}
                     <div className={play}></div>
                 </div>
@@ -47,7 +47,7 @@ const Benefits = () => (
                 <div className={`col-md-6 ${benefit}`} data-aos="fade-left">
                     <StaticImage
                         className="fl"
-                        src="../../../../images/consulting/Look-into-the-Future.png"
+                        src="../../../../assets/images/consulting/Look-into-the-Future.png"
                     />
                     <div>
                         <h4>The Ecosystem</h4>
@@ -61,7 +61,7 @@ const Benefits = () => (
                 <div className={`col-md-6 ${benefit}`} data-aos="fade-right">
                     <StaticImage
                         className="fl"
-                        src="../../../../images/consulting/crm-integration.png"
+                        src="../../../../assets/images/consulting/crm-integration.png"
                     />
                     <div>
                         <h4>Reusable Components</h4>
@@ -76,7 +76,7 @@ const Benefits = () => (
                 <div className={`col-md-6 ${benefit}`} data-aos="fade-left">
                     <StaticImage
                         className="fl"
-                        src="../../../../images/consulting/Virtual-DOM.png"
+                        src="../../../../assets/images/consulting/Virtual-DOM.png"
                     />
                     <div>
                         <h4>The Virtual DOM</h4>
@@ -91,7 +91,7 @@ const Benefits = () => (
                 <div className={`col-md-6 ${benefit}`} data-aos="fade-right">
                     <StaticImage
                         className="fl"
-                        src="../../../../images/consulting/Stable.png"
+                        src="../../../../assets/images/consulting/Stable.png"
                     />
                     <div>
                         <h4>Stable code, stable project</h4>
