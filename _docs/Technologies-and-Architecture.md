@@ -9,7 +9,7 @@ This documents aims to provide an overview of the technologies used in this proj
 
 ## Coding Patterns
 
-This website should adhere to **Clean Architecture** where possible. See the [Rules to Better Clean Architecture](https://www.ssw.com.au/rules/rules-to-better-clean-architecture) for more information.
+[Rules to Better Clean Architecture](https://www.ssw.com.au/rules/rules-to-better-clean-architecture) not applicable
 
 ## 3rd Party Libraries 
 
