@@ -12,6 +12,7 @@ import {
 
 const Benefits = () => (
     <div className={container}>
+        <a id="more" />
         <div className="main-container">
             <h1 className={title}>
                 The benefits of building your{' '}

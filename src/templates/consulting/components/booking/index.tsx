@@ -2,7 +2,17 @@ import React from 'react';
 
 import MVC_BACKGROUND from '../../../../assets/videos/MVC_background.mp4';
 import { backgroundVideo } from '../../index.module.css';
-import { container, title, desc, contact, booking } from './index.module.css';
+import {
+    container,
+    title,
+    desc,
+    contact,
+    booking,
+    arrowScroll,
+    bounce,
+    fa,
+    faChevronDown,
+} from './index.module.css';
 
 const Booking = () => (
     <>
@@ -29,8 +39,9 @@ const Booking = () => (
 
                 <h2 className={contact}>or call us on +61 2 9953 3000</h2>
 
-                <div className="arrow-scroll bounce">
-                    <a className="fa fa-chevron-down" href="#more"></a>
+                {/* TODO: Enhance arrow down animation */}
+                <div className={`${arrowScroll} ${bounce}`}>
+                    <a className={`${fa} ${faChevronDown}`} href="#more"></a>
                 </div>
             </div>
         </div>
