@@ -14,6 +14,8 @@ on:
         required: true
       AZURE_APP_NAME:
         required: true
+      CONTENT_BRANCH:
+        required: true
 
 jobs:
   build:
@@ -38,7 +40,7 @@ jobs:
       run: gatsby build
       env:
         CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
-        CONTENT_BRANCH: testing-content
+        CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
     
     # Upload build artifact
     - name: Upload Gatsby Build Artifacts

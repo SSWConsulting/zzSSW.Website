@@ -42,6 +42,8 @@ The GitHub actions in this repository require the correct secrets and environmen
         **Note:** Keep this a bit shorter (~10 characters) so as not to break the Azure resoruce character limit
     - AZURE_TENANT
       - Set as the `tenantId` from the `Setup Azure CLI` 
+    - CONTENT_BRANCH
+      - Set as the name of the branch to source content from in the content repository
 
 Once the GitHub environments are set up you have the opportunity to place protections on your production environment so that deploys can't happen accidentally.
 
