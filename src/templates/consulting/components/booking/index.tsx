@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MVC_BACKGROUND from '../../../../assets/videos/MVC_background.mp4';
-import { backgroundVideo } from '../../index.module.css';
+import { backgroundVideo, hoverable, anim } from '../../index.module.css';
 import {
     container,
     title,
@@ -31,15 +31,13 @@ const Booking = () => (
                     Easy to learn, easy to use and easy to be awesome
                 </h2>
 
-                {/* TODO: Add button animation */}
-                <button type="button" className={booking}>
-                    <div className="anim"></div>
+                <button type="button" className={`${booking} ${hoverable}`}>
                     Book a FREE Initial Meeting
+                    <div className={`${anim}`} />
                 </button>
 
                 <h2 className={contact}>or call us on +61 2 9953 3000</h2>
 
-                {/* TODO: Enhance arrow down animation */}
                 <div className={`${arrowScroll} ${bounce}`}>
                     <a className={`${fa} ${faChevronDown}`} href="#more"></a>
                 </div>
