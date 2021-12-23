@@ -20,4 +20,4 @@ The intent of this project is to recreate the SSW Website using Gatsby 4. All ap
 
 At the current time, only the Consulting / Services pages will be transferred over to this new website. With the other sections planned to come at a later date.
 
-See [Alternative Solutions Considered](_docs/Alternative-Solutions-Considered.md) for more information.
+See [Alternative Solutions Considered](./Alternative-Solutions-Considered.md) for more information.
