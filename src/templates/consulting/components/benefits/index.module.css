@@ -16,7 +16,13 @@
     margin-bottom: 50px;
 }
 
+.image {
+    width: 100%;
+    height: 100%;
+}
+
 .videoContainer {
+    position: relative;
     width: 750px;
     height: 386px;
     padding-left: 15px;

@@ -18,7 +18,7 @@ const buildTimestamp = preval`module.exports = new Date().getTime();`;
 const Footer = () => {
   return (
     <>
-      <div className="py-2 text-center bg-grey-translucent text-sm">
+      <div className="py-2 text-center bg-grey-translucent text-sm" style={{ backgroundColor: 'white' }}>
         <section className="main-container">
           We <FontAwesomeIcon icon={faHeart} className="text-ssw-red" /> open
           source. Powered by{' '}
