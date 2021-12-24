@@ -15,8 +15,8 @@ After following the steps below, you will be able to setup your Azure resources 
 2. Follow the prompts to log in to Azure CLI
 3. Run `az account list` to find your Azure Subscriptions
 4. Use the `name` field to identify the Azure Subscription you want to use
-5. save the `tenantId` value for later use
-6. run ```az ad sp create-for-rbac --name sswwebsite 
+5. Save the `tenantId` value for later use
+6. Run ```az ad sp create-for-rbac --name sswwebsite 
         --role contributor --scopes /subscriptions/<your.tenantId>/resourceGroups/<your.resourceGroup> --sdk-auth``` 
     - Replace <your.tenantId> with the saved tenantId
     - Replace <your.resourceGroup> with the Resource Group name you created
