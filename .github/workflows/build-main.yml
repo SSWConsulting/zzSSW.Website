@@ -33,3 +33,6 @@ jobs:
       # Run gatsby build
       - name: Gatsby Build
         run: gatsby build
+        env:
+          CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
+          CONTENT_BRANCH: staging
