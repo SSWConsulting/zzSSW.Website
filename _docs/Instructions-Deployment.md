@@ -53,10 +53,8 @@ Once all of the environment secrets are created, you are ready to reploy the req
 
 In your GitHub repository
 
-1. Navigate to **Actions | Staging - Deploy Azure Resources | Run workflow**
+1. Navigate to **Actions | Deploy Azure Resources | Run workflow**
 2. Click **Run workflow**
-
-**Note:** Running the `Production - Deploy Azure Resources` action will deploy the resources to your production environment.
 
 ### Deploy the Gatsby site to Azure
 
