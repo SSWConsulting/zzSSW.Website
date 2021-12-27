@@ -54,6 +54,9 @@ export const query = graphql`
                         url
                     }
                 }
+                solution {
+                    project
+                }
             }
         }
     }

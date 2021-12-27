@@ -13,8 +13,9 @@ import Solution from './components/solution';
 import './index.module.css';
 
 const ConsultingTemplate = ({ data }) => {
-    const { title, booking, benefits } = data;
+    const { title, booking, benefits, solution } = data;
 
+    const pageTitle = `${title} | SSW Consulting - Sydney, Brisbane, Melbourne`;
     const breadcrumbData = [
         {
             name: 'Home',
@@ -25,12 +26,12 @@ const ConsultingTemplate = ({ data }) => {
             path: '/consulting',
         },
         {
-            name: `${title} | SSW Consulting - Sydney, Brisbane, Melbourne`,
+            name: pageTitle,
         },
     ];
 
     return (
-        <Layout pageTitle={title}>
+        <Layout pageTitle={pageTitle}>
             <>
                 <Breadcrumb data={breadcrumbData} />
 
@@ -46,7 +47,7 @@ const ConsultingTemplate = ({ data }) => {
 
                 <Technologies />
 
-                <Solution />
+                <Solution {...solution} />
             </>
         </Layout>
     );
