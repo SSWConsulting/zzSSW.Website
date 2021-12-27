@@ -5,4 +5,6 @@ import '@fontsource/open-sans';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
-AOS.init();
+AOS.init({
+    duration: 1200,
+});

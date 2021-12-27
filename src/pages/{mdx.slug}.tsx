@@ -25,26 +25,34 @@ export const query = graphql`
             frontmatter {
                 type
                 title
+                booking {
+                    title
+                    subTitle
+                }
                 benefits {
-                    descriptions
                     title
                     video {
+                        image {
+                            childImageSharp {
+                                gatsbyImageData
+                            }
+                        }
                         url
-                        coverFilename
                     }
-                    benefit {
-                        description
-                        iconFilename
+                    descriptions
+                    benefitList {
+                        image {
+                            childImageSharp {
+                                gatsbyImageData
+                            }
+                        }
                         title
+                        description
                     }
                     rule {
                         name
                         url
                     }
-                }
-                booking {
-                    title
-                    subTitle
                 }
             }
         }
