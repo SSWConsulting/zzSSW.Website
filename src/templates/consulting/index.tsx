@@ -12,8 +12,10 @@ import Solution from './components/solution';
 
 import './index.module.css';
 
-const ConsultingTemplate = ({ data: { title } }) => {
-    const data = [
+const ConsultingTemplate = ({ data }) => {
+    const { title, booking, benefits } = data;
+
+    const breadcrumbData = [
         {
             name: 'Home',
             path: '/',
@@ -30,11 +32,11 @@ const ConsultingTemplate = ({ data: { title } }) => {
     return (
         <Layout pageTitle={title}>
             <>
-                <Breadcrumb data={data} />
+                <Breadcrumb data={breadcrumbData} />
 
-                <Booking />
+                <Booking {...booking} />
 
-                <Benefits />
+                <Benefits {...benefits} />
 
                 <Testimonials />
 
