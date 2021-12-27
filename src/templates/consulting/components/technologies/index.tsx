@@ -1,12 +1,12 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { container, title, skillContainer, skill } from './index.module.css';
+import { container, skillContainer, skill } from './index.module.css';
 
 const Technologies = () => (
     <div className={container}>
         <div className="main-container">
-            <h1 className={title}>Other technologies</h1>
+            <h1>Other technologies</h1>
             <div className="flex-wrap">
                 {/* TODO: Use Row and Col instead of old bootstrap classed */}
                 <div className={`col-md-6 ${skillContainer}`}>

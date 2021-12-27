@@ -1,12 +1,12 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { container, title, client } from './index.module.css';
+import { container, client } from './index.module.css';
 
 const Clients = () => (
     <div className={container}>
         <div className="main-container">
-            <h1 className={title}>Companies we have worked with</h1>
+            <h1>Companies we have worked with</h1>
             <div className="row no-gutters">
                 <div className="col-sm-4">
                     <StaticImage

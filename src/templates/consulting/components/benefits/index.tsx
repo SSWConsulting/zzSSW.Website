@@ -13,7 +13,7 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
         <div className={styles.container}>
             <a id="more" />
             <div className="main-container">
-                <h1 className={styles.title}>{title}</h1>
+                <h1>{title}</h1>
                 <div className={styles.videoContainer}>
                     {videoClicked ? (
                         <iframe
@@ -35,7 +35,7 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
                 </div>
 
                 {descriptions?.map((desc) => (
-                    <h5>{desc}</h5>
+                    <h5 className={styles.desc}>{desc}</h5>
                 ))}
 
                 <div className="flex-wrap">
@@ -53,8 +53,10 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
                                     alt="benefit icon"
                                 />
                                 <div>
-                                    <h4>{title}</h4>
-                                    <p>{description}</p>
+                                    <h4 className={styles.benefitTitle}>{title}</h4>
+                                    <p className={styles.benefitDesc}>
+                                        {description}
+                                    </p>
                                 </div>
                             </div>
                         )
