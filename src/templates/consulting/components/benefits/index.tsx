@@ -38,8 +38,10 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
                     )}
                 </div>
 
-                {descriptions?.map((desc) => (
-                    <h5 className={styles.desc}>{desc}</h5>
+                {descriptions?.map((desc, index) => (
+                    <h5 className={styles.desc} key={index}>
+                        {desc}
+                    </h5>
                 ))}
 
                 <div className="flex-wrap">
@@ -47,6 +49,7 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
                         ({ image, title, description }, index) => (
                             <div
                                 className={`col-md-6 ${styles.benefit}`}
+                                key={index}
                                 data-aos={
                                     index % 2 === 0 ? 'fade-left' : 'fade-right'
                                 }
