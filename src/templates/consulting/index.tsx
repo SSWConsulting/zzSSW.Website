@@ -2,7 +2,6 @@ import React from 'react';
 
 import Layout from '../../components/layout';
 import Breadcrumb from '../../components/breadcrumb';
-import MVC_BACKGROUND from '../../assets/videos/MVC_background.mp4';
 import Booking from './components/booking';
 import Benefits from './components/benefits';
 import Testimonials from './components/testimonials';
@@ -12,10 +11,12 @@ import Technologies from './components/technologies';
 import Solution from './components/solution';
 
 import './index.module.css';
-import { backgroundVideo } from './index.module.css';
 
-const ConsultingTemplate = ({ data: { title } }) => {
-    const data = [
+const ConsultingTemplate = ({ data }) => {
+    const { title, booking, benefits, solution } = data;
+
+    const pageTitle = `${title} | SSW Consulting - Sydney, Brisbane, Melbourne`;
+    const breadcrumbData = [
         {
             name: 'Home',
             path: '/',
@@ -25,18 +26,18 @@ const ConsultingTemplate = ({ data: { title } }) => {
             path: '/consulting',
         },
         {
-            name: `${title} | SSW Consulting - Sydney, Brisbane, Melbourne`,
+            name: pageTitle,
         },
     ];
 
     return (
-        <Layout pageTitle={title}>
+        <Layout pageTitle={pageTitle}>
             <>
-                <Breadcrumb data={data} />
+                <Breadcrumb data={breadcrumbData} />
 
-                <Booking />
+                <Booking {...booking} />
 
-                <Benefits />
+                <Benefits {...benefits} />
 
                 <Testimonials />
 
@@ -46,7 +47,7 @@ const ConsultingTemplate = ({ data: { title } }) => {
 
                 <Technologies />
 
-                <Solution />
+                <Solution {...solution} />
             </>
         </Layout>
     );

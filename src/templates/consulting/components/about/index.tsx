@@ -6,7 +6,6 @@ import {
     container,
     section,
     videoContainer,
-    title,
     description,
 } from './index.module.css';
 
@@ -16,7 +15,7 @@ const About = () => {
     return (
         <div className={container}>
             <div className="main-container">
-                <h1 className={title}>
+                <h1>
                     Why should you choose <span className="red">SSW</span>?
                 </h1>
                 <div className="flex-wrap">

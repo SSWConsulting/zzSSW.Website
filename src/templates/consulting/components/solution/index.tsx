@@ -3,12 +3,12 @@ import React from 'react';
 import { bookingButton, hoverable, anim } from '../../index.module.css';
 import { container } from './index.module.css';
 
-const Solution = () => (
+const Solution = ({ project }) => (
     <div className={container}>
         <div className="main-container">
             <h1>
-                Talk to us about your <span className="red">React project</span>{' '}
-                today
+                Talk to us about your <span className="red">{project}</span>{' '}
+                project
             </h1>
 
             <p>
