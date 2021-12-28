@@ -36,11 +36,7 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
     `);
 
     return (
-        <div
-            style={{
-                overflow: isMenuOpened ? 'hidden' : 'auto',
-            }}
-        >
+        <>
             <div
                 ref={node}
                 onMouseDown={
@@ -48,7 +44,7 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
                 }
             >
                 <div style={{ backgroundColor: 'white' }}>
-                    <div className="flex flex-col min-h-screen main-container" style={{ overflow: 'hidden' }}>
+                    <div className="flex flex-col min-h-screen main-container">
                         <title>{pageTitle}</title>
                         <TopBar />
                         <Menu
@@ -60,7 +56,7 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
                 <Footer />
             </div>
             <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>
-        </div>
+        </>
     );
 };
 
