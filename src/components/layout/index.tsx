@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Footer from '../footer';
 import Menu from '../../../lib/SSW.MegaMenu/menu/menu';
 import MobileMenu from '../../../lib/SSW.MegaMenu/mobile-menu/mobile-menu';
-import TopBar from '../../../lib/SSW.TopBar/top-bar';
+import TopBar from '../topBar';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 type LayoutProps = {

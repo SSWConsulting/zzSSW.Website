@@ -1,5 +1,5 @@
 import React from 'react';
-import SSWLogo from './images/SSWLogo.svg';
+import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -10,9 +10,9 @@ import {
     faTwitter,
     faWeixin,
 } from '@fortawesome/free-brands-svg-icons';
-import classNames from 'classnames';
 
-import * as styles from './top-bar.module.css';
+import SSWLogo from '../../assets/images/ssw-logo.svg';
+import * as styles from './index.module.css';
 
 const TopBar = () => {
     return (
