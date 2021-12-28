@@ -13,7 +13,11 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
         <div className={styles.container}>
             <a id="more" />
             <div className="main-container">
-                <h1>{title}</h1>
+                <h1
+                    dangerouslySetInnerHTML={{
+                        __html: title,
+                    }}
+                />
                 <div className={styles.videoContainer}>
                     {videoClicked ? (
                         <iframe
@@ -53,7 +57,9 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
                                     alt="benefit icon"
                                 />
                                 <div>
-                                    <h4 className={styles.benefitTitle}>{title}</h4>
+                                    <h4 className={styles.benefitTitle}>
+                                        {title}
+                                    </h4>
                                     <p className={styles.benefitDesc}>
                                         {description}
                                     </p>

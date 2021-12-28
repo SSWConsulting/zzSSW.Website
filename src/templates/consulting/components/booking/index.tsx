@@ -18,7 +18,10 @@ const Booking = ({ title, subTitle }) => (
         </video>
         <div className={styles.container}>
             <div className="main-container">
-                <h1 className={styles.title}>{title}</h1>
+                <h1
+                    className={styles.title}
+                    dangerouslySetInnerHTML={{ __html: title }}
+                />
 
                 <h2 className={styles.subTitle}>{subTitle}</h2>
 
