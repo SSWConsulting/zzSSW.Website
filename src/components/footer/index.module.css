@@ -1,0 +1,32 @@
+.container {
+    font-size: 0.8rem;
+    background-color: #333;
+    color: #ccc;
+}
+
+.container hr {
+    margin: 0;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+}
+
+.divider {
+    margin: 0 10px;
+}
+
+.deployment {
+    padding: 7px 0;
+}
+
+.link {
+    color: #eee;
+    font-size: 0.7rem;
+    border-bottom: 1px dotted #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out 0s;
+}
