@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoAndName {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    width: 100px;
+    margin-left: 6px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    line-height: 1em;
+    color: #666;
+}
+
+.contacts {
+    display: flex;
+    align-items: center;
+}
+
+.phoneIcon {
+    margin-right: 0.25rem;
+    font-size: 1.2rem;
+    color: #9e9e9e;
+}
+
+.phoneNumber {
+    margin-left: 4px;
+    font-size: 1.12rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+
+.iconContainer {
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    margin-left: 8px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.youtube {
+    background-color: #b31217;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.twitter {
+    background-color: #55acee;
+}
+
+.instagram {
+    background: linear-gradient(
+        45deg,
+        #f09433 0%,
+        #e6683c 25%,
+        #dc2743 50%,
+        #cc2366 75%,
+        #bc1888 100%
+    );
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.wechat {
+    background-color: #62b900;
+}
+
+.wechat:hover .qrCode {
+    display: inline-block;
+}
+
+.qrCode {
+    display: none;
+    padding: 4px;
+    position: relative;
+    left: -40px;
+    top: 10px;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.qrCode::before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -10px;
+    left: 50px;
+    border: 5px solid transparent;
+    border-bottom: 5px solid rgba(0, 0, 0, 0.65);
+}
