@@ -17,3 +17,9 @@
 .red {
     color: #cc4141;
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

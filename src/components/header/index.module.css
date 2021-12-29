@@ -38,27 +38,28 @@
 }
 
 .iconContainer {
-    color: #fff;
     width: 25px;
     height: 25px;
     margin-left: 8px;
-    text-align: center;
-    line-height: 25px;
 }
 
 .youtube {
+    composes: iconContainer;
     background-color: #b31217;
 }
 
 .linkedin {
+    composes: iconContainer;
     background-color: #0077b5;
 }
 
 .twitter {
+    composes: iconContainer;
     background-color: #55acee;
 }
 
 .instagram {
+    composes: iconContainer;
     background: linear-gradient(
         45deg,
         #f09433 0%,
@@ -70,10 +71,12 @@
 }
 
 .facebook {
+    composes: iconContainer;
     background-color: #3b5998;
 }
 
 .wechat {
+    composes: iconContainer;
     background-color: #62b900;
 }
 
