@@ -5,9 +5,34 @@
     padding: 0 15px;
 }
 
+.flex {
+    display: flex;
+}
+
 .flex-wrap {
     display: flex;
     flex-wrap: wrap;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.horizon-center {
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+
+.whole-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fl {
@@ -16,10 +41,4 @@
 
 .red {
     color: #cc4141;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

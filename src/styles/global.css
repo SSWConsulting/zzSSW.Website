@@ -1,6 +1,9 @@
 :root {
     --bs-font-sans-serif: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     --bs-breadcrumb-divider: '>';
+    --black: #333;
+    --grey: #666;
+    --white: #fff;
 }
 
 * {
@@ -14,9 +17,10 @@ body {
 }
 
 a {
-    color: #666;
+    color: var(--grey);
 }
 
 a:hover {
     color: #cc4141;
+    border-color: #cc4141;
 }
