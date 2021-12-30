@@ -1,0 +1,22 @@
+:root {
+    --bs-font-sans-serif: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    --bs-breadcrumb-divider: '>';
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: #666;
+}
+
+a:hover {
+    color: #cc4141;
+}

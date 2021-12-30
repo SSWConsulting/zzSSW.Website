@@ -6,6 +6,12 @@ import MobileMenu from '../../../lib/SSW.MegaMenu/mobile-menu/mobile-menu';
 import Header from '../header';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
+// TODO: Keep it temporarily for reference
+// import '../style.css';
+
+import '../../styles/global.css';
+import '../../styles/common.css';
+
 type LayoutProps = {
     pageTitle: string;
     children: JSX.Element;
