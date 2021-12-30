@@ -54,19 +54,21 @@ const Footer = () => {
                         <div>
                             <a
                                 className={styles.link}
-                                href="https://github.com/SSWConsulting/SSW.Rules/issues/new/choose"
+                                // TODO: Implementation
+                                href="https://github.com/SSWConsulting/SSW.Website/issues/63"
                             >
                                 SITEMAP
                             </a>
                             <span className={styles.divider}>|</span>
                             <a
                                 className={classNames(styles.link)}
-                                href="https://www.ssw.com.au/ssw/Standards/Forms/ConsultingOrderTermsConditions.aspx"
+                                // TODO: Implementation
+                                href="https://github.com/SSWConsulting/SSW.Website/issues/64"
                             >
                                 HEALTH CHECK{' '}
                                 <StaticImage
                                     className={styles.healthCheck}
-                                    src="../../assets/images/healthchecklogo-nowords.png"
+                                    src="../../assets/images/health-check.png"
                                     alt="health check "
                                     layout="constrained"
                                 />
