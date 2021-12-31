@@ -77,6 +77,7 @@
 
 .wechat {
     composes: iconContainer;
+    position: relative;
     background-color: #62b900;
 }
 
@@ -87,9 +88,8 @@
 .qrCode {
     display: none;
     padding: 4px;
-    position: relative;
-    left: -40px;
-    top: 10px;
+    position: absolute;
+    top: 32px;
     z-index: 999;
     background: rgba(0, 0, 0, 0.65);
 }
