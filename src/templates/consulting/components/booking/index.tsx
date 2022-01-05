@@ -1,6 +1,7 @@
 import React from 'react';
 
 import VideoBackground from '../../../../components/videoBackground';
+import InnerHTML from '../../../../components/innerHTML';
 import Button from '../../../../components/button';
 
 import MVC_BACKGROUND from '../../../../assets/videos/MVC_background.mp4';
@@ -11,10 +12,7 @@ const Booking = ({ title, subTitle }) => (
         <VideoBackground src={MVC_BACKGROUND} />
         <div className={styles.container}>
             <div className="main-container">
-                <h1
-                    className={styles.title}
-                    dangerouslySetInnerHTML={{ __html: title }}
-                />
+                <InnerHTML tagName="h1" __html={title} />
 
                 <h2 className={styles.subTitle}>{subTitle}</h2>
 
