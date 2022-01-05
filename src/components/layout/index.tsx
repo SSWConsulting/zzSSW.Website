@@ -53,10 +53,13 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
                     isMenuOpened ? (event) => handleClick(event) : null
                 }
             >
-                <header className={classNames('main-container', container)}>
-                    <title>{pageTitle}</title>
-                    <Header />
-                    <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
+                <header className={container}>
+                    <div className="main-container">
+                        <Header />
+                        <Menu
+                            onClickToggle={() => actionOnToggleClick()}
+                        ></Menu>
+                    </div>
                 </header>
                 <main>{children}</main>
                 <Footer />
