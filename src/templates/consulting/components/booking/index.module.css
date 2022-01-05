@@ -16,11 +16,6 @@
     margin-top: 20px;
 }
 
-.booking {
-    composes: bookingButton from '../../index.module.css';
-    margin-top: 50px;
-}
-
 .contact {
     margin-top: 40px;
 }

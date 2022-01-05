@@ -1,8 +1,9 @@
 import React from 'react';
 
 import VideoBackground from '../../../../components/videoBackground';
+import Button from '../../../../components/button';
+
 import MVC_BACKGROUND from '../../../../assets/videos/MVC_background.mp4';
-import * as commonStyles from '../../index.module.css';
 import * as styles from './index.module.css';
 
 const Booking = ({ title, subTitle }) => (
@@ -17,13 +18,7 @@ const Booking = ({ title, subTitle }) => (
 
                 <h2 className={styles.subTitle}>{subTitle}</h2>
 
-                <button
-                    type="button"
-                    className={`${styles.booking} ${commonStyles.hoverable}`}
-                >
-                    Book a FREE Initial Meeting
-                    <div className={`${commonStyles.anim}`} />
-                </button>
+                <Button>Book a FREE Initial Meeting</Button>
 
                 <h2 className={styles.contact}>
                     or call us on +61 2 9953 3000
