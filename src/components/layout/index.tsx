@@ -1,10 +1,20 @@
 import React, { useState, useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import Footer from '../footer';
+import classNames from 'classnames';
+
+import Header from '../header';
 import Menu from '../../../lib/SSW.MegaMenu/menu/menu';
 import MobileMenu from '../../../lib/SSW.MegaMenu/mobile-menu/mobile-menu';
-import TopBar from '../topBar';
+import Footer from '../footer';
+
+// TODO: Keep it temporarily for reference
+// import '../style.css';
+
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import '../../styles/global.css';
+import '../../styles/common.css';
+
+import { container } from './index.module.css';
 
 type LayoutProps = {
     pageTitle: string;
@@ -43,16 +53,12 @@ const Layout = ({ pageTitle, children }: LayoutProps) => {
                     isMenuOpened ? (event) => handleClick(event) : null
                 }
             >
-                <div style={{ backgroundColor: 'white' }}>
-                    <div className="flex flex-col min-h-screen main-container">
-                        <title>{pageTitle}</title>
-                        <TopBar />
-                        <Menu
-                            onClickToggle={() => actionOnToggleClick()}
-                        ></Menu>
-                    </div>
-                </div>
-                {children}
+                <header className={classNames('main-container', container)}>
+                    <title>{pageTitle}</title>
+                    <Header />
+                    <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
+                </header>
+                <main>{children}</main>
                 <Footer />
             </div>
             <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>

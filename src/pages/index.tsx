@@ -3,12 +3,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { Accordion } from 'react-bootstrap';
 import Layout from '../components/layout';
 
-// TODO: Keep it temporarily for reference
-import '../style.css';
-
-import '../styles/default.css';
-import '../styles/common.css';
-
 // markup
 const IndexPage = () => {
     return (

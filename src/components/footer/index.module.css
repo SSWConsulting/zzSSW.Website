@@ -1,6 +1,6 @@
 .container {
     font-size: 0.8rem;
-    background-color: #333;
+    background-color: var(--black);
     color: #ccc;
 }
 
@@ -21,6 +21,14 @@
 
 .deployment {
     padding: 7px 0;
+    border-top: solid #414141 1px;
+}
+
+.healthCheck {
+    width: 25px;
+    height: 9px;
+    position: relative;
+    top: 4px;
 }
 
 .link {
