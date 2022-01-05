@@ -1,21 +1,13 @@
 import React from 'react';
 
+import VideoBackground from '../../../../components/videoBackground';
 import MVC_BACKGROUND from '../../../../assets/videos/MVC_background.mp4';
 import * as commonStyles from '../../index.module.css';
 import * as styles from './index.module.css';
 
 const Booking = ({ title, subTitle }) => (
     <>
-        <video
-            className={commonStyles.backgroundVideo}
-            playsInline
-            autoPlay
-            muted
-            loop
-        >
-            <source src={MVC_BACKGROUND} type="video/mp4" />
-            Your browser does not support HTML5 video.
-        </video>
+        <VideoBackground src={MVC_BACKGROUND} />
         <div className={styles.container}>
             <div className="main-container">
                 <h1
