@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
+import InnerHTML from '../../../../components/innerHTML';
 import * as commonStyles from '../../index.module.css';
 import * as styles from './index.module.css';
 
@@ -13,11 +14,7 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
         <div className={styles.container}>
             <a id="more" />
             <div className="main-container">
-                <h1
-                    dangerouslySetInnerHTML={{
-                        __html: title,
-                    }}
-                />
+                <InnerHTML tagName="h1" __html={title} />
                 <div className={styles.videoContainer}>
                     {videoClicked ? (
                         <iframe
