@@ -9,12 +9,6 @@ const SSWCarousel = () => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const thisImage =(imageSrc: string )=>{
-        return(
-            <StaticImage src={`${imageSrc}`} alt="xyz"/>
-        )
-    }
-
     //TODO: Look into looping through StaticImages, rather than hard coding
     return(
         <>
