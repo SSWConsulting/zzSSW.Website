@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Accordion } from 'react-bootstrap';
 import Layout from '../components/layout';
+import SSWCarousel from '../components/image-carousel/ssw-carousel'
 
 // TODO: Keep it temporarily for reference
 import '../style.css';
@@ -14,7 +15,7 @@ const IndexPage = () => {
     return (
         <Layout pageTitle="SSW Website">
             <div id="container-fluid" className="main-container">
-                {/* TODO: Implement image carousel */}
+                <SSWCarousel />
                 {/* TODO: Convert into components using Graphiql Query */}
                 <div id="what-we-do" className="row">
                     <h2>Consulting</h2>
