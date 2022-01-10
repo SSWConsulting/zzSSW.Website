@@ -7,9 +7,11 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import '../../styles/global.css';
 import '../../styles/common.css';
 
-const Layout = ({ children }) => {
+const Layout = ({ pageTitle, children }) => {
     return (
         <>
+            <title>{pageTitle}</title>
+
             <Header />
             <main>{children}</main>
             <Footer />

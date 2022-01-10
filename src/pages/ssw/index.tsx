@@ -8,7 +8,7 @@ import '../../styles/index.css';
 // markup
 const IndexPage = () => {
     return (
-        <Layout pageTitle="SSW Website">
+        <Layout pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics">
             <div id="container-fluid" className="main-container">
                 <div className="row">
                     <SSWCarousel />
