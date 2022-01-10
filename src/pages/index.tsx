@@ -2,14 +2,18 @@ import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Accordion } from 'react-bootstrap';
 import Layout from '../components/layout';
-import SSWCarousel from '../components/image-carousel/ssw-carousel'
+import SSWCarousel from '../components/image-carousel/ssw-carousel';
+import '../styles/index.css';
 
 // markup
 const IndexPage = () => {
     return (
         <Layout pageTitle="SSW Website">
             <div id="container-fluid" className="main-container">
+            <div className="row">
                 <SSWCarousel />
+            </div>
+                
                 {/* TODO: Convert into components using Graphiql Query */}
                 <div id="what-we-do" className="row">
                     <h2>Consulting</h2>
@@ -18,15 +22,39 @@ const IndexPage = () => {
                     <div className="col-md-3 col-sm-6">Angular</div>
                     <div className="col-md-3 col-sm-6">Angular</div>
                 </div>
-                <div className="row">
-                    <h2>Core Services</h2>
-                    <div className="col-md-3 col-sm-6">Training</div>
-                    <div className="col-md-3 col-sm-6">
-                        Office 365/SharePoint
-                    </div>
-                    <div className="col-md-3 col-sm-6">Book an Expert</div>
-                    <div className="col-md-3 col-sm-6">Rules</div>
+                <div id="services" className="block">
+                    
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <h2 className="special">Core Services</h2>
+                            </div>
+                            <div className="col-md-3 col-sm-6 core-training">
+                        
+                                <a href="/ssw/Events">
+                                    <h3>Training</h3>
+                                </a>
+                            </div>
+                            <div className="col-md-3 col-sm-6 core-sharepoint">
+                            <a href="/ssw/Events">
+                                    <h3>Office 365/SharePoint</h3>
+                                </a>
+                                
+                            </div>
+                            <div className="col-md-3 col-sm-6 core-book">
+                            <a href="/ssw/Events">
+                                    <h3>Book an Expert</h3>
+                                </a>
+                                </div>
+                            <div className="col-md-3 col-sm-6 core-crm">
+                            <a href="/ssw/Events">
+                                    <h3>Rules</h3>
+                                </a>
+                                </div>
+                        </div>
+                    
+
                 </div>
+
                 <div className="row">
                     <div
                         id="about-us-summary"
