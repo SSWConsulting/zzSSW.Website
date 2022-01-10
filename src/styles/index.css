@@ -1,0 +1,103 @@
+a {
+    text-decoration: none;
+}
+
+#services a:hover {
+    background-color: #4e4e4e
+}
+
+#services a {
+    background-color: #414141;
+    background-image: url(../assets/images/svg-sprite-sheet.svg);
+    background-repeat: no-repeat;
+    border: medium none;
+    color: #fff;
+    display: block;
+}
+
+#services h2.special.special {
+    color: #fff;
+    background: #414141;
+    padding: 0.5em 1em;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.special {
+    color: #fff;
+    background: #414141;
+    padding: 0.5em 1em;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+#services {
+    padding-top: 14px;
+}
+
+#services h2.special {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    line-height: inherit;
+    font-size: .75rem;
+    color: #fff;
+    background: #414141;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1px 6px;
+    margin: 10px 0 5px;
+    clear: both;
+    line-height: 17px;
+    display: inline-block;
+    position: absolute;
+    margin-top: -8px;
+}
+
+#services a h3 {
+    padding: 6rem 0 1rem;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    height: 8.8rem;
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+#services .core-sharepoint a {
+    background-position: center -855px
+}
+
+#services .core-crm a {
+    background-position: center -700px
+}
+
+#services .core-book a {
+    background-position: center -550px
+}
+
+#services .core-training a {
+    background-position: center -400px
+}
+
+@media (min-width: 992px) {
+    #services a h3 {
+        padding: 2.8rem 20px 1.4rem 90px;
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+        height: 6.8rem;
+        text-align: left;
+    }
+    #services .core-sharepoint a {
+        background-position: -25px -842px
+    }
+    #services .core-crm a {
+        background-position: -25px -690px
+    }
+    #services .core-book a {
+        background-position: -25px -540px
+    }
+    #services .core-training a {
+        background-position: -25px -387px;
+    }
+}
