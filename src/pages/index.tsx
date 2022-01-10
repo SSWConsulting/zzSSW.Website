@@ -10,48 +10,73 @@ const IndexPage = () => {
     return (
         <Layout pageTitle="SSW Website">
             <div id="container-fluid" className="main-container">
-            <div className="row">
-                <SSWCarousel />
-            </div>
-                
+                <div className="row">
+                    <SSWCarousel />
+                </div>
+
                 {/* TODO: Convert into components using Graphiql Query */}
-                <div id="what-we-do" className="row">
-                    <h2>Consulting</h2>
-                    <div className="col-md-3 col-sm-6">Angular</div>
-                    <div className="col-md-3 col-sm-6">DevOps {'&'} Cloud</div>
-                    <div className="col-md-3 col-sm-6">Angular</div>
-                    <div className="col-md-3 col-sm-6">Angular</div>
+                <div id="whatwedo" className="block">
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <h2 className="special">Consulting</h2>
+                        </div>
+                        <div className="col-md-3 col-sm-6 do-angular">
+                            <a href="/ssw/Consulting/Web-Applications.aspx">
+                                <h2>Web / Angular / React</h2>
+                                <p>Ever since SSW developed the very first .NET Website in Australia, we've been known as leaders in Web Development.</p>
+                            </a>
+                        </div>
+                        <div className="col-md-3 col-sm-6 do-cloud">
+                            <a href="/ssw/Consulting/Azure.aspx">
+                                <h2>DevOps {'&'} Cloud</h2>
+                                <p>Making your software ships by using SSW developers' best practices in Azure, DevOps and Docker Containers.</p>
+                            </a>
+                        </div>
+                        <div className="col-md-3 col-sm-6 do-mobile">
+                        <a href="/ssw/Consulting/Mobile-Application-Development.aspx">
+                            <h2>Mobile/Bots/AI</h2>
+                            <p>SSW software developers are experts at building cross platform mobile and chat apps using the power of AI with Machine Learning.</p>
+                        </a>
+                    </div>
+
+                    <div className="col-md-3 col-sm-6 do-rules">
+                        <a href="/ssw/Consulting/Dynamics365.aspx">
+                            <h2>Dynamics 365</h2>
+                            <p>Dynamics 365/CRM brings new levels of customer intelligence, providing employees the information they need to truly impress.</p>
+                        </a>
+                    </div>
+                    </div>
                 </div>
                 <div id="services" className="block">
-                    
-                        <div className="row">
-                            <div className="col-sm-12">
-                                <h2 className="special">Core Services</h2>
-                            </div>
-                            <div className="col-md-3 col-sm-6 core-training">
-                        
-                                <a href="/ssw/Events">
-                                    <h3>Training</h3>
-                                </a>
-                            </div>
-                            <div className="col-md-3 col-sm-6 core-sharepoint">
-                            <a href="/ssw/Events">
-                                    <h3>Office 365/SharePoint</h3>
-                                </a>
-                                
-                            </div>
-                            <div className="col-md-3 col-sm-6 core-book">
-                            <a href="/ssw/Events">
-                                    <h3>Book an Expert</h3>
-                                </a>
-                                </div>
-                            <div className="col-md-3 col-sm-6 core-crm">
-                            <a href="/ssw/Events">
-                                    <h3>Rules</h3>
-                                </a>
-                                </div>
+
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <h2 className="special">Core Services</h2>
                         </div>
-                    
+                        <div className="col-md-3 col-sm-6 core-training">
+
+                            <a href="/ssw/Events">
+                                <h3>Training</h3>
+                            </a>
+                        </div>
+                        <div className="col-md-3 col-sm-6 core-sharepoint">
+                            <a href="/ssw/Events">
+                                <h3>Office 365/SharePoint</h3>
+                            </a>
+
+                        </div>
+                        <div className="col-md-3 col-sm-6 core-book">
+                            <a href="/ssw/Events">
+                                <h3>Book an Expert</h3>
+                            </a>
+                        </div>
+                        <div className="col-md-3 col-sm-6 core-crm">
+                            <a href="/ssw/Events">
+                                <h3>Rules</h3>
+                            </a>
+                        </div>
+                    </div>
+
 
                 </div>
 
