@@ -1,4 +1,4 @@
-name: Setup Azure Resources
+name: Azure - Setup Resources
 
 on:
   workflow_call:
