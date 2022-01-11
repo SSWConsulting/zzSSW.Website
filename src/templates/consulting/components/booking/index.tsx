@@ -10,8 +10,8 @@ import * as styles from './index.module.css';
 const Booking = ({ title, subTitle }) => (
     <>
         <VideoBackground src={MVC_BACKGROUND} />
-        <div className={styles.container}>
-            <div className="main-container">
+        <section className={styles.container}>
+            <article className="main-container">
                 <InnerHTML tagName="h1" __html={title} />
 
                 <h2 className={styles.subTitle}>{subTitle}</h2>
@@ -28,8 +28,8 @@ const Booking = ({ title, subTitle }) => (
                         href="#more"
                     ></a>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
     </>
 );
 

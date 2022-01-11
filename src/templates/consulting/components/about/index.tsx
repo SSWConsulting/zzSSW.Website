@@ -13,8 +13,8 @@ const About = () => {
     const [videoClicked, setVideoClicked] = useState(false);
 
     return (
-        <div className={container}>
-            <div className="main-container">
+        <section className={container}>
+            <article className="main-container">
                 <h1>
                     Why should you choose <span className="red">SSW</span>?
                 </h1>
@@ -29,18 +29,18 @@ const About = () => {
                                     allowFullScreen
                                 ></iframe>
                             ) : (
-                                <div onClick={() => setVideoClicked(true)}>
+                                <figure onClick={() => setVideoClicked(true)}>
                                     <StaticImage
                                         className={videoImage}
                                         src="../../../../assets/images/consulting/why-should-you-choose-ssw.jpeg"
                                         alt="why should you choose ssw"
                                     />
                                     <div className={play}></div>
-                                </div>
+                                </figure>
                             )}
                         </div>
                     </div>
-                    <div className={`col-md-6 ${section}`}>
+                    <article className={`col-md-6 ${section}`}>
                         <p className={description} data-aos="fade-up">
                             SSW's Consulting Services have delivered best of
                             breed Microsoft solutions for more than 1,000
@@ -50,10 +50,10 @@ const About = () => {
                             Certifications, three MVPs, and a Microsoft Regional
                             Director.
                         </p>
-                    </div>
+                    </article>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
     );
 };
 

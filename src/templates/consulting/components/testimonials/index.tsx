@@ -13,12 +13,13 @@ import {
     contactContainer,
     contact,
 } from './index.module.css';
+import Button from '../../../../components/button';
 
 const Testimonials = () => (
-    <div className={container}>
+    <section className={container}>
         <div className="main-container flex-wrap">
-            <div className={`col-md-4 ${testimonialContainer}`}>
-                <div
+            <article className={`col-md-4 ${testimonialContainer}`}>
+                <article
                     className={`${callout} ${arrowDown} `}
                     data-aos="flip-right"
                 >
@@ -27,21 +28,23 @@ const Testimonials = () => (
                         I continue to be impressed by the quality of work and
                         advice you provide.
                     </p>
-                </div>
-                <div>
-                    <StaticImage
-                        className={avatar}
-                        src="../../../../assets/images/consulting/mark_p.jpg"
-                        alt="avatar"
-                    />
+                </article>
+                <address>
+                    <figure>
+                        <StaticImage
+                            className={avatar}
+                            src="../../../../assets/images/consulting/mark_p.jpg"
+                            alt="avatar"
+                        />
+                    </figure>
                     <div className={name}> Mark Pigram</div>
                     <div className={company}>Contracts Online</div>
-                </div>
-            </div>
+                </address>
+            </article>
 
-            <div className={`col-md-4 ${testimonialContainer}`}>
+            <article className={`col-md-4 ${testimonialContainer}`}>
                 {/* TODO: How arrow down works */}
-                <div
+                <article
                     className={`${callout} ${arrowDown}`}
                     data-aos="flip-right"
                 >
@@ -51,20 +54,22 @@ const Testimonials = () => (
                         graphic designers and several programmers and they have
                         ALL been first rate.{' '}
                     </p>
-                </div>
-                <div>
-                    <StaticImage
-                        className={avatar}
-                        src="../../../../assets/images/consulting/peter-dimaridis.jpg"
-                        alt="avatar"
-                    />
+                </article>
+                <address>
+                    <figure>
+                        <StaticImage
+                            className={avatar}
+                            src="../../../../assets/images/consulting/peter-dimaridis.jpg"
+                            alt="avatar"
+                        />
+                    </figure>
                     <div className={name}> Peter Dimaridis</div>
                     <div className={company}>AuctionsPlus</div>
-                </div>
-            </div>
+                </address>
+            </article>
 
-            <div className={`col-md-4 ${testimonialContainer}`}>
-                <div
+            <article className={`col-md-4 ${testimonialContainer}`}>
+                <article
                     className={`${callout} ${arrowDown}`}
                     data-aos="flip-right"
                 >
@@ -74,31 +79,26 @@ const Testimonials = () => (
                         outcomes.
                     </p>
                     <p>Thanks for your attention to detail once again.</p>
-                </div>
-                <div>
-                    <StaticImage
-                        className={avatar}
-                        src="../../../../assets/images/consulting/peter-m.jpg"
-                        alt="avatar"
-                    />
+                </article>
+                <address>
+                    <figure>
+                        <StaticImage
+                            className={avatar}
+                            src="../../../../assets/images/consulting/peter-m.jpg"
+                            alt="avatar"
+                        />
+                    </figure>
                     <div className={name}> Peter McCurdy</div>
                     <div className={company}>PDS</div>
-                </div>
-            </div>
+                </address>
+            </article>
 
             <div className={contactContainer}>
-                <button
-                    type="button"
-                    className={bookingButton}
-                    data-aos="fade-up"
-                >
-                    <div className="anim"></div>
-                    Book a FREE Initial Meeting
-                </button>
+                <Button data-aos="fade-up">Book a FREE Initial Meeting</Button>
                 <h2 className={contact}> or call us on +61 2 9953 3000</h2>
             </div>
         </div>
-    </div>
+    </section>
 );
 
 export default Testimonials;

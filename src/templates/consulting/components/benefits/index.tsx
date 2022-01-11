@@ -11,9 +11,9 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
     const videoId = video?.url?.split('v=')[1] ?? '';
 
     return (
-        <div className={styles.container}>
+        <section className={styles.container}>
             <a id="more" />
-            <div className="main-container">
+            <article className="main-container">
                 <InnerHTML tagName="h1" __html={title} />
                 <div className={styles.videoContainer}>
                     {videoClicked ? (
@@ -24,62 +24,60 @@ const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
                             allowFullScreen
                         ></iframe>
                     ) : (
-                        <div onClick={() => setVideoClicked(true)}>
+                        <figure onClick={() => setVideoClicked(true)}>
                             <GatsbyImage
                                 className={commonStyles.videoImage}
                                 image={getImage(video.image)}
                                 alt="video cover"
                             />
                             <div className={commonStyles.play}></div>
-                        </div>
+                        </figure>
                     )}
                 </div>
 
                 {descriptions?.map((desc, index) => (
-                    <h5 className={styles.desc} key={index}>
+                    <p className={styles.desc} key={index}>
                         {desc}
-                    </h5>
+                    </p>
                 ))}
 
                 <div className="flex-wrap">
                     {benefitList?.map(
                         ({ image, title, description }, index) => (
-                            <div
+                            <article
                                 className={`col-md-6 ${styles.benefit}`}
                                 key={index}
                                 data-aos={
                                     index % 2 === 0 ? 'fade-left' : 'fade-right'
                                 }
                             >
-                                <GatsbyImage
-                                    className="fl"
-                                    image={getImage(image)}
-                                    alt="benefit icon"
-                                />
-                                <div>
-                                    <h4 className={styles.benefitTitle}>
-                                        {title}
-                                    </h4>
-                                    <p className={styles.benefitDesc}>
-                                        {description}
-                                    </p>
-                                </div>
-                            </div>
+                                <figure>
+                                    <GatsbyImage
+                                        className="fl"
+                                        image={getImage(image)}
+                                        alt="benefit icon"
+                                    />
+                                </figure>
+                                <h4 className={styles.benefitTitle}>{title}</h4>
+                                <article className={styles.benefitDesc}>
+                                    {description}
+                                </article>
+                            </article>
                         )
                     )}
                 </div>
 
                 {rule && (
-                    <h5>
+                    <p>
                         Have a look at{' '}
                         <a className={styles.link} href={rule?.url}>
                             {rule?.name}
                         </a>
                         .
-                    </h5>
+                    </p>
                 )}
-            </div>
-        </div>
+            </article>
+        </section>
     );
 };
 

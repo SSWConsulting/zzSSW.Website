@@ -4,17 +4,19 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { container, skillContainer, skill } from './index.module.css';
 
 const Technologies = () => (
-    <div className={container}>
-        <div className="main-container">
+    <section className={container}>
+        <article className="main-container">
             <h1>Other technologies</h1>
             <div className="flex-wrap">
                 {/* TODO: Use Row and Col instead of old bootstrap classed */}
-                <div className={`col-md-6 ${skillContainer}`}>
-                    <div className={skill} data-aos="flip-left">
-                        <StaticImage
-                            src="../../../../assets/images/consulting/angular-logo.png"
-                            alt="angular"
-                        />
+                <div className={'col-md-6'}>
+                    <article className={skill} data-aos="flip-left">
+                        <figure>
+                            <StaticImage
+                                src="../../../../assets/images/consulting/angular-logo.png"
+                                alt="angular"
+                            />
+                        </figure>
                         <p>
                             Angular is a Google-built and maintained Javascript
                             framework allows us to develop fast, responsive, and
@@ -23,11 +25,11 @@ const Technologies = () => (
                             mobile web, native mobile and native desktop.{' '}
                             <a href="Angular.aspx">Read more</a>
                         </p>
-                    </div>
+                    </article>
                 </div>
 
-                <div className={`col-md-6 ${skillContainer}`}>
-                    <div className={skill} data-aos="flip-left">
+                <div className={'col-md-6'}>
+                    <article className={skill} data-aos="flip-left">
                         <StaticImage
                             src="../../../../assets/images/consulting/jquery-logo.png"
                             alt="jquery"
@@ -40,11 +42,11 @@ const Technologies = () => (
                             script at client sides. JQuery is one of the most
                             widely used JavaScript libraries in the world.
                         </p>
-                    </div>
+                    </article>
                 </div>
 
-                <div className={`col-md-6 ${skillContainer}`}>
-                    <div className={skill} data-aos="flip-left">
+                <div className={'col-md-6'}>
+                    <article className={skill} data-aos="flip-left">
                         <StaticImage
                             src="../../../../assets/images/consulting/js-logo.png"
                             alt="javascript"
@@ -57,11 +59,11 @@ const Technologies = () => (
                             web applications. As one of the biggest open-source
                             platforms, Node.js is light and powerful.
                         </p>
-                    </div>
+                    </article>
                 </div>
 
-                <div className={`col-md-6 ${skillContainer}`}>
-                    <div className={skill} data-aos="flip-left">
+                <div className={'col-md-6'}>
+                    <article className={skill} data-aos="flip-left">
                         <StaticImage
                             src="../../../../assets/images/consulting/net-logo.png"
                             alt=".net"
@@ -73,11 +75,11 @@ const Technologies = () => (
                             use multiple languages, editors, and libraries to
                             build for web, mobile, desktop, games, and IoT.
                         </p>
-                    </div>
+                    </article>
                 </div>
 
-                <div className={`col-md-12 ${skillContainer}`}>
-                    <div className={skill} data-aos="flip-left">
+                <div className={`col-md-12`}>
+                    <article className={skill} data-aos="flip-left">
                         <StaticImage
                             src="../../../../assets/images/consulting/react-native-logo.png"
                             alt="react-native"
@@ -92,11 +94,11 @@ const Technologies = () => (
                             smoothly with components written in Java,
                             Objective-C, and Swift.
                         </p>
-                    </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </div>
+        </article>
+    </section>
 );
 
 export default Technologies;
