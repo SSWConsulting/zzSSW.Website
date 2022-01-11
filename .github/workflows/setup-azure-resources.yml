@@ -1,6 +1,5 @@
-name: Reusable - Setup Azure Resources
+name: Setup Azure Resources
 
-# Controls when the workflow will run
 on:
   workflow_call:
     inputs:

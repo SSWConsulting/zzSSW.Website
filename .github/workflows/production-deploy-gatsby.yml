@@ -1,16 +1,18 @@
-name: Staging - Deploy Gatsby Site
+# This is a basic workflow to help you get started with Actions
+name: Production - Deploy Gatsby
 
+# Controls when the workflow will run
 on:
   workflow_dispatch:
   push:
     branches:
-    - main
+    - release/*
 
 jobs:
-  deploy-to-staging:
+  deploy-to-production:
     uses: SSWConsulting/SSW.Website/.github/workflows/build-and-deploy-gatsby.yml@main
     with:
-      ENVIRONMENT: Staging
+      ENVIRONMENT: Production
     secrets:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       AZURE_APP_NAME: ${{ secrets.AZURE_APP_NAME }}
