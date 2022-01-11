@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Consulting from '../templates/consulting';
-import NotFound from './404';
-import { PAGE_TYPE } from '../consts';
+import Consulting from '../../templates/consulting';
+import NotFound from '../404';
+import { PAGE_TYPE } from '../../consts';
 
 const Page = ({
     data: {
