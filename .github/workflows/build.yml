@@ -1,10 +1,7 @@
-name: Build - Main branch health check
+name: Build
 
 on:
   workflow_dispatch:
-  
-  schedule:
-    - cron: "0 2 * * 1-5"
   
   push:
     branches:
@@ -17,25 +14,21 @@ on:
 
 jobs:
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    environment: Staging
     
     steps:
       - uses: actions/checkout@v2
 
-      # Install Node and install packages
       - name: Use Node.js
         uses: actions/setup-node@v2.5.0
 
       - name: Install dependencies
-        run: | 
-          npm install
+        run: |
+          yarn install
           npm install -g gatsby-cli
 
-      # Run gatsby build
-      - name: Gatsby Build
-        run: gatsby build
+      - name: Build
+        run: yarn build
         env:
           CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
-          CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
+          CONTENT_BRANCH: main
