@@ -1,8 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Reusable - Build and Deploy Gatsby
+name: Build and Deploy Gatsby
 
-# Controls when the workflow will run
 on:
   workflow_call:
     inputs:
@@ -20,30 +19,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build Gatsby Site
     environment: ${{ inputs.ENVIRONMENT }}
     
     steps:
     - uses: actions/checkout@v2
 
-    # Install Node and install packages
     - name: Use Node.js
       uses: actions/setup-node@v2.5.0
       
     - name: Install dependencies
-      run: | 
-        npm install
-        npm install -g gatsby-cli
+      run: yarn install
     
-    # Run gatsby build
-    - name: Gatsby Build
-      run: gatsby build
+    - name: Build
+      run: yarn build
       env:
         CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
         CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
     
-    # Upload build artifact
-    - name: Upload Gatsby Build Artifacts
+    - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
        name: gatsby-build
@@ -53,27 +46,24 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    name: Deploy Gatsby to Azure
     environment: ${{ inputs.ENVIRONMENT }}
 
     steps:
-    - name: Download Gatsby Build
+    - name: Download Artifacts
       uses: actions/download-artifact@v2
       with:
        name: gatsby-build
    
-    # Log into Azure
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    # Upload blob to Azure Blob Storage
     - name: Upload to blob storage
       uses: azure/CLI@v1
       with:
         inlineScript: |
             az storage blob upload-batch --account-name ${{ secrets.AZURE_APP_NAME }}storage --auth-mode key -d '$web' -s .
-    # Log out of Azure
+
     - name: logout
       run: |
             az logout

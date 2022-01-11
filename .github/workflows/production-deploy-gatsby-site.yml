@@ -7,9 +7,8 @@ on:
   workflow_call:
 
 jobs:
-  deploy-azure-resources-to-staging:
-    name: Deploy Azure Resources to Staging 
-    uses: SSWConsulting/SSW.Website/.github/workflows/build-deploy-gatsby.yml@main
+  deploy-to-production:
+    uses: SSWConsulting/SSW.Website/.github/workflows/build-and-deploy-gatsby.yml@main
     with:
       ENVIRONMENT: Production
     secrets:
