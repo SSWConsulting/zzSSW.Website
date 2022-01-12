@@ -7,13 +7,9 @@
     background-color: white;
 }
 
-.skillContainer {
-    padding: 0 15px;
-}
-
 .skill {
     background-color: #f5f5f5;
-    margin: 20px 0 60px 0;
+    margin: 20px 15px 60px 15px;
     min-height: 410px;
     padding: 41px;
     border-bottom: 2px solid #cc4141;

@@ -4,34 +4,34 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { container, client } from './index.module.css';
 
 const Clients = () => (
-    <div className={container}>
-        <div className="main-container">
+    <section className={container}>
+        <article className="main-container">
             <h1>Companies we have worked with</h1>
             <div className="row no-gutters">
-                <div className="col-sm-4">
+                <figure className="col-sm-4">
                     <StaticImage
+                        className={client}
                         src="../../../../assets/images/consulting/clients1.png"
                         alt="SSW Clients"
-                        className={client}
                     />
-                </div>
-                <div className="col-sm-4">
+                </figure>
+                <figure className="col-sm-4">
                     <StaticImage
+                        className={client}
                         src="../../../../assets/images/consulting/clients2.png"
                         alt="SSW Clients"
-                        className={client}
                     />
-                </div>
-                <div className="col-sm-4">
+                </figure>
+                <figure className="col-sm-4">
                     <StaticImage
+                        className={client}
                         src="../../../../assets/images/consulting/clients3.png"
                         alt="SSW Clients"
-                        className={client}
                     />
-                </div>
+                </figure>
             </div>
-        </div>
-    </div>
+        </article>
+    </section>
 );
 
 export default Clients;

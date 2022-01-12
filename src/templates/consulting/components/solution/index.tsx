@@ -4,8 +4,8 @@ import Button from '../../../../components/button';
 import { container } from './index.module.css';
 
 const Solution = ({ project }) => (
-    <div className={container}>
-        <div className="main-container">
+    <section className={container}>
+        <article className="main-container">
             <h1>
                 Talk to us about your <span className="red">{project}</span>{' '}
                 project
@@ -19,8 +19,8 @@ const Solution = ({ project }) => (
             <Button>Book a FREE Initial Meeting</Button>
 
             <h2>or call us on +61 2 9953 3000</h2>
-        </div>
-    </div>
+        </article>
+    </section>
 );
 
 export default Solution;
