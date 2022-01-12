@@ -15,12 +15,12 @@ const IndexPage = () => {
                 </div>
 
                 {/* TODO: Convert into components using Graphiql Query */}
-                <div id="whatwedo" className="block">
-                    <div className="row">
-                        <div className="col-sm-12">
+                <article id="whatwedo" className="block">
+                    <article className="row">
+                        <article className="col-sm-12">
                             <h2 className="special">Consulting</h2>
-                        </div>
-                        <div className="col-md-3 col-sm-6 do-angular">
+                        </article>
+                        <article className="col-md-3 col-sm-6 do-angular">
                             <a href="/ssw/Consulting/Web-Applications.aspx">
                                 <h2>Web / Angular / React</h2>
                                 <p>
@@ -29,8 +29,8 @@ const IndexPage = () => {
                                     leaders in Web Development.
                                 </p>
                             </a>
-                        </div>
-                        <div className="col-md-3 col-sm-6 do-cloud">
+                        </article>
+                        <article className="col-md-3 col-sm-6 do-cloud">
                             <a href="/ssw/Consulting/Azure.aspx">
                                 <h2>DevOps {'&'} Cloud</h2>
                                 <p>
@@ -39,8 +39,8 @@ const IndexPage = () => {
                                     and Docker Containers.
                                 </p>
                             </a>
-                        </div>
-                        <div className="col-md-3 col-sm-6 do-mobile">
+                        </article>
+                        <article className="col-md-3 col-sm-6 do-mobile">
                             <a href="/ssw/Consulting/Mobile-Application-Development.aspx">
                                 <h2>Mobile/Bots/AI</h2>
                                 <p>
@@ -49,9 +49,9 @@ const IndexPage = () => {
                                     using the power of AI with Machine Learning.
                                 </p>
                             </a>
-                        </div>
+                        </article>
 
-                        <div className="col-md-3 col-sm-6 do-rules">
+                        <article className="col-md-3 col-sm-6 do-rules">
                             <a href="/ssw/Consulting/Dynamics365.aspx">
                                 <h2>Dynamics 365</h2>
                                 <p>
@@ -60,9 +60,9 @@ const IndexPage = () => {
                                     the information they need to truly impress.
                                 </p>
                             </a>
-                        </div>
-                    </div>
-                </div>
+                        </article>
+                    </article>
+                </article>
                 <div id="services" className="block">
                     <div className="row">
                         <div className="col-sm-12">
