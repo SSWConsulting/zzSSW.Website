@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Accordion } from 'react-bootstrap';
 import Layout from '../../components/layout';
-import SSWCarousel from '../../components/image-carousel/ssw-carousel';
+import SSWCarousel from '../../components/indexPage/carousel';
 import '../../styles/index.css';
 
 // markup
