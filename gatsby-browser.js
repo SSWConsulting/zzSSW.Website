@@ -1,4 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Override bootstrap style
+import './src/styles/bootstrap.css';
+
 import '@fontsource/open-sans';
 
 // Animations
