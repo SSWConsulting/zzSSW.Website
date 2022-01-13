@@ -14,7 +14,7 @@ const SSWCarousel = () => (
                 <a href="https://vimeo.com/400817895" target="_blank">
                     <figure>
                         <StaticImage
-                            src="../../assets/images/why-ssw.jpeg"
+                            src="../../../assets/images/why-ssw.jpeg"
                             alt="why ssw"
                         />
                     </figure>
@@ -27,7 +27,7 @@ const SSWCarousel = () => (
                 >
                     <figure>
                         <StaticImage
-                            src="../../assets/images/case-study.jpeg"
+                            src="../../../assets/images/case-study.jpeg"
                             alt="case study"
                         />
                     </figure>
@@ -37,7 +37,7 @@ const SSWCarousel = () => (
                 <a href="https://tv.ssw.com/" target="_blank">
                     <figure>
                         <StaticImage
-                            src="../../assets/images/ssw-tv.png"
+                            src="../../../assets/images/ssw-tv.png"
                             alt="ssw tv"
                             width={1140}
                             height={410}
@@ -52,7 +52,7 @@ const SSWCarousel = () => (
                 >
                     <figure>
                         <StaticImage
-                            src="../../assets/images/need-help.jpeg"
+                            src="../../../assets/images/need-help.jpeg"
                             alt="need help?"
                         />
                     </figure>
