@@ -2,6 +2,15 @@ a {
     text-decoration: none;
 }
 
+.special {
+    color: #fff;
+    background: #414141;
+    padding: 0.5em 1em;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
 #whatwedo .col-xs-1,
 #services .col-xs-1,
 #whatwedo .col-sm-1,
@@ -108,19 +117,7 @@ a {
     margin-right: -3px;
 }
 
-#services a:hover {
-    background-color: #4e4e4e
-}
-
-#services a {
-    background-color: #414141;
-    background-image: url(../assets/images/svg-sprite-sheet.svg);
-    background-repeat: no-repeat;
-    border: medium none;
-    color: #fff;
-    display: block;
-}
-
+#whatwedo h2.special.special,
 #services h2.special.special {
     color: #fff;
     background: #414141;
@@ -130,19 +127,7 @@ a {
     font-weight: normal;
 }
 
-.special {
-    color: #fff;
-    background: #414141;
-    padding: 0.5em 1em;
-    z-index: 1;
-    text-transform: uppercase;
-    font-weight: normal;
-}
-
-#services {
-    padding-top: 14px;
-}
-
+#whatwedo h2.special,
 #services h2.special {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -159,6 +144,81 @@ a {
     display: inline-block;
     position: absolute;
     margin-top: -8px;
+}
+
+#whatwedo {
+    margin-top: 20px;
+}
+
+#whatwedo a {
+    background-image: url('../assets/images/svg-sprite-sheet.svg');
+    background-repeat: no-repeat;
+    background-color: none;
+    border: medium none;
+    color: #fff;
+    display: block;
+    font-weight: normal;
+    padding: 5px 90px 10px 25px;
+    margin-bottom: 6px
+}
+
+#whatwedo a h2 {
+    font-size: 2rem;
+    height: 2em;
+    line-height: 2rem
+}
+
+#whatwedo .do-angular a {
+    background-color: #cc4141;
+    background-position: right -1459px
+}
+
+#whatwedo .do-angular a:hover {
+    background-color: #d83535
+}
+
+#whatwedo .do-cloud a {
+    background-color: #9e9e9e;
+    background-position: right -2186px
+}
+
+#whatwedo .do-cloud a:hover {
+    background-color: #ababab
+}
+
+#whatwedo .do-mobile a {
+    background-color: #666;
+    background-position: right -1822px
+}
+
+#whatwedo .do-mobile a:hover {
+    background-color: #737373
+}
+
+#whatwedo .do-rules a {
+    background-color: #414141;
+    background-position: right -1093px
+}
+
+#whatwedo .do-rules a:hover {
+    background-color: #4e4e4e
+}
+
+#services a:hover {
+    background-color: #4e4e4e
+}
+
+#services a {
+    background-color: #414141;
+    background-image: url('../assets/images/svg-sprite-sheet.svg');
+    background-repeat: no-repeat;
+    border: medium none;
+    color: #fff;
+    display: block;
+}
+
+#services {
+    padding-top: 14px;
 }
 
 #services a h3 {
@@ -187,6 +247,32 @@ a {
 }
 
 @media (min-width: 992px) {
+    html {
+        font-size: 14px
+    }
+    .container {
+        width: 99%
+    }
+    #whatwedo .do-rules a {
+        background-position: right -1103px
+    }
+    #whatwedo .do-cloud a {
+        background-position: right -2196px
+    }
+    #whatwedo .do-mobile a {
+        background-position: right -1832px
+    }
+    #whatwedo .do-angular a {
+        background-position: right -1469px
+    }
+    #whatwedo a {
+        padding: 50px 25px 25px;
+        min-height: 271px
+    }
+    #whatwedo a p {
+        height: 6rem;
+        overflow: hidden
+    }
     #services a h3 {
         padding: 2.8rem 20px 1.4rem 90px;
         font-size: 1.1rem;
@@ -205,5 +291,28 @@ a {
     }
     #services .core-training a {
         background-position: -25px -387px;
+    }
+}
+
+@media(min-width:1200px) {
+    #whatwedo a {
+        padding: 75px 25px 25px;
+        margin-bottom: 0;
+        min-height: 271px
+    }
+    #whatwedo a h2 {
+        font-size: 1.9rem
+    }
+    #whatwedo .do-rules a {
+        background-position: right -1093px
+    }
+    #whatwedo .do-cloud a {
+        background-position: right -2186px
+    }
+    #whatwedo .do-mobile a {
+        background-position: right -1822px
+    }
+    #whatwedo .do-angular a {
+        background-position: right -1459px
     }
 }
