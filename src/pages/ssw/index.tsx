@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import { Accordion } from 'react-bootstrap';
+
 import Layout from '../../components/layout';
-import SSWCarousel from '../../components/indexPage/carousel';
+import Carousel from '../../components/indexPage/carousel';
+import Footer from '../../components/indexPage/footer';
+
 import '../../styles/index.css';
 
 // markup
@@ -11,7 +14,7 @@ const IndexPage = () => {
         <Layout pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics">
             <div id="container-fluid" className="main-container">
                 <div className="row">
-                    <SSWCarousel />
+                    <Carousel />
                 </div>
 
                 {/* TODO: Convert into components using Graphiql Query */}
@@ -224,6 +227,8 @@ const IndexPage = () => {
                         </div>
                     </div>
                 </div>
+
+                <Footer />
             </div>
         </Layout>
     );

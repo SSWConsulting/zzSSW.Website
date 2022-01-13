@@ -22,6 +22,7 @@ const SSWCarousel = () => (
             </Item>
             <Item className={carouselItem}>
                 <a
+                    // TODO: Update link after implement this page
                     href="https://www.ssw.com.au/SSW/Consulting/Case-Study/SydneyUni.aspx"
                     target="_blank"
                 >
@@ -47,6 +48,7 @@ const SSWCarousel = () => (
             </Item>
             <Item className={carouselItem}>
                 <a
+                    // TODO: Update link after implement this page
                     href="https://www.ssw.com.au/ssw/Consulting/Are-You-Stuck.aspx"
                     target="_blank"
                 >
