@@ -3,8 +3,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import classNames from 'classnames';
 import { container, image, link } from './index.module.css';
 
-const BuildPlatform = () => (
-    <section className={container}>
+const BuildPlatform = ({ backgroundColor = 'white' }) => (
+    <section className={container} style={{ backgroundColor }}>
         <div className="main-container">
             <a
                 className={classNames('center', link)}

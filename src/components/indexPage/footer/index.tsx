@@ -23,7 +23,7 @@ const Footer = () => (
                 </p>
             </div>
         </section>
-        <BuildPlatform />
+        <BuildPlatform backgroundColor="#f5f5f5" />
     </>
 );
 
