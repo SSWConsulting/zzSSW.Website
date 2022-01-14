@@ -8,7 +8,7 @@ const { Item } = Carousel;
 
 //TODO: Look into looping through StaticImages, rather than hard coding
 const SSWCarousel = () => (
-    <>
+    <div className="main-container">
         <Carousel controls={false}>
             <Item className={carouselItem}>
                 <a href="https://vimeo.com/400817895" target="_blank">
@@ -61,7 +61,7 @@ const SSWCarousel = () => (
                 </a>
             </Item>
         </Carousel>
-    </>
+    </div>
 );
 
 export default SSWCarousel;

@@ -34,7 +34,7 @@ const TopBar = () => {
                     +61 2 9953 3000
                 </a>
                 <a
-                    className={classNames('whole-center', styles.youtube)}
+                    className={classNames('center', styles.youtube)}
                     title="SSW on YouTube"
                     href="https://www.youtube.com/user/sswtechtalks/"
                     target="_blank"
@@ -43,7 +43,7 @@ const TopBar = () => {
                     <FontAwesomeIcon icon={faYoutube} color="white" />
                 </a>
                 <a
-                    className={classNames('whole-center', styles.linkedin)}
+                    className={classNames('center', styles.linkedin)}
                     title="SSW on LinkedIn"
                     href="https://www.linkedin.com/company/ssw/"
                     target="_blank"
@@ -52,7 +52,7 @@ const TopBar = () => {
                     <FontAwesomeIcon icon={faLinkedinIn} color="white" />
                 </a>
                 <a
-                    className={classNames('whole-center', styles.facebook)}
+                    className={classNames('center', styles.facebook)}
                     title="SSW on Facebook"
                     href="https://www.facebook.com/SSW.page"
                     target="_blank"
@@ -61,7 +61,7 @@ const TopBar = () => {
                     <FontAwesomeIcon icon={faFacebookF} color="white" />
                 </a>
                 <a
-                    className={classNames('whole-center', styles.instagram)}
+                    className={classNames('center', styles.instagram)}
                     title="SSW on Instagram"
                     href="https://www.instagram.com/ssw_tv"
                     target="_blank"
@@ -70,7 +70,7 @@ const TopBar = () => {
                     <FontAwesomeIcon icon={faInstagram} color="white" />
                 </a>
                 <a
-                    className={classNames('whole-center', styles.twitter)}
+                    className={classNames('center', styles.twitter)}
                     title="SSW on Twitter"
                     href="https://twitter.com/SSW_TV"
                     target="_blank"
@@ -79,7 +79,7 @@ const TopBar = () => {
                     <FontAwesomeIcon icon={faTwitter} color="white" />
                 </a>
                 <a
-                    className={classNames('whole-center', styles.wechat)}
+                    className={classNames('center', styles.wechat)}
                     title="SSW on WeChat"
                     href="https://mp.weixin.qq.com/s/jL4zEmzWM5VSTRu9DUW6-Q"
                     target="_blank"
