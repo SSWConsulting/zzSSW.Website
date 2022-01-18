@@ -1,11 +1,11 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { container, partner } from './index.module.css';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+
+import { container, partner, events, moreEvents } from './index.module.css';
 
 const AboutUsAndEvents = () => (
     <section className={classNames('main-container', container)}>
@@ -18,7 +18,11 @@ const AboutUsAndEvents = () => (
                         and web development experience. We build on top of
                         Angular, React, Vue, Azure, Azure DevOps (was TFS),
                         SharePoint, Office 365, Blazor, .NET, WebAPI, Dynamics
-                        365, and SQL Server. <a href="/about-us">Know more</a>
+                        365, and SQL Server.{' '}
+                        {/*  TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/SSW/Company/AboutUs.aspx">
+                            Know more
+                        </a>
                     </p>
                 </article>
                 <Row className={partner}>
@@ -41,7 +45,8 @@ const AboutUsAndEvents = () => (
                         <p>
                             In 1999, we were first recognized as a Microsoft
                             Gold Partner. Today{' '}
-                            <a href="/company/awards">
+                            {/*  TODO: Update link after implement this page */}
+                            <a href="https://www.ssw.com.au/ssw/company/awards/">
                                 SSW has competencies in a variety of areas
                             </a>
                             , earning gold in <b>Application Development</b>,{' '}
@@ -52,7 +57,7 @@ const AboutUsAndEvents = () => (
                         </p>
                     </Col>
                     <Col sm={5}>
-                        <a href="https://www.firebootcamp.com">
+                        <a href="https://www.firebootcamp.com" target="_blank">
                             <StaticImage
                                 src="../../../assets/images/ssw-mapa.jpg"
                                 alt="Microsoft Australia Partner Award"
@@ -67,7 +72,10 @@ const AboutUsAndEvents = () => (
                                 Excellence in Learning
                             </b>{' '}
                             for{' '}
-                            <a href="https://www.firebootcamp.com">
+                            <a
+                                href="https://www.firebootcamp.com"
+                                target="_blank"
+                            >
                                 SSW FireBootCamp
                             </a>
                             .
@@ -94,16 +102,32 @@ const AboutUsAndEvents = () => (
                         China is a booming market and now is the time to take
                         advantage of this growing user base. If you have a
                         successful application that you would like to bring to
-                        the Chinese market, then working with SSW can help
+                        the Chinese market, then working with{' '}
+                        {/*  TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/ssw/Consulting/Chinafy-App.aspx">
+                            SSW can help
+                        </a>{' '}
                         streamline your entry into this market.
                     </p>
                 </article>
             </Col>
             {/* TODO: Make an "Upcoming events" component */}
             <Col md={5} sm={12}>
-                <article>
+                <article className="full flex-column">
                     <h1>Upcoming Events</h1>
-                    Insert upcoming event history here
+                    <section className={classNames('flex-full', events)}>
+                        TODO: Add upcoming events
+                    </section>
+                    <div className="flex-end">
+                        <Button
+                            className={moreEvents}
+                            variant="outline-secondary"
+                        >
+                            <a href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
+                                More Events
+                            </a>
+                        </Button>
+                    </div>
                 </article>
             </Col>
         </Row>

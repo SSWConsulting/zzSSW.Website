@@ -3,6 +3,21 @@
     padding-bottom: 45px;
 }
 
+.container h1,
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.container h1 {
+    font-size: 2rem;
+    margin: 20px 0 10px;
+}
+
+.container h3 {
+    font-size: 1.5rem;
+}
+
 .container p {
     word-wrap: break-word;
     margin-bottom: 10px;
@@ -15,22 +30,23 @@
     border-bottom: 1px solid #ccc;
 }
 
-h1,
-h3 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+.events {
+    border: 1px #ccc solid;
 }
 
-h1 {
-    font-size: 2rem;
-    margin: 20px 0 10px;
+.moreEvents {
+    width: 102px;
+    margin-top: 5px;
+    border-color: #ccc;
 }
 
-h3 {
-    font-size: 1.5rem;
-}
-
-a {
+.moreEvents a {
     color: #333;
-    border-bottom: 1px dotted #9e9e9e;
+    border-bottom: none;
+}
+
+.moreEvents:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
 }
