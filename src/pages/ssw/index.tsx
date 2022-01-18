@@ -16,6 +16,7 @@ const IndexPage = () => {
             <div className="top-section">
                 <Carousel />
 
+                {/* TODO: Extract to consulting component */}
                 <section id="whatwedo" className="main-container">
                     <article className="row">
                         <article className="col-sm-12">
@@ -69,6 +70,7 @@ const IndexPage = () => {
                     </article>
                 </section>
 
+                {/* TODO: Extract to services component */}
                 <section className="main-container services">
                     <div className="row">
                         <div className="col-sm-12">
@@ -110,6 +112,7 @@ const IndexPage = () => {
 
             <AboutUsAndEvents />
 
+            {/* TODO: Extract to sswTVAndContact component */}
             <section id="index-footer" className="main-container flex">
                 {/* TODO: Embed video */}
                 <div className="col-sm-4 d-sm-block d-none">
