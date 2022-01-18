@@ -1,4 +1,5 @@
 :root {
+    --bs-body-line-height: 1.43;
     --bs-font-sans-serif: Arial, 'Helvetica Neue', Helvetica, sans-serif;
     --bs-breadcrumb-divider: '>';
     --black: #333;
@@ -22,6 +23,14 @@ h3,
 h4,
 h5 {
     font-family: 'Open Sans', sans-serif;
+}
+h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
 }
 
 a {
