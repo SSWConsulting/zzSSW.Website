@@ -19,6 +19,12 @@
     justify-content: space-between;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .horizon-center {
     display: flex;
     justify-content: center;
@@ -26,12 +32,6 @@
 
 .vertical-center {
     display: flex;
-    align-items: center;
-}
-
-.whole-center {
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 

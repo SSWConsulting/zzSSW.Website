@@ -9,6 +9,7 @@ import About from './components/about';
 import Clients from './components/clients';
 import Technologies from './components/technologies';
 import Solution from './components/solution';
+import BuildPlatform from '../../components/builtPlatform';
 
 import './index.module.css';
 
@@ -48,6 +49,8 @@ const ConsultingTemplate = ({ data }) => {
                 <Technologies />
 
                 <Solution {...solution} />
+
+                <BuildPlatform />
             </>
         </Layout>
     );

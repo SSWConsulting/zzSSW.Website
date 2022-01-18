@@ -1,0 +1,14 @@
+.container {
+    padding: 40px 0 20px;
+}
+
+.text {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.link {
+    color: #333;
+    border-bottom: 1px dotted #9e9e9e;
+    cursor: pointer;
+}
