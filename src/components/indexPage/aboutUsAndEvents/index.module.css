@@ -3,12 +3,6 @@
     padding-bottom: 45px;
 }
 
-.container h1,
-h3 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
-}
-
 .container h1 {
     font-size: 2rem;
     margin: 20px 0 10px;
