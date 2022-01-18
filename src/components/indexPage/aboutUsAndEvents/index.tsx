@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import { container, partner, events, moreEvents } from './index.module.css';
+import OutlineButton from '../../outlineButton';
 
 const AboutUsAndEvents = () => (
     <section className={classNames('main-container', container)}>
@@ -119,14 +120,9 @@ const AboutUsAndEvents = () => (
                         TODO: Add upcoming events
                     </section>
                     <div className="flex-end">
-                        <Button
-                            className={moreEvents}
-                            variant="outline-secondary"
-                        >
-                            <a href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
-                                More Events
-                            </a>
-                        </Button>
+                        <OutlineButton href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
+                            More Events
+                        </OutlineButton>
                     </div>
                 </article>
             </Col>

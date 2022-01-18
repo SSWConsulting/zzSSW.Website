@@ -1,5 +1,7 @@
-a {
-    text-decoration: none;
+.top-section {
+    padding-bottom: 10px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAANECAIAAAD+CtKcAAAAQUlEQVRIx+3Dxw3AMAwEMO8/r6pVkBmSj+XgCHB190LEb6vqNzPz6Ih4fe99vLuPa2Yjq+rYInJNZr42ESEiTvsAZBWB/XKgdAgAAAAASUVORK5CYII=)
+        repeat-x scroll left bottom #fff;
 }
 
 .special {
@@ -130,7 +132,7 @@ a {
 #whatwedo h2.special,
 #services h2.special {
     line-height: inherit;
-    font-size: .75rem;
+    font-size: 0.75rem;
     color: #fff;
     background: #414141;
     text-transform: uppercase;
@@ -145,7 +147,7 @@ a {
 }
 
 #whatwedo {
-    margin-top: 4px;
+    margin-top: 7px;
 }
 
 #whatwedo a {
@@ -157,53 +159,53 @@ a {
     display: block;
     font-weight: normal;
     padding: 5px 90px 10px 25px;
-    margin-bottom: 6px
+    margin-bottom: 6px;
 }
 
 #whatwedo a h2 {
     font-size: 2rem;
     height: 2em;
-    line-height: 2rem
+    line-height: 2rem;
 }
 
 #whatwedo .do-angular a {
     background-color: #cc4141;
-    background-position: right -1459px
+    background-position: right -1459px;
 }
 
 #whatwedo .do-angular a:hover {
-    background-color: #d83535
+    background-color: #d83535;
 }
 
 #whatwedo .do-cloud a {
     background-color: #9e9e9e;
-    background-position: right -2186px
+    background-position: right -2186px;
 }
 
 #whatwedo .do-cloud a:hover {
-    background-color: #ababab
+    background-color: #ababab;
 }
 
 #whatwedo .do-mobile a {
     background-color: #666;
-    background-position: right -1822px
+    background-position: right -1822px;
 }
 
 #whatwedo .do-mobile a:hover {
-    background-color: #737373
+    background-color: #737373;
 }
 
 #whatwedo .do-rules a {
     background-color: #414141;
-    background-position: right -1093px
+    background-position: right -1093px;
 }
 
 #whatwedo .do-rules a:hover {
-    background-color: #4e4e4e
+    background-color: #4e4e4e;
 }
 
 #services a:hover {
-    background-color: #4e4e4e
+    background-color: #4e4e4e;
 }
 
 #services a {
@@ -229,47 +231,47 @@ a {
 }
 
 #services .core-sharepoint a {
-    background-position: center -855px
+    background-position: center -855px;
 }
 
 #services .core-crm a {
-    background-position: center -700px
+    background-position: center -700px;
 }
 
 #services .core-book a {
-    background-position: center -550px
+    background-position: center -550px;
 }
 
 #services .core-training a {
-    background-position: center -400px
+    background-position: center -400px;
 }
 
 @media (min-width: 992px) {
     html {
-        font-size: 14px
+        font-size: 14px;
     }
     .container {
-        width: 99%
+        width: 99%;
     }
     #whatwedo .do-rules a {
-        background-position: right -1103px
+        background-position: right -1103px;
     }
     #whatwedo .do-cloud a {
-        background-position: right -2196px
+        background-position: right -2196px;
     }
     #whatwedo .do-mobile a {
-        background-position: right -1832px
+        background-position: right -1832px;
     }
     #whatwedo .do-angular a {
-        background-position: right -1469px
+        background-position: right -1469px;
     }
     #whatwedo a {
         padding: 50px 25px 25px;
-        min-height: 271px
+        min-height: 271px;
     }
     #whatwedo a p {
         height: 6rem;
-        overflow: hidden
+        overflow: hidden;
     }
     #services a h3 {
         padding: 2.8rem 20px 1.4rem 90px;
@@ -279,38 +281,38 @@ a {
         text-align: left;
     }
     #services .core-sharepoint a {
-        background-position: -25px -842px
+        background-position: -25px -842px;
     }
     #services .core-crm a {
-        background-position: -25px -690px
+        background-position: -25px -690px;
     }
     #services .core-book a {
-        background-position: -25px -540px
+        background-position: -25px -540px;
     }
     #services .core-training a {
         background-position: -25px -387px;
     }
 }
 
-@media(min-width:1200px) {
+@media (min-width: 1200px) {
     #whatwedo a {
         padding: 75px 25px 25px;
         margin-bottom: 0;
-        min-height: 271px
+        min-height: 271px;
     }
     #whatwedo a h2 {
-        font-size: 1.9rem
+        font-size: 1.9rem;
     }
     #whatwedo .do-rules a {
-        background-position: right -1093px
+        background-position: right -1093px;
     }
     #whatwedo .do-cloud a {
-        background-position: right -2186px
+        background-position: right -2186px;
     }
     #whatwedo .do-mobile a {
-        background-position: right -1822px
+        background-position: right -1822px;
     }
     #whatwedo .do-angular a {
-        background-position: right -1459px
+        background-position: right -1459px;
     }
 }

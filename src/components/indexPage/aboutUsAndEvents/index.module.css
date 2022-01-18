@@ -29,8 +29,9 @@
 }
 
 .moreEvents {
-    width: 102px;
+    width: 92px;
     margin-top: 5px;
+    font-size: 12px;
     border-color: #ccc;
 }
 
