@@ -69,7 +69,7 @@ const IndexPage = () => {
                     </article>
                 </section>
 
-                <section id="services" className="main-container">
+                <section className="main-container services">
                     <div className="row">
                         <div className="col-sm-12">
                             <h2 className="special">Core Services</h2>
