@@ -35,6 +35,7 @@
     font-weight: 700;
     text-decoration: none;
     color: var(--black);
+    border-bottom: none;
 }
 
 .iconContainer {

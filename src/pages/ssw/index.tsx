@@ -1,13 +1,12 @@
 import * as React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import { Accordion } from 'react-bootstrap';
 
 import Layout from '../../components/layout';
 import Carousel from '../../components/indexPage/carousel';
+import AboutUsAndEvents from '../../components/indexPage/aboutUsAndEvents';
 import Footer from '../../components/indexPage/footer';
 
 import '../../styles/index.css';
-import AboutUsAndEvents from '../../components/indexPage/aboutUsAndEvents';
 
 // markup
 const IndexPage = () => {
@@ -21,7 +20,8 @@ const IndexPage = () => {
                         <h2 className="special">Consulting</h2>
                     </article>
                     <article className="col-md-3 col-sm-6 do-angular">
-                        <a href="/ssw/Consulting/Web-Applications.aspx">
+                        {/* TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/ssw/Consulting/Web-Applications.aspx">
                             <h2>Web / Angular / React</h2>
                             <p>
                                 Ever since SSW developed the very first .NET
@@ -31,7 +31,8 @@ const IndexPage = () => {
                         </a>
                     </article>
                     <article className="col-md-3 col-sm-6 do-cloud">
-                        <a href="/ssw/Consulting/Azure.aspx">
+                        {/* TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/ssw/Consulting/Azure.aspx">
                             <h2>DevOps {'&'} Cloud</h2>
                             <p>
                                 Making your software ships by using SSW
@@ -41,7 +42,8 @@ const IndexPage = () => {
                         </a>
                     </article>
                     <article className="col-md-3 col-sm-6 do-mobile">
-                        <a href="/ssw/Consulting/Mobile-Application-Development.aspx">
+                        {/* TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/ssw/Consulting/Mobile-Application-Development.aspx">
                             <h2>Mobile/Bots/AI</h2>
                             <p>
                                 SSW software developers are experts at building
@@ -52,7 +54,8 @@ const IndexPage = () => {
                     </article>
 
                     <article className="col-md-3 col-sm-6 do-rules">
-                        <a href="/ssw/Consulting/Dynamics365.aspx">
+                        {/* TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/ssw/Consulting/Microsoft-Dynamics-365.aspx">
                             <h2>Dynamics 365</h2>
                             <p>
                                 Dynamics 365/CRM brings new levels of customer
@@ -70,22 +73,26 @@ const IndexPage = () => {
                         <h2 className="special">Core Services</h2>
                     </div>
                     <div className="col-md-3 col-sm-6 core-training">
-                        <a href="/ssw/Events">
+                        {/* TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
                             <h3>Training</h3>
                         </a>
                     </div>
                     <div className="col-md-3 col-sm-6 core-sharepoint">
-                        <a href="/ssw/Events">
+                        {/* TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/ssw/Consulting/SharePoint.aspx">
                             <h3>Office 365/SharePoint</h3>
                         </a>
                     </div>
                     <div className="col-md-3 col-sm-6 core-book">
-                        <a href="/ssw/Events">
+                        {/* TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/ssw/Consulting/Consulting.aspx">
                             <h3>Book an Expert</h3>
                         </a>
                     </div>
                     <div className="col-md-3 col-sm-6 core-crm">
-                        <a href="/ssw/Events">
+                        {/* TODO: Update link after implement this page */}
+                        <a href="https://www.ssw.com.au/rules/" target="_blank">
                             <h3>Rules</h3>
                         </a>
                     </div>
