@@ -16,7 +16,6 @@ const Footer = () => (
                         className={link}
                         // TODO: Update link after implement this page
                         href="https://www.ssw.com.au/ssw/company/AboutUs.aspx"
-                        target="_blank"
                     >
                         Read more
                     </a>

@@ -10,7 +10,6 @@ const BuildPlatform = ({ backgroundColor = 'white' }) => (
                 className={classNames('center', link)}
                 // TODO: Update link after implement this page
                 href="https://www.ssw.com.au/ssw/Consulting/Azure.aspx"
-                target="_blank"
             >
                 <StaticImage
                     className={image}

@@ -1,0 +1,47 @@
+.container {
+    padding-top: 25px;
+    padding-bottom: 45px;
+}
+
+.container h1 {
+    font-size: 2rem;
+    margin: 20px 0 10px;
+}
+
+.container h3 {
+    font-size: 1.5rem;
+}
+
+.container p {
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+
+.partner {
+    padding: 30px 0;
+    margin: 30px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.events {
+    border: 1px #ccc solid;
+}
+
+.moreEvents {
+    width: 92px;
+    margin-top: 5px;
+    font-size: 12px;
+    border-color: #ccc;
+}
+
+.moreEvents a {
+    color: #333;
+    border-bottom: none;
+}
+
+.moreEvents:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}

@@ -1,0 +1,16 @@
+.button {
+    margin-top: 5px;
+    font-size: 12px;
+    border-color: #ccc;
+}
+
+.button a {
+    color: #333;
+    border-bottom: none;
+}
+
+.button:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
