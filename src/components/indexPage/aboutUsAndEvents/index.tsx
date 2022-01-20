@@ -4,14 +4,21 @@ import { Row, Col } from 'react-bootstrap';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
 
+import OutlineButton from '../../outlineButton';
 import {
     container,
     partner,
+    eventsContainer,
     upcomingEvents,
     eventDetails,
+    timeDuration,
+    daysFromNow,
 } from './index.module.css';
-import OutlineButton from '../../outlineButton';
+
+dayjs.extend(utc);
 
 const AboutUs = () => (
     <Col md={7} sm={12}>
@@ -116,9 +123,10 @@ const Events = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
+        const datetime = dayjs.utc().startOf('day').format();
         // TODO: Add HTTP wrapper
         fetch(
-            'https://www.ssw.com.au/ssw/SharePointEventsService.aspx?odataFilter=$filter=Enabled%20ne%20false%20and%20EndDateTime%20gt%20datetime%272022-01-19T00:00:00Z%27&$top=30&$orderby=StartDateTime%20desc'
+            `https://www.ssw.com.au/ssw/SharePointEventsService.aspx?odataFilter=$filter=Enabled%20ne%20false%20and%20EndDateTime%20gt%20datetime%27${datetime}%27&$top=30&$orderby=StartDateTime%20desc`
         )
             .then((response) => response.json())
             .then((events) => setEvents(events))
@@ -126,34 +134,102 @@ const Events = () => {
             .catch((err) => console.log(err));
     }, []);
 
-    console.log('events', events);
+    const getTimeDuration = (start, end) => {
+        if (!start && !end) return null;
 
-    const GetEventsList = (events) =>
-        events.map(
-            ({ Id, Url, Thumbnail, StartDateTime, Title, Presenter }) => (
-                <article key={Id} className="flex">
-                    <figure>
-                        <a href={Url.Url}>
-                            <img
-                                src={Thumbnail.Url}
-                                width={100}
-                                height={100}
-                            ></img>
-                        </a>
-                    </figure>
-                    <div
-                        className={classNames(
-                            'flex-column-center',
-                            eventDetails
-                        )}
-                    >
-                        <time>{StartDateTime}</time>
-                        <h5>{Title}</h5>
-                        {!!Presenter && <address>{Presenter}</address>}
-                    </div>
-                </article>
-            )
+        const dateformat = 'ddd MMM D';
+        const startDate = dayjs(start).format(dateformat);
+
+        if (!end) return `${startDate}`;
+
+        const endDate = dayjs(end).format(dateformat);
+        return (
+            <span className={timeDuration}>
+                {startDate} - {endDate}
+            </span>
         );
+    };
+
+    const getDaysFromNow = (date) => {
+        const now = new Date();
+        const days = dayjs(date).diff(now, 'd');
+
+        // TODO: Check old website source code logic
+        let text;
+        if (days === 0) {
+            text = 'Today';
+        } else if (days === 1) {
+            text = 'Tomorrow';
+        } else {
+            text = `${days} days to go`;
+        }
+
+        return <span className={daysFromNow}>{text}</span>;
+    };
+
+    const GetEventsList = (events: any[]) =>
+        events
+            .sort(
+                (event1, event2) =>
+                    new Date(event1.StartDateTime).getTime() -
+                    new Date(event2.StartDateTime).getTime()
+            )
+            .map(
+                ({
+                    Id,
+                    Url,
+                    Thumbnail,
+                    StartDateTime,
+                    EndDateTime,
+                    Title,
+                    Presenter,
+                }) => {
+                    const isInternalLink = Url.Url.includes('ssw.com.au');
+
+                    return (
+                        <article
+                            key={Id}
+                            className={classNames('flex', eventsContainer)}
+                        >
+                            <figure>
+                                <a href={Thumbnail.Url}>
+                                    <img
+                                        src={Thumbnail.Url}
+                                        width={100}
+                                        height={100}
+                                    ></img>
+                                </a>
+                            </figure>
+                            <div
+                                className={classNames(
+                                    'flex-column-center',
+                                    eventDetails
+                                )}
+                            >
+                                <time>
+                                    {getTimeDuration(
+                                        StartDateTime,
+                                        EndDateTime
+                                    )}{' '}
+                                    {getDaysFromNow(StartDateTime)}
+                                </time>
+                                {/* TODO: External link icon */}
+                                <h5>
+                                    <a
+                                        href={Url.Url}
+                                        target={
+                                            isInternalLink ? '_self' : '_blank'
+                                        }
+                                    >
+                                        {Title}
+                                    </a>
+                                </h5>
+                                {!!Presenter && <address>{Presenter}</address>}
+                            </div>
+                        </article>
+                    );
+                }
+            );
 
     return (
         <Col md={5} sm={12}>
