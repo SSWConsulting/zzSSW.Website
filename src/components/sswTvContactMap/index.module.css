@@ -6,22 +6,3 @@
 .panelGroup {
     margin-bottom: 20px;
 }
-
-.accordion-button:not(.collapsed) {
-    background-image: url('/ssw/include/pigeon/img/svg-sprite-sheet.svg');
-    color: #fff;
-    font-size: .9rem;
-    line-height: 34px;
-    background-repeat: no-repeat;
-    padding: 0 16px;
-    text-transform: uppercase;
-    border: 0;
-    border-radius: 0;
-    display: block;
-    -moz-transition: all .3s ease-in-out 0s;
-    -o-transition: all .3s ease-in-out 0s;
-    -webkit-transition: all .3s ease-in-out 0s;
-    transition: all .3s ease-in-out 0s;
-    background-color: #9e9e9e;
-    background-position: right -182px
-}
