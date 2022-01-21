@@ -10,10 +10,6 @@ module.exports = {
         title: 'SSW Website',
     },
     plugins: [
-        'gatsby-plugin-image',
-        'gatsby-plugin-sharp',
-        'gatsby-transformer-sharp',
-        'gatsby-plugin-mdx',
         {
             resolve: `gatsby-source-git`,
             options: {
@@ -23,14 +19,7 @@ module.exports = {
                 patterns: ['**/*.mdx', '**/*.png', '**/*.jpeg'],
             },
         },
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                name: 'images',
-                path: './src/assets/images/',
-            },
-            __key: 'images',
-        },
+        'gatsby-plugin-mdx',
         {
             resolve: 'gatsby-source-filesystem',
             options: {
@@ -39,5 +28,16 @@ module.exports = {
             },
             __key: 'pages',
         },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'images',
+                path: './src/assets/images/',
+            },
+            __key: 'images',
+        },
+        'gatsby-plugin-image',
+        'gatsby-plugin-sharp',
+        'gatsby-transformer-sharp',
     ],
 };
