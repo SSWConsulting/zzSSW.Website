@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
+import isBetween from 'dayjs/plugin/isBetween';
+import axios from 'axios';
 
 import OutlineButton from '../../outlineButton';
 import {
@@ -19,6 +21,7 @@ import {
 } from './index.module.css';
 
 dayjs.extend(utc);
+dayjs.extend(isBetween);
 
 const AboutUs = () => (
     <Col md={7} sm={12}>
@@ -123,45 +126,57 @@ const Events = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        const datetime = dayjs.utc().startOf('day').format();
-        // TODO: Add HTTP wrapper
-        fetch(
-            `https://www.ssw.com.au/ssw/SharePointEventsService.aspx?odataFilter=$filter=Enabled%20ne%20false%20and%20EndDateTime%20gt%20datetime%27${datetime}%27&$top=30&$orderby=StartDateTime%20desc`
-        )
-            .then((response) => response.json())
-            .then((events) => setEvents(events))
-            // TODO: Handle HTTP error
-            .catch((err) => console.log(err));
+        const fetchEvents = async () => {
+            const datetime = dayjs.utc().startOf('day').format();
+            const params = {
+                odataFilter: `$filter=Enabled%20ne%20false%20and%20EndDateTime%20gt%20datetime%27${datetime}%27`,
+                $top: 30,
+                // TODO: Doesn't work
+                $orderby: 'StartDateTime%20asc',
+            };
+
+            const res = await axios.get(
+                `https://www.ssw.com.au/ssw/SharePointEventsService.aspx`,
+                { params }
+            );
+
+            if (res?.status !== 200) return;
+            setEvents(res?.data);
+        };
+
+        fetchEvents();
     }, []);
 
-    const getTimeDuration = (start, end) => {
-        if (!start && !end) return null;
+    const getDate = (start, end) => {
+        if (!start || !end) return null;
 
-        const dateformat = 'ddd MMM D';
+        // NOTE: Omit ddd for brevity if it's next year's event
+        const dateformat =
+            dayjs(start).year === dayjs().year ? 'ddd MMM D' : 'MMM D YYYY';
+        const isOneDayEvent = dayjs(start)
+            .startOf('day')
+            .isSame(dayjs(end).startOf('day'));
         const startDate = dayjs(start).format(dateformat);
-
-        if (!end) return `${startDate}`;
-
         const endDate = dayjs(end).format(dateformat);
+
         return (
             <span className={timeDuration}>
-                {startDate} - {endDate}
+                {isOneDayEvent ? startDate : `${startDate} - ${endDate}`}
             </span>
         );
     };
 
-    const getDaysFromNow = (date) => {
+    const getDaysFromNow = (start, end) => {
         const now = new Date();
-        const days = dayjs(date).diff(now, 'd');
+        const days = dayjs(start).diff(now, 'd');
 
-        // TODO: Check old website source code logic
         let text;
-        if (days === 0) {
-            text = 'Today';
-        } else if (days === 1) {
-            text = 'Tomorrow';
+        if (dayjs().isBetween(dayjs(start), dayjs(end))) {
+            text = 'now running';
+        } else if (days === 0) {
+            text = 'today';
         } else {
-            text = `${days} days to go`;
+            text = `${days} ${days === 1 ? 'day' : 'days'} to go`;
         }
 
         return <span className={daysFromNow}>{text}</span>;
@@ -184,7 +199,9 @@ const Events = () => {
                     Title,
                     Presenter,
                 }) => {
-                    const isInternalLink = Url.Url.includes('ssw.com.au');
+                    const isExternalLink =
+                        !Url.Url.includes('ssw.com.au') ||
+                        Url.Url.includes('/ssw/redirect');
 
                     return (
                         <article
@@ -207,18 +224,14 @@ const Events = () => {
                                 )}
                             >
                                 <time>
-                                    {getTimeDuration(
-                                        StartDateTime,
-                                        EndDateTime
-                                    )}{' '}
-                                    {getDaysFromNow(StartDateTime)}
+                                    {getDate(StartDateTime, EndDateTime)}{' '}
+                                    {getDaysFromNow(StartDateTime, EndDateTime)}
                                 </time>
-                                {/* TODO: External link icon */}
                                 <h5>
                                     <a
                                         href={Url.Url}
                                         target={
-                                            isInternalLink ? '_self' : '_blank'
+                                            isExternalLink ? '_blank' : '_self'
                                         }
                                     >
                                         {Title}
@@ -239,6 +252,7 @@ const Events = () => {
                     {GetEventsList(events)}
                 </section>
                 <div className="flex-end">
+                    {/* TODO: Update link after implement this page */}
                     <OutlineButton href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
                         More Events
                     </OutlineButton>
