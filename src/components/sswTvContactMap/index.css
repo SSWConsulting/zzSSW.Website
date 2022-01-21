@@ -56,7 +56,12 @@
     color: #fff;
 }
 
+#location {
+    position: relative;
+}
+
 .locationAccordian {
+    position: static;
     margin-top: -20px;
 }
 
@@ -82,4 +87,46 @@
 
 .office.closed {
     background: none repeat scroll 0 0 #cc4141
+}
+
+#location h6 {
+    z-index: 10;
+    position: absolute;
+    font-size: .7rem;
+    margin: 0;
+}
+
+element.style {}
+
+#Location .panel-heading a:not(.collapsed) h6 {
+    background-color: #cc4141;
+}
+
+#Location h6 {
+    z-index: 10;
+    position: absolute;
+    font-size: .7rem;
+    margin: 0;
+}
+
+h6,
+.h6 {
+    font-size: .75rem;
+    color: #fff;
+    background: #414141;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1px 6px;
+    margin: 10px 0 5px;
+    clear: both;
+    line-height: 17px;
+    display: inline-block;
+}
+
+.state-sydney {
+    display: block;
+    width: 80px;
+    position: absolute;
+    top: 59%;
+    left: 88%;
 }

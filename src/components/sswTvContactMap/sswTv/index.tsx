@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import { Accordion } from 'react-bootstrap';
-import VideoBackground from '../videoBackground';
 import * as styles from './index.module.css';
 
 
