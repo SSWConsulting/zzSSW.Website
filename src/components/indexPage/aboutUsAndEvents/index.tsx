@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Row, Col, Spinner } from 'react-bootstrap';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Row, Col } from 'react-bootstrap';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -121,24 +121,28 @@ const AboutUs = () => (
     </Col>
 );
 
-// TODO: Add loading events
 const Events = () => {
     const [events, setEvents] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchEvents = async () => {
             const datetime = dayjs.utc().startOf('day').format();
             const params = {
-                odataFilter: `$filter=Enabled%20ne%20false%20and%20EndDateTime%20gt%20datetime%27${datetime}%27`,
+                odataFilter: encodeURIComponent(
+                    `$filter=Enabled ne false and EndDateTime gt datetime'${datetime}'`
+                ),
                 $top: 30,
                 // TODO: Doesn't work
-                $orderby: 'StartDateTime%20asc',
+                $orderby: encodeURIComponent('StartDateTime desc'),
             };
 
+            setLoading(true);
             const res = await axios.get(
                 `https://www.ssw.com.au/ssw/SharePointEventsService.aspx`,
                 { params }
             );
+            setLoading(false);
 
             if (res?.status !== 200) return;
             setEvents(res?.data);
@@ -182,7 +186,7 @@ const Events = () => {
         return <span className={daysFromNow}>{text}</span>;
     };
 
-    const GetEventsList = (events: any[]) =>
+    const getEventsList = (events) =>
         events
             .sort(
                 (event1, event2) =>
@@ -214,7 +218,7 @@ const Events = () => {
                                         src={Thumbnail.Url}
                                         width={100}
                                         height={100}
-                                    ></img>
+                                    />
                                 </a>
                             </figure>
                             <div
@@ -248,9 +252,30 @@ const Events = () => {
         <Col md={5} sm={12}>
             <article className="full flex-column">
                 <h1>Upcoming Events</h1>
-                <section className={classNames('flex-full', upcomingEvents)}>
-                    {GetEventsList(events)}
+
+                <section
+                    className={classNames(
+                        'flex-full flex-column ',
+                        upcomingEvents
+                    )}
+                >
+                    {loading ? (
+                        <div className="flex-full center">
+                            <Spinner
+                                animation="border"
+                                variant="secondary"
+                                role="status"
+                            >
+                                <span className="visually-hidden">
+                                    Loading...
+                                </span>
+                            </Spinner>
+                        </div>
+                    ) : (
+                        getEventsList(events)
+                    )}
                 </section>
+
                 <div className="flex-end">
                     {/* TODO: Update link after implement this page */}
                     <OutlineButton href="https://www.ssw.com.au/ssw/Events/?tech=all&type=all">
