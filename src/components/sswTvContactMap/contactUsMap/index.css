@@ -71,7 +71,8 @@ h6,
     transition: all .3s ease-in-out 0s;
 }
 
-.accordion-button:not(.collapsed) {
+.accordion-button:not(.collapsed),
+.state-sydney h6 .accordion-button:not(.collapsed) {
     background-color: #cc4141;
     color: #fff;
 }
@@ -174,4 +175,11 @@ h6,
 
 .select-nsw {
     background-image: url("../../../assets/images/raven/map-nsw.png");
+}
+
+.active-accordion-nsw,
+.active-accordion-qld,
+.active-accordion-vic,
+.active-accordion-newcastle {
+    background-color: #cc4141;
 }

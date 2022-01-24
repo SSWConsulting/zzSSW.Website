@@ -1,8 +1,5 @@
 import React from 'react';
-import { Accordion } from 'react-bootstrap';
-import VideoBackground from '../videoBackground';
 import TvSSW from './sswTv';
-import MapAustralia from './australianMap';
 import ContactUsMap from './contactUsMap';
 
 
