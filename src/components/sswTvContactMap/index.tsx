@@ -6,7 +6,21 @@ import TvSSW from './sswTv';
 import MapAustralia from './australianMap';
 
 
-const TvContactMap = () => (
+const TvContactMap = () => {
+    
+
+    //const onTitleClick = {    console.log("Title clicked") , }
+    function handleSubmit() {
+
+        console.log("Function");
+      }
+      function changeBackground(e) {
+        e.target.style.background = 'red';
+        const statNsw = "";
+      }
+
+    
+    return(
 
     <section id="index-footer" className="main-container ">
         {/* TODO: Embed video */}
@@ -40,14 +54,15 @@ const TvContactMap = () => (
                                                         Monday - Friday</strong>
                                                     </p>
                                                 </article>
-                                            </Accordion.Body>
-                                            <div className='map-maker nsw hidden-xs' >
+                                           
+
                                             <div className='map-marker nsw hidden-xs' >
-                                                    <div className='state-sydney' >
+                                                    <div className='state-sydney 'onMouseOver={handleSubmit} onClick={changeBackground}>
                                                         <h6>NSW</h6>
                                                     </div>
                                                 </div>
-                                                </div>
+
+                                        </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="Brisbane">
                                             <Accordion.Header>BRISBANE</Accordion.Header>
@@ -61,7 +76,7 @@ const TvContactMap = () => (
                                                         <span itemProp='addressCountry'>Australia</span>
                                                     </p>
                                                     <p>Phone: <strong>+61 7 3077 7081</strong></p>
-                                                    <p>Hours: <strong>9am - 6pm AEST <span id="ctl00_Content_OpenTime4_labelOpenTime"><span className='office closed' >Closed</span><br /></span>
+                                                    <p>Hours: <strong>9am - 6pm AEST <span className='office closed' >Closed</span><br />
 
                                                         Monday - Friday</strong>
                                                     </p>
@@ -82,7 +97,7 @@ const TvContactMap = () => (
                                                     </p>
                                                     <p>Phone: <strong>+ 61 3 9005 2034</strong></p>
 
-                                                    <p>Hours: <strong>9am - 6pm AEST <span id="ctl00_Content_OpenTime5_labelOpenTime"><span className='office open' >Open</span><br /></span>
+                                                    <p>Hours: <strong>9am - 6pm AEST <span className='office open' >Open</span><br />
 
                                                         Monday - Friday</strong>
                                                     </p>
@@ -99,7 +114,7 @@ const TvContactMap = () => (
                                                         Newcastle, NSW 2300, Australia
                                                     </p>
                                                     <p>Phone: <strong>+ 61 3 9953 3000</strong></p>
-                                                    <p>Hours: <strong>9am - 6pm AEST <span id="ctl00_Content_OpenTime1_labelOpenTime"><span className='office open'>Open</span><br /></span>
+                                                    <p>Hours: <strong>9am - 6pm AEST <span className='office open'>Open</span><br />
 
                                                         Monday - Friday</strong>
                                                     </p>
@@ -112,7 +127,7 @@ const TvContactMap = () => (
                             </div>
                             {/* TODO: Implement Map */}
       
-                                <MapAustralia />
+                                <MapAustralia stateResponse={handleSubmit} />
 
 
                         </div>
@@ -124,6 +139,6 @@ const TvContactMap = () => (
         </div>
 
     </section>
-);
+)};
 
 export default TvContactMap;

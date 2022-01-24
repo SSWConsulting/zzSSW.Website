@@ -96,19 +96,6 @@
     margin: 0;
 }
 
-element.style {}
-
-#Location .panel-heading a:not(.collapsed) h6 {
-    background-color: #cc4141;
-}
-
-#Location h6 {
-    z-index: 10;
-    position: absolute;
-    font-size: .7rem;
-    margin: 0;
-}
-
 h6,
 .h6 {
     font-size: .75rem;
