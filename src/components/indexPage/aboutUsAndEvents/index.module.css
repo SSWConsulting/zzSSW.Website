@@ -24,8 +24,87 @@
     border-bottom: 1px solid #ccc;
 }
 
-.events {
+.eventsContainer {
+    border-bottom: 1px solid transparent;
+}
+
+.upcomingEvents {
+    min-height: 580px;
+    max-height: 580px;
+    overflow: auto;
     border: 1px #ccc solid;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+}
+
+.upcomingEvents figure {
+    margin-bottom: 0;
+}
+
+.upcomingEvents figure a {
+    border-bottom: none;
+}
+
+.upcomingEvents::-webkit-scrollbar {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 10px;
+}
+
+.upcomingEvents::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.eventDetails {
+    padding-right: 16px;
+    margin-left: 30px;
+}
+
+.eventDetails time {
+    line-height: 16px;
+    text-transform: uppercase;
+}
+
+.timeDuration {
+    font-size: 12px;
+}
+
+.daysFromNow {
+    padding: 0 5px;
+    margin-left: 5px;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: bold;
+    background: #414141;
+}
+
+.eventDetails h5 {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0 0 3px;
+    margin: 0;
+}
+
+.eventDetails h5 a {
+    color: #cc4141;
+    border-bottom: none;
+}
+
+.eventDetails h5 a[target='_blank']::after {
+    content: url(../../../assets//images//external-link.gif);
+    margin-left: 4px;
+}
+
+.eventDetails h5 a:hover {
+    cursor: pointer;
+    border-bottom: 1px dotted #cc4141;
+}
+
+.eventDetails address {
+    font-size: 12px;
+    margin-bottom: 0;
 }
 
 .moreEvents {

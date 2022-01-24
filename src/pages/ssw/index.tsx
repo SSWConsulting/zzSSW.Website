@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Accordion } from 'react-bootstrap';
 import Layout from '../../components/layout';
 import Carousel from '../../components/indexPage/carousel';

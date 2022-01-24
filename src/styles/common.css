@@ -14,6 +14,12 @@
     flex-direction: column;
 }
 
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .flex-full {
     flex: 1;
 }
