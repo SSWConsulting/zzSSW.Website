@@ -1,7 +1,6 @@
 import React from "react";
-import OutlineButton from "../outlineButton";
-import './index.css';
-
+import OutlineButton from "../../outlineButton";
+import "./index.css";
 
 const CoreServices = () => (
   <section className="main-container services">
