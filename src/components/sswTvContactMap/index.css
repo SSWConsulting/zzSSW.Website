@@ -110,14 +110,6 @@ h6,
     display: inline-block;
 }
 
-.state-sydney {
-    display: block;
-    width: 80px;
-    position: absolute;
-    top: 59%;
-    left: 88%;
-}
-
 .container-sswTvContactUs {
     background: url("data:image/png;base64,ivborw0kggoaaaansuheugaaaaeaaaaccaiaaaaw4yfwaaaaeeleqvqi12m4evqow5mntwatogt8s3duyqaaaabjru5erkjggg==") repeat-x scroll left top #f5f5f5 !important;
     clear: both;

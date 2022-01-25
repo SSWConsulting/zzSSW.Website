@@ -1,18 +1,17 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
-import PlaceHolder from "../../../assets/images/placeholder.png";
 import { ACTIVE_KEYS } from "../../../consts/constantValues";
 import "./index.css";
 
-const Map = ({ state, isHover }) => {
+const Map = ({ hoverStyle }) => {
   return (
     <article className="col-sm-6 hidden-xs">
       <div id="mapWrap">
         <div id="locationMap">
           <StaticImage
-            className={isHover ? state : ""}
-            src={PlaceHolder}
+            className={hoverStyle}
+            src="../../../assets/images/placeholder.png"
             alt="Placeholder"
             width={402}
             height={350}
@@ -26,6 +25,7 @@ const Map = ({ state, isHover }) => {
 };
 const ContactUs = ({ toggleHover }) => {
   const [activeLocation, setActiveLocation] = useState("");
+
   const handleStateClicked = (targetLocation) => {
     if (targetLocation == activeLocation) {
       setActiveLocation(ACTIVE_KEYS.None);
@@ -44,6 +44,8 @@ const ContactUs = ({ toggleHover }) => {
             <Accordion.Header
               onClick={() => handleStateClicked(ACTIVE_KEYS.NSWActiveKey)}
               className="panelHeading"
+              onMouseEnter={() => toggleHover("select-nsw")}
+              onMouseLeave={() => toggleHover("")}
             >
               SYDNEY
             </Accordion.Header>
@@ -90,8 +92,8 @@ const ContactUs = ({ toggleHover }) => {
               <div
                 className="state-sydney"
                 onClick={() => handleStateClicked(ACTIVE_KEYS.NSWActiveKey)}
-                onMouseEnter={() => toggleHover(true, "select-nsw")}
-                onMouseLeave={() => toggleHover(false, "")}
+                onMouseEnter={() => toggleHover("select-nsw")}
+                onMouseLeave={() => toggleHover("")}
               >
                 <h6
                   className={
@@ -108,6 +110,8 @@ const ContactUs = ({ toggleHover }) => {
           <Accordion.Item eventKey={ACTIVE_KEYS.QLDActiveKey}>
             <Accordion.Header
               onClick={() => handleStateClicked(ACTIVE_KEYS.QLDActiveKey)}
+              onMouseEnter={() => toggleHover("select-qld")}
+              onMouseLeave={() => toggleHover("")}
             >
               BRISBANE
             </Accordion.Header>
@@ -149,8 +153,8 @@ const ContactUs = ({ toggleHover }) => {
               <div
                 className="state-brisbane"
                 onClick={() => handleStateClicked(ACTIVE_KEYS.QLDActiveKey)}
-                onMouseEnter={() => toggleHover(true, "select-qld")}
-                onMouseLeave={() => toggleHover(false, "")}
+                onMouseEnter={() => toggleHover("select-qld")}
+                onMouseLeave={() => toggleHover("")}
               >
                 <h6
                   className={
@@ -167,6 +171,8 @@ const ContactUs = ({ toggleHover }) => {
           <Accordion.Item eventKey={ACTIVE_KEYS.VICActiveKey}>
             <Accordion.Header
               onClick={() => handleStateClicked(ACTIVE_KEYS.VICActiveKey)}
+              onMouseEnter={() => toggleHover("select-vic")}
+              onMouseLeave={() => toggleHover("")}
             >
               MELBOURNE
             </Accordion.Header>
@@ -211,8 +217,8 @@ const ContactUs = ({ toggleHover }) => {
               <div
                 className="state-melbourne"
                 onClick={() => handleStateClicked(ACTIVE_KEYS.VICActiveKey)}
-                onMouseEnter={() => toggleHover(true, "select-vic")}
-                onMouseLeave={() => toggleHover(false, "")}
+                onMouseEnter={() => toggleHover("select-vic")}
+                onMouseLeave={() => toggleHover("")}
               >
                 <h6
                   className={
@@ -229,6 +235,8 @@ const ContactUs = ({ toggleHover }) => {
           <Accordion.Item eventKey={ACTIVE_KEYS.NewCastle}>
             <Accordion.Header
               onClick={() => handleStateClicked(ACTIVE_KEYS.NewCastle)}
+              onMouseEnter={() => toggleHover("select-nsw")}
+              onMouseLeave={() => toggleHover("")}
             >
               NEWCASTLE
             </Accordion.Header>
@@ -265,12 +273,10 @@ const ContactUs = ({ toggleHover }) => {
 };
 
 const ContactUsAndMap = () => {
-  const [isHover, setHoverState] = useState(false);
-  const [state, setState] = useState("");
+  const [hoverStyle, setHoverStyle] = useState("");
 
-  const toggleHover = (isHover, state) => {
-    setHoverState(isHover);
-    setState(state);
+  const toggleHover = (hoverStyle) => {
+    setHoverStyle(hoverStyle);
   };
 
   return (
@@ -280,7 +286,7 @@ const ContactUsAndMap = () => {
         <div className="row">
           <ContactUs toggleHover={toggleHover} />
 
-          <Map state={state} isHover={isHover} />
+          <Map hoverStyle={hoverStyle} />
         </div>
       </div>
     </div>

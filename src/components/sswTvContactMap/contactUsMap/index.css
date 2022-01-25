@@ -121,8 +121,8 @@ h6,
     display: block;
     width: 80px;
     position: absolute;
-    top: 68%;
-    left: 92%;
+    top: 68% !important;
+    left: 90% !important;
     transition: 2s;
     cursor: pointer;
 }
@@ -131,7 +131,7 @@ h6,
     display: block;
     width: 80px;
     position: absolute;
-    top: 38%;
+    top: 45%;
     left: 89%;
     transition: 2s;
     cursor: pointer;
@@ -182,4 +182,8 @@ h6,
 .active-accordion-vic,
 .active-accordion-newcastle {
     background-color: #cc4141;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
 }
