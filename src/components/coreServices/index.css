@@ -1,0 +1,145 @@
+.services .col-xs-1,
+.services .col-sm-1,
+.services .col-md-1,
+.services .col-lg-1,
+.services .col-xs-2,
+.services .col-sm-2,
+.services .col-md-2,
+.services .col-lg-2,
+.services .col-xs-3,
+.services .col-sm-3,
+.services .col-md-3,
+.services .col-lg-3,
+.services .col-xs-4,
+.services .col-sm-4,
+.services .col-md-4,
+.services .col-lg-4,
+.services .col-xs-5,
+.services .col-sm-5,
+.services .col-md-5,
+.services .col-lg-5,
+.services .col-xs-6,
+.services .col-sm-6,
+.services .col-md-6,
+.services .col-lg-6,
+.services .col-xs-7,
+.services .col-sm-7,
+.services .col-md-7,
+.services .col-lg-7,
+.services .col-xs-8,
+.services .col-sm-8,
+.services .col-md-8,
+.services .col-lg-8,
+.services .col-xs-9,
+.services .col-sm-9,
+.services .col-md-9,
+.services .col-lg-9,
+.services .col-xs-10,
+.services .col-sm-10,
+.services .col-md-10,
+.services .col-lg-10,
+.services .col-xs-11,
+.services .col-sm-11,
+.services .col-md-11,
+.services .col-lg-11,
+.services .col-xs-12,
+.services .col-sm-12,
+.services .col-md-12,
+.services .col-lg-12 {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.services .row {
+    margin-left: -3px;
+    margin-right: -3px;
+}
+
+.services h2.special.special {
+    color: #fff;
+    background: #414141;
+    padding: 0.5em 1em;
+    z-index: 1;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.services h2.special {
+    line-height: inherit;
+    font-size: 0.75rem;
+    color: #fff;
+    background: #414141;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1px 6px;
+    margin: 10px 0 5px;
+    clear: both;
+    line-height: 17px;
+    display: inline-block;
+    position: absolute;
+    margin-top: -8px;
+}
+
+.services .row a:hover {
+    background-color: #4e4e4e;
+}
+
+.services .row a {
+    background-color: #414141;
+    background-image: url('../../assets/images/svg-sprite-sheet.svg');
+    background-repeat: no-repeat;
+    border: medium none;
+    color: #fff;
+    display: block;
+}
+
+.services {
+    padding-top: 14px;
+}
+
+.services a h3 {
+    padding: 6rem 0 1rem;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    height: 8.8rem;
+    margin: 0 0 5px 0;
+    text-align: center;
+}
+
+.services .core-sharepoint a {
+    background-position: center -855px;
+}
+
+.services .core-crm a {
+    background-position: center -700px;
+}
+
+.services .core-book a {
+    background-position: center -550px;
+}
+
+.services .core-training a {
+    background-position: center -400px;
+}
+
+@media (min-width: 992px) {
+    .services a h3 {
+        padding: 2.8rem 20px 1.4rem 90px;
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+        height: 6.8rem;
+        text-align: left;
+    }
+    .services .core-sharepoint a {
+        background-position: -25px -842px;
+    }
+    .services .core-crm a {
+        background-position: -25px -690px;
+    }
+    .services .core-book a {
+        background-position: -25px -540px;
+    }
+    .services .core-training a {
+        background-position: -25px -387px;
+    }
+}
