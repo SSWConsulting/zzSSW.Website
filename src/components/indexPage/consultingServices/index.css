@@ -85,7 +85,7 @@
 }
 
 #whatwedo a {
-    background-image: url('../../assets/images/svg-sprite-sheet.svg');
+    background-image: url('../../../assets/images/svg-sprite-sheet.svg');
     background-repeat: no-repeat;
     background-color: none;
     border: medium none;

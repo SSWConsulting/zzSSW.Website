@@ -86,7 +86,7 @@
 
 .services .row a {
     background-color: #414141;
-    background-image: url('../../assets/images/svg-sprite-sheet.svg');
+    background-image: url('../../../assets/images/svg-sprite-sheet.svg');
     background-repeat: no-repeat;
     border: medium none;
     color: #fff;
