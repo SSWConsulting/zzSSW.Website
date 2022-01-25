@@ -1,23 +1,19 @@
-import React from 'react';
-import TvSSW from './sswTv';
-import ContactUsMap from './contactUsMap';
-
+import React from "react";
+import TvSSW from "./sswTv";
+import ContactUsMap from "./contactUsMap";
+import "./index.css";
 
 const TvContactMap = () => {
-    
-    return(
-
-    <section id="index-footer" className="main-container ">
-        <div id="video">
-            <div className="row">
-                <TvSSW video={"https://www.youtube.com/watch?v=2G7z2mF7Onk"} />
-                <ContactUsMap />
-
-
-            </div>
+  return (
+    <div className="container-sswTvContactUs">
+      <section id="index-footer" className="main-container ">
+        <div className="row">
+          <TvSSW />
+          <ContactUsMap />
         </div>
-
-    </section>
-)};
+      </section>
+    </div>
+  );
+};
 
 export default TvContactMap;
