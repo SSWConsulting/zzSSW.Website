@@ -29,6 +29,7 @@
     "dayjs": "^1.10.7",
     "dotenv": "^14.2.0",
     "gatsby": "^4.5.3",
+    "gatsby-plugin-google-tagmanager": "^4.6.0",
     "gatsby-plugin-image": "^2.5.2",
     "gatsby-plugin-mdx": "^3.5.2",
     "gatsby-plugin-sharp": "^4.5.2",

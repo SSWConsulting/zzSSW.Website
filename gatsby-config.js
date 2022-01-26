@@ -1,5 +1,3 @@
-//TODO: Create a site config
-
 require('dotenv').config({
     path: `.env.${process.env.NODE_ENV}`,
 });
@@ -39,5 +37,12 @@ module.exports = {
         'gatsby-plugin-image',
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
+        {
+            resolve: 'gatsby-plugin-google-tagmanager',
+            options: {
+                id: 'GTM-WP8CQLL',
+                includeInDevelopment: true,
+            },
+        },
     ],
 };
