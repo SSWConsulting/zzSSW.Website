@@ -56,45 +56,7 @@
     color: #fff;
 }
 
-#location {
-    position: relative;
-}
 
-.locationAccordian {
-    position: static;
-    margin-top: -20px;
-}
-
-.accordion-button:focus {
-    border-color: #cc4141;
-}
-
-.office {
-    color: #fff;
-    font-size: .6rem;
-    font-weight: bold;
-    line-height: 2em;
-    margin-left: 9px;
-    padding: 0 6px;
-    text-transform: uppercase;
-    vertical-align: middle;
-    display: inline-block
-}
-
-.office.open {
-    background: none repeat scroll 0 0 #8dc63f
-}
-
-.office.closed {
-    background: none repeat scroll 0 0 #cc4141
-}
-
-#location h6 {
-    z-index: 10;
-    position: absolute;
-    font-size: .7rem;
-    margin: 0;
-}
 
 h6,
 .h6 {
@@ -113,5 +75,11 @@ h6,
 .container-sswTvContactUs {
     background: url("data:image/png;base64,ivborw0kggoaaaansuheugaaaaeaaaaccaiaaaaw4yfwaaaaeeleqvqi12m4evqow5mntwatogt8s3duyqaaaabjru5erkjggg==") repeat-x scroll left top #f5f5f5 !important;
     clear: both;
-    padding: 10px 0 25px
+    padding: 10px 0 25px;
+    border-top: 2px solid lightgray;
+
+}
+#sswTvContactMap{
+    padding-bottom: 55px;
+    padding-top: 15px;
 }

@@ -73,6 +73,7 @@ h6,
 
 #location {
     position: relative;
+    max-height: 360px;
 }
 
 .locationAccordian {
@@ -142,8 +143,8 @@ h6,
 }
 
 #mapWrap {
-    height: 350px;
-    width: 402px !important;
+    max-height: 350px;
+   
     background-image: url('../../../assets/images/raven/map-bg.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -161,14 +162,21 @@ h6,
 
 .select-vic {
     background-image: url("../../../assets/images/raven/map-vic.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+   
 }
 
 .select-qld {
     background-image: url("../../../assets/images/raven/map-qld.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 }
 
 .select-nsw {
     background-image: url("../../../assets/images/raven/map-nsw.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 }
 
 .active-accordion-nsw,
@@ -180,4 +188,12 @@ h6,
 
 .accordion-button:focus {
     box-shadow: none;
+}
+@media (max-width: 575px) {
+    #mapDisappear{
+        display: none !important;
+    }
+    .map-marker{
+        display: none !important;
+    }
 }
