@@ -1,0 +1,17 @@
+.carousel-indicators [data-bs-target]:hover[data-bs-target]:hover{
+    transform: scale(1.5);
+    transition-property: all;
+    transition-property: transform;
+    transition-timing-function: ease;
+
+}
+
+.carousel-indicators [data-bs-target]{
+    transform: scale(1);
+    transition-property: all;
+    transition-property: transform;
+    transition-timing-function: ease;
+}
+.carousel-indicators [data-bs-target].active :hover{
+    background-color: #cc4141;
+}
