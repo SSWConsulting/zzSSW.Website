@@ -2,19 +2,21 @@ import { StaticImage } from "gatsby-plugin-image";
 import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
 import { ACTIVE_KEYS } from "../../../consts/constantValues";
+import { DAY_KEYS } from "../../../consts/dayValues";
+import DayJS from 'dayjs';
 import "./index.css";
+import dayjs from "dayjs";
 
 const Map = ({ hoverStyle }) => {
   return (
-    <article className="col-sm-6 hidden-xs">
+    <article className="col-sm-6 hidden-xs" id="mapDisappear">
       <div id="mapWrap">
         <div id="locationMap">
           <StaticImage
+
             className={hoverStyle}
             src="../../../assets/images/placeholder.png"
             alt="Placeholder"
-            width={402}
-            height={350}
             useMap="#map"
             id="map-img"
           />
@@ -25,6 +27,22 @@ const Map = ({ hoverStyle }) => {
 };
 const ContactUs = ({ toggleHover }) => {
   const [activeLocation, setActiveLocation] = useState("");
+  //Office Open Time Logic
+  const currentTime = DayJS();
+  const openOfficeTime =  DayJS().set('hour',9).set('seconds',0).set('minutes',0);
+  const closeOfficeTime =  DayJS().set('hour',18).set('seconds',0).set('minutes',0);
+  let time :any;
+  
+  if(DayJS().day() != DAY_KEYS.SUNDAY &&  DayJS().day() != DAY_KEYS.SATURDAY && currentTime >= openOfficeTime && currentTime < closeOfficeTime){
+    
+    time= <span className="office open">Open</span>
+    } 
+     else{
+      time= <span className="office closed">Closed</span>
+     }
+
+
+
 
   const handleStateClicked = (targetLocation) => {
     if (targetLocation == activeLocation) {
@@ -33,13 +51,17 @@ const ContactUs = ({ toggleHover }) => {
       setActiveLocation(ACTIVE_KEYS.NewCastle);
     } else {
       setActiveLocation(targetLocation);
+      
     }
+
+    
   };
 
   return (
     <div className="locationAccordian col-sm-6">
       <article className="panelGroup">
-        <Accordion activeKey={activeLocation} flush>
+        <Accordion activeKey={activeLocation}    flush>
+
           <Accordion.Item eventKey={ACTIVE_KEYS.NSWActiveKey}>
             <Accordion.Header
               onClick={() => handleStateClicked(ACTIVE_KEYS.NSWActiveKey)}
@@ -79,7 +101,8 @@ const ContactUs = ({ toggleHover }) => {
                   <strong>
                     9am - 6pm AEST{" "}
                     <span id="ctl00_Content_OpenTime3_labelOpenTime">
-                      <span className="office closed">Closed</span>
+                     {time} 
+      
                       <br />
                     </span>
                     Monday - Friday
@@ -142,7 +165,7 @@ const ContactUs = ({ toggleHover }) => {
                 <p>
                   Hours:{" "}
                   <strong>
-                    9am - 6pm AEST <span className="office closed">Closed</span>
+                    9am - 6pm AEST {time} 
                     <br />
                     Monday - Friday
                   </strong>
@@ -205,7 +228,7 @@ const ContactUs = ({ toggleHover }) => {
                 <p>
                   Hours:{" "}
                   <strong>
-                    9am - 6pm AEST <span className="office open">Open</span>
+                    9am - 6pm AEST  {time} 
                     <br />
                     Monday - Friday
                   </strong>
@@ -258,7 +281,8 @@ const ContactUs = ({ toggleHover }) => {
                 <p>
                   Hours:{" "}
                   <strong>
-                    9am - 6pm AEST <span className="office open">Open</span>
+                    9am - 6pm AEST 
+                    {time} 
                     <br />
                     Monday - Friday
                   </strong>

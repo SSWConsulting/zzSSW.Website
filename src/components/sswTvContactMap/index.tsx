@@ -7,7 +7,7 @@ const TvContactMap = () => {
   return (
     <div className="container-sswTvContactUs">
       <section id="index-footer" className="main-container ">
-        <div className="row">
+        <div className="row " id="sswTvContactMap">
           <TvSSW />
           <ContactUsMap />
         </div>
@@ -17,3 +17,4 @@ const TvContactMap = () => {
 };
 
 export default TvContactMap;
+
