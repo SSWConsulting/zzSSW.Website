@@ -3,7 +3,7 @@ import { Carousel } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import { carouselItem } from "./index.module.css";
 import "./index.css";
-import VideoPopup from "../../videoPopup";
+import VideoPopup from "../videoPopup";
 
 const { Item } = Carousel;
 
