@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
 import { ACTIVE_KEYS } from "../../../consts/constantValues";
 import { DAY_KEYS } from "../../../consts/dayValues";
-import DayJS from 'dayjs';
+import DayJS from "dayjs";
 import "./index.css";
-import dayjs from "dayjs";
 
 const Map = ({ hoverStyle }) => {
   return (
@@ -13,7 +12,6 @@ const Map = ({ hoverStyle }) => {
       <div id="mapWrap">
         <div id="locationMap">
           <StaticImage
-
             className={hoverStyle}
             src="../../../assets/images/placeholder.png"
             alt="Placeholder"
@@ -29,21 +27,27 @@ const ContactUs = ({ toggleHover }) => {
   const [activeLocation, setActiveLocation] = useState("");
   //Office Open Time Logic
   const currentTime = DayJS();
-  const openOfficeTime =  DayJS().set('hour',9).set('seconds',0).set('minutes',0);
-  const closeOfficeTime =  DayJS().set('hour',18).set('seconds',0).set('minutes',0);
-  let time :any;
-  
-  if(DayJS().day() != DAY_KEYS.SUNDAY &&  DayJS().day() != DAY_KEYS.SATURDAY && currentTime >= openOfficeTime && currentTime < closeOfficeTime){
-    
-    time= <span className="office open">Open</span>
-    } 
-     else{
-      time= <span className="office closed">Closed</span>
-     }
+  const openOfficeTime = DayJS()
+    .set("hour", 9)
+    .set("seconds", 0)
+    .set("minutes", 0);
+  const closeOfficeTime = DayJS()
+    .set("hour", 18)
+    .set("seconds", 0)
+    .set("minutes", 0);
+  let time: any;
 
-
-
-
+  if (
+    DayJS().day() != DAY_KEYS.SUNDAY &&
+    DayJS().day() != DAY_KEYS.SATURDAY &&
+    currentTime >= openOfficeTime &&
+    currentTime < closeOfficeTime
+  ) {
+    time = <span className="office open">Open</span>;
+  } else {
+    time = <span className="office closed">Closed</span>;
+  }
+  //Todo: ActiveKey sydney on initialize
   const handleStateClicked = (targetLocation) => {
     if (targetLocation == activeLocation) {
       setActiveLocation(ACTIVE_KEYS.None);
@@ -51,17 +55,17 @@ const ContactUs = ({ toggleHover }) => {
       setActiveLocation(ACTIVE_KEYS.NewCastle);
     } else {
       setActiveLocation(targetLocation);
-      
     }
-
-    
   };
 
   return (
     <div className="locationAccordian col-sm-6">
       <article className="panelGroup">
-        <Accordion activeKey={activeLocation}    flush>
-
+        <Accordion
+          defaultActiveKey={ACTIVE_KEYS.NSWActiveKey}
+          activeKey={activeLocation}
+          flush
+        >
           <Accordion.Item eventKey={ACTIVE_KEYS.NSWActiveKey}>
             <Accordion.Header
               onClick={() => handleStateClicked(ACTIVE_KEYS.NSWActiveKey)}
@@ -99,12 +103,8 @@ const ContactUs = ({ toggleHover }) => {
                 <p>
                   Hours:{" "}
                   <strong>
-                    9am - 6pm AEST{" "}
-                    <span id="ctl00_Content_OpenTime3_labelOpenTime">
-                     {time} 
-      
-                      <br />
-                    </span>
+                    9am - 6pm AEST {time}
+                    <br />
                     Monday - Friday
                   </strong>
                 </p>
@@ -165,7 +165,7 @@ const ContactUs = ({ toggleHover }) => {
                 <p>
                   Hours:{" "}
                   <strong>
-                    9am - 6pm AEST {time} 
+                    9am - 6pm AEST {time}
                     <br />
                     Monday - Friday
                   </strong>
@@ -228,7 +228,7 @@ const ContactUs = ({ toggleHover }) => {
                 <p>
                   Hours:{" "}
                   <strong>
-                    9am - 6pm AEST  {time} 
+                    9am - 6pm AEST {time}
                     <br />
                     Monday - Friday
                   </strong>
@@ -281,8 +281,8 @@ const ContactUs = ({ toggleHover }) => {
                 <p>
                   Hours:{" "}
                   <strong>
-                    9am - 6pm AEST 
-                    {time} 
+                    9am - 6pm AEST
+                    {time}
                     <br />
                     Monday - Friday
                   </strong>
