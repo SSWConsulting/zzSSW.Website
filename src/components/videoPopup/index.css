@@ -1,3 +1,52 @@
-.vp-center{
-    background-color: black  !important;
+
+.react-responsive-modal-closeButton{
+    fill: #fff;
+    transition: fill 40ms;
+    background: rgba(30,30,30,.9);
+    border-radius: 0.5em;
+    padding: 2px;
+    top: 3px;
+    right: 10px;
+    
 }
+.react-responsive-modal-closeButton svg{
+    width: 32px;
+    height: 32px;
+}
+.react-responsive-modal-closeButton:hover{
+    background: #cc4141;
+    transition: fill 40ms;
+}
+@keyframes customEnterOverlayAnimation {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes customLeaveOverlayAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes customEnterModalAnimation {
+    0% {
+      transform: scale(0.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes customLeaveModalAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }

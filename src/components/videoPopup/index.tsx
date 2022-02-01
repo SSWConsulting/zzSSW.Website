@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
+import "./index.css";
 
 const VideoPopup = ({ openPopup, onCloseModal }) => {
-  //  const onCloseModal = () => setOpen(false);
-  console.log(onCloseModal);
   return (
     <div>
       <Modal
@@ -14,21 +13,25 @@ const VideoPopup = ({ openPopup, onCloseModal }) => {
         styles={{
           modal: {
             maxWidth: "unset",
-            width: "80%",
+            width: "64%",
             padding: "unset",
+            background: "#000",
+            boxShadow: "0 0 10px 0 rgba(0,0,0,0.7)",
+            borderRadius: "4px",
           },
-          overlay: {
-            background: "black !important",
-          },
-          closeButton: {
-            background: "#cc4141",
-          },
+          closeButton: {},
         }}
         center
+        classNames={{
+          modalAnimationIn: "customEnterModalAnimation",
+          modalAnimationOut: "customLeaveModalAnimation",
+        }}
+        animationDuration={500}
       >
         <ReactPlayer
           url="https://vimeo.com/400817895"
           width="100%"
+          padding="unset"
           height="calc(100vh - 100px)"
           playing
           controls
