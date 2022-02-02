@@ -12,8 +12,6 @@ const SSWCarousel = () => {
   const [openPopup, setOpenPopup] = useState(false);
   const onOpenModal = () => setOpenPopup(!openPopup);
 
-  console.log(openPopup);
-
   return (
     <div className="main-container">
       <Carousel controls={false}>
