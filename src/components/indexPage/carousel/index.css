@@ -1,5 +1,5 @@
 .carousel-indicators [data-bs-target]:hover[data-bs-target]:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
     transition-property: all;
     transition-property: transform;
     transition-timing-function: ease;
