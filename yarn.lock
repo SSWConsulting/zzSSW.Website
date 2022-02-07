@@ -5870,6 +5870,11 @@ gatsby-plugin-utils@^2.5.0:
     "@babel/runtime" "^7.15.4"
     joi "^17.4.2"
 
+gatsby-plugin-zendesk-chat@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-zendesk-chat/-/gatsby-plugin-zendesk-chat-1.1.4.tgz#46863ccf0ecd72d5f8a21a6c396fb998314eb6a7"
+  integrity sha512-L/fRu8tnLO2wVpc2bq7m4b24gl39L5ti6CeXWEx3O28qI+79DmlCKlGrlhT/rRFRZsI8rVhpMFJEEK/Y4FahVw==
+
 gatsby-react-router-scroll@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-5.5.0.tgz#a564a4ce6b592ddd013b55cd2eed76dfca0c3a65"

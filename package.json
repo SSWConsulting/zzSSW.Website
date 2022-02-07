@@ -33,6 +33,7 @@
     "gatsby-plugin-image": "^2.5.2",
     "gatsby-plugin-mdx": "^3.5.2",
     "gatsby-plugin-sharp": "^4.5.2",
+    "gatsby-plugin-zendesk-chat": "^1.1.4",
     "gatsby-source-filesystem": "^4.5.2",
     "gatsby-source-git": "^1.1.0",
     "gatsby-transformer-sharp": "^4.5.0",
