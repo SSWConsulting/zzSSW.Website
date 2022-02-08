@@ -1,5 +1,5 @@
 import { StaticImage } from "gatsby-plugin-image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
 import { ACTIVE_KEYS } from "../../../consts/constantValues";
 import { DAY_KEYS } from "../../../consts/dayValues";
@@ -27,7 +27,9 @@ const Map = ({ hoverStyle }) => {
   );
 };
 const ContactUs = ({ toggleHover }) => {
-  const [activeLocation, setActiveLocation] = useState("");
+  const [activeLocation, setActiveLocation] = useState(
+    ACTIVE_KEYS.NSWActiveKey
+  );
   //Office Open Time Logic
   DayJS.extend(timeZonePlugin);
   DayJS.extend(utc);
