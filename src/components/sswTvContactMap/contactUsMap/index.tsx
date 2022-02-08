@@ -43,7 +43,7 @@ const ContactUs = ({ toggleHover }) => {
     .set("seconds", 0)
     .set("minutes", 0);
   let time: any;
-  const officeTimeCal = (timeZone) => {
+  const officeTimeZones = (timeZone) => {
     if (timeZone == null) {
       timeZone = TZ_KEYS.TZ_NSW;
     }
@@ -64,13 +64,13 @@ const ContactUs = ({ toggleHover }) => {
   const handleStateClicked = (targetLocation, timeZone) => {
     if (targetLocation == activeLocation) {
       setActiveLocation(ACTIVE_KEYS.None);
-      officeTimeCal(timeZone);
+      officeTimeZones(timeZone);
     } else if (targetLocation == ACTIVE_KEYS.NewCastle) {
       setActiveLocation(ACTIVE_KEYS.NewCastle);
-      officeTimeCal(timeZone);
+      officeTimeZones(timeZone);
     } else {
       setActiveLocation(targetLocation);
-      officeTimeCal(timeZone);
+      officeTimeZones(timeZone);
     }
   };
 
