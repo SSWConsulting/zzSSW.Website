@@ -5,8 +5,6 @@ import { ACTIVE_KEYS } from "../../../consts/constantValues";
 import { DAY_KEYS } from "../../../consts/dayValues";
 import { TZ_KEYS } from "../../../consts/timeZoneValues";
 import * as DayJS from "dayjs";
-import * as timeZonePlugin from "dayjs/plugin/timeZone";
-import * as utc from "dayjs/plugin/utc";
 import "./index.css";
 
 const Map = ({ hoverStyle }) => {
@@ -27,50 +25,37 @@ const Map = ({ hoverStyle }) => {
   );
 };
 const ContactUs = ({ toggleHover }) => {
+  var utc = require("dayjs/plugin/utc");
+  var timezone = require("dayjs/plugin/timezone");
   const [activeLocation, setActiveLocation] = useState(
     ACTIVE_KEYS.NSWActiveKey
   );
   //Office Open Time Logic
-  DayJS.extend(timeZonePlugin);
+  DayJS.extend(timezone);
   DayJS.extend(utc);
   const [currentTime, setCurrentTime] = useState(DayJS().tz(TZ_KEYS.TZ_NSW));
-  const openOfficeTime = DayJS()
-    .set("hour", 9)
-    .set("seconds", 0)
-    .set("minutes", 0);
-  const closeOfficeTime = DayJS()
-    .set("hour", 18)
-    .set("seconds", 0)
-    .set("minutes", 0);
   let time: any;
-  const officeTimeZones = (timeZone) => {
-    if (timeZone == null) {
-      timeZone = TZ_KEYS.TZ_NSW;
-    }
-    setCurrentTime(DayJS().tz(timeZone));
-  };
   if (
     DayJS().day() != DAY_KEYS.SUNDAY &&
     DayJS().day() != DAY_KEYS.SATURDAY &&
-    currentTime >= openOfficeTime &&
-    currentTime < closeOfficeTime
+    currentTime.hour() >= ACTIVE_KEYS.OfficeOpen &&
+    currentTime.hour() < ACTIVE_KEYS.OfficeClose
   ) {
     time = <span className="office open">Open</span>;
   } else {
     time = <span className="office closed">Closed</span>;
   }
 
-  //Todo: ActiveKey sydney on initialize
   const handleStateClicked = (targetLocation, timeZone) => {
     if (targetLocation == activeLocation) {
       setActiveLocation(ACTIVE_KEYS.None);
-      officeTimeZones(timeZone);
+      setCurrentTime(DayJS().tz(timeZone));
     } else if (targetLocation == ACTIVE_KEYS.NewCastle) {
       setActiveLocation(ACTIVE_KEYS.NewCastle);
-      officeTimeZones(timeZone);
+      setCurrentTime(DayJS().tz(timeZone));
     } else {
       setActiveLocation(targetLocation);
-      officeTimeZones(timeZone);
+      setCurrentTime(DayJS().tz(timeZone));
     }
   };
 
