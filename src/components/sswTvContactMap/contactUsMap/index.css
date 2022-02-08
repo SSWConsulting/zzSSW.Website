@@ -189,7 +189,7 @@ h6,
 .accordion-button:focus {
     box-shadow: none;
 }
-@media (max-width: 575px) {
+@media (max-width: 575.99px) {
     #mapDisappear{
         display: none !important;
     }
