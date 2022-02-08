@@ -4,9 +4,9 @@ import { Accordion } from "react-bootstrap";
 import { ACTIVE_KEYS } from "../../../consts/constantValues";
 import { DAY_KEYS } from "../../../consts/dayValues";
 import { TZ_KEYS } from "../../../consts/timeZoneValues";
-import DayJS from "dayjs";
-import timeZonePlugin from "dayjs/plugin/timeZone.js";
-import utc from "dayjs/plugin/utc.js";
+import * as DayJS from "dayjs";
+import * as timeZonePlugin from "dayjs/plugin/timeZone";
+import * as utc from "dayjs/plugin/utc";
 import "./index.css";
 
 const Map = ({ hoverStyle }) => {
@@ -43,7 +43,6 @@ const ContactUs = ({ toggleHover }) => {
     .set("seconds", 0)
     .set("minutes", 0);
   let time: any;
-  console.log(currentTime);
   const officeTimeZones = (timeZone) => {
     if (timeZone == null) {
       timeZone = TZ_KEYS.TZ_NSW;
