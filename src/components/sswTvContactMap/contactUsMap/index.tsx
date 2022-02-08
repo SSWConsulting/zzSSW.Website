@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
 import { ACTIVE_KEYS } from "../../../consts/constantValues";
 import { DAY_KEYS } from "../../../consts/dayValues";
+import { TZ_KEYS } from "../../../consts/timeZoneValues";
 import DayJS from "dayjs";
+import timeZonePlugin from "dayjs/plugin/timeZone";
+import utc from "dayjs/plugin/utc";
 import "./index.css";
 
 const Map = ({ hoverStyle }) => {
@@ -26,7 +29,9 @@ const Map = ({ hoverStyle }) => {
 const ContactUs = ({ toggleHover }) => {
   const [activeLocation, setActiveLocation] = useState("");
   //Office Open Time Logic
-  const currentTime = DayJS();
+  DayJS.extend(timeZonePlugin);
+  DayJS.extend(utc);
+  const [currentTime, setCurrentTime] = useState(DayJS().tz(TZ_KEYS.TZ_NSW));
   const openOfficeTime = DayJS()
     .set("hour", 9)
     .set("seconds", 0)
@@ -36,7 +41,12 @@ const ContactUs = ({ toggleHover }) => {
     .set("seconds", 0)
     .set("minutes", 0);
   let time: any;
-
+  const officeTimeCal = (timeZone) => {
+    if (timeZone == null) {
+      timeZone = TZ_KEYS.TZ_NSW;
+    }
+    setCurrentTime(DayJS().tz(timeZone));
+  };
   if (
     DayJS().day() != DAY_KEYS.SUNDAY &&
     DayJS().day() != DAY_KEYS.SATURDAY &&
@@ -47,14 +57,18 @@ const ContactUs = ({ toggleHover }) => {
   } else {
     time = <span className="office closed">Closed</span>;
   }
+
   //Todo: ActiveKey sydney on initialize
-  const handleStateClicked = (targetLocation) => {
+  const handleStateClicked = (targetLocation, timeZone) => {
     if (targetLocation == activeLocation) {
       setActiveLocation(ACTIVE_KEYS.None);
+      officeTimeCal(timeZone);
     } else if (targetLocation == ACTIVE_KEYS.NewCastle) {
       setActiveLocation(ACTIVE_KEYS.NewCastle);
+      officeTimeCal(timeZone);
     } else {
       setActiveLocation(targetLocation);
+      officeTimeCal(timeZone);
     }
   };
 
@@ -68,7 +82,9 @@ const ContactUs = ({ toggleHover }) => {
         >
           <Accordion.Item eventKey={ACTIVE_KEYS.NSWActiveKey}>
             <Accordion.Header
-              onClick={() => handleStateClicked(ACTIVE_KEYS.NSWActiveKey)}
+              onClick={() =>
+                handleStateClicked(ACTIVE_KEYS.NSWActiveKey, TZ_KEYS.TZ_NSW)
+              }
               className="panelHeading"
               onMouseEnter={() => toggleHover("select-nsw")}
               onMouseLeave={() => toggleHover("")}
@@ -114,7 +130,9 @@ const ContactUs = ({ toggleHover }) => {
             <div className="map-marker  hidden-xs">
               <div
                 className="state-sydney"
-                onClick={() => handleStateClicked(ACTIVE_KEYS.NSWActiveKey)}
+                onClick={() =>
+                  handleStateClicked(ACTIVE_KEYS.NSWActiveKey, TZ_KEYS.TZ_NSW)
+                }
                 onMouseEnter={() => toggleHover("select-nsw")}
                 onMouseLeave={() => toggleHover("")}
               >
@@ -132,7 +150,9 @@ const ContactUs = ({ toggleHover }) => {
           </Accordion.Item>
           <Accordion.Item eventKey={ACTIVE_KEYS.QLDActiveKey}>
             <Accordion.Header
-              onClick={() => handleStateClicked(ACTIVE_KEYS.QLDActiveKey)}
+              onClick={() =>
+                handleStateClicked(ACTIVE_KEYS.QLDActiveKey, TZ_KEYS.TZ_QLD)
+              }
               onMouseEnter={() => toggleHover("select-qld")}
               onMouseLeave={() => toggleHover("")}
             >
@@ -175,7 +195,9 @@ const ContactUs = ({ toggleHover }) => {
             <div className="map-marker  hidden-xs">
               <div
                 className="state-brisbane"
-                onClick={() => handleStateClicked(ACTIVE_KEYS.QLDActiveKey)}
+                onClick={() =>
+                  handleStateClicked(ACTIVE_KEYS.QLDActiveKey, TZ_KEYS.TZ_QLD)
+                }
                 onMouseEnter={() => toggleHover("select-qld")}
                 onMouseLeave={() => toggleHover("")}
               >
@@ -193,7 +215,9 @@ const ContactUs = ({ toggleHover }) => {
           </Accordion.Item>
           <Accordion.Item eventKey={ACTIVE_KEYS.VICActiveKey}>
             <Accordion.Header
-              onClick={() => handleStateClicked(ACTIVE_KEYS.VICActiveKey)}
+              onClick={() =>
+                handleStateClicked(ACTIVE_KEYS.VICActiveKey, TZ_KEYS.TZ_VIC)
+              }
               onMouseEnter={() => toggleHover("select-vic")}
               onMouseLeave={() => toggleHover("")}
             >
@@ -239,7 +263,9 @@ const ContactUs = ({ toggleHover }) => {
             <div className="map-marker  hidden-xs">
               <div
                 className="state-melbourne"
-                onClick={() => handleStateClicked(ACTIVE_KEYS.VICActiveKey)}
+                onClick={() =>
+                  handleStateClicked(ACTIVE_KEYS.VICActiveKey, TZ_KEYS.TZ_VIC)
+                }
                 onMouseEnter={() => toggleHover("select-vic")}
                 onMouseLeave={() => toggleHover("")}
               >
@@ -257,7 +283,9 @@ const ContactUs = ({ toggleHover }) => {
           </Accordion.Item>
           <Accordion.Item eventKey={ACTIVE_KEYS.NewCastle}>
             <Accordion.Header
-              onClick={() => handleStateClicked(ACTIVE_KEYS.NewCastle)}
+              onClick={() =>
+                handleStateClicked(ACTIVE_KEYS.NewCastle, TZ_KEYS.TZ_NSW)
+              }
               onMouseEnter={() => toggleHover("select-nsw")}
               onMouseLeave={() => toggleHover("")}
             >
