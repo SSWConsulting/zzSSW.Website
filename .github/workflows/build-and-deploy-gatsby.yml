@@ -35,11 +35,9 @@ jobs:
       env:
         CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
         CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
+        GITHUB_RUN_ID: ${{ github.run_id }}
+        GITHUB_RUN_NUMBER: ${{ github.run_number }}
 
-    - name: Output Run ID
-      run: echo ${{ github.run_id }}
-    - name: Output Run Number
-      run: echo ${{ github.run_number }}
     
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2

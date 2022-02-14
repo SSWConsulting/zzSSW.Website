@@ -1,7 +1,14 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import classNames from 'classnames';
+import preval from 'preval.macro';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import * as styles from './index.module.css';
+
+dayjs.extend(relativeTime);
+
+const buildTimestamp = preval`module.exports = new Date().getTime();`;
 
 const Footer = () => (
     <footer className={styles.container}>
@@ -36,13 +43,23 @@ const Footer = () => (
                     >
                         CONSTANT CONTINUOUS DEPLOYMENT
                     </a>
-                    . The latest deployment is listed{' '}
-                    <a
-                        className={styles.link}
-                        href="https://github.com/SSWConsulting/SSW.Website/actions/workflows/production-deploy-gatsby-site.yml"
-                    >
-                        HERE
-                    </a>
+                    . Last deployed {dayjs(buildTimestamp).fromNow()}{' '}
+                    {process.env.GITHUB_RUN_NUMBER && (
+                        <span>
+                            (Build #{' '}
+                            <a
+                                className={classNames(
+                                    styles.link,
+                                    styles.buildLink
+                                )}
+                                href={`https://github.com/SSWConsulting/SSW.Website/actions/runs/${process.env.GITHUB_RUN_ID}`}
+                                target="_blank"
+                            >
+                                {process.env.GITHUB_RUN_NUMBER}
+                            </a>
+                            )
+                        </span>
+                    )}
                 </div>
                 <div>
                     <a
