@@ -43,21 +43,26 @@ const Footer = () => (
                     >
                         CONSTANT CONTINUOUS DEPLOYMENT
                     </a>
-                    . Last deployed {dayjs(buildTimestamp).fromNow()}{' '}
-                    {process.env.GITHUB_RUN_NUMBER && (
+                    .{' '}
+                    {buildTimestamp && (
                         <span>
-                            (Build #{' '}
-                            <a
-                                className={classNames(
-                                    styles.link,
-                                    styles.buildLink
-                                )}
-                                href={`https://github.com/SSWConsulting/SSW.Website/actions/runs/${process.env.GITHUB_RUN_ID}`}
-                                target="_blank"
-                            >
-                                {process.env.GITHUB_RUN_NUMBER}
-                            </a>
-                            )
+                            Last deployed {dayjs(buildTimestamp).fromNow()}{' '}
+                            {process.env.GITHUB_RUN_NUMBER && (
+                                <span>
+                                    (Build #{' '}
+                                    <a
+                                        className={classNames(
+                                            styles.link,
+                                            styles.buildLink
+                                        )}
+                                        href={`https://github.com/SSWConsulting/SSW.Website/actions/runs/${process.env.GITHUB_RUN_ID}`}
+                                        target="_blank"
+                                    >
+                                        {process.env.GITHUB_RUN_NUMBER}
+                                    </a>
+                                    )
+                                </span>
+                            )}
                         </span>
                     )}
                 </div>
