@@ -36,8 +36,10 @@ jobs:
         CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
         CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
 
-    - name: Log GITHUB_RUN_ID
-      run: echo "The GITHUB_RUN_ID is ${{ github.run_id }}"
+    - name: Output Run ID
+      run: echo ${{ github.run_id }}
+    - name: Output Run Number
+      run: echo ${{ github.run_number }}
     
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
