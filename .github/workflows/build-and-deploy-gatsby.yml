@@ -32,7 +32,7 @@ jobs:
         touch .env.production
         echo GITHUB_RUN_ID=${{ github.run_id }} >> .env.production
         echo GITHUB_RUN_NUMBER=${{ github.run_number }} >> .env.production
-        cat .env
+        cat .env.production
       
     - name: Install dependencies
       run: yarn install
