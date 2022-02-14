@@ -2,6 +2,9 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+// TODO: Remove this after testing
+console.log('node.env', process.env.NODE_ENV);
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",

@@ -26,6 +26,13 @@ jobs:
 
     - name: Use Node.js
       uses: actions/setup-node@v2.5.0
+
+    - name: Create env File
+      run: |
+        touch .env.production
+        echo GITHUB_RUN_ID=${{ github.run_id }} >> .env.production
+        echo GITHUB_RUN_NUMBER=${{ github.run_number }} >> .env.production
+        cat .env
       
     - name: Install dependencies
       run: yarn install
@@ -35,9 +42,6 @@ jobs:
       env:
         CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
         CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
-        GITHUB_RUN_ID: ${{ github.run_id }}
-        GITHUB_RUN_NUMBER: ${{ github.run_number }}
-
     
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
