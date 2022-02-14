@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
-import * as DayJS from "dayjs";
+import dayjs from "dayjs";
+import timezone from 'dayjs/plugin/timezone';
+import utc from 'dayjs/plugin/utc';
 import "./index.css";
+
+dayjs.extend(timezone);
+dayjs.extend(utc);
 
 const ACTIVE_KEYS = {
   Sydney: 'Sydney',
@@ -59,19 +64,17 @@ const Map = ({ hoverStyle }) => {
   );
 };
 const ContactUs = ({ toggleHover }) => {
-  var utc = require("dayjs/plugin/utc");
-  var timezone = require("dayjs/plugin/timezone");
   const [activeLocation, setActiveLocation] = useState(
     ACTIVE_KEYS.Sydney
   );
   //Office Open Time Logic
-  DayJS.extend(timezone);
-  DayJS.extend(utc);
-  const [currentTime, setCurrentTime] = useState(DayJS().tz(TIME_ZONE_KEYS.NSW));
+  dayjs.extend(timezone);
+  dayjs.extend(utc);
+  const [currentTime, setCurrentTime] = useState(dayjs().tz(TIME_ZONE_KEYS.NSW));
   let time: any;
   if (
-    DayJS().day() != DAY_KEYS.Sunday &&
-    DayJS().day() != DAY_KEYS.Saturday &&
+    dayjs().day() != DAY_KEYS.Sunday &&
+    dayjs().day() != DAY_KEYS.Saturday &&
     currentTime.hour() >= WORKING_TIME.Open &&
     currentTime.hour() < WORKING_TIME.Close
   ) {
@@ -83,13 +86,13 @@ const ContactUs = ({ toggleHover }) => {
   const handleStateClicked = (targetLocation, timeZone) => {
     if (targetLocation == activeLocation) {
       setActiveLocation(ACTIVE_KEYS.None);
-      setCurrentTime(DayJS().tz(timeZone));
+      setCurrentTime(dayjs().tz(timeZone));
     } else if (targetLocation == ACTIVE_KEYS.Newcastle) {
       setActiveLocation(ACTIVE_KEYS.Newcastle);
-      setCurrentTime(DayJS().tz(timeZone));
+      setCurrentTime(dayjs().tz(timeZone));
     } else {
       setActiveLocation(targetLocation);
-      setCurrentTime(DayJS().tz(timeZone));
+      setCurrentTime(dayjs().tz(timeZone));
     }
   };
 
