@@ -22,6 +22,7 @@ const Footer = () => (
                     <a
                         className={styles.link}
                         href="https://github.com/SSWConsulting/SSW.Rules/issues/new/choose"
+                        target="_blank"
                     >
                         FEEDBACK TO SSW
                     </a>
@@ -43,26 +44,21 @@ const Footer = () => (
                     >
                         CONSTANT CONTINUOUS DEPLOYMENT
                     </a>
-                    .{' '}
-                    {buildTimestamp && (
+                    . Last deployed {dayjs(buildTimestamp).fromNow()}{' '}
+                    {process.env.GITHUB_RUN_NUMBER && (
                         <span>
-                            Last deployed {dayjs(buildTimestamp).fromNow()}{' '}
-                            {process.env.GITHUB_RUN_NUMBER && (
-                                <span>
-                                    (Build #{' '}
-                                    <a
-                                        className={classNames(
-                                            styles.link,
-                                            styles.buildLink
-                                        )}
-                                        href={`https://github.com/SSWConsulting/SSW.Website/actions/runs/${process.env.GITHUB_RUN_ID}`}
-                                        target="_blank"
-                                    >
-                                        {process.env.GITHUB_RUN_NUMBER}
-                                    </a>
-                                    )
-                                </span>
-                            )}
+                            (Build #{' '}
+                            <a
+                                className={classNames(
+                                    styles.link,
+                                    styles.buildLink
+                                )}
+                                href={`https://github.com/SSWConsulting/SSW.Website/actions/runs/${process.env.GITHUB_RUN_ID}`}
+                                target="_blank"
+                            >
+                                {process.env.GITHUB_RUN_NUMBER}
+                            </a>
+                            )
                         </span>
                     )}
                 </div>
