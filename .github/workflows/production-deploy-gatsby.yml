@@ -17,3 +17,5 @@ jobs:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
       AZURE_APP_NAME: ${{ secrets.AZURE_APP_NAME }}
       CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
+      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID }}
+      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY }}
