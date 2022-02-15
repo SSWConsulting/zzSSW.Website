@@ -15,6 +15,10 @@ on:
         required: true
       CONTENT_BRANCH:
         required: true
+      GOOGLE_GTM_ID:
+        required: true
+      ZENDESK_CHAT_KEY:
+        required: true
 
 jobs:
   build:
