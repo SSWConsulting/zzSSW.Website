@@ -66,8 +66,6 @@ const Map = ({ hoverStyle }) => {
 const ContactUs = ({ toggleHover }) => {
   const [activeLocation, setActiveLocation] = useState(ACTIVE_KEYS.Sydney);
   //Office Open Time Logic
-  dayjs.extend(timezone);
-  dayjs.extend(utc);
   const [currentTime, setCurrentTime] = useState(
     dayjs().tz(TIME_ZONE_KEYS.NSW)
   );
