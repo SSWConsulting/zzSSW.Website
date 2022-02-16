@@ -108,7 +108,7 @@
 }
 
 #whatwedo .do-angular a:hover {
-    background-color: #d83535;
+    background-color: #d76969;
 }
 
 #whatwedo .do-cloud a {
@@ -117,7 +117,7 @@
 }
 
 #whatwedo .do-cloud a:hover {
-    background-color: #ababab;
+    background-color: #b8b8b8;
 }
 
 #whatwedo .do-mobile a {
@@ -126,7 +126,7 @@
 }
 
 #whatwedo .do-mobile a:hover {
-    background-color: #737373;
+    background-color: #808080;
 }
 
 #whatwedo .do-rules a {
@@ -135,7 +135,7 @@
 }
 
 #whatwedo .do-rules a:hover {
-    background-color: #4e4e4e;
+    background-color: #5a5a5a;
 }
 
 @media (min-width: 992px) {

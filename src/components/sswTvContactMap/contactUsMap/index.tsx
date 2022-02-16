@@ -2,33 +2,33 @@ import React, { useState } from "react";
 import { Accordion } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import dayjs from "dayjs";
-import timezone from 'dayjs/plugin/timezone';
-import utc from 'dayjs/plugin/utc';
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import "./index.css";
 
 dayjs.extend(timezone);
 dayjs.extend(utc);
 
 const ACTIVE_KEYS = {
-  Sydney: 'Sydney',
-  Brisbane: 'Brisbane',
-  Melbourne: 'Melbourne',
-  Newcastle: 'Newcastle',
-  None: '',
+  Sydney: "Sydney",
+  Brisbane: "Brisbane",
+  Melbourne: "Melbourne",
+  Newcastle: "Newcastle",
+  None: "",
 };
 
 const ACCORDIONS = {
-  NSW: 'active-accordion-nsw',
-  QLD: 'active-accordion-qld',
-  VIC: 'active-accordion-vic',
-  Newcastle: 'active-accordion-newcastle',
-  None: '',
+  NSW: "active-accordion-nsw",
+  QLD: "active-accordion-qld",
+  VIC: "active-accordion-vic",
+  Newcastle: "active-accordion-newcastle",
+  None: "",
 };
 
 const WORKING_TIME = {
-  Open: 6,
+  Open: 9,
   Close: 18,
-}
+};
 
 const DAY_KEYS = {
   Sunday: 0,
@@ -41,9 +41,9 @@ const DAY_KEYS = {
 };
 
 const TIME_ZONE_KEYS = {
-  QLD: 'Australia/Queensland',
-  NSW: 'Australia/NSW',
-  VIC: 'Australia/Victoria',
+  QLD: "Australia/Queensland",
+  NSW: "Australia/NSW",
+  VIC: "Australia/Victoria",
 };
 
 const Map = ({ hoverStyle }) => {
@@ -64,13 +64,11 @@ const Map = ({ hoverStyle }) => {
   );
 };
 const ContactUs = ({ toggleHover }) => {
-  const [activeLocation, setActiveLocation] = useState(
-    ACTIVE_KEYS.Sydney
-  );
+  const [activeLocation, setActiveLocation] = useState(ACTIVE_KEYS.Sydney);
   //Office Open Time Logic
-  dayjs.extend(timezone);
-  dayjs.extend(utc);
-  const [currentTime, setCurrentTime] = useState(dayjs().tz(TIME_ZONE_KEYS.NSW));
+  const [currentTime, setCurrentTime] = useState(
+    dayjs().tz(TIME_ZONE_KEYS.NSW)
+  );
   let time: any;
   if (
     dayjs().day() != DAY_KEYS.Sunday &&
@@ -133,7 +131,7 @@ const ContactUs = ({ toggleHover }) => {
                   <br />
                   Neutral Bay, <span itemProp="addressLocality">
                     Sydney
-                  </span>, <span itemProp="addressRegion">NSW</span>
+                  </span>, <span itemProp="addressRegion">NSW&nbsp;</span>
                   <span itemProp="postalCode">2089</span>,{" "}
                   <span itemProp="addressCountry">Australia</span>
                 </p>
@@ -198,8 +196,8 @@ const ContactUs = ({ toggleHover }) => {
                     Level 1, 471 Adelaide Street
                   </span>
                   <br />
-                  <span itemProp="addressLocality"> Brisbane</span>,{" "}
-                  <span itemProp="addressRegion">QLD</span>
+                  <span itemProp="addressLocality"> Brisbane&nbsp;</span>,{" "}
+                  <span itemProp="addressRegion">QLD </span>
                   <span itemProp="postalCode"> 4000</span>,
                   <span itemProp="addressCountry">Australia</span>
                 </p>
@@ -264,8 +262,8 @@ const ContactUs = ({ toggleHover }) => {
                     Level 1, 370 Little Bourke Street
                   </span>
                   <br />
-                  <span itemProp="addressLocality">Melbourne</span>,
-                  <span itemProp="addressRegion">VIC</span>
+                  <span itemProp="addressLocality">Melbourne&nbsp;</span>,
+                  <span itemProp="addressRegion">VIC </span>
                   <span itemProp="postalCode">3000</span>,
                   <span itemProp="addressCountry">Australia</span>
                 </p>
