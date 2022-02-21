@@ -21,12 +21,7 @@ jobs:
           CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
           CONTENT_BRANCH: main
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-        uses: actions/checkout@v2
       - name: Tests - CodeAuditor
         shell: pwsh
         run: |
-          Invoke-Pester templates/test.ps1 -Passthru
+          templates/test.ps1
