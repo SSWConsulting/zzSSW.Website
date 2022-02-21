@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   deploy-to-staging:
-    uses: SSWConsulting/SSW.Website/.github/workflows/build-and-deploy-gatsby.yml@main
+    uses: SSWConsulting/SSW.Website/.github/workflows/reuseable-build-and-deploy-gatsby.yml@main
     with:
       ENVIRONMENT: Staging
     secrets:
