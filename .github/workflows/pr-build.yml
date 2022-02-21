@@ -22,7 +22,7 @@ jobs:
           CONTENT_BRANCH: main
 
 jobs:
-  pester-test:
+  test:
     runs-on: ubuntu-latest
     steps:
         uses: actions/checkout@v2
