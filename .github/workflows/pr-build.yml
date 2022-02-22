@@ -22,6 +22,7 @@ jobs:
           CONTENT_BRANCH: main
 
   test-codeauditor:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
