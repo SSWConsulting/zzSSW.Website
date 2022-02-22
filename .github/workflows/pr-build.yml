@@ -22,6 +22,4 @@ jobs:
           CONTENT_BRANCH: main
 
       - name: Tests - CodeAuditor
-        shell: pwsh
-        run: |
-          -command ".github\templates\test.ps1"
+        run: pwsh -command "SSWConsulting\SSW.Website\.github\workflows\templates\test.ps1"
