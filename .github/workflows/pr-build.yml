@@ -21,6 +21,12 @@ jobs:
           CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
           CONTENT_BRANCH: main
 
+  test-codeauditor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
       - name: Tests - CodeAuditor
         shell: pwsh
         run: Invoke-Expression ".\$GITHUB_WORKSPACE\.github\templates\test.ps1"

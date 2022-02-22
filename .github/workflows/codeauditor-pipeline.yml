@@ -1,0 +1,21 @@
+# This is a basic workflow to help you get started with Actions
+name: Tests - CodeAuditor
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - release/*
+
+jobs:
+  deploy-to-production:
+    uses: SSWConsulting/SSW.Website/.github/workflows/reuseable-build-and-deploy-gatsby.yml@main
+    with:
+      ENVIRONMENT: Production
+    secrets:
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      AZURE_APP_NAME: ${{ secrets.AZURE_APP_NAME }}
+      CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
+      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID }}
+      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY }}
