@@ -6,16 +6,19 @@ on:
   workflow_dispatch:
   push:
     branches:
+      - main
+    branches-ignore:
       - release/*
+    Schedule:
+      - cron: "0 14 * * 0"
 
 jobs:
-  deploy-to-production:
-    uses: SSWConsulting/SSW.Website/.github/workflows/reuseable-build-and-deploy-gatsby.yml@main
-    with:
-      ENVIRONMENT: Production
-    secrets:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
-      AZURE_APP_NAME: ${{ secrets.AZURE_APP_NAME }}
-      CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
-      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID }}
-      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY }}
+  needs: deploy-to-staging
+  runs-on: ubuntu-latest
+
+  steps:
+    - uses: actions/checkout@v2
+
+    - name: Tests - CodeAuditor
+      shell: pwsh
+      run: Invoke-Expression ".\$GITHUB_WORKSPACE\.github\templates\test.ps1"
