@@ -22,4 +22,5 @@ jobs:
           CONTENT_BRANCH: main
 
       - name: Tests - CodeAuditor
-        run: pwsh -command ".\$GITHUB_WORKSPACE\test.ps1"
+        shell: pwsh
+        run: Invoke-Expression ".\$GITHUB_WORKSPACE\.github\templates\test.ps1"
