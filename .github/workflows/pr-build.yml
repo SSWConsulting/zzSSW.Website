@@ -24,4 +24,4 @@ jobs:
       - name: Tests - CodeAuditor
         shell: pwsh
         run: |
-          ./test.ps1 -Path SSWConsulting/SSW.Website/.github/templates/test.ps1
+          .test.ps1 -Path SSWConsulting/SSW.Website/.github/templates/test.ps1
