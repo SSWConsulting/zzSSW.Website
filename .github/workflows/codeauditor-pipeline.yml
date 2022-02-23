@@ -12,8 +12,8 @@ on:
       - cron: "0 14 * * 0"
 
 jobs:
+codeauditor-test:
 on-success:
-  codeauditor-test:
   runs-on: ubuntu-latest
 
   steps:
