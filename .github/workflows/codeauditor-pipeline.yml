@@ -3,16 +3,16 @@ name: Tests - CodeAuditor
 
 # Controls when the workflow will run
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: [Staging - Deploy Gatsby]
+    types: [completed]
+    branches: [main]
+
     Schedule:
       - cron: "0 14 * * 0"
 
 jobs:
-  needs: deploy-to-staging
-
+on-success:
   codeauditor-test:
   runs-on: ubuntu-latest
 
