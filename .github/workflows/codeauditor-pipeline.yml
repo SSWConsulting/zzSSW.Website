@@ -5,27 +5,19 @@ name: Tests - CodeAuditor
 on:
   workflow_run:
     workflows: [Staging - Deploy Gatsby]
-    types: [completed]
-    branches: [main]
+    types:
+      - completed
 
     Schedule:
       - cron: "0 14 * * 0"
 
 jobs:
   codeauditor-test:
-  on-success:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     steps:
       - uses: actions/checkout@v2
 
       - name: Tests - CodeAuditor
         shell: pwsh
         run: Invoke-Expression ".\$GITHUB_WORKSPACE\.github\templates\test.ps1"
-
-  on-failure:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-
-    steps:
-      - run: echo 'Deployment of staging website is failed'
