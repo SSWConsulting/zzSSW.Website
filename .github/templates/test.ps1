@@ -1,0 +1,1 @@
+ docker run sswconsulting/codeauditor --token 3c34a549-dfb3-442c-b0e3-45942104a8bf --url https://staging2.ssw.com.au/ssw/ --maxthread 200 --debug
