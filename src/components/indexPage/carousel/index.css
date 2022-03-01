@@ -13,5 +13,5 @@
     transition-timing-function: ease;
 }
 .carousel-indicators [data-bs-target].active :hover{
-    background-color: #cc4141;
+    background-color: #d76969;
 }

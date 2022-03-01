@@ -20,7 +20,7 @@
   clear: both;
   height: 36px;
   line-height: 24px;
-  width: 100%;
+  width: 90%;
   z-index: 0;
   background: none repeat scroll 0 0 #414141;
   position: relative;
@@ -30,7 +30,7 @@
 
 @media (min-width: 600px) and (max-width: 1279px) {
   .MegaMenu {
-    width: 100%
+    width: 95%
   }
 }
 
