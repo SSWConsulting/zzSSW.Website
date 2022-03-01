@@ -1,15 +1,13 @@
-import React from 'react';
-import TopBar from './topBar';
-import Menu from '../../../lib/SSW.MegaMenu/menu/menu';
-import { container } from './index.module.css';
+import React from "react";
+import TopBar from "./topBar";
+import { container } from "./index.module.css";
 
-const Header = () => (
+const Header = () => {
+  return (
     <header className={container}>
-        <div className="main-container">
-            <TopBar />
-            <Menu />
-        </div>
+      <TopBar />
     </header>
-);
+  );
+};
 
 export default Header;
