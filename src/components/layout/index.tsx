@@ -21,10 +21,6 @@ const Layout = ({ pageTitle, children }) => {
     }
   };
 
-  const onRedirectCallback = (appState) => {
-    navigate(appState.targetUrl);
-  };
-
   return (
     <>
       <div
