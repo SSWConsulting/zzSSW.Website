@@ -4,7 +4,7 @@ This documents aims to provide an overview of the technologies used in this proj
 
 ## Architecture Diagram(s)
 
-![SSW-Website-Architecture-v2](https://user-images.githubusercontent.com/17246482/146713647-c9cd90d0-8618-4387-851d-9f4696fbac34.png)
+![SSW-Website-Architecture-v2](architechture-diagrams/SSW-Website-Architecture-v2.png)
 **Figure: SSW Website Architecture Diagram**
 
 ## Coding Patterns
