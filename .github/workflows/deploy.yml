@@ -1,0 +1,88 @@
+name: Deploy
+# This should be treated as 'private' and only be called by on-<some-action>.yml workflows
+# You cannot add any child workflows to this workflow.
+on:
+  workflow_call:
+    inputs:
+      ENVIRONMENT:
+        required: true
+        type: string
+    secrets:
+      AZURE_CREDENTIALS:
+        required: true
+      AZURE_RESOURCE_GROUP:
+        required: true
+      AZURE_APP_NAME:
+        required: true
+
+
+jobs:
+  # TODO: March 2022 - Ideally this would be in its own file, but GitHub has a hard limit of 2-deep called workflows.
+  deploy-infrastructure:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+
+    steps:      
+    - uses: actions/checkout@v2
+
+    # Log into Azure
+    - name: Login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    # Create Azure infrastructure
+    - name: Create Deployment Group
+      uses: azure/arm-deploy@v1
+      id: depAz
+      with:
+        resourceGroupName: ${{ secrets.AZURE_RESOURCE_GROUP }}
+        template: ./.azure/create-storage.bicep
+        parameters: appName=${{ secrets.AZURE_APP_NAME }} 
+
+    # Enable static website on storage and set index/error page
+    # TODO: March 2022 - can't be done in bicep yet :( Move to bicep file when available
+    - name: Enable Static Website
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+          az storage blob service-properties update --account-name ${{ secrets.AZURE_APP_NAME }}storage --static-website --index-document index.html --404-document 404.html
+    
+    # Log out when finished
+    - name: logout
+      run: |
+            az logout
+      if: always()
+
+  deploy-site:
+    runs-on: ubuntu-latest
+    needs: deploy-infrastructure
+    environment: ${{ inputs.ENVIRONMENT }}
+      
+    steps:
+      # Download artifacts from build
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: gatsby-build
+
+      # Log in to upload artifacts
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      
+      # Upload to Storage Container
+      - name: check output
+        run: |
+          ls
+      - name: Upload to blob storage
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch --account-name ${{ secrets.AZURE_APP_NAME }}storage -d '$web' -s .
+            
+      # Log out when finished
+      - name: logout
+        run: |
+          az logout
+        if: always()

@@ -1,18 +1,16 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Reuseable - Build and Deploy Gatsby
-
+name: Build Gatsby site
+# This should be treated as 'private' and only be called by on-<some-action>.yml workflows
+# You cannot add any child workflows to this workflow.
 on:
   workflow_call:
     inputs:
       ENVIRONMENT:
         required: true
         type: string
+      UPLOAD_ARTIFACTS:
+        required: true
+        type: boolean
     secrets:
-      AZURE_CREDENTIALS:
-        required: true
-      AZURE_APP_NAME:
-        required: true
       CONTENT_BRANCH:
         required: true
       GOOGLE_GTM_ID:
@@ -21,11 +19,12 @@ on:
         required: true
 
 jobs:
+
   build:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
-
-    steps:
+     
+    steps: 
       - uses: actions/checkout@v2
 
       - name: Use Node.js
@@ -37,7 +36,6 @@ jobs:
           echo GITHUB_RUN_ID=${{ github.run_id }} >> .env.production
           echo GITHUB_RUN_NUMBER=${{ github.run_number }} >> .env.production
           cat .env.production
-
       - name: Install dependencies
         run: yarn install
 
@@ -49,35 +47,11 @@ jobs:
           GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID }}
           ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY }}
 
+      # Upload build artifacts for deployment
       - name: Upload Artifacts
+        if: ${{ inputs.UPLOAD_ARTIFACTS }}
         uses: actions/upload-artifact@v2
         with:
           name: gatsby-build
           path: public
           retention-days: 1
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment: ${{ inputs.ENVIRONMENT }}
-
-    steps:
-      - name: Download Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: gatsby-build
-
-      - uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Upload to blob storage
-        uses: azure/CLI@v1
-        with:
-          inlineScript: |
-            az storage blob upload-batch --account-name ${{ secrets.AZURE_APP_NAME }}storage --auth-mode key -d '$web' -s .
-
-      - name: logout
-        run: |
-          az logout
-        if: always()
