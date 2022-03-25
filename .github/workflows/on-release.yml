@@ -1,0 +1,39 @@
+name: Build + Deploy to prod
+
+on:
+  push:
+    branches:
+      - release/* #on push to the release branch do the jobs below
+
+jobs:
+
+  build:
+    
+    name: Build and upload artifacts
+    uses: SSWConsulting/SSW.Website/.github/workflows/build.yml@main
+    with:
+      ENVIRONMENT: production
+      UPLOAD_ARTIFACTS: true # Upload artifacts so it can deploy to production
+    secrets:
+      CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH}}
+      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
+      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
+
+  deploy:
+
+    name: Download artifacts and deploy to staging
+    needs: build
+    uses: SSWConsulting/SSW.Website/.github/workflows/deploy.yml@main
+    with:
+      ENVIRONMENT: production
+    secrets:
+      AZURE_APP_NAME: ${{ secrets.AZURE_APP_NAME }}
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+
+  # TODO: add tests after successfully deploying to production
+  # code-auditor:
+
+  # name: Codeauditor tests
+  # needs: deploy
+  # uses: 'SSWConsulting/SSW.Website/.github/workflows/codeauditor-pipeline.yml@main'
