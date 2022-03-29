@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Form } from "react-bootstrap";
+import { Button, Col, Form } from "react-bootstrap";
 import "./index.css";
 
 const BookingForm = () => {
@@ -91,7 +91,6 @@ const BookingForm = () => {
   } else {
     theStateList = null;
   }
-  console.log(isShowState);
   const handleSubmit = (event) => {
     const form = event.currentTarget;
   };
@@ -159,6 +158,9 @@ const BookingForm = () => {
                 <small>Maximium 2000 characters</small>
               </div>
             </Form.Group>
+            <Button className="btn done" type="submit">
+              SUBMIT
+            </Button>
           </Form>
         </div>
       </div>
