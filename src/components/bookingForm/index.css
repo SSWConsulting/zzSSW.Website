@@ -1,5 +1,6 @@
 .modal-content {
     background-color: #eee;
+    border-radius: 0;
 }
 .modal-body {
     position: relative;
@@ -7,6 +8,7 @@
 }
 .form-control, .form-select{
     border: 0 !important;
+    border-radius: 0;
 }
 .form-control:focus{
     border-color:none !important
@@ -18,19 +20,19 @@ div.get-started-form {
 
 }
 div.get-started-form h2 {
-    margin-top: 0;
+    margin-top: 5px;
+    padding-top: 5px ;
     margin-bottom: 2em;
     color: #cc4141;
     font-family: 'Open Sans',sans-serif;
     font-weight: 300;
     font-size: 1.8em;
 }
-.form-group{
-    height: 38em;
-}
+
 .form-group .field-wrapper {
     position: relative;
     margin-bottom: 20px;
+    padding: 5px 0 5px 0;
     display: block;
 }
 .form-group label {
@@ -61,6 +63,7 @@ div.get-started-form .form-group input.form-control:focus,div.get-started-form .
 }
 div.get-started-form .form-group input.form-control, div.get-started-form .form-group textarea.form-control {
     border: 0;
+    border-radius: 0;
     border-bottom: 1px solid #ccc !important;
     background: transparent;
     box-shadow: none;
@@ -71,6 +74,7 @@ div.get-started-form .form-group input.form-control, div.get-started-form .form-
 }
 div.get-started-form .form-group .form-select{
     border-bottom: 1px solid #ccc !important;
+    padding: 0;
 }
 input[type="submit"].save, a.save, button.save, input[type="submit"].done, a.done, button.done, input[type="submit"].submit, a.submit, button.submit {
     border: medium none;

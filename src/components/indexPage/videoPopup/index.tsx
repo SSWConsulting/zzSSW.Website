@@ -29,6 +29,7 @@ const VideoPopup = ({ openPopup, onCloseModal }) => {
         animationDuration={500}
       >
         <ReactPlayer
+          //TODO: make url a prop
           url="https://vimeo.com/400817895"
           width="100%"
           padding="unset"

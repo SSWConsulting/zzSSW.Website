@@ -5,22 +5,17 @@ import "react-responsive-modal/styles.css";
 import BookingForm from "../bookingForm";
 import "./index.css";
 
-const BookingFormPopup = ({ openPopup, onCloseModal }) => {
-  console.log("popup", openPopup);
-  console.log(onCloseModal);
+const BookingFormPopup = ({ isVisible, showBookingForm }) => {
   return (
     <div>
       <Modal
-        open={openPopup}
-        onClose={onCloseModal}
+        open={isVisible}
+        onClose={showBookingForm}
         styles={{
           modal: {
             maxWidth: "unset",
             width: "600px",
-            padding: "unset",
-            background: "#000",
-            boxShadow: "0 0 10px 0 rgba(0,0,0,0.7)",
-            borderRadius: "2px",
+            background: "rgba(0,0,0,0)",
           },
         }}
         showCloseIcon={false}
