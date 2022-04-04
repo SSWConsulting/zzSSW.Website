@@ -17,5 +17,5 @@ This is a Gatsby website that fetches content from:
 
 ## Architecture Overview
 
-![SSW-Website-Architecture-v2](https://user-images.githubusercontent.com/17246482/146718281-d145fbbf-84bd-4db4-97eb-efce2b842d9b.png)
+![SSW-Website-Architecture-v2](https://raw.githubusercontent.com/SSWConsulting/SSW.Website/main/_docs/architechture-diagrams/SSW-Website-Architecture-v2.png)
 **Figure: SSW Website architecture diagram**
