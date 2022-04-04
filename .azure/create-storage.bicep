@@ -1,5 +1,7 @@
 param storageSKU string = 'Standard_LRS'
 param location string = resourceGroup().location
+
+@maxLength(17) //max length because storage account names have a max length of 24. 24-7 ('storage') = 17
 param appName string
 
 var storageAccountName = '${appName}storage'
