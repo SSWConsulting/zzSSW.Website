@@ -1,85 +1,10 @@
-@allowed([
-  'Standard_LRS'
-  'Standard_GRS'
-  'Standard_RAGRS'
-  'Standard_ZRS'
-  'Premium_LRS'
-  'Premium_ZRS'
-  'Standard_GZRS'
-  'Standard_RAGZRS'
-])
 param storageSKU string = 'Standard_LRS'
 param location string = resourceGroup().location
+
+@maxLength(17) //max length because storage account names have a max length of 24. 24-7 ('storage') = 17
 param appName string
-param tenantId string 
 
 var storageAccountName = '${appName}storage'
-var keyVaultName = '${appName}kv'
-
-resource keyVault 'Microsoft.KeyVault/vaults@2021-06-01-preview' = {
-  name: keyVaultName
-  location: location
-  properties: {
-    sku: {
-      family: 'A'
-      name: 'standard'
-    }
-    tenantId: tenantId
-    accessPolicies: [
-      {
-        tenantId: tenantId
-        objectId: '96cd40d5-7340-410d-8ac7-b6863b399a8f'
-        permissions: {
-          keys: [
-            'get'
-            'list'
-            'update'
-            'create'
-            'import'
-            'delete'
-            'recover'
-            'backup'
-            'restore'
-          ]
-          secrets: [
-            'get'
-            'list'
-            'set'
-            'delete'
-            'recover'
-            'backup'
-            'restore'
-          ]
-          certificates: [
-            'get'
-            'list'
-            'update'
-            'create'
-            'import'
-            'delete'
-            'recover'
-            'backup'
-            'restore'
-            'managecontacts'
-            'manageissuers'
-            'getissuers'
-            'listissuers'
-            'setissuers'
-            'deleteissuers'
-          ]
-        }
-      }
-    ]
-    enabledForDeployment: false
-    enabledForDiskEncryption: false
-    enabledForTemplateDeployment: false
-    enableSoftDelete: true
-    softDeleteRetentionInDays: 90
-    enableRbacAuthorization: false
-    provisioningState: 'Succeeded'
-    publicNetworkAccess: 'Enabled'
-  }
-}
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
   name: storageAccountName
