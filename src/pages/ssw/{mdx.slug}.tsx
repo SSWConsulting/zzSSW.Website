@@ -25,16 +25,6 @@ export const query = graphql`
                     subTitle
                 }
                 benefits {
-                    title
-                    video {
-                        image {
-                            childImageSharp {
-                                gatsbyImageData
-                            }
-                        }
-                        url
-                    }
-                    descriptions
                     benefitList {
                         image {
                             childImageSharp {
