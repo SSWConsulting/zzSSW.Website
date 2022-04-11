@@ -4,8 +4,12 @@ import AzureTech from '../../../../components/technologies/azure';
 import ReactTech from '../../../../components/technologies/react';
 import DotnetTech from '../../../../components/technologies/net';
 import SqlServerTech from '../../../../components/technologies/sql-server';
+import JQueryTech from '../../../../components/technologies/jquery';
 
 import { container, skillContainer, skill } from './index.module.css';
+import AngularTech from '../../../../components/technologies/angular';
+import NodeJsTech from '../../../../components/technologies/node-js';
+
 
 const Technologies = ({ techList }) => {
     const [techComponents, setTechComponents] = useState([]);
@@ -25,6 +29,12 @@ const Technologies = ({ techList }) => {
                 return <SqlServerTech />
             case 'dotnet':
                 return <DotnetTech />
+            case 'jquery':
+                return <JQueryTech />
+            case 'angular':
+                return <AngularTech />
+            case 'node-js':
+                return <NodeJsTech />
 
         }
     }
