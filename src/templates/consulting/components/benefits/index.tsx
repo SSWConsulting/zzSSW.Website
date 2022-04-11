@@ -1,45 +1,25 @@
 import React, { useState } from 'react';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import InnerHTML from '../../../../components/innerHTML';
 import * as commonStyles from '../../index.module.css';
 import * as styles from './index.module.css';
 
-const Benefits = ({ title, video, descriptions, benefitList, rule }) => {
+const Benefits = ({ benefits, markdownContent }) => {
     const [videoClicked, setVideoClicked] = useState(false);
-
+    console.log('LOGGING');
+    console.log(benefits);
+    const { title, video, descriptions, benefitList, rule } = benefits;
     const videoId = video?.url?.split('v=')[1] ?? '';
 
     return (
         <section className={styles.container}>
             <a id="more" />
             <article className="main-container">
-                <InnerHTML tagName="h1" __html={title} />
-                <div className={styles.videoContainer}>
-                    {videoClicked ? (
-                        <iframe
-                            width="100%"
-                            height="100%"
-                            src={`https://www.youtube.com/embed/${videoId}`}
-                            allowFullScreen
-                        ></iframe>
-                    ) : (
-                        <figure onClick={() => setVideoClicked(true)}>
-                            <GatsbyImage
-                                className={commonStyles.videoImage}
-                                image={getImage(video.image)}
-                                alt="video cover"
-                            />
-                            <div className={commonStyles.play}></div>
-                        </figure>
-                    )}
-                </div>
-
-                {descriptions?.map((desc, index) => (
-                    <p className={styles.desc} key={index}>
-                        {desc}
-                    </p>
-                ))}
+                <MDXRenderer>
+                    {markdownContent}
+                </MDXRenderer>
 
                 <div className="flex-wrap">
                     {benefitList?.map(

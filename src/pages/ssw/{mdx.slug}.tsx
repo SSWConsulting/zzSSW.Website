@@ -5,15 +5,10 @@ import Consulting from '../../templates/consulting';
 import NotFound from '../404';
 import { PAGE_TYPE } from '../../consts';
 
-const Page = ({
-    data: {
-        mdx: { frontmatter },
-    },
-}) => {
-    const { type } = frontmatter;
-
+const Page = ({data}) => {
+    const { type } = data.mdx.frontmatter;
     if (type === PAGE_TYPE.Consulting) {
-        return <Consulting data={frontmatter} />;
+        return <Consulting data={data} />;
     }
 
     return <NotFound />;
@@ -30,16 +25,6 @@ export const query = graphql`
                     subTitle
                 }
                 benefits {
-                    title
-                    video {
-                        image {
-                            childImageSharp {
-                                gatsbyImageData
-                            }
-                        }
-                        url
-                    }
-                    descriptions
                     benefitList {
                         image {
                             childImageSharp {
@@ -57,7 +42,11 @@ export const query = graphql`
                 solution {
                     project
                 }
+                technologies {
+                    name
+                }
             }
+            body
         }
     }
 `;

@@ -14,8 +14,9 @@ import BuildPlatform from '../../components/builtPlatform';
 import './index.module.css';
 
 const ConsultingTemplate = ({ data }) => {
-    const { title, booking, benefits, solution } = data;
-
+    const { title, booking, benefits, solution, technologies } = data.mdx.frontmatter;
+    console.log('LOGGING 2');
+    console.log(data);
     const pageTitle = `${title} | SSW Consulting - Sydney, Brisbane, Melbourne`;
     const breadcrumbData = [
         {
@@ -38,7 +39,7 @@ const ConsultingTemplate = ({ data }) => {
 
                 <Booking {...booking} />
 
-                <Benefits {...benefits} />
+                <Benefits benefits={benefits} markdownContent={data.mdx.body} />
 
                 <Testimonials />
 
@@ -46,7 +47,7 @@ const ConsultingTemplate = ({ data }) => {
 
                 <Clients />
 
-                <Technologies />
+                <Technologies techList={technologies} />
 
                 <Solution {...solution} />
 
