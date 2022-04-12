@@ -79,7 +79,7 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob upload-batch --account-name ${{ secrets.AZURE_APP_NAME }}storage -d '$web' -s .
+            az storage blob upload-batch --overwrite --account-name ${{ secrets.AZURE_APP_NAME }}storage -d '$web' -s .
             
       # Log out when finished
       - name: logout
