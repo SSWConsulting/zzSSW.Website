@@ -1,0 +1,99 @@
+.modal-content {
+    background-color: #eee;
+    border-radius: 0;
+}
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+.form-control, .form-select{
+    border: 0 !important;
+    border-radius: 0;
+}
+.form-control:focus{
+    border-color:none !important
+}
+div.get-started-form {
+    margin: 0;
+    background: #fff;
+    padding: 0.25rem 1.5rem 1.25rem;
+
+}
+div.get-started-form h2 {
+    margin-top: 5px;
+    padding-top: 5px ;
+    margin-bottom: 2em;
+    color: #cc4141;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 300;
+    font-size: 1.8em;
+}
+
+.form-group .field-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 5px 0 5px 0;
+    display: block;
+}
+.form-group label {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 12px;
+    color: #999;
+    transition: all .1s linear;
+    opacity: 0;
+    background-image: linear-gradient(to bottom,#fff,#fff);
+    background-size: 100% 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-weight: normal;
+    padding: 0 3px 0 3px;
+    margin: 0 0 0 2px;
+}
+.form-group label.show {
+    top: -17px;
+    opacity: 1;
+    background: transparent;
+    left: -5px;
+}
+div.get-started-form .form-group input.form-control:focus,div.get-started-form .form-group .form-select:focus, div.get-started-form .form-group textarea.form-control:focus{
+    border-bottom: 2px solid #cc4141 !important;
+    box-shadow :none !important
+}
+div.get-started-form .form-group input.form-control, div.get-started-form .form-group textarea.form-control {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc !important;
+    background: transparent;
+    box-shadow: none;
+    padding: 6px 12px 6px 0;
+    color: #333;
+    font-size: 1em;
+    font-family: sans-serif;
+}
+div.get-started-form .form-group .form-select{
+    border-bottom: 1px solid #ccc !important;
+    padding: 0;
+}
+input[type="submit"].save, a.save, button.save, input[type="submit"].done, a.done, button.done, input[type="submit"].submit, a.submit, button.submit {
+    border: medium none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 18px;
+    text-transform: uppercase;
+    font-weight: normal;
+    background-repeat: no-repeat;
+    background-position: center right;
+    display: inline-block;
+    text-decoration: none;
+    padding-right: 30px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAABGklEQVQ4y7XUsUoDURAF0CCIVWJhYWdhaVKolf6ERVIknQlWpvIXREg+QdsUCgmkFxs7BUEbv8AqCNZ24Vg4wrIk5mXFgYE3l3vnLvvmTamUC5RxgiEeIoeBlUt/CRxjghu0cBjZCmyC46LNe3hF7RdOLTi9ZZt3QlhJ4FaC20ltvo537CzgVbEZ553QrKcYdDFYwNnAG+4z2ACnKQZjNDL1ClZz9R0+sZvBGxinGDxjP1Nf4vbHBBe+o53T7eGliEEbU4xwFOerGbpkgzHqOewsvnqKJ6zN0NVTf9HMS8Y5PrA1RzdA909jiu05mvQx/feHlhH2E1ZFNTj9ovuoHQvtGk0cRDYDm+THtYhJJVbzCI+Ro8Aqy/b7Ai65u7TwIdSpAAAAAElFTkSuQmCC);
+    background-color:#cc4141 ;
+}
+button.done :hover, .btn-primary :hover {
+    background-color: #d76969 !important;
+    color: #fff !important;
+}
+

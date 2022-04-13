@@ -9,6 +9,7 @@ const { Item } = Carousel;
 
 //TODO: Look into looping through StaticImages, rather than hard coding
 const SSWCarousel = () => {
+  //TODO: Change props name
   const [openPopup, setOpenPopup] = useState(false);
   const onOpenModal = () => setOpenPopup(!openPopup);
 
