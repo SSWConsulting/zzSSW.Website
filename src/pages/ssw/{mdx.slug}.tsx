@@ -26,13 +26,15 @@ export const query = graphql`
                 }
                 benefits {
                     benefitList {
-                        image {
+                        image  {
                             childImageSharp {
                                 gatsbyImageData
                             }
                         }
                         title
                         description
+                        linkName
+                        linkURL
                     }
                     rule {
                         name
