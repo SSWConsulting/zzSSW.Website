@@ -23,7 +23,7 @@ const Benefits = ({ benefits, markdownContent }) => {
 
                 <div className="flex-wrap">
                     {benefitList?.map(
-                        ({ image, title, description, linkName, linkURL }, index) => (
+                        ({ image, title, description }, index) => (
                             <article
                                 className={`col-md-6 ${styles.benefit}`}
                                 key={index}
@@ -42,9 +42,9 @@ const Benefits = ({ benefits, markdownContent }) => {
                                 <article className={styles.benefitDesc}>
                                     {description}
                                     {/* what do I put here */}
-                                    <a className={styles.link} href={linkURL}>
+                                    {/* <a className={styles.link} href={linkURL}>
                                         {linkName}
-                                    </a>
+                                    </a> */}
                                 </article>
                             </article>
                         )
