@@ -18,6 +18,8 @@ const Technologies = ({ techList }) => {
             techList.map(({name}, index) => (
                 setTechComponents(techComponents => [...techComponents, getComponent(name)])
             ));
+        } else {
+            return (null)
         }
         
     },[]);
