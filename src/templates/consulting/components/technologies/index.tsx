@@ -14,9 +14,12 @@ import NodeJsTech from '../../../../components/technologies/node-js';
 const Technologies = ({ techList }) => {
     const [techComponents, setTechComponents] = useState([]);
     useEffect( () => {
-        techList?.map(({name}, index) => (
-            setTechComponents(techComponents => [...techComponents, getComponent(name)])
-        ));
+        if (techList) {
+            techList.map(({name}, index) => (
+                setTechComponents(techComponents => [...techComponents, getComponent(name)])
+            ));
+        }
+        
     },[]);
     
     function getComponent(name) {
