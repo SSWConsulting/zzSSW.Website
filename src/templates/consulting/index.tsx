@@ -59,7 +59,7 @@ const ConsultingTemplate = ({ data }) => {
   );
 };
 export const consultingPagesQuery = graphql`
-  query ($slug: String) {
+  query PageByPath($slug: String) {
     mdx(slug: { eq: $slug }) {
       frontmatter {
         type

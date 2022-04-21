@@ -24,7 +24,6 @@ exports.createPages = ({ actions, graphql }) => {
     const consultingNodes = result.data.allMdx.nodes.filter(
       (node) => node.fields.source === "content"
     );
-    console.log(consultingNodes);
     consultingNodes.forEach((node) => {
       createPage({
         path: `${BASE_URL}${node.slug}`,
