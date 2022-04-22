@@ -4,26 +4,29 @@ import { useTechnologyMdxData } from "../../../../hooks/use-technology-mdx-data"
 import Technology from "../../../../components/technology";
 
 const Technologies = ({ techList }) => {
-  console.log(techList.length);
+  let techListLength: number = techList.length;
   const nodes = useTechnologyMdxData();
   const [techComponents, setTechComponents] = useState([]);
   useEffect(() => {
-    techList.map(({ name }) =>
+    techList.map(({ name }, index) => {
       setTechComponents((techComponents) => [
         ...techComponents,
-        getComponent(name),
-      ])
-    );
+        getComponent(name, index),
+      ]);
+    });
   }, []);
-  console.log(techComponents);
-  function getComponent(name) {
+  function getComponent(name: string, index: number) {
     const technologyNode = nodes.filter(
       (node) => node.frontmatter.key === name
     )[0];
-    console.log(technologyNode);
-    console.log(name);
     if (technologyNode) {
-      return <Technology {...technologyNode} key={name} />;
+      return (
+        <Technology
+          {...technologyNode}
+          index={index}
+          techListLength={techListLength}
+        />
+      );
     } else {
       return null;
     }
