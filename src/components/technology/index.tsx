@@ -10,9 +10,6 @@ const Technology = (props) => {
   const { title, logoImage, readMoreSlug } = frontmatter;
   let theReadMoreLink;
   let columnClass;
-  console.log(techListLength - 1 + " " + index);
-  console.log();
-
   if (techListLength % 2 != 0 && techListLength - 1 == index) {
     columnClass = "col-md-12";
   } else {

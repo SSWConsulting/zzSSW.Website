@@ -1,5 +1,5 @@
 const path = require("path");
-const BASE_URL = "/ssw/s/";
+const BASE_URL = "/ssw/";
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
