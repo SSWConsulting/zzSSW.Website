@@ -85,3 +85,12 @@ strong {
     font-weight: 300;
     color: #cc4141;
 }
+
+.link {
+    color: white;
+    margin-left: 0.25em;
+}
+
+div.mdx-content p a {
+    color: white;
+}

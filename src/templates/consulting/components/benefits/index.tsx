@@ -4,7 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import InnerHTML from '../../../../components/innerHTML';
 import * as commonStyles from '../../index.module.css';
-import * as styles from './index.module.css';
+import './index.css';
 
 const Benefits = ({ benefits, markdownContent }) => {
     const [videoClicked, setVideoClicked] = useState(false);
@@ -14,18 +14,21 @@ const Benefits = ({ benefits, markdownContent }) => {
     const videoId = video?.url?.split('v=')[1] ?? '';
 
     return (
-        <section className={styles.container}>
+        <section className="container">
             <a id="more" />
             <article className="main-container">
-                <MDXRenderer>
-                    {markdownContent}
-                </MDXRenderer>
+                <div className="mdx-content">
+                    <MDXRenderer>
+                        {markdownContent}
+                    </MDXRenderer>
+                </div>
+
 
                 <div className="flex-wrap">
                     {benefitList?.map(
                         ({ image, title, description, linkName, linkURL }, index) => (
                             <article
-                                className={`col-md-6 ${styles.benefit}`}
+                                className={`col-md-6 benefit`}
                                 key={index}
                                 data-aos={
                                     index % 2 === 0 ? 'fade-left' : 'fade-right'
@@ -38,11 +41,10 @@ const Benefits = ({ benefits, markdownContent }) => {
                                         alt="benefit icon"
                                     />
                                 </figure>
-                                <h4 className={styles.benefitTitle}>{title}</h4>
-                                <article className={styles.benefitDesc}>
+                                <h4 className="benefitTitle">{title}</h4>
+                                <article className="benefitDesc">
                                     {description}
-                                    {' '}
-                                    {<a className={styles.link} href={linkURL}>
+                                    {<a className="link" href={linkURL}>
                                         {linkName}
                                     </a>}
                                 </article>
@@ -54,7 +56,7 @@ const Benefits = ({ benefits, markdownContent }) => {
                 {rule && (
                     <p>
                         Have a look at{' '}
-                        <a className={styles.link} href={rule?.url}>
+                        <a className="link" href={rule?.url}>
                             {rule?.name}
                         </a>
                         .
