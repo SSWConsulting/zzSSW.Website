@@ -1,0 +1,18 @@
+.header[class~='active'] button {
+    color: #cc4114;
+    background-color: #F5F5F5;
+    border: solid #9E9E9E;
+    border-width: 1px 1px 0;
+}
+.header {
+    flex-grow: 1;
+    overflow: hidden;
+}
+.header button {
+    width: 100%;
+    border: 0;
+    background-color: #FFFFFF;
+    text-align: left;
+    padding-left: 28px;
+    border-bottom: 1px solid #9E9E9E;
+}

@@ -1,0 +1,10 @@
+.tabs {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.container {
+    background-color: #F5F5F5;
+}
