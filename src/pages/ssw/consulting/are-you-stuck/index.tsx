@@ -40,6 +40,8 @@ const AreYouStuck = ({ data }) => {
         <Clients />
 
         <Solution project={solution} />
+
+        <BuildPlatform />
       </>
 
     </Layout>
