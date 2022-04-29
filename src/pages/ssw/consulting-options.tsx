@@ -7,6 +7,9 @@ import TabContent from '../../components/tabs/tabContent';
 import jason_thumb from '../../assets/images/jason_thumb.jpg';
 import jean_thumb from '../../assets/images/Jean-Thirion.jpg';
 import adam_thumb from '../../assets/images/Adam-Cogan.jpg';
+import scrum_bats from '../../assets/images/ScrumBats.jpg';
+import bats_story from '../../assets/images/Bats-Story.jpg';
+import bats_burndown from '../../assets/images/Bats-Burndown.jpg';
 
 const ConsultingOptions = () => {
     const data = [
@@ -23,19 +26,19 @@ const ConsultingOptions = () => {
         <Layout pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics">
             <div className="main-container">
                 <Breadcrumb data={data} />
-                <h1>Consulting Options</h1>
+                <h1 className='no-header-margin'>Consulting Options</h1>
                 <h2>Solutions that can adapt to your every need</h2>
                 <p>SSW offers the opportunity to hire one of our highly specialised experts in the field of your need, or a team of experts, ready to build your next project for you. If you are a new customer we need to schedule a free initial meeting. If you're an existing client, please continue below.</p>
                 <Tabs>
-                    <TabContent header="Book a SSW Expert">
+                    <TabContent header="Book a SSW Expert" icon="one">
                         <div>
                             <p>Whether you want a technical expert or a Scrum Master to get the team into a highly performing unit, we have the experts with expertise in a wide range of the Microsoft technology stack. SSW consultants ensure your project is done right and following best practices. From SharePoint or CRM to ASP.NET MVC or Azure our experts get the job done.</p>
                             <p>For example:</p>
                             <ul>
-                                <li>Web and MVC Experts</li>
-                                <li>SharePoint Expert</li>
-                                <li>CRM Expert</li>
-                                <li>More</li>
+                                <li><a href="WebsiteDevelopment.aspx">Web and MVC Experts</a></li>
+                                <li><a href="/ssw/Consulting/SharePoint.aspx">SharePoint Expert</a></li>
+                                <li><a href="/ssw/Consulting/MicrosoftCRM.aspx">CRM Expert</a></li>
+                                <li><a href="Default.aspx">More</a></li>
                             </ul>
                             <h3 className="special">Some of Our Experts</h3>
                             <div className="row">
@@ -67,20 +70,20 @@ const ConsultingOptions = () => {
                             <p><a href="https://www.ssw.com.au/people/">Full List of Experts</a></p>
                         </div>
                     </TabContent>
-                    <TabContent header="Book a SSW Team">
+                    <TabContent header="Book a SSW Team" icon="one">
                     <div>
-                        <img alt="" src="Images/ScrumBats.jpg" className="right clearfix"></img>
+                        <img alt="" src={scrum_bats} className="right clearfix"></img>
                         <p>Our most popular option is to get a dedicated team to complete your project.</p>
                         <p>We have development teams ranging from 2 to 5 people that strive to bring you high quality software at the end of every Sprint (2 week cycle). If you've already got your own developer team, further improve the production process by booking one of our trained "Scrum Masters". They'll manage the team to bring you the best possible solution for your business.</p>
                         
                         <h3 className="special">Latest Activity</h3>
                         <h3>Scrum Bats</h3>
                         <dl className="image">
-                            <dt><img src="images/Bats-Story.jpg"></img></dt>
+                            <dt><img src={bats_story}></img></dt>
                             <dd>Figure: Stories Overview</dd>
                         </dl>
                         <dl className="image">
-                            <dt><img src="images/Bats-Burndown.jpg"></img></dt>
+                            <dt><img src={bats_burndown}></img></dt>
                             <dd>Figure: Task Burndown (hours)</dd>
                         </dl>
                     </div>

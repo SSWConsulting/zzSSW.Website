@@ -16,3 +16,14 @@
     padding-left: 28px;
     border-bottom: 1px solid #9E9E9E;
 }
+/* li img {
+    background: url("../images/people.png") top left no-repeat;
+    padding: 10px 20px 0 40px;
+    margin: 0;
+} */
+
+button[class~='one'] {
+    background: url("../images/people.png") top left no-repeat;
+    padding: 10px 20px 0 40px;
+    margin: 0;
+}

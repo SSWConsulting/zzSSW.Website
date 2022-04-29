@@ -3,6 +3,7 @@ import * as styles from "./index.module.css"
 
 type Props = {
     header: string;
+    icon: string;
     children: ReactElement | ReactElement[];
 };
 

@@ -27,6 +27,7 @@ const Tabs = (props: Props): JSX.Element => {
                         isActive={index === selectedTabIndex}
                         setSelectedTab={setSelectedTabIndex}
                         tabCount={tabCount}
+                        icon={item.props.icon}
                     />
                 ))}
             </ul>
