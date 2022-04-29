@@ -46,11 +46,6 @@
     animation: bounce 2s infinite;
 }
 
-/* .container p {
-    margin: 20px 0 50px 0;
-    margin: auto;
-} */
-
 @keyframes bounce {
     0%,
     20%,
