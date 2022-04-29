@@ -1,0 +1,34 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 300;
+}
+
+h1 {
+    margin: 100px 0 50px 0;
+    font-size: 3.28rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+.videoImage:hover {
+    filter: brightness(75%);
+    cursor: pointer;
+    transition: 0.4s all;
+}
+
+.play {
+    height: 72px;
+    width: 72px;
+    margin-left: -36px;
+    margin-top: -36px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: url(../../assets/images/consulting/play.png) no-repeat;
+    cursor: pointer;
+}
