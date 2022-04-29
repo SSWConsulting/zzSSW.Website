@@ -8,11 +8,12 @@ import Testimonials from "../../../../templates/consulting/components/testimonia
 import Solution from "../../../../templates/consulting/components/solution";
 import BuildPlatform from './../../../../components/builtPlatform';
 
-import './index.module.css';
+// import './index.module.css';
 
 const AreYouStuck = ({ data }) => {
   // const { solution } = data
   const pageTitle = `Are you stuck on legacy technologies? | SSW Consulting - Sydney, Brisbane, Melbourne`
+  const solution = `Get the help you need`
   const breadcrumbData = [
     {
         name: 'Home',
@@ -38,6 +39,7 @@ const AreYouStuck = ({ data }) => {
 
         <Clients />
 
+        {/* <Solution /> */}
       </>
 
     </Layout>
