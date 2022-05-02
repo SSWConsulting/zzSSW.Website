@@ -1,6 +1,6 @@
 import React from "react";
-import Breadcrumb from "../../components/breadcrumb";
-import Layout from "../../components/layout";
+import Breadcrumb from "../components/breadcrumb";
+import Layout from "../components/layout";
 
 const ConsultingServices = () => {
   const data = [

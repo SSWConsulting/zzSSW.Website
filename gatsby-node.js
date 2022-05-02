@@ -1,5 +1,5 @@
 const path = require("path");
-const BASE_URL = "/ssw/";
+// const BASE_URL = "/ssw/";
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
@@ -26,7 +26,7 @@ exports.createPages = ({ actions, graphql }) => {
     );
     consultingNodes.forEach((node) => {
       createPage({
-        path: `${BASE_URL}${node.slug}`,
+        path: `${node.slug}`,
         component: consultingTemplate,
         context: {
           slug: node.slug,

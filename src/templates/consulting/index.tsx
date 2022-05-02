@@ -17,8 +17,6 @@ import { graphql } from "gatsby";
 const ConsultingTemplate = ({ data }) => {
   const { title, booking, benefits, solution, technologies } =
     data.mdx.frontmatter;
-  console.log("LOGGING 2");
-  console.log(data);
   const pageTitle = `${title} | SSW Consulting - Sydney, Brisbane, Melbourne`;
   const breadcrumbData = [
     {
