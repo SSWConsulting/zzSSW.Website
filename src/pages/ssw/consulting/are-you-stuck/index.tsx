@@ -6,7 +6,7 @@ import Layout from "../../../../components/layout";
 import About from "../../../../templates/consulting/components/about";
 import Testimonials from "../../../../templates/consulting/components/testimonials";
 import Solution from "../are-you-stuck/components/solution";
-import Booking from "../are-you-stuck/components/booking";
+import BusiBooking from "../are-you-stuck/components/booking";
 import BuildPlatform from './../../../../components/builtPlatform';
 
 import './index.module.css';
@@ -36,7 +36,7 @@ const AreYouStuck = ({ data }) => {
       <>
         <Breadcrumb data={breadcrumbData}/>
 
-        <Booking title={businessTitle} subTitle={businessSubtitle} />
+        <BusiBooking title={businessTitle} subTitle={businessSubtitle} />
 
         <Testimonials />
 

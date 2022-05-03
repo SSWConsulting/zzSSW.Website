@@ -45,7 +45,7 @@ const Booking = ({ title, subTitle }) => {
               allow="autoplay; encrypted-media"
               allowFullScreen
               title="video"
-            />{" "}
+            />
           </div>
 
           <h5>Once your application has been built to run in a container, it can be easily hosted with any provider that supports containers, including Kubernetes and Azure Web Apps.</h5>

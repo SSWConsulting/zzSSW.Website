@@ -51,6 +51,28 @@ section article ul li {
     margin-top: 2em;
 }
 
+h5 {
+    font-weight: 300;
+}
+
+.videoImage:hover {
+    filter: brightness(75%);
+    cursor: pointer;
+    transition: 0.4s all;
+}
+
+.play {
+    height: 72px;
+    width: 72px;
+    margin-left: -36px;
+    margin-top: -36px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: url(../../../../../../assets/images/consulting/play.png) no-repeat;
+    cursor: pointer;
+}
+
 @keyframes bounce {
     0%,
     20%,
