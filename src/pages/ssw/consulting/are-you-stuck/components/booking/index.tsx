@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import VideoBackground from "../../../../../../components/videoBackground";
 import InnerHTML from "../../../../../../components/innerHTML";
 import Button from "../../../../../../components/button";
-
-import MVC_BACKGROUND from "../../../../../../assets/videos/MVC_background.mp4";
+// this is fine
+import MVC_BACKGROUND from "../../../../../../assets/videos/MVC_background.mp4"
 import * as styles from "./index.module.css";
 import BookingFormPopup from "../../../../../../components/bookingFormPopup";
 
