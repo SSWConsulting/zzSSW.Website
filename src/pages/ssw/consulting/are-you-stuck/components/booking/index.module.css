@@ -48,6 +48,7 @@
 
 section article ul li {
     display: block;
+    margin-top: 2em;
 }
 
 @keyframes bounce {
