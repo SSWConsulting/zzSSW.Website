@@ -46,6 +46,10 @@
     animation: bounce 2s infinite;
 }
 
+ul li {
+    display: block;
+}
+
 @keyframes bounce {
     0%,
     20%,

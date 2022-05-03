@@ -15,6 +15,8 @@ const AreYouStuck = ({ data }) => {
   // const { solution } = data
   const pageTitle = `Are you stuck on legacy technologies? | SSW Consulting - Sydney, Brisbane, Melbourne`
   const solution = `help`
+  const businessTitle = 'Are your staff being driven nuts by outdated software or manual processes?'
+  const businessSubtitle = 'Need the right software to multiply your teams output?'
   const breadcrumbData = [
     {
         name: 'Home',
@@ -34,7 +36,7 @@ const AreYouStuck = ({ data }) => {
       <>
         <Breadcrumb data={breadcrumbData}/>
 
-        <Booking title={'test 1'} subTitle={'test 2'} />
+        <Booking title={businessTitle} subTitle={businessSubtitle} />
 
         <Testimonials />
 
