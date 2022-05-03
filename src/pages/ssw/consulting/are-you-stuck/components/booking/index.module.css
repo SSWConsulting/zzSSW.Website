@@ -46,7 +46,7 @@
     animation: bounce 2s infinite;
 }
 
-ul li {
+section article ul li {
     display: block;
 }
 
