@@ -73,6 +73,27 @@ h5 {
     cursor: pointer;
 }
 
+.videoText {
+    font-size: 1.2rem;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px 0;
+    line-height: inherit;
+}
+
+.videoContainer {
+    position: relative;
+    width: 750px;
+    height: 386px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
 @keyframes bounce {
     0%,
     20%,

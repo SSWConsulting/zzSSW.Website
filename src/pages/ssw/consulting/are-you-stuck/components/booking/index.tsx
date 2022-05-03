@@ -12,6 +12,9 @@ const Booking = ({ title, subTitle }) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 
+  const [busiBooking, devBooking] = useState(true);
+  const bookingToggle = () => devBooking(!busiBooking);
+
   return (
     <>
       <VideoBackground src={MVC_BACKGROUND} />
@@ -20,6 +23,8 @@ const Booking = ({ title, subTitle }) => {
           <InnerHTML tagName="h1" __html={title} />
 
           <h2 className={styles.subTitle}>{subTitle}</h2>
+
+          
 
           <ul>
             <li>We can help you adopt best practices</li>
@@ -35,8 +40,6 @@ const Booking = ({ title, subTitle }) => {
             showBookingForm={setIsVisible}
           />
 
-          <h2 className={styles.contact}>or call us on +61 2 9953 3000</h2>
-
           <div>
             <iframe
               width="560" height="315"
@@ -45,10 +48,11 @@ const Booking = ({ title, subTitle }) => {
               allow="autoplay; encrypted-media"
               allowFullScreen
               title="video"
+              className="videoContainer"
             />
           </div>
 
-          <h5>Once your application has been built to run in a container, it can be easily hosted with any provider that supports containers, including Kubernetes and Azure Web Apps.</h5>
+          <h5 className="videoText">Once your application has been built to run in a container, it can be easily hosted with any provider that supports containers, including Kubernetes and Azure Web Apps.</h5>
 
         </article>
       </section>
