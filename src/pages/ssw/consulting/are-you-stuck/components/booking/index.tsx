@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import VideoBackground from "../../../../../../components/videoBackground";
 import InnerHTML from "../../../../../../components/innerHTML";
 import Button from "../../../../../../components/button";
+import ToggleButton from "../toggle-button"
 // this is fine
 import MVC_BACKGROUND from "../../../../../../assets/videos/MVC_background.mp4"
 import * as styles from "./index.module.css";
@@ -23,6 +24,11 @@ const Booking = ({ title, subTitle }) => {
           <InnerHTML tagName="h1" __html={title} />
 
           <h2 className={styles.subTitle}>{subTitle}</h2>
+          {/* make copy of Button from the above directory to use here */}
+          <div>
+            <Button onClick={""}>I'm a Business Person</Button>
+            <Button onClick={""}>I'm a Developer</Button>
+          </div>
 
           
 
