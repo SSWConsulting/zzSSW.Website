@@ -70,7 +70,7 @@ const ConsultingOptions = () => {
                             <p><a href="https://www.ssw.com.au/people/">Full List of Experts</a></p>
                         </div>
                     </TabContent>
-                    <TabContent header="Book a SSW Team" icon="one">
+                    <TabContent header="Book a SSW Team" icon="two">
                     <div>
                         <img alt="" src={scrum_bats} className="right clearfix"></img>
                         <p>Our most popular option is to get a dedicated team to complete your project.</p>

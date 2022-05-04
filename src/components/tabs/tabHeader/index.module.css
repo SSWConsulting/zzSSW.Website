@@ -23,7 +23,14 @@
 } */
 
 button[class~='one'] {
-    background: url("../images/people.png") top left no-repeat;
+    background: url("../images/one-person-icon.png") top left no-repeat;
     padding: 10px 20px 0 40px;
     margin: 0;
 }
+
+button[class~='two'] {
+    background: url("../images/two-person-icon.png") top left no-repeat;
+    padding: 10px 20px 0 40px;
+    margin: 0;
+}
+

@@ -18,6 +18,7 @@ const TabHeader = (props: Props): JSX.Element => {
     const handleOnClick = useCallback(() => {
         setSelectedTab(index);
     }, [setSelectedTab, index]);
+    
     console.log(icon);
     // use this for bootstrap: col-sm-${12/tabCount} 
     return(
