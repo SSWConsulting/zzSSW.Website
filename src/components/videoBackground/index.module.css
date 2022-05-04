@@ -1,10 +1,10 @@
 /* TODO: How this works? */
 .video {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 13%;
+    object-fit: cover;
     min-width: 100%;
-    min-height: 100%;
     z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); 
+    transition: 1s opacity;
 }
