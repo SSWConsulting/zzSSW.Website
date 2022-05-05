@@ -13,24 +13,25 @@
     border: 0;
     background-color: #FFFFFF;
     text-align: left;
-    padding-left: 28px;
     border-bottom: 1px solid #9E9E9E;
 }
-/* li img {
-    background: url("../images/people.png") top left no-repeat;
-    padding: 10px 20px 0 40px;
-    margin: 0;
-} */
-
 button[class~='one'] {
-    background: url("../images/one-person-icon.png") top left no-repeat;
-    padding: 10px 20px 0 40px;
-    margin: 0;
+    background: url("../images/one-person-icon.png") no-repeat;
+    background-position: left 18px top 20px;
+    width: 100%;
+    border: 0;
+    background-color: #FFFFFF;
+    text-align: left;
+    padding-left: 70px;
+    border-bottom: 1px solid #9E9E9E;
 }
-
 button[class~='two'] {
-    background: url("../images/two-person-icon.png") top left no-repeat;
-    padding: 10px 20px 0 40px;
-    margin: 0;
+    background: url("../images/two-person-icon.png") no-repeat;
+    background-position: left 18px top 20px;
+    width: 100%;
+    border: 0;
+    background-color: #FFFFFF;
+    text-align: left;
+    padding-left: 70px;
+    border-bottom: 1px solid #9E9E9E;
 }
-

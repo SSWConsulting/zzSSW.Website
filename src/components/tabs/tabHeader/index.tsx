@@ -19,11 +19,8 @@ const TabHeader = (props: Props): JSX.Element => {
         setSelectedTab(index);
     }, [setSelectedTab, index]);
     
-    console.log(icon);
-    // use this for bootstrap: col-sm-${12/tabCount} 
     return(
         <li className={`${styles.header} ${isActive ? 'active' : ''}`}>
-            {/* <Button  onClick={handleOnClick}>{header}</Button> */}
             <button className={icon} onClick={handleOnClick}><h2>{header}</h2></button>
         </li>
     );

@@ -1,15 +1,15 @@
 import React from 'react';
-import Breadcrumb from '../../components/breadcrumb';
-import Layout from '../../components/layout';
-import BookingForm from '../../components/bookingForm';
-import Tabs from '../../components/tabs';
-import TabContent from '../../components/tabs/tabContent';
-import jason_thumb from '../../assets/images/jason_thumb.jpg';
-import jean_thumb from '../../assets/images/Jean-Thirion.jpg';
-import adam_thumb from '../../assets/images/Adam-Cogan.jpg';
-import scrum_bats from '../../assets/images/ScrumBats.jpg';
-import bats_story from '../../assets/images/Bats-Story.jpg';
-import bats_burndown from '../../assets/images/Bats-Burndown.jpg';
+import Breadcrumb from '../components/breadcrumb';
+import Layout from '../components/layout';
+import BookingForm from '../components/bookingForm';
+import Tabs from '../components/tabs';
+import TabContent from '../components/tabs/tabContent';
+import jason_thumb from '../assets/images/jason_thumb.jpg';
+import jean_thumb from '../assets/images/Jean-Thirion.jpg';
+import adam_thumb from '../assets/images/Adam-Cogan.jpg';
+import scrum_bats from '../assets/images/ScrumBats.jpg';
+import bats_story from '../assets/images/Bats-Story.jpg';
+import bats_burndown from '../assets/images/Bats-Burndown.jpg';
 
 const ConsultingOptions = () => {
     const data = [
