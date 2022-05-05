@@ -15,6 +15,9 @@
     text-align: left;
     border-bottom: 1px solid #9E9E9E;
 }
+.header button:hover {
+    background-color: #F5F5F5;
+}
 button[class~='one'] {
     background: url("../images/one-person-icon.png") no-repeat;
     background-position: left 18px top 20px;
