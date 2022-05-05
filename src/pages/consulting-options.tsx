@@ -40,7 +40,7 @@ const ConsultingOptions = () => {
                                 <li><a href="/ssw/Consulting/MicrosoftCRM.aspx">CRM Expert</a></li>
                                 <li><a href="Default.aspx">More</a></li>
                             </ul>
-                            <h3 className="special">Some of Our Experts</h3>
+                            <h3 className="h3-special">Some of Our Experts</h3>
                             <div className="row">
                                 <div className="col-sm-4">	
                                     <img src={jason_thumb} className="thumbnail" data-pin-nopin="true"></img>
@@ -76,7 +76,7 @@ const ConsultingOptions = () => {
                         <p>Our most popular option is to get a dedicated team to complete your project.</p>
                         <p>We have development teams ranging from 2 to 5 people that strive to bring you high quality software at the end of every Sprint (2 week cycle). If you've already got your own developer team, further improve the production process by booking one of our trained "Scrum Masters". They'll manage the team to bring you the best possible solution for your business.</p>
                         
-                        <h3 className="special">Latest Activity</h3>
+                        <h3 className="h3-special">Latest Activity</h3>
                         <h3>Scrum Bats</h3>
                         <dl className="image">
                             <dt><img src={bats_story}></img></dt>
