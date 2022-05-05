@@ -10,6 +10,7 @@ import adam_thumb from '../assets/images/Adam-Cogan.jpg';
 import scrum_bats from '../assets/images/ScrumBats.jpg';
 import bats_story from '../assets/images/Bats-Story.jpg';
 import bats_burndown from '../assets/images/Bats-Burndown.jpg';
+import speech_bubble from '../assets/images/speech-bubble.png';
 
 const ConsultingOptions = () => {
     const data = [
@@ -24,11 +25,14 @@ const ConsultingOptions = () => {
 
     return (
         <Layout pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics">
-            <div className="main-container">
+            <div className='legacy-banner'>
+                <img src={speech_bubble} />
                 <Breadcrumb data={data} />
                 <h1 className='no-header-margin'>Consulting Options</h1>
                 <h2>Solutions that can adapt to your every need</h2>
-                <p>SSW offers the opportunity to hire one of our highly specialised experts in the field of your need, or a team of experts, ready to build your next project for you. If you are a new customer we need to schedule a free initial meeting. If you're an existing client, please continue below.</p>
+            </div>
+            <div className="main-container">
+                <p className='mt-3'>SSW offers the opportunity to hire one of our highly specialised experts in the field of your need, or a team of experts, ready to build your next project for you. If you are a new customer we need to schedule a free initial meeting. If you're an existing client, please continue below.</p>
                 <Tabs>
                     <TabContent header="Book a SSW Expert" icon="one">
                         <div>
@@ -91,7 +95,10 @@ const ConsultingOptions = () => {
                 </Tabs>
                 <h2>Australia Wide</h2>
                 <p>We have consultants available in all Australian capital cities including Sydney, Melbourne, Brisbane, Adelaide, Perth and Canberra.</p>
-                <BookingForm />
+                <div className='mb-5'>
+                    <BookingForm />
+                </div>
+                
             </div>
         </Layout>
     );
