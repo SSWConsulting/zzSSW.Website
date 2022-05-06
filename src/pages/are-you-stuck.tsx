@@ -1,7 +1,7 @@
 import React from "react";
 
 import Breadcrumb from '../components/breadcrumb';
-import Clients from '../components/clients';
+import Clients from '../templates/consulting/components/clients';
 import Layout from "../components/layout";
 import About from "../templates/consulting/components/about";
 import Testimonials from "../templates/consulting/components/testimonials";
@@ -28,8 +28,7 @@ const AreYouStuck = ({ data }) => {
         path: '/',
     },
     {
-        name: 'Services',
-        path: '/consulting',
+        path: 'are-you-stuck',
     },
     {
         name: pageTitle,
