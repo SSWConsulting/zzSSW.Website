@@ -4,6 +4,8 @@ import Layout from '../components/layout';
 import BookingForm from '../components/bookingForm';
 import Tabs from '../components/tabs';
 import TabContent from '../components/tabs/tabContent';
+import { Link } from 'gatsby';
+
 import jason_thumb from '../assets/images/jason_thumb.jpg';
 import jean_thumb from '../assets/images/Jean-Thirion.jpg';
 import adam_thumb from '../assets/images/Adam-Cogan.jpg';
@@ -39,10 +41,11 @@ const ConsultingOptions = () => {
                             <p>Whether you want a technical expert or a Scrum Master to get the team into a highly performing unit, we have the experts with expertise in a wide range of the Microsoft technology stack. SSW consultants ensure your project is done right and following best practices. From SharePoint or CRM to ASP.NET MVC or Azure our experts get the job done.</p>
                             <p>For example:</p>
                             <ul>
-                                <li><a href="WebsiteDevelopment.aspx">Web and MVC Experts</a></li>
-                                <li><a href="/ssw/Consulting/SharePoint.aspx">SharePoint Expert</a></li>
-                                <li><a href="/ssw/Consulting/MicrosoftCRM.aspx">CRM Expert</a></li>
-                                <li><a href="Default.aspx">More</a></li>
+                                <li><Link to="/consulting/web-applications/">Web and MVC Experts</Link></li>
+                                {/* TODO: update to gatsby Link components when pages are ready on new site */}
+                                <li><a href="https://www.ssw.com.au/ssw/Consulting/SharePoint.aspx">SharePoint Expert</a></li>
+                                <li><a href="https://www.ssw.com.au/ssw/Consulting/Microsoft-Dynamics-365.aspx">CRM Expert</a></li>
+                                <li><a href="https://www.ssw.com.au/ssw/Consulting/Default.aspx">More</a></li>
                             </ul>
                             <h3 className="h3-special">Some of Our Experts</h3>
                             <div className="row">
@@ -76,7 +79,7 @@ const ConsultingOptions = () => {
                     </TabContent>
                     <TabContent header="Book a SSW Team" icon="two">
                     <div>
-                        <img alt="" src={scrum_bats} className="right clearfix"></img>
+                        <img alt="Scrum bats image" src={scrum_bats} className="right clearfix"></img>
                         <p>Our most popular option is to get a dedicated team to complete your project.</p>
                         <p>We have development teams ranging from 2 to 5 people that strive to bring you high quality software at the end of every Sprint (2 week cycle). If you've already got your own developer team, further improve the production process by booking one of our trained "Scrum Masters". They'll manage the team to bring you the best possible solution for your business.</p>
                         
