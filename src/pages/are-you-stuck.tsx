@@ -9,7 +9,7 @@ import Solution from "../templates/consulting/components/solution";
 import DevBooking from "../components/are-you-stuck/components/dev-booking";
 import BuildPlatform from '../components/builtPlatform';
 
-import './index.module.css';
+import '../components/are-you-stuck/components/index.module.css';
 
 const AreYouStuck = ({ data }) => {
   // const { solution } = data

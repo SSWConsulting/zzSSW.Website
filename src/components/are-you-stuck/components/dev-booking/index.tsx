@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-import VideoBackground from "../../../../../../components/videoBackground";
-import InnerHTML from "../../../../../../components/innerHTML";
-import Button from "../../../../../../components/button";
+import VideoBackground from "../../../videoBackground";
+import InnerHTML from "../../../innerHTML";
+import Button from "../../../button";
 import ToggleButton from "../toggle-button"
 // this is fine
-import MVC_BACKGROUND from "../../../../../../assets/videos/MVC_background.mp4"
+import MVC_BACKGROUND from "../../../../assets/videos/MVC_background.mp4"
 import * as styles from "./index.module.css";
-import BookingFormPopup from "../../../../../../components/bookingFormPopup";
+import BookingFormPopup from "../../../bookingFormPopup";
 
 const Booking = ({ title, subTitle }) => {
   const [isVisible, setIsVisible] = useState(false);
