@@ -102,6 +102,11 @@ h5 {
     text-align: center;
 }
 
+.toggleButtons {
+    flex-direction: row;
+    justify-content: space-between;   
+}
+
 @keyframes bounce {
     0%,
     20%,

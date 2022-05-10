@@ -25,9 +25,9 @@ const Booking = ({ title, subTitle }) => {
 
           <h2 className={styles.subTitle}>{subTitle}</h2>
           {/* make copy of Button from the above directory to use here */}
-          <div>
-            <Button onClick={""}>I'm a Business Person</Button>
-            <Button onClick={""}>I'm a Developer</Button>
+          <div className={styles.toggleButtons}>
+            <ToggleButton onClick={""}>I'm a Business Person</ToggleButton>
+            <ToggleButton onClick={""}>I'm a Developer</ToggleButton>
           </div>
 
           <ul>
