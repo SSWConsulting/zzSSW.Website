@@ -46,6 +46,10 @@
     animation: bounce 2s infinite;
 }
 
+section article ul {
+    margin-bottom: 4em;
+}
+
 section article ul li {
     display: block;
     margin-top: 2em;
@@ -62,8 +66,9 @@ h5 {
 }
 
 .play {
-    height: 72px;
-    width: 72px;
+    /* height: 72px;
+    width: 72px; */
+    padding-top: 30px;
     margin-left: -36px;
     margin-top: -36px;
     position: absolute;
@@ -80,14 +85,17 @@ h5 {
     color: #fff;
     width: 75%;
     margin: 0 auto;
-    padding: 20px 0;
     line-height: inherit;
+    padding-bottom: 8em;
 }
 
 .videoContainer {
     position: relative;
+    /* embedded video height */
     width: 750px;
-    height: 386px;
+    /* height: 386px; */
+    height: 450px;
+    padding-top: 5em;
     padding-left: 15px;
     padding-right: 15px;
     margin: 2rem auto;

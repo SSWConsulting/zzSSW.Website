@@ -30,8 +30,6 @@ const Booking = ({ title, subTitle }) => {
             <Button onClick={""}>I'm a Developer</Button>
           </div>
 
-          
-
           <ul>
             <li>We can help you adopt best practices</li>
             <li>We can upskill you on the latest technologies</li>
@@ -48,17 +46,16 @@ const Booking = ({ title, subTitle }) => {
 
           <div>
             <iframe
-              width="560" height="315"
               src="https://www.youtube.com/embed/esPfjax-G-I"
               frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
               title="video"
-              className="videoContainer"
+              className={styles.videoContainer}
             />
           </div>
 
-          <h5 className="videoText">Once your application has been built to run in a container, it can be easily hosted with any provider that supports containers, including Kubernetes and Azure Web Apps.</h5>
+          <h5 className={styles.videoText}>Once your application has been built to run in a container, it can be easily hosted with any provider that supports containers, including Kubernetes and Azure Web Apps.</h5>
 
         </article>
       </section>
