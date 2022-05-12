@@ -40,7 +40,8 @@ const AreYouStuck = ({ data }) => {
       <>
         <Breadcrumb data={breadcrumbData}/>
 
-        <DevBooking title={devTitle} subTitle={devSubtitle} />
+        
+        {/* <DevBooking title={devTitle} subTitle={devSubtitle} /> */}
 
         <Testimonials />
 
