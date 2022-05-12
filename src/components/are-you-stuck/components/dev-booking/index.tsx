@@ -9,27 +9,29 @@ import MVC_BACKGROUND from "../../../../assets/videos/MVC_background.mp4"
 import * as styles from "./index.module.css";
 import BookingFormPopup from "../../../bookingFormPopup";
 
-const Booking = ({ title, subTitle }) => {
+const DevBooking = ({ title, subTitle }) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 
-  const [busiBooking, devBooking] = useState(true);
-  const bookingToggle = () => devBooking(!busiBooking);
+  const [state, setState ] = useState(false);
+  const bookingToggle = () => setState(!state);
 
   return (
     <>
       <VideoBackground src={MVC_BACKGROUND} />
       <section className={styles.container}>
         <article className="main-container">
+          {/* title + subtitle component */}
           <InnerHTML tagName="h1" __html={title} />
 
           <h2 className={styles.subTitle}>{subTitle}</h2>
-          {/* make copy of Button from the above directory to use here */}
+          {/* button component */}
           <div className={styles.toggleButtons}>
-            <ToggleButton onClick={""}>I'm a Business Person</ToggleButton>
-            <ToggleButton onClick={""}>I'm a Developer</ToggleButton>
+            <ToggleButton onClick={bookingToggle}>I'm a Business Person</ToggleButton>
+            <ToggleButton>I'm a Developer</ToggleButton>
           </div>
 
+          {/* rest of content component */}
           <ul>
             <li>We can help you adopt best practices</li>
             <li>We can upskill you on the latest technologies</li>
@@ -63,4 +65,4 @@ const Booking = ({ title, subTitle }) => {
   );
 };
 
-export default Booking;
+export default DevBooking;
