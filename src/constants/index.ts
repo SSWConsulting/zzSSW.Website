@@ -1,4 +1,4 @@
 export const PAGE_TYPE = {
   Consulting: "consulting",
 };
-export const BASE_URL = "/ssw/";
+export const BASE_URL = "/";
