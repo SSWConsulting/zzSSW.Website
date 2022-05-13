@@ -1,17 +1,17 @@
 import React from 'react';
-import Breadcrumb from '../../components/breadcrumb';
-import Layout from '../../components/layout';
-import BookingForm from '../../components/bookingForm';
-import Tabs from '../../components/tabs';
-import TabContent from '../../components/tabs/tabContent';
+import Breadcrumb from '../../../components/breadcrumb';
+import Layout from '../../../components/layout';
+import BookingForm from '../../../components/bookingForm';
+import Tabs from '../../../components/tabs';
+import TabContent from '../../../components/tabs/tabContent';
 import { Link } from 'gatsby';
 
-import jason_thumb from '../../assets/images/jason_thumb.jpg';
-import jean_thumb from '../../assets/images/Jean-Thirion.jpg';
-import adam_thumb from '../../assets/images/Adam-Cogan.jpg';
-import backlog from '../../assets/images/backlog.png';
-import burndown from '../../assets/images/burndown.png';
-import speech_bubble from '../../assets/images/speech-bubble.png';
+import jason_thumb from '../../../assets/images/jason_thumb.jpg';
+import jean_thumb from '../../../assets/images/Jean-Thirion.jpg';
+import adam_thumb from '../../../assets/images/Adam-Cogan.jpg';
+import backlog from '../../../assets/images/backlog.png';
+import burndown from '../../../assets/images/burndown.png';
+import speech_bubble from '../../../assets/images/speech-bubble.png';
 
 const ConsultingOptions = () => {
     const data = [
