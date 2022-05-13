@@ -34,15 +34,6 @@ const ConsultingServices = ({data}) => {
         <h1 className='no-header-margin'>Consulting Services</h1>
     </div>
 
-    <div className="flex-services">
-      <div className="p-2">Flex item 1</div>
-      <div className="p-2">Flex item 2</div>
-      <div className="p-2">Flex item 3</div>
-      <div className="p-2">Flex item 4</div>
-      <div className="p-2">Flex item 5</div>
-      <div className="p-2">Flex item 6</div>
-    </div>
-
       <div className="main-container">
 
         <div id="maincontentColumns" className="row">
@@ -63,22 +54,26 @@ const ConsultingServices = ({data}) => {
                 <Col sm={9}>
                     <div id="maincontent">
                         <div id="isotope">
-                        
-                        {pageServices.map(y => {
-                        if (y.frontmatter?.serviceList.list) {
-                        return (
-                            y.frontmatter.serviceList.list.map((p, idx) => {
-                            const tempobject = {
-                                serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
-                            }
-                            return (
-                                <ServiceContent key={idx} props={tempobject} />
-                            )
-                            })
-                        )
-                        }
 
-                        })}
+                          <div className="flex-services">
+                        
+                            {pageServices.map(y => {
+                            if (y.frontmatter?.serviceList.list) {
+                            return (
+                                y.frontmatter.serviceList.list.map((p, idx) => {
+                                const tempobject = {
+                                    serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
+                                }
+                                return (
+                                    <ServiceContent key={idx} props={tempobject} />
+                                )
+                                })
+                            )
+                            }
+
+                            })}
+
+                          </div>
 
                         </div>
                     </div>
@@ -100,14 +95,18 @@ const SideMenu = ({menuText, menuLink, menuFilter}) => {
 
 const ServiceContent = ({props: {serviceDesc, serviceFilter, serviceLink, serviceTitle, serviceImage}}) => {
   return (
-    <div className={serviceFilter}>
-      <Link to={serviceLink}>
-        <GatsbyImage image={getImage(serviceImage)} alt={serviceTitle} />
-          <div className="ourHolder-text">
-              <h3>{serviceTitle}</h3>
-              <p>{serviceDesc}</p>
-          </div>
-      </Link>
+    <div className="service-item">
+
+      <div className={serviceFilter}>
+        <Link to={serviceLink}>
+          <GatsbyImage image={getImage(serviceImage)} alt={serviceTitle} />
+            <div className="ourHolder-text">
+                <h3>{serviceTitle}</h3>
+                <p>{serviceDesc}</p>
+            </div>
+        </Link>
+      </div>
+
     </div>
   )
 }

@@ -56,14 +56,77 @@ ul#filters li a.selected {
 	pointer-events: none;
 	z-index: 1;
 }
+#isotope div.item>a>img {
+	width: 115px;
+	height: 115px;
+	float: left;
+	border: 1px solid #eee!important;
+	margin: 0 10px 10px 0;
+}
+
 .flex-services {
+	width: 120%;
+	padding-left: 25px;
 	display: flex;
-    flex-wrap: wrap;
-	background-color: bisque;
+	flex-wrap: wrap;
 }
-.flex-services>* {
-	flex: 1 1 60px;
+.service-item {
+	width: 48%;
+	min-width: 300px;
+	margin: 5px;
 }
-.p-2 {
-	
+#isotope div.item>a {
+    font-weight: normal;
+    display: block;
+    padding: 10px;
+    border: 0;
+    color: #333;
+}
+
+.event-item .ourHolder-text {
+	padding-bottom: 20px;
+}
+
+.event-item .ourHolder-text .key_technology_title,.event-item .ourHolder-text .key_type_title,.event-item .ourHolder-text .key_presenter_title,.event-item .ourHolder-text .key_video_title {
+	font-weight: bold;
+	padding-right: 5px;
+}
+
+.event-item .ourHolder-text .key_datetime {
+	text-transform: uppercase;
+	display: block;
+	margin-bottom: 10px;
+}
+.event-item .ourHolder-text .key_type,.event-item .ourHolder-text .key_technology,.event-item .ourHolder-text .key_presenter,.event-item .ourHolder-text .key_video {
+	display: inline;
+}
+.event-item .ourHolder-text .key-description {
+	padding: 10px 0;
+	display: block;
+}
+
+.event-item .ourHolder-text a h3 {
+	margin: 0 0 10px 0;
+	font-size: 1.6rem;
+}
+.event-item .ourHolder-text a h3 span {
+	color: #cc4141;
+	line-height: 1.4;
+}
+.event-item .ourHolder-text a h3 span:hover {
+	border-bottom: 1px dotted #cc4141;
+}
+#isotope.clients .item .ourHolder-text {
+	width: 100%;
+	max-width: 100%;
+}
+#isotope div.item>a .ourHolder-text p {
+	margin: 0;
+}
+#isotope div.item>a>img {
+    width: 115px;
+    height: 115px;
+    float: left;
+    border: 1px solid #eee!important;
+    margin: 0 10px 10px 0;
 }
