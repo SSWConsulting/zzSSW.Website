@@ -27,8 +27,8 @@ const DevBooking = ({ title, subTitle }) => {
           <h2 className={styles.subTitle}>{subTitle}</h2>
           {/* button component */}
           <div className={styles.toggleButtons}>
-            <ToggleButton onClick={bookingToggle}>I'm a Business Person</ToggleButton>
-            <ToggleButton>I'm a Developer</ToggleButton>
+            {/* <ToggleButton onClick={bookingToggle}>I'm a Business Person</ToggleButton>
+            <ToggleButton>I'm a Developer</ToggleButton> */}
           </div>
 
           {/* rest of content component */}

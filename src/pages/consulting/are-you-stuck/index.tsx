@@ -16,11 +16,6 @@ const AreYouStuck = ({ data }) => {
   const pageTitle = `Are you stuck on legacy technologies? | SSW Consulting - Sydney, Brisbane, Melbourne`
   const solution = `help`
 
-  const businessTitle = 'Are your <span class="red"> staff being driven nuts </span> by outdated software or manual processes?'
-  const businessSubtitle = 'Need the right software to multiply your teams output?'
-
-  const devTitle = 'Find a way out of your nightmare'
-  const devSubtitle = 'Are you stuck on legacy technologies and using sub-optimal practices?'
 
   const breadcrumbData = [
     {

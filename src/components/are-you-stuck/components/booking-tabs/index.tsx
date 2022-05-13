@@ -29,6 +29,12 @@ const Booking = ({}) => {
 
   const [currentTab, setCurrentTab] = useState<TabSelected>(TabSelected.LEFT)
 
+  const businessTitle = 'Are your <span class="red"> staff being driven nuts </span> by outdated software or manual processes?'
+  const businessSubtitle = 'Need the right software to multiply your teams output?'
+
+  const devTitle = 'Find a way out of your nightmare'
+  const devSubtitle = 'Are you stuck on legacy technologies and using sub-optimal practices?'
+
 // TODO: Get the Tabs onClick working 
 // TODO: Get the Title and Content changing based on the currentTab
   
@@ -38,27 +44,28 @@ const Booking = ({}) => {
       <section className={styles.container}>
         <article className="main-container">
           {/* <TabHeader /> */}
-          <div>Title</div>
+          {/* Do something like below but put the <TabHeader /> component in and pass the title + subtitle values instead */}
+          {currentTab === TabSelected.LEFT ? 
+            (<TabHeader title={businessTitle} subTitle={businessSubtitle}/>) : (<TabHeader title={devTitle} subTitle={devSubtitle}/>)}
           {/* <ToggleButton /> */}
           <div> 
-            {/* <TabC 
-              id={TabSelected.LEFT} 
-              setCurrentTab={setCurrentTab} 
-              display={currentTab === TabSelected.LEFT ? true : false} 
-              title={"Tab 1"}
-            /> */}
-            <ToggleButton
-              id={TabSelected.LEFT} 
-              setCurrentTab={setCurrentTab} 
-              display={currentTab === TabSelected.LEFT ? true : false} 
-              title={"I'm a Business Person"}
-            />
-            <ToggleButton
-              id={TabSelected.RIGHT} 
-              setCurrentTab={setCurrentTab} 
-              display={currentTab === TabSelected.RIGHT ? true : false} 
-              title={"I'm a Developer"}
-            />
+
+            <div>
+              {/* TODO: styling */}
+              <ToggleButton
+                id={TabSelected.LEFT} 
+                setCurrentTab={setCurrentTab} 
+                display={currentTab === TabSelected.LEFT ? true : false} 
+                title={"I'm a Business Person"}
+              />
+              <ToggleButton
+                id={TabSelected.RIGHT} 
+                setCurrentTab={setCurrentTab} 
+                display={currentTab === TabSelected.RIGHT ? true : false} 
+                title={"I'm a Developer"}
+              />
+            </div>
+
           </div>  
           {/* <TabContent /> */}
           {currentTab === TabSelected.LEFT ? (<div>Hi</div>) : (<div>Hello</div>)}
