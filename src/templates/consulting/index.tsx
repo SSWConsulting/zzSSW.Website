@@ -75,6 +75,8 @@ export const consultingPagesQuery = graphql`
             }
             title
             description
+            linkName
+            linkURL
           }
           rule {
             name
