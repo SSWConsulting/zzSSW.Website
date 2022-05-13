@@ -1,18 +1,17 @@
 import React from 'react';
-import Breadcrumb from '../components/breadcrumb';
-import Layout from '../components/layout';
-import BookingForm from '../components/bookingForm';
-import Tabs from '../components/tabs';
-import TabContent from '../components/tabs/tabContent';
+import Breadcrumb from '../../components/breadcrumb';
+import Layout from '../../components/layout';
+import BookingForm from '../../components/bookingForm';
+import Tabs from '../../components/tabs';
+import TabContent from '../../components/tabs/tabContent';
 import { Link } from 'gatsby';
 
-import jason_thumb from '../assets/images/jason_thumb.jpg';
-import jean_thumb from '../assets/images/Jean-Thirion.jpg';
-import adam_thumb from '../assets/images/Adam-Cogan.jpg';
-import scrum_bats from '../assets/images/ScrumBats.jpg';
-import bats_story from '../assets/images/Bats-Story.jpg';
-import bats_burndown from '../assets/images/Bats-Burndown.jpg';
-import speech_bubble from '../assets/images/speech-bubble.png';
+import jason_thumb from '../../assets/images/jason_thumb.jpg';
+import jean_thumb from '../../assets/images/Jean-Thirion.jpg';
+import adam_thumb from '../../assets/images/Adam-Cogan.jpg';
+import backlog from '../../assets/images/backlog.png';
+import burndown from '../../assets/images/burndown.png';
+import speech_bubble from '../../assets/images/speech-bubble.png';
 
 const ConsultingOptions = () => {
     const data = [
@@ -38,13 +37,13 @@ const ConsultingOptions = () => {
                 <Tabs>
                     <TabContent header="Book a SSW Expert" icon="one">
                         <div>
-                            <p>Whether you want a technical expert or a Scrum Master to get the team into a highly performing unit, we have the experts with expertise in a wide range of the Microsoft technology stack. SSW consultants ensure your project is done right and following best practices. From SharePoint or CRM to ASP.NET MVC or Azure our experts get the job done.</p>
+                            <p>Whether you want a technical expert or a Scrum Master to get the team into a highly performing unit, we have the experts with expertise in a wide range of the Microsoft technology stack. SSW consultants ensure your project is done right and following best practices. From Angular, React, Vue, Azure, Azure DevOps, SharePoint, Office 365, Blazor, .NET, WebAPI, Dynamics 365, or SQL Server our experts get the job done.</p>
                             <p>For example:</p>
                             <ul>
-                                <li><Link to="/consulting/web-applications/">Web and MVC Experts</Link></li>
+                                <li><Link to="/consulting/web-applications/">Web Applications</Link></li>
                                 {/* TODO: update to gatsby Link components when pages are ready on new site */}
-                                <li><a href="https://www.ssw.com.au/ssw/Consulting/SharePoint.aspx">SharePoint Expert</a></li>
-                                <li><a href="https://www.ssw.com.au/ssw/Consulting/Microsoft-Dynamics-365.aspx">CRM Expert</a></li>
+                                <li><a href="https://www.ssw.com.au/ssw/Consulting/Power-Platform.aspx">Power Platform</a></li>
+                                <li><a href="https://www.ssw.com.au/ssw/Consulting/Microsoft-Dynamics-365.aspx">Dynamics 365</a></li>
                                 <li><a href="https://www.ssw.com.au/ssw/Consulting/Default.aspx">More</a></li>
                             </ul>
                             <h3 className="h3-special">Some of Our Experts</h3>
@@ -79,19 +78,17 @@ const ConsultingOptions = () => {
                     </TabContent>
                     <TabContent header="Book a SSW Team" icon="two">
                     <div>
-                        <img alt="Scrum bats image" src={scrum_bats} className="right clearfix"></img>
                         <p>Our most popular option is to get a dedicated team to complete your project.</p>
                         <p>We have development teams ranging from 2 to 5 people that strive to bring you high quality software at the end of every Sprint (2 week cycle). If you've already got your own developer team, further improve the production process by booking one of our trained "Scrum Masters". They'll manage the team to bring you the best possible solution for your business.</p>
-                        
                         <h3 className="h3-special">Latest Activity</h3>
                         <h3>Scrum Bats</h3>
                         <dl className="image">
-                            <dt><img src={bats_story}></img></dt>
-                            <dd>Figure: Stories Overview</dd>
+                            <dt><img src={backlog}></img></dt>
+                            <dd>Figure: Backlog</dd>
                         </dl>
                         <dl className="image">
-                            <dt><img src={bats_burndown}></img></dt>
-                            <dd>Figure: Task Burndown (hours)</dd>
+                            <dt><img src={burndown}></img></dt>
+                            <dd>Figure: Burndown Chart</dd>
                         </dl>
                     </div>
                     </TabContent>
