@@ -20,11 +20,21 @@ module.exports = {
         name: "content",
         remote: process.env.CONTENT_REPO,
         branch: process.env.CONTENT_BRANCH,
-        patterns: ["**/*.mdx", "**/*.png", "**/*.jpeg"],
+        patterns: ["consulting/**"],
       },
     },
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: "gatsby-source-git",
+      options: {
+        name: "technologies",
+        remote: process.env.CONTENT_REPO,
+        branch: process.env.CONTENT_BRANCH,
+        patterns: ["technologies/**"],
+      },
+    },
+    "gatsby-plugin-mdx-source-name",
+    {
+      resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: [
           {
@@ -35,13 +45,13 @@ module.exports = {
               height: 400, // Optional: Overrides optional.ratio
               related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
               noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
-              loadingStrategy: 'lazy', //Optional: Enable support for lazy-load offscreen iframes. Default is disabled.
+              loadingStrategy: "lazy", //Optional: Enable support for lazy-load offscreen iframes. Default is disabled.
               containerClass: "videoContainer", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
               iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
             },
           },
         ],
-      }
+      },
     },
     {
       resolve: "gatsby-source-filesystem",

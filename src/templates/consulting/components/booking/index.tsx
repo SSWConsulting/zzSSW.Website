@@ -14,7 +14,6 @@ const Booking = ({ title, subTitle }) => {
 
   return (
     <>
-      <VideoBackground src={MVC_BACKGROUND} />
       <section className={styles.container}>
         <article className="main-container">
           <InnerHTML tagName="h1" __html={title} />
@@ -36,6 +35,7 @@ const Booking = ({ title, subTitle }) => {
             ></a>
           </div>
         </article>
+        <VideoBackground src={MVC_BACKGROUND} />
       </section>
     </>
   );

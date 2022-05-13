@@ -1,59 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
-import AzureTech from '../../../../components/technologies/azure';
-import ReactTech from '../../../../components/technologies/react';
-import DotnetTech from '../../../../components/technologies/net';
-import SqlServerTech from '../../../../components/technologies/sql-server';
-import JQueryTech from '../../../../components/technologies/jquery';
-
-import { container, skillContainer, skill } from './index.module.css';
-import AngularTech from '../../../../components/technologies/angular';
-import NodeJsTech from '../../../../components/technologies/node-js';
-
+import React, { useState, useEffect } from "react";
+import { container } from "./index.module.css";
+import { useTechnologyMdxData } from "../../../../hooks/use-technology-mdx-data";
+import Technology from "../../../../components/technology";
 
 const Technologies = ({ techList }) => {
-    const [techComponents, setTechComponents] = useState([]);
-    useEffect( () => {
-        if (techList) {
-            techList.map(({name}, index) => (
-                setTechComponents(techComponents => [...techComponents, getComponent(name)])
-            ));
-        } 
-        
-    },[]);
-    
-    function getComponent(name) {
-        switch(name) {
-            case 'react':
-                return <ReactTech />
-            case 'azure':
-                return <AzureTech />
-            case 'sql-server':
-                return <SqlServerTech />
-            case 'dotnet':
-                return <DotnetTech />
-            case 'jquery':
-                return <JQueryTech />
-            case 'angular':
-                return <AngularTech />
-            case 'node-js':
-                return <NodeJsTech />
-
-        }
-    }
-    
-    if (techList) {
+  let techListLength: number = techList.length;
+  const nodes = useTechnologyMdxData();
+  const [techComponents, setTechComponents] = useState([]);
+  useEffect(() => {
+    techList.map(({ name }, index) => {
+      setTechComponents((techComponents) => [
+        ...techComponents,
+        getComponent(name, index),
+      ]);
+    });
+  }, []);
+  function getComponent(name: string, index: number) {
+    const technologyNode = nodes.filter(
+      (node) => node.frontmatter.key === name
+    )[0];
+    if (technologyNode) {
       return (
-        <section className={container}>
-            <article className="main-container">
-                <h1>Other technologies</h1>
-                <div className="flex-wrap">
-                    {techComponents}
-                </div>
-            </article>
-        </section>
-        )  
-    } 
-}
-    
+        <Technology
+          {...technologyNode}
+          index={index}
+          techListLength={techListLength}
+        />
+      );
+    } else {
+      return null;
+    }
+  }
+
+  return (
+    <section className={container}>
+      <article className="main-container">
+        <h1>Other technologies</h1>
+        <div className="flex-wrap">{techComponents}</div>
+      </article>
+    </section>
+  );
+};
+
 export default Technologies;
