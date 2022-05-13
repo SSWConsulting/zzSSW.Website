@@ -20,6 +20,10 @@ const ConsultingOptions = () => {
             path: '/',
         },
         {
+            name: 'Consulting',
+            path: '/consulting',
+        },
+        {
             name: 'Consulting Options',
         },
     ];
