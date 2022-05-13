@@ -32,6 +32,15 @@ module.exports = {
         patterns: ["technologies/**"],
       },
     },
+    {
+      resolve: "gatsby-source-git",
+      options: {
+        name: "legacy",
+        remote: process.env.CONTENT_REPO,
+        branch: process.env.CONTENT_BRANCH,
+        patterns: ["legacy/**"],
+      },
+    },
     "gatsby-plugin-mdx-source-name",
     {
       resolve: "gatsby-plugin-mdx",
