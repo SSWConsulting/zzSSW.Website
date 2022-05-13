@@ -6,7 +6,7 @@ import Layout from "../../../components/layout";
 import About from "../../../templates/consulting/components/about";
 import Testimonials from "../../../templates/consulting/components/testimonials";
 import Solution from "../../../templates/consulting/components/solution";
-import DevBooking from "../../../components/are-you-stuck/components/dev-booking";
+import BookingTabs from "../../../components/are-you-stuck/components/booking-tabs";
 import BuildPlatform from '../../../components/builtPlatform';
 
 import '../../../components/are-you-stuck/components/index.module.css';
@@ -35,12 +35,14 @@ const AreYouStuck = ({ data }) => {
     },
 ];
 
+console.log("test 1")
+
   return (
     <Layout pageTitle={pageTitle}>
       <>
         <Breadcrumb data={breadcrumbData}/>
 
-        
+        <BookingTabs />
         {/* <DevBooking title={devTitle} subTitle={devSubtitle} /> */}
 
         <Testimonials />
