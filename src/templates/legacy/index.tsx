@@ -36,13 +36,13 @@ const LegacyTemplate = ({ data }) => {
                 <h2>Auditing services to improve your software</h2>
             </div>
             <div className="main-container">
-            { 
+            {/* { 
                 content.allMdx.nodes.map((node) => (
                     <article key={node.id}>
                         <h2>{node.frontmatter.title}</h2>
                     </article>
                 ))
-            }
+            } */}
                 <div className="row">
                     <div className="col-9">
                         <div className="body">

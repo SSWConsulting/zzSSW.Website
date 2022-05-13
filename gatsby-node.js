@@ -19,6 +19,9 @@ exports.createPages = ({ actions, graphql }) => {
   const consultingTemplate = require.resolve(
     "./src/templates/consulting/index.tsx"
   );
+  const legacyTemplate = require.resolve(
+    "./src/templates/legacy/index.tsx"
+  );
   return query.then((result) => {
     // filter by source name "content"
     const consultingNodes = result.data.allMdx.nodes.filter(
