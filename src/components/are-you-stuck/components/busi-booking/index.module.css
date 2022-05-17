@@ -46,11 +46,6 @@
     animation: bounce 2s infinite;
 }
 
-section article ul li {
-    display: block;
-    margin-top: 2em;
-}
-
 h5 {
     font-weight: 300;
 }
@@ -86,8 +81,11 @@ h5 {
 
 .videoContainer {
     position: relative;
+    /* embedded video height */
     width: 750px;
-    height: 386px;
+    /* height: 386px; */
+    height: 450px;
+    padding-top: 5em;
     padding-left: 15px;
     padding-right: 15px;
     margin: 2rem auto;
@@ -96,6 +94,19 @@ h5 {
 
 .firstLine {
     padding-top: 3em;
+}
+
+.theList {
+    margin-top: 0;
+    padding-bottom: 2em;
+}
+
+.lastItem {
+    margin-top: 0;
+}
+
+.stuckButton {
+    margin-top: -50px;
 }
 
 @keyframes bounce {
