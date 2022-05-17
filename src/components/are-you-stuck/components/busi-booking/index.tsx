@@ -10,7 +10,7 @@ const BusiBooking = () => {
   return (
     <>
       <section>
-        <h5>We are enterprise software consultants who solve complex business problems and reduce risk, using best practices and the latest technologies.</h5>
+        <h5 className={styles.firstLine}>We are enterprise software consultants who solve complex business problems and reduce risk, using best practices and the latest technologies.</h5>
         <h5>See how SSW can help:</h5>
 
         <ul>

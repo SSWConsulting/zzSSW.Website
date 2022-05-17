@@ -94,6 +94,10 @@ h5 {
     text-align: center;
 }
 
+.firstLine {
+    padding-top: 3em;
+}
+
 @keyframes bounce {
     0%,
     20%,

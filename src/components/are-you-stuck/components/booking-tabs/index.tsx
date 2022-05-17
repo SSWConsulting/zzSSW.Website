@@ -34,8 +34,8 @@ const Booking = () => {
           {currentTab === TabSelected.LEFT ? 
             (<TabHeader title={businessTitle} subTitle={businessSubtitle}/>) : (<TabHeader title={devTitle} subTitle={devSubtitle}/>)}
           {/* <ToggleButton /> */}
-          <div className="flex-container"> 
-            <div className="flex-child">
+          <div className={styles.flexContainer}> 
+            <div className={styles.flexChild}>
               {/* TODO: styling */}
               <ToggleButton
                 id={TabSelected.LEFT} 
@@ -44,7 +44,7 @@ const Booking = () => {
                 title={"I'm a Business Person"}
               />
             </div>
-            <div className="flex-child">
+            <div className={styles.flexChild}>
               <ToggleButton
                 id={TabSelected.RIGHT} 
                 setCurrentTab={setCurrentTab} 

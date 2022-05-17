@@ -1,18 +1,8 @@
-/* .container {
+.container {
     overflow: hidden;
     color: white;
     text-align: center;
     min-height: 800px;
-    background: rgba(0, 0, 0, 0.75)
-        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
-} */
-
-.container {
-    overflow: hidden;
-    color: white;
-    min-width: 100%;
-    min-height: 100%;
-    /* background-attachment: fixed; */
     background-image: url('../../../../assets/images/mvc-benefits-bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -21,6 +11,15 @@
     border-top: 4px solid #cc4141;
     border-bottom: 4px solid #cc4141;
     text-align: center;
+}
+
+.container1 {
+    overflow: hidden;
+    color: white;
+    min-width: 100%;
+    min-height: 100%;
+    /* background-attachment: fixed; */
+
 }
 
 .title {
@@ -118,23 +117,22 @@ h5 {
     text-align: center;
 }
 
-.toggleButtons {
+/* .toggleButtons {
     flex-direction: row;
     justify-content: space-between;   
-}
+} */
 
 .flex-container {
     display: flex;
+    flex-direction: row;
+    padding: 2em;
+    justify-content: space-evenly;
+    
 }
 
 .flex-child {
     flex: 1;
-    border: 2px solid yellow;
 }  
-
-.flex-child:first-child {
-    margin-right: 20px;
-} 
 
 @keyframes bounce {
     0%,

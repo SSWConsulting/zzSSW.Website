@@ -6,16 +6,16 @@ import BookingFormPopup from "../bookingFormPopup";
 const ToggleButton = ({ display, title, setCurrentTab, id}) => {
   return (
     <>
-      <button
-        type="button"
-        className={classnames(button, hoverable)}
-      >
- {/* TODO: Change from hidden to grey (to let the user know that the button isn't selected) */}
-        <div onClick={() => setCurrentTab(id)} hidden={display}>
+      {/* TODO: Change from hidden to grey (to let the user know that the button isn't selected) */}
+      <div onClick={() => setCurrentTab(id)}>
+        <button
+          type="button"
+          className={classnames(button, hoverable)}
+          >
           {title}
-        </div>
-        <div className={anim} />
-      </button>
+          <div className={anim} />
+        </button>
+      </div>
     </>
   );
 };
