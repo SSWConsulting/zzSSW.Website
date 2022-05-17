@@ -7,14 +7,11 @@ const DevBooking = () => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 
-  const [state, setState ] = useState(false);
-  const bookingToggle = () => setState(!state);
-
   return (
     <>
       <div>
         {/* rest of content component */}
-        <ul>
+        <ul className={styles.uList}>
           <li>We can help you adopt best practices</li>
           <li>We can upskill you on the latest technologies</li>
           <li>We can add weight and leverage to the decisions that you already know need to happen</li>

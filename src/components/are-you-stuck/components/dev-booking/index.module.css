@@ -53,6 +53,7 @@ section article ul {
 section article ul li {
     display: block;
     margin-top: 2em;
+    font-weight: bold;
 }
 
 h5 {
@@ -100,11 +101,6 @@ h5 {
     padding-right: 15px;
     margin: 2rem auto;
     text-align: center;
-}
-
-.toggleButtons {
-    flex-direction: row;
-    justify-content: space-between;   
 }
 
 @keyframes bounce {

@@ -11,8 +11,7 @@ const BusiBooking = () => {
     <>
       <section>
         <h5 className={styles.firstLine}>We are enterprise software consultants who solve complex business problems and reduce risk, using best practices and the latest technologies.</h5>
-        <h5>See how SSW can help:</h5>
-
+        <h5 className={styles.firstLine}>See how SSW can help:</h5>
         <ul>
           <li>Build it right the 1st time</li>
           <li>Reduce risk through transparency, communication and fast feedback loops</li>

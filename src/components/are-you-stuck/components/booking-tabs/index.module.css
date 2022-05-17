@@ -127,12 +127,16 @@ h5 {
     flex-direction: row;
     padding: 2em;
     justify-content: space-evenly;
-    
+    padding-bottom: 0;
 }
 
 .flex-child {
     flex: 1;
 }  
+
+.buttonClicked {
+    opacity: 0.4;
+}
 
 @keyframes bounce {
     0%,

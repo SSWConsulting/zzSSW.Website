@@ -31,6 +31,7 @@ const Booking = () => {
     <>
       <section className={styles.container}>
         <article className="main-container">
+          {/* heading */}
           {currentTab === TabSelected.LEFT ? 
             (<TabHeader title={businessTitle} subTitle={businessSubtitle}/>) : (<TabHeader title={devTitle} subTitle={devSubtitle}/>)}
           {/* <ToggleButton /> */}
@@ -40,7 +41,7 @@ const Booking = () => {
               <ToggleButton
                 id={TabSelected.LEFT} 
                 setCurrentTab={setCurrentTab} 
-                display={currentTab === TabSelected.LEFT ? true : false} 
+                // display={currentTab === TabSelected.LEFT ? true : false} 
                 title={"I'm a Business Person"}
               />
             </div>
@@ -48,7 +49,7 @@ const Booking = () => {
               <ToggleButton
                 id={TabSelected.RIGHT} 
                 setCurrentTab={setCurrentTab} 
-                display={currentTab === TabSelected.RIGHT ? true : false} 
+                // display={currentTab === TabSelected.RIGHT ? true : false} 
                 title={"I'm a Developer"}
               />
             </div>

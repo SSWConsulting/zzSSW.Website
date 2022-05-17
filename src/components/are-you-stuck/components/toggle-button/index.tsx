@@ -3,7 +3,7 @@ import classnames from "classnames";
 import { button, hoverable, anim } from "./index.module.css";
 import BookingFormPopup from "../bookingFormPopup";
 
-const ToggleButton = ({ display, title, setCurrentTab, id}) => {
+const ToggleButton = ({title, setCurrentTab, id}) => {
   return (
     <>
       {/* TODO: Change from hidden to grey (to let the user know that the button isn't selected) */}
@@ -13,7 +13,7 @@ const ToggleButton = ({ display, title, setCurrentTab, id}) => {
           className={classnames(button, hoverable)}
           >
           {title}
-          <div className={anim} />
+          <div className={classnames(anim)} />
         </button>
       </div>
     </>
