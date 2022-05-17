@@ -8,8 +8,7 @@ const Solution = ({ project }) => (
     <section className={container}>
         <article className="main-container">
             <h1>
-                Get the <span className="red">{project}</span>{' '}
-                you need
+                Get the <span className="red">{project}</span>{' '} you need
             </h1>
 
             <p>

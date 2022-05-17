@@ -5,13 +5,13 @@ import Clients from '../../../templates/consulting/components/clients';
 import Layout from "../../../components/layout";
 import About from "../../../templates/consulting/components/about";
 import Testimonials from "../../../templates/consulting/components/testimonials";
-import Solution from "../../../templates/consulting/components/solution";
+import Solution from "../../../components/are-you-stuck/components/solution";
 import BookingTabs from "../../../components/are-you-stuck/components/booking-tabs";
 import BuildPlatform from '../../../components/builtPlatform';
 
 import '../../../components/are-you-stuck/components/index.module.css';
 
-const AreYouStuck = ({ data }) => {
+const AreYouStuck = () => {
   // const { solution } = data
   const pageTitle = `Are you stuck on legacy technologies? | SSW Consulting - Sydney, Brisbane, Melbourne`
   const solution = `help`
@@ -38,7 +38,6 @@ console.log("test 1")
         <Breadcrumb data={breadcrumbData}/>
 
         <BookingTabs />
-        {/* <DevBooking title={devTitle} subTitle={devSubtitle} /> */}
 
         <Testimonials />
 
