@@ -73,6 +73,6 @@
     border-radius: 50%;
 }
 
-.clickedTab {
+.buttonClicked {
     opacity: 0.4;
 }

@@ -43,6 +43,7 @@ const Booking = () => {
                 setCurrentTab={setCurrentTab} 
                 // display={currentTab === TabSelected.LEFT ? true : false} 
                 title={"I'm a Business Person"}
+                currentTab={currentTab}
               />
             </div>
             <div className={styles.flexChild}>
@@ -51,6 +52,7 @@ const Booking = () => {
                 setCurrentTab={setCurrentTab} 
                 // display={currentTab === TabSelected.RIGHT ? true : false} 
                 title={"I'm a Developer"}
+                currentTab={currentTab}
               />
             </div>
           </div>  
