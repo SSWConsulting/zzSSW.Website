@@ -1,26 +1,21 @@
 import React, { useState, useEffect } from "react";
 
 import VideoBackground from "../../../videoBackground";
-import InnerHTML from "../../../innerHTML";
-import Button from "../../../button";
 import ToggleButton from "../toggle-button"
 // this is fine
 import MVC_BACKGROUND from "../../../../assets/videos/MVC_background.mp4"
 import * as styles from "./index.module.css";
-import BookingFormPopup from "../../../bookingFormPopup";
-import { Tab, TabContainer, Tabs } from "react-bootstrap";
 
 import TabHeader from "../booking-title"
-import { graphql } from "gatsby";
-
+import BusiBooking from "../busi-booking";
+import DevBooking from "../dev-booking";
 
 enum TabSelected {
   LEFT,
   RIGHT
 }
 
-
-const Booking = ({}) => {
+const Booking = () => {
   // const [isVisible, setIsVisible] = useState(false);
   // const showBookingForm = () => setIsVisible(!isVisible);
 
@@ -34,7 +29,6 @@ const Booking = ({}) => {
   
   return (
     <>
-      <VideoBackground src={MVC_BACKGROUND} />
       <section className={styles.container}>
         <article className="main-container">
           {currentTab === TabSelected.LEFT ? 
@@ -60,8 +54,7 @@ const Booking = ({}) => {
             </div>
           </div>  
           {/* <TabContent /> */}
-          {currentTab === TabSelected.LEFT ? (<div>Hi</div>) : (<div>Hello</div>)}
-          
+          {currentTab === TabSelected.LEFT ? (<BusiBooking />) : (<DevBooking />)}
         </article>
       </section>
     </>
