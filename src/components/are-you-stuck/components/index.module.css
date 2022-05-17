@@ -64,6 +64,10 @@ h2 {
     text-align: center;
 }
 
+section {
+    padding-bottom: 0;
+}
+
 section article.main-container p, section article.main-container ul {
     font-size: 1.2rem;
     font-family: 'Open Sans',sans-serif;

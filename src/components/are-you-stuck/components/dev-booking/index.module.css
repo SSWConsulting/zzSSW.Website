@@ -87,7 +87,7 @@ h5 {
     width: 75%;
     margin: 0 auto;
     line-height: inherit;
-    padding-bottom: 8em;
+    /* padding-bottom: 8em; */
 }
 
 .videoContainer {
