@@ -21,11 +21,8 @@ enum TabSelected {
 
 
 const Booking = ({}) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const showBookingForm = () => setIsVisible(!isVisible);
-
-  const [state, setState ] = useState(false);
-  // const bookingToggle = () => setState(!state);
+  // const [isVisible, setIsVisible] = useState(false);
+  // const showBookingForm = () => setIsVisible(!isVisible);
 
   const [currentTab, setCurrentTab] = useState<TabSelected>(TabSelected.LEFT)
 
@@ -34,23 +31,17 @@ const Booking = ({}) => {
 
   const devTitle = 'Find a way out of your nightmare'
   const devSubtitle = 'Are you stuck on legacy technologies and using sub-optimal practices?'
-
-// TODO: Get the Tabs onClick working 
-// TODO: Get the Title and Content changing based on the currentTab
   
   return (
     <>
       <VideoBackground src={MVC_BACKGROUND} />
       <section className={styles.container}>
         <article className="main-container">
-          {/* <TabHeader /> */}
-          {/* Do something like below but put the <TabHeader /> component in and pass the title + subtitle values instead */}
           {currentTab === TabSelected.LEFT ? 
             (<TabHeader title={businessTitle} subTitle={businessSubtitle}/>) : (<TabHeader title={devTitle} subTitle={devSubtitle}/>)}
           {/* <ToggleButton /> */}
-          <div> 
-
-            <div>
+          <div className="flex-container"> 
+            <div className="flex-child">
               {/* TODO: styling */}
               <ToggleButton
                 id={TabSelected.LEFT} 
@@ -58,6 +49,8 @@ const Booking = ({}) => {
                 display={currentTab === TabSelected.LEFT ? true : false} 
                 title={"I'm a Business Person"}
               />
+            </div>
+            <div className="flex-child">
               <ToggleButton
                 id={TabSelected.RIGHT} 
                 setCurrentTab={setCurrentTab} 
@@ -65,7 +58,6 @@ const Booking = ({}) => {
                 title={"I'm a Developer"}
               />
             </div>
-
           </div>  
           {/* <TabContent /> */}
           {currentTab === TabSelected.LEFT ? (<div>Hi</div>) : (<div>Hello</div>)}

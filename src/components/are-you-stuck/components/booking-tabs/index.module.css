@@ -107,6 +107,19 @@ h5 {
     justify-content: space-between;   
 }
 
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    border: 2px solid yellow;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+
 @keyframes bounce {
     0%,
     20%,

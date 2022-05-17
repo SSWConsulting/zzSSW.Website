@@ -4,12 +4,6 @@ import * as styles from "./index.module.css";
 
 
 const DevBooking = ({ title, subTitle }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const showBookingForm = () => setIsVisible(!isVisible);
-
-  const [state, setState ] = useState(false);
-  const bookingToggle = () => setState(!state);
-
   return (
     <>
       <div>
