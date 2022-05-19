@@ -1,4 +1,4 @@
-import React from "react"
+    import React from "react"
 
 import Layout from "../../components/layout";
 import Breadcrumb from "../../components/breadcrumb";
@@ -8,6 +8,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import * as styles from "./index.module.css";
 
 import speech_bubble from '../../assets/images/speech-bubble.png';
+import BookingForm from "../../components/bookingForm";
 
 const LegacyTemplate = ({ data }) => {
     const { title, subtitle } = data.mdx.frontmatter
@@ -44,6 +45,15 @@ const LegacyTemplate = ({ data }) => {
                         </div>
                     </div>
                     <div className="col-3">
+                        <div id="index">
+                            <h2>DNN:</h2>
+                            <ul>
+                                <li><a href="#overview">Overview</a></li>
+                                <li><a href="#dnnbenefits">Benefits</a></li>
+                                <li><a href="#keytechnologies">Key Technologies</a></li>
+                                <li><a href="#getstarted">How to get started</a></li>
+                            </ul>
+                        </div>
                         <div className="sidebar">
                             <div id="OurExperience">
                                 <div className={styles.section}>
@@ -60,6 +70,11 @@ const LegacyTemplate = ({ data }) => {
                             </div>
                         </div>
                     </div>
+                </div>
+                <h2>Australia Wide</h2>
+                <p>We have consultants available in all Australian capital cities including Sydney, Melbourne, Brisbane, Adelaide, Perth and Canberra.</p>
+                <div className='mb-5'>
+                    <BookingForm />
                 </div>
             </div>
         </Layout>
