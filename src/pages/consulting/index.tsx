@@ -12,7 +12,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const ConsultingServices = ({data}) => {
+const ConsultingServices = ({ data }) => {
   const databc = [
     {
       name: "Home",
@@ -26,60 +26,81 @@ const ConsultingServices = ({data}) => {
   const pageMenu = data.allMdx.nodes.filter(x => x.frontmatter.pageLeftMenu);
   const pageServices = data.allMdx.nodes.filter(y => y.frontmatter.serviceList);
 
+  console.log(pageServices);
+
+  const serviceArray = ["_0", "_1", "_2", "_3", "_4", "_5"];
+
   return (
     <Layout pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics">
-    <div className='legacy-banner'>
+      <div className='legacy-banner'>
         <img src={speech_bubble} />
         <Breadcrumb data={databc} />
         <h1 className='no-header-margin'>Consulting Services</h1>
-    </div>
+        <br />
+      </div>
+
+      <br />
+      <br />
 
       <div className="main-container">
 
         <div id="maincontentColumns" className="row">
 
-            <Row>
-                <Col sm={3}>
-                    <div id="SidebarLeft">
-                        <h3 className="filter-header"><a className="filter"></a>I am looking for...</h3>
-                            <ul id="filters" className="option-set">
-                                {pageMenu[0].frontmatter.pageLeftMenu.map((x, idx) => {
-                                    return (
-                                        <SideMenu key={idx} menuText={x.title} menuLink={x.link} menuFilter={x.data_filter}/>
-                                    )
-                                })}
-                            </ul>
-                    </div>
-                </Col>
-                <Col sm={9}>
-                    <div id="maincontent">
-                        <div id="isotope">
+          <Row>
+            <Col sm={3}>
+              <div id="SidebarLeft">
+                <h3 className="filter-header"><a className="filter"></a>I am looking for...</h3>
+                <ul id="filters" className="option-set">
+                  {pageMenu[0].frontmatter.pageLeftMenu.map((x, idx) => {
+                    return (
+                      <SideMenu key={idx} menuText={x.title} menuLink={x.link} menuFilter={x.data_filter} />
+                    )
+                  })}
+                </ul>
+              </div>
+            </Col>
+            <Col sm={9}>
+              <div id="maincontent">
+                <div id="isotope">
 
-                          <div className="flex-services">
+                  <div className="flex-services">
+
+                  {serviceArray.map((item, key) => { /* <h1>{item}</h1> */
+                    return (
+                      <div key={key}>
+                        <h1>{item}</h1> 
                         
-                            {pageServices.map(y => {
-                            if (y.frontmatter?.serviceList.list) {
-                            return (
-                                y.frontmatter.serviceList.list.map((p, idx) => {
+                        {pageServices.map(y => {
+                        if (y.frontmatter?.serviceList._2.list) {
+                          return (
+                            <>
+                              <div className={y.frontmatter?.serviceList._2.heading_filter}>
+                                <h2>{y.frontmatter?.serviceList._2.heading}</h2>
+                              </div>
+                              {y.frontmatter.serviceList._2.list.map((p, idx) => {
                                 const tempobject = {
-                                    serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
+                                  serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
                                 }
                                 return (
-                                    <ServiceContent key={idx} props={tempobject} />
+                                  <ServiceContent key={idx} props={tempobject} />
                                 )
-                                })
-                            )
-                            }
+                              })}
+                            </>
+                          )
+                        }
 
-                            })}
+                      })}
+                      </div>
+                    )
+                  })}
 
-                          </div>
+                  </div>
 
-                        </div>
-                    </div>
-                </Col>
-            </Row>
-          
+                </div>
+              </div>
+            </Col>
+          </Row>
+
         </div>
 
       </div>
@@ -87,32 +108,29 @@ const ConsultingServices = ({data}) => {
   );
 };
 
-const SideMenu = ({menuText, menuLink, menuFilter}) => {
+const SideMenu = ({ menuText, menuLink, menuFilter }) => {
   return (
     <li><a href={"#" + menuLink} data-filter={menuFilter}>{menuText}</a></li>
   )
 }
 
-const ServiceContent = ({props: {serviceDesc, serviceFilter, serviceLink, serviceTitle, serviceImage}}) => {
+const ServiceContent = ({ props: { serviceDesc, serviceFilter, serviceLink, serviceTitle, serviceImage } }) => {
   return (
     <div className="service-item">
 
       <div className={serviceFilter}>
         <Link to={serviceLink}>
-          <GatsbyImage image={getImage(serviceImage)} alt={serviceTitle} />
-            <div className="ourHolder-text">
-                <h3>{serviceTitle}</h3>
-                <p>{serviceDesc}</p>
-            </div>
+          <GatsbyImage image={getImage(serviceImage)} alt={serviceTitle} className="floatServiceImage" />
+          <div className="ourHolder-text">
+            <h3>{serviceTitle}</h3>
+            <p>{serviceDesc}</p>
+          </div>
         </Link>
       </div>
 
     </div>
   )
 }
-
-
-//<GatsbyImage image={serviceImagePath} alt={serviceTitle} />
 
 export default ConsultingServices;
 
@@ -122,23 +140,99 @@ export const query = graphql`
     nodes {
       frontmatter {
         pageLeftMenu {
+          data_filter
           link
           title
-          data_filter
         }
         serviceList {
-          filter_item
-          heading
-          list {
-            description
-            filter_item
-            link
-            title
-            image {
-              relativePath
-              childImageSharp {
-                gatsbyImageData
+          _0 {
+            heading
+            heading_filter
+            list {
+              description
+              filter_item
+              link
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
+            }
+          }
+          _1 {
+            heading
+            heading_filter
+            list {
+              description
+              filter_item
+              link
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+          _2 {
+            heading
+            heading_filter
+            list {
+              description
+              filter_item
+              link
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+          _3 {
+            heading
+            heading_filter
+            list {
+              description
+              filter_item
+              link
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+          _4 {
+            heading
+            heading_filter
+            list {
+              description
+              filter_item
+              link
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+          _5 {
+            heading
+            heading_filter
+            list {
+              description
+              filter_item
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+              link
+              title
             }
           }
         }
@@ -147,44 +241,3 @@ export const query = graphql`
   }
 }
 `
-/*
-{
-  allMdx {
-    nodes {
-      frontmatter {
-        pageLeftMenu {
-          link
-          title
-          data_filter
-        }
-      }
-    }
-  }
-}
-{
-  allMdx {
-    nodes {
-      frontmatter {
-        pageLeftMenu {
-          link
-          title
-          data_filter
-        }
-        serviceList {
-          filter_item
-          heading
-          list {
-            description
-            filter_item
-            link
-            title
-            image {
-              relativePath
-            }
-          }
-        }
-      }
-    }
-  }
-}
-*/
