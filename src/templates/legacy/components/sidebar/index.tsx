@@ -8,6 +8,7 @@ const Sidebar = ({ }) => {
     return(
         <div>
             <div id="pagenav">
+                {/* TODO: auto quick nav functionality */}
                 <h2 className={styles.navtitle}>Quick Navigate</h2>
                 <ul>
                     <li><a href="#test">test</a></li>

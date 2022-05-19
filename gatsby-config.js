@@ -64,6 +64,7 @@ module.exports = {
             options: {
               maxWidth: 1200,
               wrapperStyle: "margin: 0", // Optional: Add custom styles to the div wrapping the responsive images.
+              backgroundColor: 'transparent',
             },
           },
         ],

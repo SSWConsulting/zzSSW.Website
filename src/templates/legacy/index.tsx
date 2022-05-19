@@ -44,7 +44,7 @@ const LegacyTemplate = ({ data }) => {
             </div>
             <div className="main-container">
                 <div className="row">
-                    <div className="col-9">
+                    <div className="col-9 legacy-content">
                         <Body 
                             content={data.mdx.body}
                         />
