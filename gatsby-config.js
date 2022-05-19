@@ -59,6 +59,13 @@ module.exports = {
               iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              wrapperStyle: "margin: 0", // Optional: Add custom styles to the div wrapping the responsive images.
+            },
+          },
         ],
       },
     },

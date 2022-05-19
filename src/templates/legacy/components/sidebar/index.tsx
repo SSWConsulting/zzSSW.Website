@@ -1,6 +1,6 @@
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React, {ReactElement} from 'react';
-
+import phoneImg from '../../../../assets/images/phone.png';
 import * as styles from "./index.module.css";
 
 const Sidebar = ({ }) => {
@@ -17,8 +17,8 @@ const Sidebar = ({ }) => {
                 <div id="OurExperience">
                     <div className={styles.section}>
                         <h3>Get your project started!</h3>
-                        <img className="phone" src="/ssw/images/icons/phone.png" alt="phone icon"/>
-                        <h3>+61 2 <strong>9953 3000</strong></h3>
+                        <img className={styles.phone} src={phoneImg} alt="phone icon"/>
+                        <h4><strong>+61 2 9953 3000</strong></h4>
                         <p>SSW will look at your development requirements and help you design and implement an effective app.</p>
                     </div>
                     <div className={styles.section}>

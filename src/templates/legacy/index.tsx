@@ -6,7 +6,6 @@ import BookingForm from "../../components/bookingForm";
 import Layout from "../../components/layout";
 import Breadcrumb from "../../components/breadcrumb";
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Body from "./components/body";
 import Sidebar from "./components/sidebar";
