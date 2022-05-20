@@ -63,28 +63,31 @@ const ConsultingServices = ({ data }) => {
               <div id="maincontent">
                 <div id="isotope">
 
-                  <div className="flex-services">
-
                   {serviceArray.map((item, key) => { /* <h1>{item}</h1> */
                     return (
                       <div key={key}>
-                        <h1>{item}</h1> 
                         
                         {pageServices.map(y => {
-                        if (y.frontmatter?.serviceList._2.list) {
+                        if (y.frontmatter?.serviceList._0.list) {
                           return (
                             <>
-                              <div className={y.frontmatter?.serviceList._2.heading_filter}>
-                                <h2>{y.frontmatter?.serviceList._2.heading}</h2>
+                              <div className={y.frontmatter?.serviceList._0.heading_filter}>
+                                <h2>{y.frontmatter?.serviceList._0.heading}</h2>
                               </div>
-                              {y.frontmatter.serviceList._2.list.map((p, idx) => {
-                                const tempobject = {
-                                  serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
-                                }
-                                return (
-                                  <ServiceContent key={idx} props={tempobject} />
-                                )
-                              })}
+
+                              <div className="flex-services">
+
+                                {y.frontmatter.serviceList._0.list.map((p, idx) => {
+                                  const tempobject = {
+                                    serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
+                                  }
+                                  return (
+                                    <ServiceContent key={idx} props={tempobject} />
+                                  )
+                                })}
+
+                              </div>
+
                             </>
                           )
                         }
@@ -93,8 +96,6 @@ const ConsultingServices = ({ data }) => {
                       </div>
                     )
                   })}
-
-                  </div>
 
                 </div>
               </div>
