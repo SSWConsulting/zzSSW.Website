@@ -1,5 +1,5 @@
 import React from "react"
-import * as styles from "./index.module.css";
+import "./index.css";
 import speech_bubble from '../../assets/images/speech-bubble.png';
 import BookingForm from "../../components/bookingForm";
 
@@ -35,7 +35,7 @@ const LegacyTemplate = ({ data }) => {
                 <img src={speech_bubble} />
                 <Breadcrumb data={breadcrumbData} />
                 <GatsbyImage
-                    className={styles.featureImage}
+                    className="{styles.featureImage}"
                     image={getImage(featureImage)}
                     alt=""
                 />

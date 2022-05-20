@@ -67,6 +67,7 @@ module.exports = {
               backgroundColor: 'transparent',
             },
           },
+          "gatsby-remark-fenced-divs",
         ],
       },
     },
