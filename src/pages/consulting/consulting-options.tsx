@@ -5,7 +5,7 @@ import BookingForm from '../../components/bookingForm';
 import Tabs from '../../components/tabs';
 import TabContent from '../../components/tabs/tabContent';
 import { Link } from 'gatsby';
-
+import "./index.css";
 import jason_thumb from '../../assets/images/jason_thumb.jpg';
 import jean_thumb from '../../assets/images/Jean-Thirion.jpg';
 import adam_thumb from '../../assets/images/Adam-Cogan.jpg';
