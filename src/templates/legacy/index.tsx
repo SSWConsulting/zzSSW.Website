@@ -35,7 +35,7 @@ const LegacyTemplate = ({ data }) => {
                 <img src={speech_bubble} />
                 <Breadcrumb data={breadcrumbData} />
                 <GatsbyImage
-                    className="{styles.featureImage}"
+                    className="featureImage"
                     image={getImage(featureImage)}
                     alt=""
                 />
