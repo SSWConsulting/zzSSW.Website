@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import VideoBackground from "../../../videoBackground";
 import ToggleButton from "../toggle-button"
 // this is fine
-import MVC_BACKGROUND from "../../../../assets/videos/MVC_background.mp4"
-import * as styles from "./index.module.css";
-
 import TabHeader from "../booking-title"
 import BusiBooking from "../busi-booking";
 import DevBooking from "../dev-booking";
+
+import * as styles from "./index.module.css";
 
 enum TabSelected {
   LEFT,
@@ -34,14 +32,12 @@ const Booking = () => {
           {/* heading */}
           {currentTab === TabSelected.LEFT ? 
             (<TabHeader title={businessTitle} subTitle={businessSubtitle}/>) : (<TabHeader title={devTitle} subTitle={devSubtitle}/>)}
-          {/* <ToggleButton /> */}
+          {/* buttons */}
           <div className={styles.flexContainer}> 
             <div className={styles.flexChild}>
-              {/* TODO: styling */}
               <ToggleButton
                 id={TabSelected.LEFT} 
                 setCurrentTab={setCurrentTab} 
-                // display={currentTab === TabSelected.LEFT ? true : false} 
                 title={"I'm a Business Person"}
                 currentTab={currentTab}
               />
@@ -49,14 +45,13 @@ const Booking = () => {
             <div className={styles.flexChild}>
               <ToggleButton
                 id={TabSelected.RIGHT} 
-                setCurrentTab={setCurrentTab} 
-                // display={currentTab === TabSelected.RIGHT ? true : false} 
+                setCurrentTab={setCurrentTab}  
                 title={"I'm a Developer"}
                 currentTab={currentTab}
               />
             </div>
           </div>  
-          {/* <TabContent /> */}
+          {/* content */}
           {currentTab === TabSelected.LEFT ? (<BusiBooking />) : (<DevBooking />)}
         </article>
       </section>
