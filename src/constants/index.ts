@@ -19,3 +19,7 @@ export const PAGE_TITLE = {
 export const IMAGES_LINKS = {
   Azure: require("../assets/images/bg.jpg"),
 };
+
+//Color Schema
+export const WHITE_SMOKE = "#f5f5f5";
+export const WHITE = "#ffff";
