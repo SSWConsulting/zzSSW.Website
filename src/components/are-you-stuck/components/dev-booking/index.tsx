@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../../../button";
+import Button from "../booking-button";
 import * as styles from "./index.module.css";
 import BookingFormPopup from "../../../bookingFormPopup";
 
