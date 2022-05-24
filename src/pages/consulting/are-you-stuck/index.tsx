@@ -16,7 +16,11 @@ const AreYouStuck = () => {
   // const { solution } = data
   const pageTitle = `Are you stuck on legacy technologies? | SSW Consulting - Sydney, Brisbane, Melbourne`
   const solution = `help`
-  const techList = []
+  const techList = [
+    {
+      "name": "web-applications"
+    }
+  ]
 
   const breadcrumbData = [
     {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { container } from "./index.module.css";
 import { useTechnologyMdxData } from "../../../../hooks/use-technology-mdx-data";
-import Technology from "../../../../components/technology";
+import Technology from "../service";
 
 const Technologies = ({ techList }) => {
   let techListLength: number = techList.length;
@@ -35,7 +35,7 @@ const Technologies = ({ techList }) => {
   return (
     <section className={container}>
       <article className="main-container">
-        <h1>Other technologies</h1>
+        <h1>SSW's main services</h1>
         <div className="flex-wrap">{techComponents}</div>
       </article>
     </section>
