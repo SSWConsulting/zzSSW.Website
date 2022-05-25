@@ -17,7 +17,14 @@
   
   @keyframes customEnterModalAnimation {
     0% {
-      transform: scale(0.2);
+     -webkit-transform: translate(0,-25%); 
+    -ms-transform: translate(0,-25%);
+    -o-transform: translate(0,-25%);
+    transform: translate(0,-25%);
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -moz-transition: -moz-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out;
     }
     100% {
       transform: scale(1);
@@ -25,7 +32,14 @@
   }
   @keyframes customLeaveModalAnimation {
     0% {
-      transform: scale(1);
+      -webkit-transform: translate(0,-25%); 
+      -ms-transform: translate(0,-25%);
+      -o-transform: translate(0,-25%);
+      transform: translate(0,-25%);
+      -webkit-transition: -webkit-transform .3s ease-in;
+      -moz-transition: -moz-transform .3s ease-in;
+      -o-transition: -o-transform .3s ease-in;
+      transition: transform .3s ease-in;
     }
     100% {
       transform: scale(0);
