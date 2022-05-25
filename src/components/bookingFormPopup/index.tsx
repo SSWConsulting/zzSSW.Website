@@ -5,7 +5,7 @@ import "react-responsive-modal/styles.css";
 import BookingForm from "../bookingForm";
 import "./index.css";
 
-const BookingFormPopup = ({ isVisible, showBookingForm }) => {
+const BookingFormPopup = ({ isVisible, showBookingForm, isShareForm }) => {
   return (
     <div>
       <Modal
@@ -25,7 +25,7 @@ const BookingFormPopup = ({ isVisible, showBookingForm }) => {
         }}
         animationDuration={500}
       >
-        <BookingForm />
+        <BookingForm isShareForm={isShareForm} />
       </Modal>
     </div>
   );

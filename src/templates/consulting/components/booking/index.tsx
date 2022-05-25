@@ -24,6 +24,7 @@ const Booking = ({ title, subTitle }) => {
           <BookingFormPopup
             isVisible={isVisible}
             showBookingForm={setIsVisible}
+            isShareForm="false"
           />
 
           <h2 className={styles.contact}>or call us on +61 2 9953 3000</h2>

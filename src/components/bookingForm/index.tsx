@@ -3,7 +3,7 @@ import { Button, Col, Form } from "react-bootstrap";
 import axios from "axios";
 import "./index.css";
 
-const BookingForm = () => {
+const BookingForm = ({ isShareForm }) => {
   const ACTIVE_INPUT = {
     FullName: "Full Name *",
     Email: "Email *",
@@ -13,6 +13,9 @@ const BookingForm = () => {
     Note: "Message",
     Company: "Company",
     ClassShow: "show",
+    ReferredCompany: "Referred Company",
+    ReferredFullName: "Referred FullName",
+    ReferredEmail: "Referred Email",
     None: "",
   };
 
@@ -79,10 +82,19 @@ const BookingForm = () => {
     },
   ];
 
+  //Show FomrStates and Active label
   const [isShowState, setIsShowState] = useState(false);
   const [activeLabel, setActiveLabel] = useState({});
+
+  //ContactForm title
+  const contactFormTitle = "Get your project started!";
+
+  //ShareForm title
+  const shareFormTitle = "Share this Page...";
+
   //Form Validation
   const [validated, setValidated] = useState(false);
+
   //Form Data
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -92,6 +104,11 @@ const BookingForm = () => {
   const [company, setCompany] = useState("");
   const [note, setNote] = useState("");
 
+  //ShareForm additional fields
+  const [referredFullName, setReferredFullName] = useState("");
+  const [referredEmail, setReferredEmail] = useState("");
+  const [referredCompany, setReferredCompany] = useState("");
+
   const handleInput = (targetInput, value) => {
     if (
       (targetInput == ACTIVE_INPUT.FullName ||
@@ -99,7 +116,10 @@ const BookingForm = () => {
         targetInput == ACTIVE_INPUT.Phone ||
         targetInput == ACTIVE_INPUT.Location ||
         targetInput == ACTIVE_INPUT.Company ||
-        targetInput == ACTIVE_INPUT.Note) &&
+        targetInput == ACTIVE_INPUT.Note ||
+        targetInput == ACTIVE_INPUT.ReferredCompany ||
+        targetInput == ACTIVE_INPUT.ReferredFullName ||
+        targetInput == ACTIVE_INPUT.ReferredEmail) &&
       value.trim().length > 0
     ) {
       setActiveLabel({ ...activeLabel, [targetInput]: true });
@@ -119,6 +139,12 @@ const BookingForm = () => {
           setCompany(value);
         case ACTIVE_INPUT.Note:
           setNote(value);
+        case ACTIVE_INPUT.ReferredCompany:
+          setReferredCompany(value);
+        case ACTIVE_INPUT.ReferredFullName:
+          setReferredFullName(value);
+        case ACTIVE_INPUT.ReferredEmail:
+          setReferredEmail(value);
         default:
           break;
       }
@@ -129,14 +155,15 @@ const BookingForm = () => {
       setActiveLabel({ ...activeLabel, [targetInput]: false });
     }
   };
-
+  //Check the validation of form
   const handleSubmit = (event) => {
-    event.preventDefault();
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
+      event.preventDefault();
       event.stopPropagation();
-    } else {
       setValidated(true);
+    } else {
+      setValidated(false);
       const subject = "Consulting enquiry - " + company + " - " + fullName;
       let body = "Consulting enquiry from " + document.URL + "<br/>";
       body = body + "Company: " + company + "<br/>";
@@ -164,6 +191,7 @@ const BookingForm = () => {
     }
   };
 
+  //Load states if selected country is Australia
   let theStateList;
   if (isShowState) {
     theStateList = (
@@ -202,11 +230,161 @@ const BookingForm = () => {
     theStateList = null;
   }
 
+  //Form fields checked either it is ShareForm or BookingForm
+  let theFormFields;
+  if (!isShareForm) {
+    theFormFields = (
+      <>
+        <Form.Group as={Col} controlId="validationCompany">
+          <div className="field-wrapper">
+            <Form.Label
+              className={
+                activeLabel[ACTIVE_INPUT.Company] == true
+                  ? ACTIVE_INPUT.ClassShow
+                  : ACTIVE_INPUT.None
+              }
+            >
+              {ACTIVE_INPUT.Company}
+            </Form.Label>
+            <Form.Control
+              onChange={(e) => {
+                handleInput(ACTIVE_INPUT.Company, e.currentTarget.value);
+              }}
+              type="text"
+              placeholder={ACTIVE_INPUT.Company}
+            />
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Please provide your full name.
+            </Form.Control.Feedback>
+          </div>
+        </Form.Group>
+        <Form.Group controlId="contactFormNote">
+          <div className="field-wrapper">
+            <Form.Label
+              className={
+                activeLabel[ACTIVE_INPUT.Note] == true
+                  ? ACTIVE_INPUT.ClassShow
+                  : ACTIVE_INPUT.None
+              }
+            >
+              {ACTIVE_INPUT.Note}
+            </Form.Label>
+
+            <Form.Control
+              as="textarea"
+              placeholder="Note"
+              rows={4}
+              maxLength={2000}
+              name="address"
+              required
+              onChange={(e) => {
+                handleInput(ACTIVE_INPUT.Note, e.currentTarget.value);
+              }}
+            />
+            <small>Maximium 2000 characters</small>
+            <Form.Control.Feedback type="invalid">
+              Please provide note.
+            </Form.Control.Feedback>
+          </div>
+        </Form.Group>
+      </>
+    );
+  } else if (isShareForm) {
+    theFormFields = (
+      <>
+        <Form.Group as={Col} controlId="validationCompany">
+          <div className="field-wrapper">
+            <Form.Label
+              className={
+                activeLabel[ACTIVE_INPUT.ReferredCompany] == true
+                  ? ACTIVE_INPUT.ClassShow
+                  : ACTIVE_INPUT.None
+              }
+            >
+              {ACTIVE_INPUT.ReferredCompany}
+            </Form.Label>
+            <Form.Control
+              onChange={(e) => {
+                handleInput(
+                  ACTIVE_INPUT.ReferredCompany,
+                  e.currentTarget.value
+                );
+              }}
+              required
+              type="text"
+              placeholder={ACTIVE_INPUT.ReferredCompany}
+            />
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Please provide your referred company .
+            </Form.Control.Feedback>
+          </div>
+        </Form.Group>
+        <Form.Group as={Col} controlId="validationCompany">
+          <div className="field-wrapper">
+            <Form.Label
+              className={
+                activeLabel[ACTIVE_INPUT.ReferredFullName] == true
+                  ? ACTIVE_INPUT.ClassShow
+                  : ACTIVE_INPUT.None
+              }
+            >
+              {ACTIVE_INPUT.ReferredFullName}
+            </Form.Label>
+            <Form.Control
+              onChange={(e) => {
+                handleInput(
+                  ACTIVE_INPUT.ReferredFullName,
+                  e.currentTarget.value
+                );
+              }}
+              required
+              type="text"
+              placeholder={ACTIVE_INPUT.ReferredFullName}
+            />
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Please provide your referred full name.
+            </Form.Control.Feedback>
+          </div>
+        </Form.Group>
+        <Form.Group as={Col} controlId="validationCompany">
+          <div className="field-wrapper">
+            <Form.Label
+              className={
+                activeLabel[ACTIVE_INPUT.ReferredEmail] == true
+                  ? ACTIVE_INPUT.ClassShow
+                  : ACTIVE_INPUT.None
+              }
+            >
+              {ACTIVE_INPUT.ReferredEmail}
+            </Form.Label>
+            <Form.Control
+              onChange={(e) => {
+                handleInput(ACTIVE_INPUT.ReferredEmail, e.currentTarget.value);
+              }}
+              required
+              type="text"
+              placeholder={ACTIVE_INPUT.ReferredEmail}
+            />
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Please provide your Referred email.
+            </Form.Control.Feedback>
+          </div>
+        </Form.Group>
+      </>
+    );
+  } else {
+    theFormFields = null;
+  }
+
   return (
     <div className="modal-content">
       <div className="modal-body">
         <div className="get-started-form">
-          <h2>Get your project started!</h2>
+          <h2>{isShareForm ? shareFormTitle : contactFormTitle}</h2>
           <Form
             noValidate
             validated={validated}
@@ -232,9 +410,11 @@ const BookingForm = () => {
                   type="text"
                   placeholder={ACTIVE_INPUT.FullName}
                 />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 <Form.Control.Feedback type="invalid">
                   Please provide your full name.
+                </Form.Control.Feedback>
+                <Form.Control.Feedback type="valid">
+                  Looks good!
                 </Form.Control.Feedback>
               </div>
             </Form.Group>
@@ -277,9 +457,13 @@ const BookingForm = () => {
                     handleInput(ACTIVE_INPUT.Phone, e.currentTarget.value);
                   }}
                   type="phone"
+                  required
                   placeholder={ACTIVE_INPUT.Phone}
                 />
                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Please provide valid Phone number.
+                </Form.Control.Feedback>
               </div>
             </Form.Group>
             <Form.Group controlId="locationSelect">
@@ -316,61 +500,7 @@ const BookingForm = () => {
               </div>
             </Form.Group>
             {theStateList}
-            <Form.Group as={Col} controlId="validationCompany">
-              <div className="field-wrapper">
-                <Form.Label
-                  className={
-                    activeLabel[ACTIVE_INPUT.Company] == true
-                      ? ACTIVE_INPUT.ClassShow
-                      : ACTIVE_INPUT.None
-                  }
-                >
-                  {ACTIVE_INPUT.Company}
-                </Form.Label>
-                <Form.Control
-                  onChange={(e) => {
-                    handleInput(ACTIVE_INPUT.Company, e.currentTarget.value);
-                  }}
-                  required
-                  type="text"
-                  placeholder={ACTIVE_INPUT.Company}
-                />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                <Form.Control.Feedback type="invalid">
-                  Please provide your full name.
-                </Form.Control.Feedback>
-              </div>
-            </Form.Group>
-            <Form.Group controlId="contactFormNote">
-              <div className="field-wrapper">
-                <Form.Label
-                  className={
-                    activeLabel[ACTIVE_INPUT.Note] == true
-                      ? ACTIVE_INPUT.ClassShow
-                      : ACTIVE_INPUT.None
-                  }
-                >
-                  {ACTIVE_INPUT.Note}
-                </Form.Label>
-
-                <Form.Control
-                  as="textarea"
-                  placeholder="Note"
-                  rows={4}
-                  maxLength={2000}
-                  name="address"
-                  required
-                  onChange={(e) => {
-                    handleInput(ACTIVE_INPUT.Note, e.currentTarget.value);
-                  }}
-                />
-                <small>Maximium 2000 characters</small>
-                <Form.Control.Feedback type="invalid">
-                  Please provide note.
-                </Form.Control.Feedback>
-              </div>
-            </Form.Group>
-
+            {theFormFields}
             <Button className="btn done" type="submit">
               SUBMIT
             </Button>
