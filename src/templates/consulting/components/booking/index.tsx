@@ -10,7 +10,7 @@ import BookingFormPopup from "../../../../components/bookingFormPopup";
 
 const Booking = ({ title, subTitle }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const showBookingForm = () => setIsVisible(!isVisible);
+  const [isShareForm, setIsShareForm] = useState(false);
 
   return (
     <>
@@ -20,11 +20,18 @@ const Booking = ({ title, subTitle }) => {
 
           <h2 className={styles.subTitle}>{subTitle}</h2>
 
-          <Button onClick={showBookingForm}>Book a FREE Initial Meeting</Button>
+          <Button
+            onClick={() => {
+              setIsVisible(!isVisible);
+              setIsShareForm(false);
+            }}
+          >
+            Book a FREE Initial Meeting
+          </Button>
           <BookingFormPopup
             isVisible={isVisible}
             showBookingForm={setIsVisible}
-            isShareForm="false"
+            isShareForm={isShareForm}
           />
 
           <h2 className={styles.contact}>or call us on +61 2 9953 3000</h2>
