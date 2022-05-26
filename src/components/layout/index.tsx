@@ -8,7 +8,7 @@ import Menu from "../../../lib/SSW.MegaMenu/menu/menu";
 import MobileMenu from "../../../lib/SSW.MegaMenu//mobile-menu/mobile-menu";
 import { navigate } from "gatsby";
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ pageTitle, children, backgroundColor }) => {
   const node = useRef(null);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
@@ -28,6 +28,7 @@ const Layout = ({ pageTitle, children }) => {
         onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
         style={{
           transform: isMenuOpened ? "translateX(84%)" : "translateX(0px)",
+          backgroundColor: backgroundColor,
         }}
       >
         <title>{pageTitle}</title>
@@ -35,7 +36,7 @@ const Layout = ({ pageTitle, children }) => {
           <Header />
           <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
         </div>
-        <main>{children}</main>
+        <main style={{ backgroundColor: backgroundColor }}>{children}</main>
         <Footer />
       </div>
       <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>
