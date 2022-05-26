@@ -1,8 +1,8 @@
 import React from 'react';
 import "./index.css";
 
-const SideNav = ({ title }) => {
-    // TODO: modify existing MDX pages to handle sidenav data
+const SideNav = ({ title }) => {   
+    
     return(
         <div id="pagenav">
             <h2 className="navtitle">{title}:</h2>

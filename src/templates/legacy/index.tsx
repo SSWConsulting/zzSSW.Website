@@ -56,8 +56,7 @@ const LegacyTemplate = ({ data }) => {
                         </div>
                     </div>
                     <div className="col-3">
-                        {title === "Software Auditing" ? "" : <SideNav title={title} />}
-                        <Sidebar />
+                        <Sidebar title={title} />
                     </div>
                 </div>
       
