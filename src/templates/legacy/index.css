@@ -28,7 +28,7 @@ span a img {
     border: 1px solid #ccc;
     padding: 10px;
 }
-.good::before {
+.tickpoint::before {
     background: transparent url(../../assets/images/Good.gif) no-repeat;
     content: "\00a0 ";
     padding-left: 20px;
@@ -37,7 +37,7 @@ span a img {
     left: 0px;
     top:0px;
 }
-.good {  
+.tickpoint {  
     caption-side: bottom;
     padding-left: 1.5rem;
     margin: 0.5rem 0 6px;
