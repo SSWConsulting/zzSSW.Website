@@ -9,7 +9,6 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Body from "./components/body";
 import Sidebar from "./components/sidebar";
-import SideNav from "./components/sidenav";
 
 const LegacyTemplate = ({ data }) => {
     const { title, subtitle, featureImage } = data.mdx.frontmatter
