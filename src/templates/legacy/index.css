@@ -44,3 +44,10 @@ span a img {
     line-height: initial;
     position: relative;
 }
+.body h2 {
+    color: #cc4141;
+}
+.body strong {
+    color: #333;
+    font-weight: bold;
+}

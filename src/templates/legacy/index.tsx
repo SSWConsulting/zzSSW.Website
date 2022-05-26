@@ -27,8 +27,6 @@ const LegacyTemplate = ({ data }) => {
         },
     ];
 
-    console.log();
-
     return (
         <Layout pageTitle={pageTitle}>
             <div className='legacy-banner'>
