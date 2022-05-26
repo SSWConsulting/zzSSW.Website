@@ -42,20 +42,21 @@ const LegacyTemplate = ({ data }) => {
             </div>
             <div className="main-container">
                 <div className="row">
-                    <div className="col-9 legacy-content">
+                    <div className="col-9">
                         <Body 
                             content={data.mdx.body}
                         />
+                        <h2>Australia Wide</h2>
+                        <p>We have consultants available in all Australian capital cities including Sydney, Melbourne, Brisbane, Adelaide, Perth and Canberra.</p>
+                        <div className='mb-5'>
+                            <BookingForm />
+                        </div>
                     </div>
                     <div className="col-3">
                         <Sidebar />
                     </div>
                 </div>
-                <h2>Australia Wide</h2>
-                <p>We have consultants available in all Australian capital cities including Sydney, Melbourne, Brisbane, Adelaide, Perth and Canberra.</p>
-                <div className='mb-5'>
-                    <BookingForm />
-                </div>
+      
             </div>
         </Layout>
     );
