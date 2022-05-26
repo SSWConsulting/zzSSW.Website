@@ -1,5 +1,5 @@
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React, {ReactElement} from 'react';
+import React from 'react';
 
 import * as styles from "./index.module.css";
 

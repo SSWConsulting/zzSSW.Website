@@ -46,10 +46,12 @@ const LegacyTemplate = ({ data }) => {
                         <Body 
                             content={data.mdx.body}
                         />
-                        <h2>Australia Wide</h2>
-                        <p>We have consultants available in all Australian capital cities including Sydney, Melbourne, Brisbane, Adelaide, Perth and Canberra.</p>
-                        <div className='mb-5'>
-                            <BookingForm />
+                        <div className="booking-form">
+                            <h2>Australia Wide</h2>
+                            <p>We have consultants available in all Australian capital cities including Sydney, Melbourne, Brisbane, Adelaide, Perth and Canberra.</p>
+                            <div className='mb-5'>
+                                <BookingForm />
+                            </div>
                         </div>
                     </div>
                     <div className="col-3">

@@ -1,5 +1,4 @@
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React, {ReactElement} from 'react';
+import React from 'react';
 import phoneImg from '../../../../assets/images/phone.png';
 import SideNav from '../sidenav';
 import "./index.css";
