@@ -1,13 +1,12 @@
 import React from 'react';
 import phoneImg from '../../../../assets/images/phone.png';
-import SideNav from '../sidenav';
 import "./index.css";
 
-const Sidebar = ({ }) => {
-    // TODO: create mdx hook for content
+const Sidebar = () => {
+    // TODO: create mdx hook for sidebar content
+    
     return(
         <div>
-            <SideNav />
             <div className="sidebar">
                 <div id="OurExperience">
                     <div className="section">

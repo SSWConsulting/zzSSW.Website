@@ -9,6 +9,7 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Body from "./components/body";
 import Sidebar from "./components/sidebar";
+import SideNav from "./components/sidenav";
 
 const LegacyTemplate = ({ data }) => {
     const { title, subtitle, featureImage } = data.mdx.frontmatter
@@ -35,7 +36,7 @@ const LegacyTemplate = ({ data }) => {
                 <GatsbyImage
                     className="featureImage"
                     image={getImage(featureImage)}
-                    alt=""
+                    alt="feature image"
                 />
                 <h1 className='no-header-margin'>{title}</h1>
                 <h2>{subtitle}</h2>
@@ -55,6 +56,7 @@ const LegacyTemplate = ({ data }) => {
                         </div>
                     </div>
                     <div className="col-3">
+                        {title === "Software Auditing" ? "" : <SideNav title={title} />}
                         <Sidebar />
                     </div>
                 </div>
