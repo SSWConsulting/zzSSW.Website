@@ -1,0 +1,16 @@
+#pagenav {
+    margin-top: 20px;
+}
+.navtitle {
+    font-weight: 300;
+    font-size: .75rem;
+    color: #fff;
+    background: #414141;
+    text-transform: uppercase;
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 1px 6px;
+    margin: 10px 0 5px;
+    clear: both;
+    line-height: 17px;
+    display: inline-block;
+}
