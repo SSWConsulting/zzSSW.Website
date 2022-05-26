@@ -39,7 +39,15 @@ td {
     margin: 0 !important;
 }
 .ticks ul li {
+    list-style: url(../../assets/images/Good.gif);
     padding-right: 0.5rem;
-    list-style: url(../../assets/images/Good.gif) ;
     margin-bottom: .6rem;
+}
+.body blockquote {
+    background: #eee;
+    padding: 1.8em 1.8em 1.2em;
+    font-style: italic;
+    font-size: 1rem;
+    margin: 10px 0;
+    border-left: 5px solid #ccc;
 }

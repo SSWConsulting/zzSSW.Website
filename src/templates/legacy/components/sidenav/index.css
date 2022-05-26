@@ -1,6 +1,9 @@
 #pagenav {
     margin-top: 20px;
 }
+#pagenav ul li {
+    margin-bottom: .4rem;
+}
 .navtitle {
     font-weight: 300;
     font-size: .75rem;
