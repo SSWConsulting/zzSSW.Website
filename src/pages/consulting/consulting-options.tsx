@@ -12,6 +12,7 @@ import adam_thumb from "../../assets/images/Adam-Cogan.jpg";
 import backlog from "../../assets/images/backlog.png";
 import burndown from "../../assets/images/burndown.png";
 import speech_bubble from "../../assets/images/speech-bubble.png";
+import { WHITE } from "../../constants";
 
 const ConsultingOptions = () => {
   const data = [
@@ -25,7 +26,10 @@ const ConsultingOptions = () => {
   ];
 
   return (
-    <Layout pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics">
+    <Layout
+      backgroundColor={WHITE}
+      pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics"
+    >
       <div className="legacy-banner">
         <img src={speech_bubble} />
         <Breadcrumb data={data} />
