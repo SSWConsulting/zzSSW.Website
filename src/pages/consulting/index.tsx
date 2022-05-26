@@ -26,8 +26,6 @@ const ConsultingServices = ({ data }) => {
   const pageMenu = data.allMdx.nodes.filter(x => x.frontmatter.pageLeftMenu);
   const pageServices = data.allMdx.nodes.filter(y => y.frontmatter.serviceList);
 
-  console.log(pageServices);
-
   const serviceArray = ["_0", "_1", "_2", "_3", "_4", "_5"];
 
   return (
@@ -61,23 +59,21 @@ const ConsultingServices = ({ data }) => {
             </Col>
             <Col sm={9}>
               <div id="maincontent">
-                <div id="isotope">
+                <div id="isotope">          
 
-                  {serviceArray.map((item, key) => { /* <h1>{item}</h1> */
+                  {serviceArray.map((item, key) => {
                     return (
                       <div key={key}>
                         
                         {pageServices.map(y => {
-                        if (y.frontmatter?.serviceList._0.list) {
+                        if (y.frontmatter?.serviceList[item].list) {
                           return (
                             <>
-                              <div className={y.frontmatter?.serviceList._0.heading_filter}>
-                                <h2>{y.frontmatter?.serviceList._0.heading}</h2>
-                              </div>
+                              <ServiceHeader heading={y.frontmatter?.serviceList[item].heading} headingfilter={y.frontmatter?.serviceList[item].heading_filter} />
 
                               <div className="flex-services">
 
-                                {y.frontmatter.serviceList._0.list.map((p, idx) => {
+                                {y.frontmatter.serviceList[item].list.map((p, idx) => {
                                   const tempobject = {
                                     serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
                                   }
@@ -129,6 +125,14 @@ const ServiceContent = ({ props: { serviceDesc, serviceFilter, serviceLink, serv
         </Link>
       </div>
 
+    </div>
+  )
+}
+
+const ServiceHeader = ({ heading, headingfilter }) => {
+  return (
+    <div className={headingfilter}>
+      <h2>{heading}</h2>
     </div>
   )
 }

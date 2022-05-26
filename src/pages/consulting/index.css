@@ -1,14 +1,3 @@
-/*.flex-services {
-	width: 120%;
-	padding-left: 25px;
-	display: flex;
-	flex-wrap: wrap;
-}
-.service-item {
-	width: 48%;
-	min-width: 200px;
-	margin: 5px;
-} */
 .flex-services {
 	width: 110%;
 	display: flex;
