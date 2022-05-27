@@ -78,6 +78,31 @@ const ConsultingServices = ({ data }) => {
                           }
                         })}
                         
+                        {/* Adds the service item heading and each of the service items following that */}
+                        {pageServices.map(y => {
+                        if (y.frontmatter?.serviceList[serviceListItem].list) {
+                          return (
+                            <>
+                              <ServiceHeader heading={y.frontmatter?.serviceList[serviceListItem].heading} headingfilter={y.frontmatter?.serviceList[serviceListItem].heading_filter} />
+
+                              <div className="flex-services">
+
+                                {y.frontmatter.serviceList[serviceListItem].list.map((p, idx) => {
+                                  const tempobject = {
+                                    serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
+                                  }
+                                  return (
+                                    <ServiceContent key={idx} props={tempobject} />
+                                  )
+                                })}
+
+                              </div>
+
+                            </>
+                          )
+                        }
+
+                      })}
                       </div>
                     )
                   })}
@@ -103,7 +128,6 @@ const SideMenu = ({ menuText, menuLink, menuFilter, menuClass }) => {
 
 /* Displays the service items */
 const ServiceContent = ({ props: { serviceDesc, serviceFilter, serviceLink, serviceTitle, serviceImage } }) => {
-  console.log("HIT");
   return (
     <div className="service-item">
 
@@ -132,17 +156,8 @@ const ServiceHeader = ({ heading, headingfilter }) => {
 
 /* Handles the onClick event for the side menu and dumps serviceItem matching */
 const menuHandling = ({ menuFilter }) => {
-  const displayArray = mainServiceArray.filter(fi => fi.filter_item.includes(menuFilter.substring(1)))
-
-  {displayArray.map((serviceListItem, key) => {
-    const tempobject = {
-      serviceTitle: serviceListItem.title, serviceLink: serviceListItem.link, serviceDesc: serviceListItem.description, serviceFilter: serviceListItem.filter_item, serviceImage: serviceListItem.image?.childImageSharp.gatsbyImageData
-    }
-    return (
-      <ServiceContent key={key} props={tempobject} />
-    )
-
-  })}
+  console.log(menuFilter.substring(1));
+  console.log(mainServiceArray.filter(fi => fi.filter_item.includes(menuFilter.substring(1))));
 
 }
 
