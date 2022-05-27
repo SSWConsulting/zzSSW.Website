@@ -10,7 +10,7 @@ import BookingTabs from "../../../components/are-you-stuck/components/booking-ta
 import BuildPlatform from '../../../components/builtPlatform';
 import MainServices from "../../../components/are-you-stuck/components/main-services";
 
-import '../../../components/are-you-stuck/components/index.module.css';
+import './index.module.css';
 
 const AreYouStuck = () => {
   // const { solution } = data
