@@ -62,7 +62,6 @@ ul#filters li a:hover {
 	background-color: #eee;
 	background-position: 5px center;
 }
-
 ul#filters li a.selected {
 	color: #cc4141;
 	background-position: 5px center;

@@ -12,6 +12,8 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+let mainServiceArray = [];
+
 const ConsultingServices = ({ data }) => {
   const databc = [
     {
@@ -49,9 +51,10 @@ const ConsultingServices = ({ data }) => {
               <div id="SidebarLeft">
                 <h3 className="filter-header"><a className="filter"></a>I am looking for...</h3>
                 <ul id="filters" className="option-set">
+                  {/* Loops through the pageLeftMenu */}
                   {pageMenu[0].frontmatter.pageLeftMenu.map((x, idx) => {
                     return (
-                      <SideMenu key={idx} menuText={x.title} menuLink={x.link} menuFilter={x.data_filter} />
+                      <SideMenu key={idx} menuText={x.title} menuLink={x.link} menuFilter={x.data_filter} menuClass={x.class} />
                     )
                   })}
                 </ul>
@@ -59,21 +62,32 @@ const ConsultingServices = ({ data }) => {
             </Col>
             <Col sm={9}>
               <div id="maincontent">
-                <div id="isotope">          
+                <div id="isotope">       
 
-                  {serviceArray.map((item, key) => {
+                  {/* Loops through each of the service category */}
+                  {serviceArray.map((serviceListItem, key) => {
                     return (
-                      <div key={key}>
+                      <div key={key}>  
+
+                        {/* Testing filtering in 1 large array */}
+                        {pageServices.map(fl => {
+                          if (fl.frontmatter?.serviceList[serviceListItem].list) {
+                            {fl.frontmatter.serviceList[serviceListItem].list.map((serviceItem, idx) => {
+                              mainServiceArray.push(serviceItem);
+                            })}
+                          }
+                        })}
                         
+                        {/* Adds the service item heading and each of the service items following that */}
                         {pageServices.map(y => {
-                        if (y.frontmatter?.serviceList[item].list) {
+                        if (y.frontmatter?.serviceList[serviceListItem].list) {
                           return (
                             <>
-                              <ServiceHeader heading={y.frontmatter?.serviceList[item].heading} headingfilter={y.frontmatter?.serviceList[item].heading_filter} />
+                              <ServiceHeader heading={y.frontmatter?.serviceList[serviceListItem].heading} headingfilter={y.frontmatter?.serviceList[serviceListItem].heading_filter} />
 
                               <div className="flex-services">
 
-                                {y.frontmatter.serviceList[item].list.map((p, idx) => {
+                                {y.frontmatter.serviceList[serviceListItem].list.map((p, idx) => {
                                   const tempobject = {
                                     serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
                                   }
@@ -105,12 +119,14 @@ const ConsultingServices = ({ data }) => {
   );
 };
 
-const SideMenu = ({ menuText, menuLink, menuFilter }) => {
+/* Displays the pageLeftMenu */
+const SideMenu = ({ menuText, menuLink, menuFilter, menuClass }) => {
   return (
-    <li><a href={"#" + menuLink} data-filter={menuFilter}>{menuText}</a></li>
+    <li><a href={"#" + menuLink} data-filter={menuFilter} className={menuClass} onClick={() => menuHandling({menuFilter})}>{menuText}</a></li>
   )
 }
 
+/* Displays the service items */
 const ServiceContent = ({ props: { serviceDesc, serviceFilter, serviceLink, serviceTitle, serviceImage } }) => {
   return (
     <div className="service-item">
@@ -129,12 +145,20 @@ const ServiceContent = ({ props: { serviceDesc, serviceFilter, serviceLink, serv
   )
 }
 
+/* Displays the heading for service items */
 const ServiceHeader = ({ heading, headingfilter }) => {
   return (
     <div className={headingfilter}>
       <h2>{heading}</h2>
     </div>
   )
+}
+
+/* Handles the onClick event for the side menu and dumps serviceItem matching */
+const menuHandling = ({ menuFilter }) => {
+  console.log(menuFilter.substring(1));
+  console.log(mainServiceArray.filter(fi => fi.filter_item.includes(menuFilter.substring(1))));
+
 }
 
 export default ConsultingServices;
@@ -148,6 +172,7 @@ export const query = graphql`
           data_filter
           link
           title
+          class
         }
         serviceList {
           _0 {
