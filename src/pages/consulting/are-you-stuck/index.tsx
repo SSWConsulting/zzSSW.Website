@@ -56,7 +56,6 @@ console.log("test 1")
 
         <BuildPlatform />
       </>
-
     </Layout>
   );
 };
