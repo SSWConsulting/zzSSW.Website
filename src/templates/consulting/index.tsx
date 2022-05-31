@@ -16,7 +16,7 @@ import { graphql } from "gatsby";
 import { WHITE, WHITE_SMOKE } from "../../constants";
 
 const ConsultingTemplate = ({ data }) => {
-  const { title, booking, benefits, solution, technologies } =
+  const { title, booking, benefits, solution, techHeader, technologies } =
     data.mdx.frontmatter;
   const pageTitle = `${title} | SSW Consulting - Sydney, Brisbane, Melbourne`;
   const breadcrumbData = [
@@ -48,7 +48,7 @@ const ConsultingTemplate = ({ data }) => {
 
         <Clients />
 
-        <Technologies techList={technologies} />
+        <Technologies technologies={technologies} techHeader={techHeader} />
 
         <Solution {...solution} />
 
@@ -58,41 +58,40 @@ const ConsultingTemplate = ({ data }) => {
   );
 };
 export const consultingPagesQuery = graphql`
-  query PageByPath($slug: String) {
-    mdx(slug: { eq: $slug }) {
-      frontmatter {
-        type
+query PageByPath($slug: String) {
+  mdx(slug: {eq: $slug}) {
+    frontmatter {
+      type
+      title
+      booking {
         title
-        booking {
-          title
-          subTitle
-        }
-        benefits {
-          benefitList {
-            image {
-              childImageSharp {
-                gatsbyImageData
-              }
+        subTitle
+      }
+      techHeader
+      technologies {
+        name
+      }
+      solution {
+        project
+      }
+      benefits {
+        benefitList {
+          description
+          image {
+            childImageSharp {
+              gatsbyImageData
             }
-            title
-            description
-            linkName
-            linkURL
           }
-          rule {
-            name
-            url
-          }
+          title
         }
-        solution {
-          project
-        }
-        technologies {
+        rule {
           name
+          url
         }
       }
-      body
     }
+    body
   }
+}
 `;
 export default ConsultingTemplate;
