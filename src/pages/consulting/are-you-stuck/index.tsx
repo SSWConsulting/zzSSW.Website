@@ -8,14 +8,18 @@ import Testimonials from "../../../templates/consulting/components/testimonials"
 import Solution from "../../../components/are-you-stuck/components/solution";
 import BookingTabs from "../../../components/are-you-stuck/components/booking-tabs";
 import BuildPlatform from '../../../components/builtPlatform';
-import MainServices from "../../../components/are-you-stuck/components/main-services";
+import Technologies from "../../../templates/consulting/components/technologies";
+// import MainServices from "../../../components/are-you-stuck/components/main-services";
 
 import './index.module.css';
+import { WHITE } from "../../../constants";
+import { graphql } from "gatsby";
 
 const AreYouStuck = () => {
   // const { solution } = data
   const pageTitle = `Are you stuck on legacy technologies? | SSW Consulting - Sydney, Brisbane, Melbourne`
   const solution = `help`
+  const techHeader = `SSW's main services`
   const techList = [
     {
       "name": "web-applications"
@@ -35,10 +39,8 @@ const AreYouStuck = () => {
     },
 ];
 
-console.log("test 1")
-
   return (
-    <Layout pageTitle={pageTitle}>
+    <Layout pageTitle={pageTitle} backgroundColor={WHITE}>
       <>
         <Breadcrumb data={breadcrumbData}/>
 
@@ -50,11 +52,12 @@ console.log("test 1")
 
         <Clients />
 
-        <MainServices techList={techList}/>
+        {/* <Technologies techList={techList}/> */}
+        <Technologies techHeader={techHeader} technologies={techList} />
 
         <Solution project={solution} />
 
-        <BuildPlatform />
+        <BuildPlatform backgroundColor={WHITE}/>
       </>
     </Layout>
   );

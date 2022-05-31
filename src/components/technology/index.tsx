@@ -7,7 +7,7 @@ import { BASE_URL } from "../../constants";
 
 const Technology = (props) => {
   const { techListLength, frontmatter, body, index } = props;
-  const { logoImage, readMoreSlug } = frontmatter;
+  const { logoImage, readMoreSlug, key } = frontmatter;
   let theReadMoreLink;
   let columnClass;
   if (techListLength % 2 != 0 && techListLength - 1 == index) {
@@ -28,7 +28,7 @@ const Technology = (props) => {
     <div className={columnClass}>
       <article className={skill} data-aos="flip-left">
         <figure>
-          <GatsbyImage image={getImage(logoImage)} alt="" />
+          <GatsbyImage image={getImage(logoImage)} alt={key} />
         </figure>
         <MDXRenderer>{body}</MDXRenderer>
         {theReadMoreLink}

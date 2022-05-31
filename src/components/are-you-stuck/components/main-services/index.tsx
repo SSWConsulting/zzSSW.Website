@@ -3,7 +3,7 @@ import { container } from "./index.module.css";
 import { useTechnologyMdxData } from "../../../../hooks/use-technology-mdx-data";
 import Technology from "../service";
 
-const Technologies = ({ techList }) => {
+const AYSTechnologies = ({ techList }) => {
   let techListLength: number = techList.length;
   const nodes = useTechnologyMdxData();
   const [techComponents, setTechComponents] = useState([]);
@@ -42,4 +42,4 @@ const Technologies = ({ techList }) => {
   );
 };
 
-export default Technologies;
+export default AYSTechnologies;

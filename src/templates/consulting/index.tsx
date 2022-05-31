@@ -62,7 +62,6 @@ query PageByPath($slug: String) {
   mdx(slug: {eq: $slug}) {
     frontmatter {
       type
-      title
       booking {
         title
         subTitle
