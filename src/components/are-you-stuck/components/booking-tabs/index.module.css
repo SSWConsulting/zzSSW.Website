@@ -2,22 +2,22 @@
     /* overflow: hidden; */
     color: white;
     text-align: center;
-    /* min-height: 800px; */
-    /* background-image: url('../../../../assets/images/mvc-benefits-bg.jpg'); */
+    min-height: 800px;
+    background-image: url('../../../../assets/images/mvc-benefits-bg.jpg');
     /* background:url('../../../../assets/images/mvc-benefits-bg.jpg') no-repeat center center fixed; */
-    /* background-position: center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; */
-    /* background-size: cover; */
-    /* padding-bottom: 100px; */
+    background-attachment: fixed;
+    background-size: cover;
+    padding-bottom: 100px;
     border-top: 4px solid #cc4141;
     border-bottom: 4px solid #cc4141;
 }
 
 .containerWrapper {
-    background:url('../../../../assets/images/mvc-benefits-bg.jpg') no-repeat center center fixed;
+    /* background:url('../../../../assets/images/mvc-benefits-bg.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 855px;
+    height: 855px; */
 }
 
 /* .backgroundImage {
