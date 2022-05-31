@@ -15,7 +15,7 @@ const Benefits = ({ benefits, markdownContent }) => {
         <MDXRenderer>{markdownContent}</MDXRenderer>
 
         <div className="flex-wrap">
-          {benefitList?.map(({ image, title, description }, index) => (
+          {benefitList?.map(({ image, title, description, linkName, linkURL }, index) => (
             <article
               className={`col-md-6 benefit`}
               key={index}
@@ -29,7 +29,12 @@ const Benefits = ({ benefits, markdownContent }) => {
                 />
               </figure>
               <h4 className="benefitTitle">{title}</h4>
-              <article className="benefitDesc">{description}</article>
+              <article className="benefitDesc">
+                {description}
+                {<a className="link" href={linkURL}>
+                    {linkName}
+                </a>}
+              </article>
             </article>
           ))}
         </div>
