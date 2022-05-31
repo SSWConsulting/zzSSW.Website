@@ -1,0 +1,29 @@
+.body-background-white{
+    background-color: #ffff !important;
+    max-width: 100% !important;  
+}
+.header-content{
+    line-height: 1em;
+    margin-bottom: 5px;
+    min-height: 111px;
+
+}
+.header-content h1{
+    margin:0;
+    font-size: 2rem;
+    padding-left: 1rem;
+
+}
+.body-content{
+    margin-top: 10px;
+    margin-bottom: 2em;
+    padding: 2rem 0 2rem 1rem;
+}
+.body-content p{
+    padding-left: 1rem;
+    
+}
+.link-content{
+    padding:20px;
+    text-align: center;
+}
