@@ -76,7 +76,11 @@ query PageByPath($slug: String) {
       benefits {
         benefitList {
           description
-          image
+          image {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
           title
         }
         rule {
