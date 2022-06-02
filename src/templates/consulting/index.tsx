@@ -13,6 +13,7 @@ import BuildPlatform from "../../components/builtPlatform";
 
 import "./index.module.css";
 import { graphql } from "gatsby";
+import { WHITE, WHITE_SMOKE } from "../../constants";
 
 const ConsultingTemplate = ({ data }) => {
   const { title, booking, benefits, solution, techHeader, technologies } =
@@ -33,7 +34,7 @@ const ConsultingTemplate = ({ data }) => {
   ];
 
   return (
-    <Layout pageTitle={pageTitle}>
+    <Layout backgroundColor={{ WHITE_SMOKE }} pageTitle={pageTitle}>
       <>
         <Breadcrumb data={breadcrumbData} />
 
@@ -51,7 +52,7 @@ const ConsultingTemplate = ({ data }) => {
 
         <Solution {...solution} />
 
-        <BuildPlatform />
+        <BuildPlatform backgroundColor={WHITE} />
       </>
     </Layout>
   );
