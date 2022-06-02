@@ -32,6 +32,15 @@ module.exports = {
         patterns: ["technologies/**"],
       },
     },
+    {
+      resolve: "gatsby-source-git",
+      options: {
+        name: "legacy",
+        remote: process.env.CONTENT_REPO,
+        branch: process.env.CONTENT_BRANCH,
+        patterns: ["legacy/**"],
+      },
+    },
     "gatsby-plugin-mdx-source-name",
     {
       resolve: "gatsby-plugin-mdx",
@@ -50,6 +59,14 @@ module.exports = {
               iframeId: false, //Optional: if true, iframe's id will be set to what is provided after 'video:' (YouTube IFrame player API requires iframe id)
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              backgroundColor: 'transparent',
+            },
+          },
+          "gatsby-remark-fenced-divs",
         ],
       },
     },
