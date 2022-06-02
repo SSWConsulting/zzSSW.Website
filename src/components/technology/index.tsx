@@ -28,7 +28,7 @@ const Technology = (props) => {
     <div className={columnClass}>
       <article className={skill} data-aos="flip-left">
         <figure>
-          <GatsbyImage image={getImage(logoImage)} alt="" />
+          <GatsbyImage image={getImage(logoImage)} alt="technology logo" />
         </figure>
         <MDXRenderer>{body}</MDXRenderer>
         {theReadMoreLink}
