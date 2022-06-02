@@ -22,7 +22,22 @@ const AreYouStuck = () => {
   const techHeader = `SSW's main services`
   const techList = [
     {
-      "name": "web-applications"
+      "name": "service-azure"
+    },
+    {
+      "name": "service-dynamics"
+    },
+    {
+      "name": "service-mobile-app-dev"
+    },
+    {
+      "name": "service-sharepoint"
+    },
+    {
+      "name": "service-UI-UX-design"
+    },
+    {
+      "name": "service-web-applications"
     }
   ]
 
