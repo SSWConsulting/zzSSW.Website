@@ -1,7 +1,7 @@
 import React from "react";
 import Breadcrumb from "../../components/breadcrumb";
 import Layout from "../../components/layout";
-import { graphql } from 'gatsby'
+import { graphql, PageRenderer } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import speech_bubble from "../../assets/images/speech-bubble.png";
@@ -69,14 +69,40 @@ const ConsultingServices = ({ data }) => {
                     return (
                       <div key={key}>  
 
-                        {/* Testing filtering in 1 large array */}
-                        {pageServices.map(fl => {
-                          if (fl.frontmatter?.serviceList[serviceListItem].list) {
-                            {fl.frontmatter.serviceList[serviceListItem].list.map((serviceItem, idx) => {
-                              mainServiceArray.push(serviceItem);
-                            })}
-                          }
-                        })}
+                      {/* Adds the service item heading and each of the service items following that */}
+                      {pageServices.map(y => {
+                        if (y.frontmatter?.serviceList[serviceListItem].list) {
+                          return (
+                            <>
+                              <ServiceHeader heading={y.frontmatter?.serviceList[serviceListItem].heading} headingfilter={y.frontmatter?.serviceList[serviceListItem].heading_filter} />
+
+                              <div className="flex-services">
+
+                                {y.frontmatter.serviceList[serviceListItem].list.map((p, idx) => {
+                                  const tempobject = {
+                                    serviceTitle: p.title, serviceLink: p.link, serviceDesc: p.description, serviceFilter: p.filter_item, serviceImage: p.image?.childImageSharp.gatsbyImageData
+                                  }
+                                  return (
+                                    <ServiceContent key={idx} props={tempobject} />
+                                  )
+                                })}
+
+                              </div>
+
+                            </>
+                          )
+                        }
+
+                      })}
+
+                      {/* Testing filtering in 1 large array */}
+                      {pageServices.map(fl => {
+                        if (fl.frontmatter?.serviceList[serviceListItem].list) {
+                          {fl.frontmatter.serviceList[serviceListItem].list.map((serviceItem, idx) => {
+                            mainServiceArray.push(serviceItem);
+                          })}
+                        }
+                      })}
                         
                       </div>
                     )
@@ -97,13 +123,12 @@ const ConsultingServices = ({ data }) => {
 /* Displays the pageLeftMenu */
 const SideMenu = ({ menuText, menuLink, menuFilter, menuClass }) => {
   return (
-    <li><a href={"#" + menuLink} data-filter={menuFilter} className={menuClass} onClick={() => menuHandling({menuFilter})}>{menuText}</a></li>
+    <li><a href={"#" + menuLink} data-filter={menuFilter} className={menuClass} onClick={() => MenuHandling({menuFilter})}>{menuText}</a></li>
   )
 }
 
 /* Displays the service items */
 const ServiceContent = ({ props: { serviceDesc, serviceFilter, serviceLink, serviceTitle, serviceImage } }) => {
-  console.log("HIT");
   return (
     <div className="service-item">
 
@@ -131,19 +156,22 @@ const ServiceHeader = ({ heading, headingfilter }) => {
 }
 
 /* Handles the onClick event for the side menu and dumps serviceItem matching */
-const menuHandling = ({ menuFilter }) => {
+const MenuHandling = ({ menuFilter }) => {
   const displayArray = mainServiceArray.filter(fi => fi.filter_item.includes(menuFilter.substring(1)))
 
   {displayArray.map((serviceListItem, key) => {
     const tempobject = {
       serviceTitle: serviceListItem.title, serviceLink: serviceListItem.link, serviceDesc: serviceListItem.description, serviceFilter: serviceListItem.filter_item, serviceImage: serviceListItem.image?.childImageSharp.gatsbyImageData
     }
+    console.log(tempobject);
     return (
-      <ServiceContent key={key} props={tempobject} />
+      <div key={key}> 
+        <ServiceContent key={key} props={tempobject} />
+      </div>
     )
 
   })}
-
+  
 }
 
 export default ConsultingServices;
