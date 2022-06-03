@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import classnames from "classnames";
-import { button, hoverable, anim } from "./index.module.css";
+import { button, hoverable, anim, buttonAnim } from "./index.module.css";
 import BookingFormPopup from "../bookingFormPopup";
 import * as styles from "./index.module.css";
 
-const Button = ({ children, ...props }) => {
+const BookingButton = ({ children, ...props }) => {
   return (
     <>
       <button
         type="button"
-        className={classnames(button, hoverable)}
+        className={classnames(button, hoverable, buttonAnim)}
         {...props}
       >
         {children}
@@ -19,4 +19,4 @@ const Button = ({ children, ...props }) => {
   );
 };
 
-export default Button;
+export default BookingButton;
