@@ -5,6 +5,7 @@ import { graphql, PageRenderer } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import speech_bubble from "../../assets/images/speech-bubble.png";
+import Filter from "../consulting/filter"
 
 import "./index.css";
 
@@ -28,6 +29,7 @@ const ConsultingServices = ({ data }) => {
   const pageMenu = data.allMdx.nodes.filter(x => x.frontmatter.pageLeftMenu);
   const pageServices = data.allMdx.nodes.filter(y => y.frontmatter.serviceList);
 
+  /* This array is used to read each service category in the mdx file */
   const serviceArray = ["_0", "_1", "_2", "_3", "_4", "_5"];
 
   return (
