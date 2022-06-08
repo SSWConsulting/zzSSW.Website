@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { container } from "./index.module.css";
 import { useTechnologyMdxData } from "../../../../hooks/use-technology-mdx-data";
-import Technology from "../../../../components/technology";
+import Technology from "../service";
 
-const Technologies = ({ technologies, techHeader }) => {
-  const techList = technologies;
+const AYSTechnologies = ({ techList }) => {
+  let techListLength: number = techList.length;
   const nodes = useTechnologyMdxData();
   const [techComponents, setTechComponents] = useState([]);
-  let techListLength: number = techList.length;
   useEffect(() => {
     techList.map(({ name }, index) => {
       setTechComponents((techComponents) => [
@@ -36,11 +35,11 @@ const Technologies = ({ technologies, techHeader }) => {
   return (
     <section className={container}>
       <article className="main-container">
-        <h1>{techHeader}</h1>
+        <h1>SSW's main services</h1>
         <div className="flex-wrap">{techComponents}</div>
       </article>
     </section>
   );
 };
 
-export default Technologies;
+export default AYSTechnologies;

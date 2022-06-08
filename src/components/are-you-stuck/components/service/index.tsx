@@ -3,11 +3,12 @@ import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import { skill } from "./index.module.css";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { BASE_URL } from "../../constants";
+// import { BASE_URL } from "../../constants";
+import { BASE_URL } from "../../../../constants";
 
 const Technology = (props) => {
   const { techListLength, frontmatter, body, index } = props;
-  const { logoImage, readMoreSlug, key } = frontmatter;
+  const { title, logoImage, readMoreSlug } = frontmatter;
   let theReadMoreLink;
   let columnClass;
   if (techListLength % 2 != 0 && techListLength - 1 == index) {
@@ -28,7 +29,7 @@ const Technology = (props) => {
     <div className={columnClass}>
       <article className={skill} data-aos="flip-left">
         <figure>
-          <GatsbyImage image={getImage(logoImage)} alt={key} />
+          <GatsbyImage image={getImage(logoImage)} alt={title} />
         </figure>
         <MDXRenderer>{body}</MDXRenderer>
         {theReadMoreLink}

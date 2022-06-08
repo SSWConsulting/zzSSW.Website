@@ -1,0 +1,89 @@
+.container {
+    overflow: hidden;
+    color: white;
+    /* background-image: url('../../../assets/images/consulting/mvc-benefits-bg.jpg'); */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 300;
+}
+
+h1 {
+    margin: 100px 0 50px 0;
+    font-size: 3.28rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+.videoImage:hover {
+    filter: brightness(75%);
+    cursor: pointer;
+    transition: 0.4s all;
+}
+
+.play {
+    height: 72px;
+    width: 72px;
+    margin-left: -36px;
+    margin-top: -36px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* background: url(../../assets/images/consulting/play.png) no-repeat; */
+    background: url(../../../assets/images/consulting/play.png) no-repeat;
+    cursor: pointer;
+}
+
+.videoContainer {
+    position: relative;
+    width: 750px;
+    height: 386px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+section {
+    padding-bottom: 0;
+}
+
+section article.main-container p, section article.main-container ul {
+    font-size: 1.2rem;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: 300;
+    width: 75%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+article ul li {
+    display: inline-block;
+    margin: 0 3rem;
+}
+
+article  ul li::before {
+    content: "■"; 
+    font-family:"Arial Black";
+    color: #cc4141; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
