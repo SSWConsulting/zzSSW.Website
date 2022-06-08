@@ -1,6 +1,6 @@
 import * as yup from "yup";
 import { VALIDATION_ERROR_MESSAGE } from "../../../constants";
-export const ValidationSchema = (isShowStates: boolean) =>
+export const ValidationSchema = (isShowStates: boolean, isShareForm: boolean) =>
   yup.object().shape({
     fullName: yup.string().required(VALIDATION_ERROR_MESSAGE.fullName),
     email: yup.string().email().required(VALIDATION_ERROR_MESSAGE.email),
@@ -9,13 +9,13 @@ export const ValidationSchema = (isShowStates: boolean) =>
     states: isShowStates
       ? yup.string().required(VALIDATION_ERROR_MESSAGE.states)
       : null,
-
-    note: yup.string().required(VALIDATION_ERROR_MESSAGE.note),
-    // referredFullName: yup
-    //   .string()
-    //   .required(VALIDATION_ERROR_MESSAGE.referredFullName),
-    // referredEmail: yup
-    //   .string()
-    //   .email()
-    //   .required(VALIDATION_ERROR_MESSAGE.referredEmail),
+    note: isShareForm
+      ? null
+      : yup.string().required(VALIDATION_ERROR_MESSAGE.note),
+    referredFullName: isShareForm
+      ? yup.string().required(VALIDATION_ERROR_MESSAGE.referredFullName)
+      : null,
+    referredEmail: isShareForm
+      ? yup.string().email().required(VALIDATION_ERROR_MESSAGE.referredEmail)
+      : null,
   });

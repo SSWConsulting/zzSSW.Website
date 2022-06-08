@@ -26,11 +26,13 @@ const BookingFormFormik = ({ isShareForm }) => {
   const [formValues, setFormValues] = useState(InitialValues);
 
   //Changing state of Validation Schema
-  const [schema, setSchema] = useState(() => ValidationSchema(isShowState));
+  const [schema, setSchema] = useState(() =>
+    ValidationSchema(isShowState, isShareForm)
+  );
 
   useEffect(() => {
     // every time isShowState changes, recreate the schema and set it in the state
-    setSchema(ValidationSchema(isShowState));
+    setSchema(ValidationSchema(isShowState, isShareForm));
     console.log("formValues", formValues);
   }, [isShowState]);
 
