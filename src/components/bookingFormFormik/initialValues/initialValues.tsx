@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-//import { Share } from "../index";
-
 export const InitialValues = {
   fullName: "",
   email: "",

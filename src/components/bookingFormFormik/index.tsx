@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import "./index.css";
 import { Formik } from "formik";
@@ -19,22 +19,26 @@ import FormGroupTextArea from "./formGroupTextArea";
 
 const BookingFormFormik = ({ isShareForm }) => {
   //Show FormStates and Active label
-  const [isShowState, setIsShowState] = useState(false);
+  const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
 
-  //Changing initialValues
-  const [formValues, setFormValues] = useState(InitialValues);
+  //returns true if country is Australia
+  const handleStates = (country) => {
+    return country === AUSTRALIA;
+  };
+
+  //useMemo is call, whenever country value is changed
+  const isShowStates = useMemo(() => handleStates(country), [country]);
 
   //Changing state of Validation Schema
   const [schema, setSchema] = useState(() =>
-    ValidationSchema(isShowState, isShareForm)
+    ValidationSchema(isShowStates, isShareForm)
   );
 
   useEffect(() => {
     // every time isShowState changes, recreate the schema and set it in the state
-    setSchema(ValidationSchema(isShowState, isShareForm));
-    console.log("formValues", formValues);
-  }, [isShowState]);
+    setSchema(ValidationSchema(isShowStates, isShareForm));
+  }, [isShowStates]);
 
   //Form Data
   const [fullName, setFullName] = useState("");
@@ -61,20 +65,13 @@ const BookingFormFormik = ({ isShareForm }) => {
         case ACTIVE_INPUT.Email:
           setFullName(value);
       }
-    } else if (targetInput == ACTIVE_INPUT.States && isShowState) {
+    } else if (targetInput == ACTIVE_INPUT.States && isShowStates) {
       setActiveInputLabel({ ...activeInputLabel, [targetInput]: true });
     } else {
       setActiveInputLabel({ ...activeInputLabel, [targetInput]: false });
     }
   };
 
-  const handleAustralianState = (target) => {
-    setIsShowState(target === AUSTRALIA ? true : false);
-  };
-  const handleSubmitx = (t) => {
-    console.log();
-    console.log("Submit", t);
-  };
   return (
     <div className="modal-content">
       <div className="modal-body">
@@ -82,7 +79,7 @@ const BookingFormFormik = ({ isShareForm }) => {
           <h2>{isShareForm ? SHARE_FORM_TITLE : CONTACT_FORM_TITLE}</h2>
           <Formik
             validationSchema={schema}
-            initialValues={formValues}
+            initialValues={InitialValues}
             onSubmit={async (values) => {
               console.log("Submit", values);
               alert(JSON.stringify(values, null, 2));
@@ -168,7 +165,8 @@ const BookingFormFormik = ({ isShareForm }) => {
                   name={FORM_INPUT.Location.toLowerCase()}
                   handleChange={(e) => {
                     handleChange(e);
-                    handleAustralianState(e.currentTarget.value);
+
+                    setCountry(e.currentTarget.value);
                   }}
                   handleClick={(e) => {
                     handleActiveInputLabel(
@@ -180,7 +178,7 @@ const BookingFormFormik = ({ isShareForm }) => {
                   isValid={touched.location && !errors.location}
                   error={errors.location}
                 />
-                {isShowState ? (
+                {isShowStates ? (
                   <FormGroupSelect
                     activeLabelClass={
                       activeInputLabel[ACTIVE_INPUT.States]
