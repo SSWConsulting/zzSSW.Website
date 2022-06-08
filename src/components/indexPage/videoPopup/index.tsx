@@ -23,8 +23,8 @@ const VideoPopup = ({ openPopup, onCloseModal }) => {
         }}
         center
         classNames={{
-          modalAnimationIn: "customEnterModalAnimation",
-          modalAnimationOut: "customLeaveModalAnimation",
+          modalAnimationIn: "videoModalAnimation",
+          modalAnimationOut: "videoLeaveModalAnimation",
         }}
         animationDuration={500}
       >

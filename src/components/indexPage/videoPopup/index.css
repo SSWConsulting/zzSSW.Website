@@ -34,7 +34,7 @@
     }
   }
   
-  @keyframes customEnterModalAnimation {
+  @keyframes videoModalAnimation {
     0% {
       transform: scale(0.2);
     }
@@ -42,7 +42,7 @@
       transform: scale(1);
     }
   }
-  @keyframes customLeaveModalAnimation {
+  @keyframes videoLeaveModalAnimation {
     0% {
       transform: scale(1);
     }

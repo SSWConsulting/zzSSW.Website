@@ -1,7 +1,6 @@
 import React from "react";
 import Breadcrumb from "../../components/breadcrumb";
 import Layout from "../../components/layout";
-import BookingForm from "../../components/bookingForm";
 import Tabs from "../../components/tabs";
 import TabContent from "../../components/tabs/tabContent";
 import { Link } from "gatsby";
@@ -13,6 +12,7 @@ import backlog from "../../assets/images/backlog.png";
 import burndown from "../../assets/images/burndown.png";
 import speech_bubble from "../../assets/images/speech-bubble.png";
 import { WHITE } from "../../constants";
+import BookingFormFormik from "../../components/bookingFormFormik";
 
 const ConsultingOptions = () => {
   const data = [
@@ -177,7 +177,7 @@ const ConsultingOptions = () => {
           including Sydney, Melbourne, Brisbane, Adelaide, Perth and Canberra.
         </p>
         <div className="mb-5">
-          <BookingForm isShareForm={false} />
+          <BookingFormFormik isShareForm={false} />
         </div>
       </div>
     </Layout>

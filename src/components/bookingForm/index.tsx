@@ -193,7 +193,7 @@ const BookingForm = ({ isShareForm }) => {
 
   //Load states if selected country is Australia
   let theStateList;
-  if (isShowState) {
+  if (!isShowState) {
     theStateList = (
       <>
         <Form.Group controlId="australianStateSelect">
