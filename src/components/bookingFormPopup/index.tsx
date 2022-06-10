@@ -2,10 +2,10 @@ import React from "react";
 import ReactPlayer from "react-player";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-import BookingForm from "../bookingForm";
+import BookingFormFormik from "../bookingFormFormik";
 import "./index.css";
 
-const BookingFormPopup = ({ isVisible, showBookingForm }) => {
+const BookingFormPopup = ({ isVisible, showBookingForm, isShareForm }) => {
   return (
     <div>
       <Modal
@@ -25,7 +25,7 @@ const BookingFormPopup = ({ isVisible, showBookingForm }) => {
         }}
         animationDuration={500}
       >
-        <BookingForm />
+        <BookingFormFormik isShareForm={isShareForm} />
       </Modal>
     </div>
   );
