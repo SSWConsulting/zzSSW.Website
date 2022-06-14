@@ -7,6 +7,9 @@ export const PAGE_TYPE = {
 //Page Types for BreadCrumbs data
 export const BASE_URL = "/";
 
+//Page Types for BreadCrumbs data
+export const HOST = window.location.host;
+
 //Page Titles for layout component
 export const PAGE_TITLE = {
   Consulting:
@@ -63,18 +66,20 @@ export const ACTIVE_INPUT = {
 
 //Validation  Messages
 export const VALIDATION_ERROR_MESSAGE = {
-  fullName: "Please enter your first name and last name.",
-  email: "Doesn’t look like a valid email.",
-  phone: "Please enter your phone number.",
-  location: "Select your country.",
-  states: "Select your state.",
-  note: "A message is required.",
-  referredFullName: "Please enter referred name",
-  referredEmail: "Please enter referred email",
+  FULL_NAME: "Please enter your first name and last name.",
+  EMAIL: "Doesn’t look like a valid email.",
+  PHONE: "Please enter your phone number.",
+  LOCATION: "Select your country.",
+  STATES: "Select your state.",
+  NOTE: "A message is required.",
+  REFERRED_FULL_NAME: "Please enter referred name",
+  REFERRED_EMAIL: "Please enter referred email",
 };
 export const VALIDATION_SUCCESS_MESSAGE = "Looks good!";
 
-//
+//STATE DEFAULT VALUE
+export const STATE_DEFAULT_VALUE = "100000008";
+
 export const AUSTRALIA = "australia";
 //SSW Form Countries List
 export const FormCountriesList = [
@@ -109,34 +114,34 @@ export const FormCountriesList = [
 export const AustralianStatesList = [
   {
     label: "Australian Capital Territory",
-    value: "ACT",
+    value: "100000003",
   },
   {
     label: "New South Wales",
-    value: "NSW",
+    value: "100000000",
   },
   {
     label: "Northern Territory",
-    value: "NT",
+    value: "100000006",
   },
   {
     label: "Queensland",
-    value: "QLD",
+    value: "100000002",
   },
   {
     label: "South Australia",
-    value: "SA",
+    value: "100000004",
   },
   {
     label: "Tasmania",
-    value: "TAS",
+    value: "100000007",
   },
   {
     label: "Victoria",
-    value: "VIC",
+    value: "100000001",
   },
   {
     label: "Western Australia",
-    value: "WA",
+    value: "100000005",
   },
 ];
