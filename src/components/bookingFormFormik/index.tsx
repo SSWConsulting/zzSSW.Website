@@ -12,6 +12,7 @@ import {
   CONTACT_FORM_TITLE,
   AUSTRALIA,
   HOST,
+  STATE_DEFAULT_VALUE,
 } from "../../constants";
 import { InitialValues } from "./initialValues/index";
 import { ValidationSchema } from "./validationSchema/index";
@@ -151,6 +152,7 @@ const BookingFormFormik = ({ isShareForm }) => {
                   className="form-group"
                   onSubmit={(e) => {
                     handleSubmit(e);
+                    console.log("e", e);
                   }}
                 >
                   <FormGroupInput
@@ -261,7 +263,13 @@ const BookingFormFormik = ({ isShareForm }) => {
                         error={errors.states}
                       />
                     </>
-                  ) : null}
+                  ) : (
+                    <input
+                      type="hidden"
+                      name={FORM_INPUT.States.toLowerCase()}
+                      value={(values.states = STATE_DEFAULT_VALUE)}
+                    />
+                  )}
                   {isShareForm ? (
                     <>
                       <FormGroupInput

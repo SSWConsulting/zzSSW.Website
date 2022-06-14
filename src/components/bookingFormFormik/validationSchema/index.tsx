@@ -1,5 +1,4 @@
 import * as yup from "yup";
-import { AnyObject, Maybe } from "yup/lib/types";
 import {
   STATE_DEFAULT_VALUE,
   VALIDATION_ERROR_MESSAGE,
@@ -15,9 +14,7 @@ export const ValidationSchema = (isShowStates: boolean, isShareForm: boolean) =>
       ? yup
           .string()
           .notOneOf([STATE_DEFAULT_VALUE, ""], VALIDATION_ERROR_MESSAGE.STATES)
-      : yup.string().transform((value) => {
-          value ? STATE_DEFAULT_VALUE : "";
-        }),
+      : yup.string(),
     note: isShareForm
       ? yup.string()
       : yup.string().required(VALIDATION_ERROR_MESSAGE.NOTE),
