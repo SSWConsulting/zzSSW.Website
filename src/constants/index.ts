@@ -7,9 +7,6 @@ export const PAGE_TYPE = {
 //Page Types for BreadCrumbs data
 export const BASE_URL = "/";
 
-//Page Types for BreadCrumbs data
-export const HOST = window.location.host;
-
 //Page Titles for layout component
 export const PAGE_TITLE = {
   Consulting:
@@ -80,33 +77,33 @@ export const VALIDATION_SUCCESS_MESSAGE = "Looks good!";
 //STATE DEFAULT VALUE
 export const STATE_DEFAULT_VALUE = "100000008";
 
-export const AUSTRALIA = "australia";
+export const AUSTRALIA = "Australia";
 //SSW Form Countries List
 export const FormCountriesList = [
   {
     label: "Australia",
-    value: "australia",
+    value: "Australia",
   },
   {
     label: "China",
-    value: "china",
+    value: "China",
   },
   {
     label: "Europe",
-    value: "eu",
+    value: "Europe",
   },
   {
     label: "South America",
-    value: "southamerica",
+    value: "South America",
   },
   {
     label: "USA",
-    value: "usa",
+    value: "USA",
   },
 
   {
     label: "Other",
-    value: "other",
+    value: "Other",
   },
 ];
 

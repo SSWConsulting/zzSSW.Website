@@ -11,7 +11,6 @@ import {
   SHARE_FORM_TITLE,
   CONTACT_FORM_TITLE,
   AUSTRALIA,
-  HOST,
   STATE_DEFAULT_VALUE,
 } from "../../constants";
 import { InitialValues } from "./initialValues/index";
@@ -23,6 +22,7 @@ import { FormSubmissionData } from "./formData";
 
 const BookingFormFormik = ({ isShareForm }) => {
   //Show FormStates and Active label
+  const [host, setHost] = useState("");
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
 
@@ -40,6 +40,11 @@ const BookingFormFormik = ({ isShareForm }) => {
     ValidationSchema(isShowStates, isShareForm)
   );
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setHost(window.location.host);
+    }
+  }, []);
   useEffect(() => {
     // every time isShowState changes, recreate the schema and set it in the state
     console.log("window.location.href", window.location.host);
@@ -81,43 +86,36 @@ const BookingFormFormik = ({ isShareForm }) => {
   };
 
   const handleOnSubmit = async (values, actions) => {
-    FormSubmissionData(values, isShareForm);
+    const data = FormSubmissionData(values, isShareForm);
+    console.log(document?.location?.hostname);
     actions.setSubmitting(false);
     // if (values.states.trim() !== "" || values.states.trim().length > 0) {
     //   setState("100000008");
     // }
-    console.log("value", values);
 
-    let subject =
-      "Consulting enquiry - " + values.company + " - " + values.fullName;
-    let body = "Consulting enquiry from " + document.URL + "<br/>";
-    body = body + "Company: " + values.company + "<br/>";
-    body = body + "Country: " + values.location + "<br/>";
-    body = body + "State:  " + state + "<br/>";
-    body = body + "Name:  " + values.fullName + "<br/>";
-    body = body + "Phone:   " + values.phone + "<br/>";
-    body = body + "Email:   " + values.email + "<br/>";
-    body = body + "Note:    " + values.note + "<br/><br/>";
+    console.log(data);
+    //console.log(body);
 
-    const data = {
-      Name: values.fullName,
-      Topic: subject,
-      Company: values.company,
-      Note: values.note,
-      Country: values.location,
-      State: values.states,
-      Email: values.email,
-      Phone: values.phone,
-      EmailSubject: subject,
-      EmailBody: body + "The associated CRM lead is ",
-    };
-
-    console.log(body);
-
-    // await axios
-    //   .post(HOST + `/ssw/api/crm/createlead`, data)
-    //   .then((response) => console.log(response))
-    //   .catch((err) => console.log(err));
+    await axios
+      .post(host + `/ssw/api/crm/createlead`, data, {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => {
+        console.log(response);
+        isShareForm
+          ? axios
+              .post(host + `/ssw/api/share`, {
+                referredByFullName: values.fullName,
+                fullName: values.referredFullName,
+                email: values.referredEmail,
+              })
+              .then(() => {
+                navigate("/thankyou/");
+              })
+              .catch((err) => console.log(err))
+          : navigate("/thankyou/");
+      })
+      .catch((err) => console.log(err));
     // axios({
     //   method: "POST",
     //   url: HOST + `/ssw/api/crm/createlead`,
