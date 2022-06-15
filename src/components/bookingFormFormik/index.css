@@ -106,3 +106,9 @@ button.done :hover, .btn-primary :hover {
   cursor: pointer !important;
 }
 
+.recaptcha{
+    width: 304px;
+    height: 78px;
+    margin-bottom: 1em;
+    }
+

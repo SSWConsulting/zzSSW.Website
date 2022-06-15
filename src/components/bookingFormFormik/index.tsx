@@ -72,13 +72,6 @@ const BookingFormFormik = ({ isShareForm }) => {
       value.trim().length > 0
     ) {
       setActiveInputLabel({ ...activeInputLabel, [targetInput]: true });
-      // switch (targetInput) {
-      //   case ACTIVE_INPUT.FullName:
-      //     console.log("Target");
-      //     setFullName(value);
-      //   case ACTIVE_INPUT.Email:
-      //     setFullName(value);
-      // }
     } else if (targetInput == ACTIVE_INPUT.States && isShowStates) {
       setActiveInputLabel({ ...activeInputLabel, [targetInput]: true });
     } else {
@@ -87,9 +80,7 @@ const BookingFormFormik = ({ isShareForm }) => {
   };
 
   const handleOnSubmit = async (values, actions) => {
-    console.log("URL", host + `/ssw/api/crm/createlead`);
-    const data = FormSubmissionData(values, isShareForm);
-    console.log(document?.location?.hostname);
+    const data = FormSubmissionData(values, isShareForm, contactReCaptcha);
     actions.setSubmitting(false);
 
     await axios
@@ -363,7 +354,10 @@ const BookingFormFormik = ({ isShareForm }) => {
                     {process.env.RECAPTCHA_KEY !== "FALSE" && (
                       <ReCAPTCHA
                         sitekey={process.env.RECAPTCHA_KEY}
-                        onChange={(value) => setContactReCaptcha(value)}
+                        onChange={(value) => {
+                          console.log("ReCaptcha", value);
+                          setContactReCaptcha(value);
+                        }}
                       />
                     )}
                   </div>
