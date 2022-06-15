@@ -4,7 +4,6 @@ import "./index.css";
 import { Formik } from "formik";
 import { Button, Col, Form } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
-
 import FormGroupInput from "./formGroupInput";
 import {
   ACTIVE_INPUT,
@@ -271,7 +270,7 @@ const BookingFormFormik = ({ isShareForm }) => {
                         handleChange={(e) => {
                           handleChange(e);
                           handleActiveInputLabel(
-                            ACTIVE_INPUT.FullName,
+                            ACTIVE_INPUT.ReferredFullName,
                             e.currentTarget.value
                           );
                         }}
