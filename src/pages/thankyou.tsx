@@ -32,12 +32,12 @@ const ThankyouPage = () => {
           <p>Thank you for your inquiry.</p>
           <p>
             We will be in contact soon. In the meantime, please have a look at
-            our{" "}
+            our&nbsp;
             <a href="/Consulting/" target="_blank">
               Consulting Services
             </a>
             &nbsp;
-            <img src={external}></img> and{" "}
+            <img src={external}></img> and&nbsp;
             <a href="/People" target="_blank">
               People
             </a>

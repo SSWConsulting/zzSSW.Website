@@ -32,7 +32,6 @@ const BookingFormFormik = ({ isShareForm }) => {
 
   //returns true if country is Australia
   const handleStates = (country) => {
-    console.log("country", country);
     return country === AUSTRALIA;
   };
 
@@ -51,8 +50,6 @@ const BookingFormFormik = ({ isShareForm }) => {
   }, []);
   useEffect(() => {
     // every time isShowState changes, recreate the schema and set it in the state
-    console.log("window.location.href", window.location.host);
-    console.log("isShowStates", isShowStates);
     setSchema(ValidationSchema(isShowStates, isShareForm));
   }, [isShowStates]);
 
@@ -88,7 +85,6 @@ const BookingFormFormik = ({ isShareForm }) => {
         headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
-        console.log(response);
         isShareForm
           ? axios
               .post(host + `/ssw/api/share`, {
@@ -122,7 +118,6 @@ const BookingFormFormik = ({ isShareForm }) => {
                   className="form-group"
                   onSubmit={(e) => {
                     handleSubmit(e);
-                    console.log("e", e);
                   }}
                 >
                   <FormGroupInput
@@ -355,7 +350,6 @@ const BookingFormFormik = ({ isShareForm }) => {
                       <ReCAPTCHA
                         sitekey={process.env.RECAPTCHA_KEY}
                         onChange={(value) => {
-                          console.log("ReCaptcha", value);
                           setContactReCaptcha(value);
                         }}
                       />

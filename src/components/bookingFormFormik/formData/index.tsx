@@ -53,8 +53,5 @@ export const FormSubmissionData = (values, isShareForm, contactReCaptcha) => {
     EmailBody: body + "The associated CRM lead is ",
   };
 
-  console.log(document?.location?.hostname);
-  console.log(window.location.host);
-
   return data;
 };
