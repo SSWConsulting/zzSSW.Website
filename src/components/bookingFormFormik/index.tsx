@@ -3,6 +3,7 @@ import axios from "axios";
 import "./index.css";
 import { Formik } from "formik";
 import { Button, Col, Form } from "react-bootstrap";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import FormGroupInput from "./formGroupInput";
 import {
@@ -25,6 +26,9 @@ const BookingFormFormik = ({ isShareForm }) => {
   const [host, setHost] = useState("");
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
+
+  //ReCaptcha
+  const [contactReCaptcha, setContactReCaptcha] = useState("");
 
   //returns true if country is Australia
   const handleStates = (country) => {
@@ -53,9 +57,6 @@ const BookingFormFormik = ({ isShareForm }) => {
   }, [isShowStates]);
 
   //Form Data
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [state, setState] = useState("");
 
   const handleActiveInputLabel = (targetInput, value) => {
     if (
@@ -71,13 +72,13 @@ const BookingFormFormik = ({ isShareForm }) => {
       value.trim().length > 0
     ) {
       setActiveInputLabel({ ...activeInputLabel, [targetInput]: true });
-      switch (targetInput) {
-        case ACTIVE_INPUT.FullName:
-          console.log("Target");
-          setFullName(value);
-        case ACTIVE_INPUT.Email:
-          setFullName(value);
-      }
+      // switch (targetInput) {
+      //   case ACTIVE_INPUT.FullName:
+      //     console.log("Target");
+      //     setFullName(value);
+      //   case ACTIVE_INPUT.Email:
+      //     setFullName(value);
+      // }
     } else if (targetInput == ACTIVE_INPUT.States && isShowStates) {
       setActiveInputLabel({ ...activeInputLabel, [targetInput]: true });
     } else {
@@ -86,15 +87,10 @@ const BookingFormFormik = ({ isShareForm }) => {
   };
 
   const handleOnSubmit = async (values, actions) => {
+    console.log("URL", host + `/ssw/api/crm/createlead`);
     const data = FormSubmissionData(values, isShareForm);
     console.log(document?.location?.hostname);
     actions.setSubmitting(false);
-    // if (values.states.trim() !== "" || values.states.trim().length > 0) {
-    //   setState("100000008");
-    // }
-
-    console.log(data);
-    //console.log(body);
 
     await axios
       .post(host + `/ssw/api/crm/createlead`, data, {
@@ -116,21 +112,6 @@ const BookingFormFormik = ({ isShareForm }) => {
           : navigate("/thankyou/");
       })
       .catch((err) => console.log(err));
-    // axios({
-    //   method: "POST",
-    //   url: HOST + `/ssw/api/crm/createlead`,
-    //   data: values,
-    // })
-    //   .then((response) => {
-    //     actions.setSubmitting(false);
-    //     actions.resetForm();
-    //   })
-    //   .catch((error) => {
-    //     actions.setSubmitting(false);
-    //   });
-    // {
-    //   navigate("/");
-    // }
   };
 
   return (
@@ -378,6 +359,14 @@ const BookingFormFormik = ({ isShareForm }) => {
                       />
                     </>
                   )}
+                  <div className="form-group recaptcha">
+                    {process.env.RECAPTCHA_KEY !== "FALSE" && (
+                      <ReCAPTCHA
+                        sitekey={process.env.RECAPTCHA_KEY}
+                        onChange={(value) => setContactReCaptcha(value)}
+                      />
+                    )}
+                  </div>
                   <Button className="btn done" type="submit">
                     SUBMIT
                   </Button>
