@@ -92,10 +92,19 @@ input[type="submit"].save, a.save, button.save, input[type="submit"].done, a.don
     padding-right: 30px;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAQCAYAAAAMJL+VAAABGklEQVQ4y7XUsUoDURAF0CCIVWJhYWdhaVKolf6ERVIknQlWpvIXREg+QdsUCgmkFxs7BUEbv8AqCNZ24Vg4wrIk5mXFgYE3l3vnLvvmTamUC5RxgiEeIoeBlUt/CRxjghu0cBjZCmyC46LNe3hF7RdOLTi9ZZt3QlhJ4FaC20ltvo537CzgVbEZ553QrKcYdDFYwNnAG+4z2ACnKQZjNDL1ClZz9R0+sZvBGxinGDxjP1Nf4vbHBBe+o53T7eGliEEbU4xwFOerGbpkgzHqOewsvnqKJ6zN0NVTf9HMS8Y5PrA1RzdA909jiu05mvQx/feHlhH2E1ZFNTj9ovuoHQvtGk0cRDYDm+THtYhJJVbzCI+Ro8Aqy/b7Ai65u7TwIdSpAAAAAElFTkSuQmCC);
     background-color:#cc4141 ;
+    outline-color:#cc4141 !important;
+    border-color: #cc4141 !important;
 }
-button.done :hover, .btn-primary :hover {
+button.done:hover, .btn-primary:hover {
     background-color: #d76969 !important;
     color: #fff !important;
+}
+button.done:focus, .btn-primary:focus {
+    background-color: #cc4141 !important;
+    color: #fff !important;
+    outline-color:#cc4141 !important;
+    border-color: #cc4141 !important;
+    box-shadow: 0 0 0 0.25rem rgb(204 65 65 / 50%);
 }
 .form-select {
   padding: 0.25em 0.25em !important;
