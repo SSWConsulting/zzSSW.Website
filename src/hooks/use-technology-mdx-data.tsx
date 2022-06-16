@@ -7,7 +7,6 @@ export const useTechnologyMdxData = () => {
           frontmatter {
             type
             key
-            title
             logoImage {
               childImageSharp {
                 gatsbyImageData

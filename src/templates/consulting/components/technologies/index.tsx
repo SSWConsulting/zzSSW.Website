@@ -3,10 +3,11 @@ import { container } from "./index.module.css";
 import { useTechnologyMdxData } from "../../../../hooks/use-technology-mdx-data";
 import Technology from "../../../../components/technology";
 
-const Technologies = ({ techList }) => {
-  let techListLength: number = techList.length;
+const Technologies = ({ technologies, techHeader }) => {
+  const techList = technologies;
   const nodes = useTechnologyMdxData();
   const [techComponents, setTechComponents] = useState([]);
+  let techListLength: number = techList.length;
   useEffect(() => {
     techList.map(({ name }, index) => {
       setTechComponents((techComponents) => [
@@ -35,7 +36,7 @@ const Technologies = ({ techList }) => {
   return (
     <section className={container}>
       <article className="main-container">
-        <h1>Other technologies</h1>
+        <h1>{techHeader}</h1>
         <div className="flex-wrap">{techComponents}</div>
       </article>
     </section>
