@@ -13,10 +13,12 @@ module.exports = {
     siteUrl: "https://www.yourdomain.tld",
     title: "SSW Website",
   },
+
   plugins: [
     {
       resolve: "gatsby-source-git",
       options: {
+        //TODO: change content to consulting
         name: "content",
         remote: process.env.CONTENT_REPO,
         branch: process.env.CONTENT_BRANCH,
@@ -63,7 +65,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,
-              backgroundColor: 'transparent',
+              backgroundColor: "transparent",
             },
           },
           "gatsby-remark-fenced-divs",

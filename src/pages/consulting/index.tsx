@@ -57,15 +57,18 @@ const ConsultingServices = ({ data }) => {
       name: "Consulting",
     },
   ];
+  console.log("data", data);
   const [serviceObjectArray, setServiceObjectArray]: any = useState([]);
   const nod = data.allMdx.nodes[0].frontmatter.pageLeftMenu;
-  const pageMenu = data.allMdx.nodes[0].frontmatter.pageLeftMenu;
-  const pageMenuT = data.allMdx.nodes.filter((x) => x.frontmatter.pageLeftMenu);
+  const pageMenuT = data.allMdx.nodes[0].frontmatter.pageLeftMenu;
+
+  const pageMenu = data.allMdx.nodes.filter((x) => x.frontmatter.pageLeftMenu);
+  console.log("pageMenu", pageMenu);
   const pageServices = data.allMdx.nodes.filter(
     (y) => y.frontmatter.serviceList
   );
   console.log("nod", nod);
-  console.log("pageServices", pageMenuT);
+  console.log("pageServices", pageServices);
 
   useEffect(() => {
     // let len = serviceObjectArray.length;
@@ -84,10 +87,10 @@ const ConsultingServices = ({ data }) => {
     setServiceObjectArray([serviceObjectArray.splice(0, len)]);
     console.log(serviceObjectArray);
     let displayArray: any = [];
-    console.log("displayArray BFR\n", displayArray);
-    displayArray = mainServiceArray.filter((fi) =>
-      fi.filter_item.includes(menuFilter.substring(1))
-    );
+    console.log("displayArray");
+    displayArray = mainServiceArray.filter((fi) => {
+      console.log(fi.filter_item.includes(menuFilter.substring(1)));
+    });
 
     console.log("DisplayArray: \n", displayArray);
     console.log("MAIN SERV", mainServiceArray);
@@ -141,7 +144,7 @@ const ConsultingServices = ({ data }) => {
                   </h3>
                   <ul id="filters" className="option-set">
                     {/* Loops through the pageLeftMenu */}
-                    {pageMenu.map((x, idx) => {
+                    {pageMenu[0].frontmatter.pageLeftMenu.map((x, idx) => {
                       console.log("x", x, idx);
                       return (
                         // <SideMenu
