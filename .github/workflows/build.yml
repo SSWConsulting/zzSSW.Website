@@ -17,8 +17,6 @@ on:
         required: true
       ZENDESK_CHAT_KEY:
         required: true
-      RECAPTCHA_KEY:
-        required: true
 
 jobs:
   build:
