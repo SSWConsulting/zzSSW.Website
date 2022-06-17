@@ -1,11 +1,10 @@
 import React from "react";
-import ReactPlayer from "react-player";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-import BookingForm from "../bookingForm";
+import BookingFormFormik from "../bookingFormFormik";
 import "./index.css";
 
-const BookingFormPopup = ({ isVisible, showBookingForm }) => {
+const BookingFormPopup = ({ isVisible, showBookingForm, isShareForm }) => {
   return (
     <div>
       <Modal
@@ -20,12 +19,12 @@ const BookingFormPopup = ({ isVisible, showBookingForm }) => {
         }}
         showCloseIcon={false}
         classNames={{
-          modalAnimationIn: "customEnterModalAnimation",
-          modalAnimationOut: "customLeaveModalAnimation",
+          modalAnimationIn: "formEnterModalAnimation",
+          modalAnimationOut: "formLeaveModalAnimation",
         }}
-        animationDuration={500}
+        animationDuration={700}
       >
-        <BookingForm />
+        <BookingFormFormik isShareForm={isShareForm} />
       </Modal>
     </div>
   );

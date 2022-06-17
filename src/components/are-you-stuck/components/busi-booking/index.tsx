@@ -10,24 +10,38 @@ const BusiBooking = () => {
   return (
     <>
       <section>
-        <h5 className={styles.firstLine}>We are enterprise software consultants who solve complex business problems and reduce risk, using best practices and the latest technologies.</h5>
+        <h5 className={styles.firstLine}>
+          We are enterprise software consultants who solve complex business
+          problems and reduce risk, using best practices and the latest
+          technologies.
+        </h5>
         <h5 className={styles.firstLine}>See how SSW can help:</h5>
-        <ul >
+        <ul>
           <li className={styles.theList}>Build it right the 1st time</li>
-          <li className={styles.theList}>Reduce risk through transparency, communication and fast feedback loops</li>
-          <li className={styles.theList}>High value, quality &amp; range of expertise</li>
-          <li className={styles.lastItem}>We are Microsoft Gold Certified partner, we have three MVPs and a Microsoft Regional Director</li>
+          <li className={styles.theList}>
+            Reduce risk through transparency, communication and fast feedback
+            loops
+          </li>
+          <li className={styles.theList}>
+            High value, quality &amp; range of expertise
+          </li>
+          <li className={styles.lastItem}>
+            We are Microsoft Gold Certified partner, we have three MVPs and a
+            Microsoft Regional Director
+          </li>
         </ul>
-        
+
         <Button onClick={showBookingForm}>Book a Free Initial Meeting</Button>
         <BookingFormPopup
           isVisible={isVisible}
           showBookingForm={setIsVisible}
+          isShareForm={false}
         />
 
         <div>
           <iframe
-            width="560" height="315"
+            width="560"
+            height="315"
             src="https://www.youtube.com/embed/wiFadV5SOPc"
             frameBorder="0"
             allow="autoplay; encrypted-media"
@@ -37,7 +51,6 @@ const BusiBooking = () => {
           />
         </div>
       </section>
-
     </>
   );
 };

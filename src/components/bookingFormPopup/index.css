@@ -1,12 +1,15 @@
-@keyframes customEnterOverlayAnimation {
+@keyframes formEnterOverlayAnimation {
     0% {
+      top:0px;
+      margin-top: -100%;
       transform: scale(0);
     }
     100% {
       transform: scale(1);
+      margin-top: -100%;
     }
   }
-  @keyframes customLeaveOverlayAnimation {
+  @keyframes formLeaveOverlayAnimation {
     0% {
       transform: scale(1);
     }
@@ -15,19 +18,22 @@
     }
   }
   
-  @keyframes customEnterModalAnimation {
+  @keyframes formEnterModalAnimation {
     0% {
-      transform: scale(0.2);
+      top:0px;
+      margin-top: -100%;
+      transform: scale(1);
     }
     100% {
       transform: scale(1);
     }
   }
-  @keyframes customLeaveModalAnimation {
+  @keyframes formLeaveModalAnimation {
     0% {
       transform: scale(1);
     }
     100% {
-      transform: scale(0);
+      transform: scale(1);
+      margin-top: -100%;
     }
   }
