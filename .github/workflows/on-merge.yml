@@ -6,9 +6,7 @@ on:
       - main #on push to the master branch do the jobs below
 
 jobs:
-
   build:
-    
     name: Build and upload artifacts
     uses: SSWConsulting/SSW.Website/.github/workflows/build.yml@main
     with:
@@ -18,9 +16,9 @@ jobs:
       CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH}}
       GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
       ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
+      RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
 
   deploy-to:
-
     name: Download artifacts and deploy to staging
     needs: build
     uses: SSWConsulting/SSW.Website/.github/workflows/deploy.yml@main
