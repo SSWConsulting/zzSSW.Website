@@ -1,4 +1,5 @@
 const path = require("path");
+
 // const BASE_URL = "/ssw/";
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -19,15 +20,13 @@ exports.createPages = ({ actions, graphql }) => {
   const consultingTemplate = require.resolve(
     "./src/templates/consulting/index.tsx"
   );
-  const legacyTemplate = require.resolve(
-    "./src/templates/legacy/index.tsx"
-  );
+  const legacyTemplate = require.resolve("./src/templates/legacy/index.tsx");
   return query.then((result) => {
     // filter by source name "content"
     const consultingNodes = result.data.allMdx.nodes.filter(
-      (node) => node.fields.source === "content"
+      (node) => node.fields.source === "content" && node.slug !== "consulting/"
     );
-    
+
     // filter by source name "legacy"
     const legacyNodes = result.data.allMdx.nodes.filter(
       (node) => node.fields.source === "legacy"
@@ -52,6 +51,5 @@ exports.createPages = ({ actions, graphql }) => {
         },
       });
     });
-
   });
 };
