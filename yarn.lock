@@ -9461,10 +9461,17 @@
   "resolved" "https://registry.npmjs.org/node-addon-api/-/node-addon-api-3.2.1.tgz"
   "version" "3.2.1"
 
+<<<<<<< HEAD
 "node-addon-api@^5.0.0":
   "integrity" "sha512-CvkDw2OEnme7ybCykJpVcKH+uAOLV2qLqiyla128dN9TkEWfrYmxG6C2boDe5KcNQqZF3orkqzGgOMvZ/JNekA=="
   "resolved" "https://registry.npmjs.org/node-addon-api/-/node-addon-api-5.0.0.tgz"
   "version" "5.0.0"
+=======
+"node-addon-api@^4.3.0":
+  "integrity" "sha512-73sE9+3UaLYYFmDsFZnqCInzPyh3MqIwZO9cw58yIqAZhONrrabrYyYe3TuIqtIiOuTXVhsGau8hcrhhwSsDIQ=="
+  "resolved" "https://registry.npmjs.org/node-addon-api/-/node-addon-api-4.3.0.tgz"
+  "version" "4.3.0"
+>>>>>>> main
 
 "node-eta@^0.9.0":
   "integrity" "sha1-n7CwmbzSoCGUDmA8ZCVNwAPZp6g="
@@ -10485,7 +10492,11 @@
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.1"
 
+<<<<<<< HEAD
 "prebuild-install@^7.1.0":
+=======
+"prebuild-install@^7.0.1":
+>>>>>>> main
   "integrity" "sha512-CNcMgI1xBypOyGqjp3wOc8AAo1nMhZS3Cwd3iHIxOdAUbb+YxdNuM4Z5iIrZ8RLvOsf3F3bl7b7xGq6DjQoNYA=="
   "resolved" "https://registry.npmjs.org/prebuild-install/-/prebuild-install-7.1.0.tgz"
   "version" "7.1.0"
@@ -11620,6 +11631,7 @@
   "resolved" "https://registry.npmjs.org/shallow-compare/-/shallow-compare-1.2.2.tgz"
   "version" "1.2.2"
 
+<<<<<<< HEAD
 "sharp@^0.30.3", "sharp@^0.30.6":
   "integrity" "sha512-lSdVxFxcndzcXggDrak6ozdGJgmIgES9YVZWtAFrwi+a/H5vModaf51TghBtMPw+71sLxUsTy2j+aB7qLIODQg=="
   "resolved" "https://registry.npmjs.org/sharp/-/sharp-0.30.6.tgz"
@@ -11629,6 +11641,17 @@
     "detect-libc" "^2.0.1"
     "node-addon-api" "^5.0.0"
     "prebuild-install" "^7.1.0"
+=======
+"sharp@^0.30.3":
+  "integrity" "sha512-3Onig53Y6lji4NIZo69s14mERXXY/GV++6CzOYx/Rd8bnTwbhFbL09WZd7Ag/CCnA0WxFID8tkY0QReyfL6v0Q=="
+  "resolved" "https://registry.npmjs.org/sharp/-/sharp-0.30.4.tgz"
+  "version" "0.30.4"
+  dependencies:
+    "color" "^4.2.3"
+    "detect-libc" "^2.0.1"
+    "node-addon-api" "^4.3.0"
+    "prebuild-install" "^7.0.1"
+>>>>>>> main
     "semver" "^7.3.7"
     "simple-get" "^4.0.1"
     "tar-fs" "^2.1.1"

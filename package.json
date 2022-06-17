@@ -52,7 +52,10 @@
     "react-player": "^2.10.1",
     "react-responsive-modal": "^6.2.0",
     "react-transition-group": "^4.4.2",
+<<<<<<< HEAD
     "sharp": "^0.30.6",
+=======
+>>>>>>> main
     "yup": "^0.32.11"
   }
 }
