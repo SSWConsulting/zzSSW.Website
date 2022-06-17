@@ -4,7 +4,6 @@ on:
   pull_request:
 
 jobs:
-
   build:
     name: Build and upload artifacts
     uses: SSWConsulting/SSW.Website/.github/workflows/build.yml@main

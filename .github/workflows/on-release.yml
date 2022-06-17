@@ -6,9 +6,7 @@ on:
       - release/* #on push to the release branch do the jobs below
 
 jobs:
-
   build:
-    
     name: Build and upload artifacts
     uses: SSWConsulting/SSW.Website/.github/workflows/build.yml@main
     with:
@@ -20,7 +18,6 @@ jobs:
       ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
 
   deploy:
-
     name: Download artifacts and deploy to staging
     needs: build
     uses: SSWConsulting/SSW.Website/.github/workflows/deploy.yml@main
