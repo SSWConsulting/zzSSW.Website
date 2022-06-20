@@ -29,7 +29,6 @@ jobs:
         uses: actions/setup-node@v2.5.0
 
       - name: Create env File
-        env:
         run: |
           touch .env.production
           echo GITHUB_RUN_ID=${{ github.run_id }} >> .env.production
