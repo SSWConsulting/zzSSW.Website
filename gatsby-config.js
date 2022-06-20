@@ -7,7 +7,7 @@ const siteUrl =
   process.env.NODE_ENV === "development"
     ? "http://localhost:9000"
     : "https://staging2.ssw.com.au";
-console.log("RECAPTCHA_KEY TEST", process.env.RECAPTCHA_KEY.length);
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
