@@ -16,7 +16,7 @@ jobs:
       CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH}}
       GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
       ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
-
+      RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
 
   deploy-to:
     name: Download artifacts and deploy to staging
