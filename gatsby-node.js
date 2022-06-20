@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
   return query.then((result) => {
     // filter by source name "content"
     const consultingNodes = result.data.allMdx.nodes.filter(
-      (node) => node.fields.source === "content" && node.slug !== "consulting/"
+      (node) => node.fields.source === "content" && node.slug !== "consulting/" //TODO: Need to filter it by pattern on gatsby-config. This is a temporary workaround
     );
 
     // filter by source name "legacy"
