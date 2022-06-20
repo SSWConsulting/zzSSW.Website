@@ -33,12 +33,11 @@ jobs:
 
       - name: Create env File
         env:
-          RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY }}
         run: |
           touch .env.production
           echo GITHUB_RUN_ID=${{ github.run_id }} >> .env.production
           echo GITHUB_RUN_NUMBER=${{ github.run_number }} >> .env.production
-          echo RECAPTCHA_KEY= echo $RECAPTCHA_KEY >> .env.production
+          echo RECAPTCHA_KEY=${{ secrets.RECAPTCHA_KEY }} >> .env.production
           cat .env.production
       - name: Install dependencies
         run: yarn install
@@ -49,6 +48,7 @@ jobs:
           CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
           CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
           GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID }}
+          ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY }}
 
       # Upload build artifacts for deployment
       - name: Upload Artifacts
