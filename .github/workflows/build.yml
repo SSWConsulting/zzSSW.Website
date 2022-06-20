@@ -32,6 +32,8 @@ jobs:
         uses: actions/setup-node@v2.5.0
 
       - name: Create env File
+        env:
+          RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY }}
         run: |
           touch .env.production
           echo GITHUB_RUN_ID=${{ github.run_id }} >> .env.production
@@ -47,8 +49,6 @@ jobs:
           CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
           CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
           GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID }}
-          ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY }}
-          RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY }}
 
       # Upload build artifacts for deployment
       - name: Upload Artifacts
