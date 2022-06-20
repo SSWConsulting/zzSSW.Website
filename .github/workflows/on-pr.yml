@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Build and upload artifacts
-    uses: SSWConsulting/SSW.Website/.github/workflows/build.yml
+    uses: SSWConsulting/SSW.Website/.github/workflows/build.yml@bug_fix_recaptcha_env_key
     with:
       ENVIRONMENT: staging
       UPLOAD_ARTIFACTS: false # Do not upload artifacts as this is simply a "does it build?" check
