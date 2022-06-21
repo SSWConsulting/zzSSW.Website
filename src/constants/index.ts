@@ -18,6 +18,49 @@ export const PAGE_TITLE = {
   Thankyou: "Thank you for consulting SSW!",
 };
 
+export const consultingServicesList = [
+  {
+    Title: "All SSW Services",
+    Filter: "all",
+  },
+  {
+    Title: "Website Development",
+    Filter: "webdev",
+  },
+  {
+    Title: "Application Development",
+    Filter: "appdev",
+  },
+  {
+    Title: "Database Development",
+    Filter: "datadev",
+  },
+  {
+    Title: "Mobile Development",
+    Filter: "mobdev",
+  },
+  {
+    Title: "Consulting",
+    Filter: "consulting-services",
+  },
+  {
+    Title: "Design",
+    Filter: "design",
+  },
+  {
+    Title: "Content Management Systems (CMS)",
+    Filter: "cms",
+  },
+  {
+    Title: "Cloud and Infrastructure",
+    Filter: "hosting-solutions",
+  },
+  {
+    Title: "Video",
+    Filter: "video",
+  },
+];
+
 //Images Import
 export const IMAGES_LINKS = {
   Azure: require("../assets/images/bg.jpg"),

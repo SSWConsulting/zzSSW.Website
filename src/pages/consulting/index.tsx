@@ -358,16 +358,12 @@ const ServiceList = ({ serviceListArray }) => {
 export default ConsultingServices;
 
 export const query = graphql`
-  {
-    allMdx {
+  query ConsutlingSertvicesQuery {
+    consultingServices: allMdx(
+      filter: { fields: { source: { eq: "content" } } }
+    ) {
       nodes {
         frontmatter {
-          pageLeftMenu {
-            data_filter
-            link
-            title
-            class
-          }
           serviceList {
             _0 {
               heading
