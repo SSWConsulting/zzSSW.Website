@@ -1,31 +1,12 @@
-.bookingContainer {
-    /* overflow: hidden; */
-    color: white;
-    text-align: center;
-    min-height: 850px;
-    background-image: url('../../../../assets/images/mvc-benefits-bg.jpg');
-    /* background:url('../../../../assets/images/mvc-benefits-bg.jpg') no-repeat center center fixed; */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 100px;
-    text-align: center;
-    border-top: 4px solid #cc4141;
-    border-bottom: 4px solid #cc4141;
-}
-
-.containerWrapper {
-     /* background:url('../../../../assets/images/mvc-benefits-bg.jpg') no-repeat center center fixed; */
-    background-size: cover;
-
-}
-
-/* .backgroundImage {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-} */
+.headerContent {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .headerContent.tn.visibleHeader {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 .title {
     margin-top: 4em;
@@ -66,10 +47,6 @@
     animation: bounce 2s infinite;
 }
 
-section article ul {
-    margin-bottom: 4em;
-}
-
 section article ul li {
     display: block;
     margin-top: 2em;
@@ -86,9 +63,8 @@ h5 {
 }
 
 .play {
-    /* height: 72px;
-    width: 72px; */
-    padding-top: 30px;
+    height: 72px;
+    width: 72px;
     margin-left: -36px;
     margin-top: -36px;
     position: absolute;
@@ -105,42 +81,18 @@ h5 {
     color: #fff;
     width: 75%;
     margin: 0 auto;
+    padding: 20px 0;
     line-height: inherit;
-    /* padding-bottom: 8em; */
 }
 
 .videoContainer {
     position: relative;
-    /* embedded video height */
     width: 750px;
-    /* height: 386px; */
-    height: 450px;
-    padding-top: 5em;
+    height: 386px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 2rem auto;
     text-align: center;
-}
-
-/* .toggleButtons {
-    flex-direction: row;
-    justify-content: space-between;   
-} */
-
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    padding: 2em;
-    justify-content: space-evenly;
-    padding-bottom: 0;
-}
-
-.flex-child {
-    flex: 1;
-}  
-
-.buttonClicked {
-    opacity: 0.4;
 }
 
 @keyframes bounce {

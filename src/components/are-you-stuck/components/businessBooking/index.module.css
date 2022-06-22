@@ -1,31 +1,19 @@
-.bookingContainer {
-    /* overflow: hidden; */
+.headerContent {
+    opacity: 0;
+    transform: translateX(15px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .headerContent.tn.visibleHeader {
+    opacity: 1;
+    transform: translateY(0);
+  }
+.container {
+    overflow: hidden;
     color: white;
     text-align: center;
-    min-height: 850px;
-    background-image: url('../../../../assets/images/mvc-benefits-bg.jpg');
-    /* background:url('../../../../assets/images/mvc-benefits-bg.jpg') no-repeat center center fixed; */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 100px;
-    text-align: center;
-    border-top: 4px solid #cc4141;
-    border-bottom: 4px solid #cc4141;
+    background: rgba(0, 0, 0, 0.75)
+        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
 }
-
-.containerWrapper {
-     /* background:url('../../../../assets/images/mvc-benefits-bg.jpg') no-repeat center center fixed; */
-    background-size: cover;
-
-}
-
-/* .backgroundImage {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-} */
 
 .title {
     margin-top: 4em;
@@ -66,15 +54,6 @@
     animation: bounce 2s infinite;
 }
 
-section article ul {
-    margin-bottom: 4em;
-}
-
-section article ul li {
-    display: block;
-    margin-top: 2em;
-}
-
 h5 {
     font-weight: 300;
 }
@@ -86,9 +65,8 @@ h5 {
 }
 
 .play {
-    /* height: 72px;
-    width: 72px; */
-    padding-top: 30px;
+    height: 72px;
+    width: 72px;
     margin-left: -36px;
     margin-top: -36px;
     position: absolute;
@@ -105,8 +83,8 @@ h5 {
     color: #fff;
     width: 75%;
     margin: 0 auto;
+    padding: 20px 0;
     line-height: inherit;
-    /* padding-bottom: 8em; */
 }
 
 .videoContainer {
@@ -122,25 +100,21 @@ h5 {
     text-align: center;
 }
 
-/* .toggleButtons {
-    flex-direction: row;
-    justify-content: space-between;   
-} */
-
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    padding: 2em;
-    justify-content: space-evenly;
-    padding-bottom: 0;
+.firstLine {
+    padding-top: 3em;
 }
 
-.flex-child {
-    flex: 1;
-}  
+.theList {
+    margin-top: 0;
+    padding-bottom: 2em;
+}
 
-.buttonClicked {
-    opacity: 0.4;
+.lastItem {
+    margin-top: 0;
+}
+
+.stuckButton {
+    margin-top: -50px;
 }
 
 @keyframes bounce {
