@@ -27,7 +27,7 @@ const Layout = ({ pageTitle, children, backgroundColor }) => {
         ref={node}
         onMouseDown={isMenuOpened ? (event) => handleClick(event) : null}
         style={{
-          transform: isMenuOpened ? "translateX(84%)" : "translateX(0px)",
+          transform: isMenuOpened ? "translateX(84%)" : "none",
           backgroundColor: backgroundColor,
         }}
       >
@@ -37,6 +37,7 @@ const Layout = ({ pageTitle, children, backgroundColor }) => {
           <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
         </div>
         <main style={{ backgroundColor: backgroundColor }}>{children}</main>
+
         <Footer />
       </div>
       <MobileMenu isMenuOpened={isMenuOpened}></MobileMenu>

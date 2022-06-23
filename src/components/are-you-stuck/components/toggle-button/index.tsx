@@ -1,19 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import classnames from "classnames";
 import { button, hoverable, anim, buttonClicked } from "./index.module.css";
-import BookingFormPopup from "../bookingFormPopup";
 
-const ToggleButton = ({title, setCurrentTab, id, currentTab}) => {
+const ToggleButton = ({
+  title,
+  setCurrentTab,
+  id,
+  currentTab,
+  isMounted,
+  toggle,
+}) => {
   return (
     <>
       {/* TODO: Change from hidden to grey (to let the user know that the button isn't selected) */}
-      <div onClick={() => setCurrentTab(id)}>
+      <div>
         <button
+          onClick={() => {
+            setCurrentTab(id);
+            toggle(!isMounted);
+          }}
           type="button"
-          className={classnames(button, hoverable,
-              currentTab !== id ? buttonClicked : ""
-            )}
-          >
+          disabled={currentTab === id ? true : false}
+          className={classnames(
+            button,
+            hoverable,
+            currentTab !== id ? buttonClicked : ""
+          )}
+        >
           {title}
           <div className={classnames(anim)} />
         </button>
