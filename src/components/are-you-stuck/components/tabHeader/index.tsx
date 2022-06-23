@@ -1,6 +1,5 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import InnerHTML from "../../../innerHTML";
-import "./index.css";
 
 const TabHeader = ({ title, subTitle, hasTransitionedIn, isMounted }) => {
   return (
@@ -8,10 +7,10 @@ const TabHeader = ({ title, subTitle, hasTransitionedIn, isMounted }) => {
       <div
       // className={
       //   (hasTransitionedIn && isMounted) || (!hasTransitionedIn && !isMounted)
-      //     ? `headerContent  ${hasTransitionedIn && "tn"} ${
-      //         isMounted && "visibleHeader"
-      //       }`
-      //     : `headerContent`
+      //     ? `${styles.headerContent}  ${
+      //         hasTransitionedIn && `${styles.tn}`
+      //       } ${isMounted && `${styles.visibleHeader}`}`
+      //     : `${styles.headerContent} `
       // }
       >
         {/* title + subtitle component */}

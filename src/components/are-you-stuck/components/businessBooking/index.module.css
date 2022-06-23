@@ -1,6 +1,6 @@
 .headerContent {
     opacity: 0;
-    transform: translateX(15px);
+    transform: translateY(15px);
     transition: opacity 1s ease, transform 1s ease;
   }
   .headerContent.tn.visibleHeader {

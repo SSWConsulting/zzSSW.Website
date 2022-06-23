@@ -12,10 +12,10 @@ const DeveloperBooking = ({ isBusinessTab, hasTransitionedIn, isMounted }) => {
       <section
         className={
           (hasTransitionedIn && isMounted) || (!hasTransitionedIn && !isMounted)
-            ? `headerContent  ${hasTransitionedIn && "tn"} ${
-                isMounted && "visibleHeader"
-              }`
-            : `headerContent`
+            ? `${styles.headerContent}  ${
+                hasTransitionedIn && `${styles.tn}`
+              } ${isMounted && `${styles.visibleHeader}`}`
+            : `${styles.headerContent} `
         }
       >
         {/* rest of content component */}
