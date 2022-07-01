@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useMemo, useState } from "react";
 import InnerHTML from "../../../innerHTML";
 
-const TabHeader = ({ title, subTitle, hasTransitionedIn, isMounted }) => {
+const TabHeader = ({ title, subTitle }) => {
   return (
     <>
       <div

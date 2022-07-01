@@ -3,7 +3,7 @@ import Button from "../bookingButton";
 import * as styles from "./index.module.css";
 import BookingFormPopup from "../../../bookingFormPopup";
 
-const DeveloperBooking = ({ isBusinessTab, hasTransitionedIn, isMounted }) => {
+const DeveloperBooking = ({ hasTransitionedIn, isMounted }) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 

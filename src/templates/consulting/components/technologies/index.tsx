@@ -26,6 +26,7 @@ const Technologies = ({ technologies, techHeader }) => {
           {...technologyNode}
           index={index}
           techListLength={techListLength}
+          key={index}
         />
       );
     } else {

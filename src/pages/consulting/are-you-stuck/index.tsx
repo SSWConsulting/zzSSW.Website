@@ -58,7 +58,9 @@ const AreYouStuck = () => {
     <>
       <Layout pageTitle={pageTitle} backgroundColor={WHITE}>
         <Breadcrumb data={breadcrumbData} />
+
         <BookingTabs />
+
         <Testimonials />
 
         <About />

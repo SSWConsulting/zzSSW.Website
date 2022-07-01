@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import ToggleButton from "../toggle-button";
 // this is fine
@@ -67,19 +67,16 @@ const Booking = () => {
       <section className={styles.bookingContainer}>
         <article className="main-container">
           {/* heading */}
-          {currentTab === TabSelected.LEFT ? (
+          {currentTab === TabSelected.LEFT && (
             <TabHeader
               title={LABELS.TITLE_BUSINESS}
               subTitle={LABELS.SUBTITLE_BUSINESS}
-              hasTransitionedIn={hasTransitionedIn}
-              isMounted={isMounted}
             />
-          ) : (
+          )}
+          {currentTab === TabSelected.RIGHT && (
             <TabHeader
               title={LABELS.TITLE_DEVELOPER}
               subTitle={LABELS.SUBTITLE_DEVELOPER}
-              hasTransitionedIn={hasTransitionedIn}
-              isMounted={isMounted}
             />
           )}
           {/* buttons */}
@@ -110,17 +107,16 @@ const Booking = () => {
             </div>
           </div>
           {/* content */}
-          {currentTab === TabSelected.LEFT ? (
+          {currentTab === TabSelected.LEFT && (
             <BusinessBooking
               hasTransitionedIn={hasTransitionedIn}
               isMounted={isMounted}
-              isBusinessTab={TabSelected.LEFT}
             />
-          ) : (
+          )}
+          {currentTab === TabSelected.RIGHT && (
             <DeveloperBooking
               hasTransitionedIn={hasTransitionedIn}
               isMounted={isMounted}
-              isBusinessTab={TabSelected.LEFT}
             />
           )}
         </article>

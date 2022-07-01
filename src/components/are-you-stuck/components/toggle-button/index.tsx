@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classnames from "classnames";
 import { button, hoverable, anim, buttonClicked } from "./index.module.css";
 

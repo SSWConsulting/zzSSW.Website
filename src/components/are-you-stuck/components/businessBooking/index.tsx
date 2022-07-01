@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../bookingButton";
 import * as styles from "./index.module.css";
 import BookingFormPopup from "../../../bookingFormPopup";
 
-const BusinessBooking = ({ isBusinessTab, hasTransitionedIn, isMounted }) => {
+const BusinessBooking = ({ hasTransitionedIn, isMounted }) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 
