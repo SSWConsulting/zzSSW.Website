@@ -5,10 +5,13 @@ import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { BASE_IMAGE_URL, BASE_URL } from "../../constants";
 import ImageWithFallbacks from "../ImageWithFallbacks";
+import { useAllImagesUrlData } from "../../hooks/useAllImageData";
+import ImageToUrl from "../../helpers/imageToUrl";
 
 const Technology = (props) => {
   const { techListLength, frontmatter, body, index } = props;
   const { logoImage, readMoreSlug, key } = frontmatter;
+  const imagesUrldata = useAllImagesUrlData();
 
   let BaseImageURL = BASE_IMAGE_URL + `${key}`;
   let theReadMoreLink;
@@ -27,15 +30,10 @@ const Technology = (props) => {
     );
   }
 
-  const onError = () => {
-    console.log("errored");
-  };
-
   return (
     <div className={columnClass}>
       <article className={skill} data-aos="flip-left">
         <figure>
-          <ImageWithFallbacks url={BaseImageURL}></ImageWithFallbacks>
           {/* <img
             src={__dirname + "/assets/images/azure.jpeg"}
             onError={(e) => {
@@ -43,7 +41,18 @@ const Technology = (props) => {
               onError();
             }}
           ></img> */}
-          <GatsbyImage image={getImage(logoImage)} alt={key} />
+          {ImageToUrl(key, imagesUrldata) ? (
+            <>
+              <img src={ImageToUrl(key, imagesUrldata)} alt={key}></img>
+            </>
+          ) : (
+            <StaticImage
+              src="../../assets/images/ssw-logo.svg"
+              alt="SSW Consulting"
+            />
+          )}
+
+          {/* <GatsbyImage image={getImage(logoImage)} alt={key} /> */}
         </figure>
         <MDXRenderer>{body}</MDXRenderer>
         {theReadMoreLink}
