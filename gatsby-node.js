@@ -3,11 +3,7 @@ const fs = require("fs");
 const crypto = require(`crypto`);
 const { createRemoteFileNode } = require("gatsby-source-filesystem");
 
-exports.sourceNodes = async ({
-  actions,
-  createNodeId,
-  createContentDigest,
-}) => {
+exports.sourceNodes = async ({ actions, createNodeId }) => {
   const { createNode } = actions;
 
   let rawdata = fs.readFileSync("ImageUrlData.json");
