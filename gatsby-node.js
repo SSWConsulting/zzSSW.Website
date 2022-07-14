@@ -9,25 +9,6 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
   let rawdata = fs.readFileSync("ImageUrlData.json");
   let imageUrlData = JSON.parse(rawdata);
 
-  imageUrlData.forEach((imageUrlData) => {
-    const imageObject = createImageObjectFromUrl(imageUrlData.imageUrl);
-
-    const nodeData = turnImageObjectIntoGatsbyNode(imageObject, imageUrlData);
-    createNode(nodeData);
-  });
-
-  const createImageObjectFromUrl = (url) => {
-    const lastIndexOfSlash = url.lastIndexOf("/");
-
-    const id = url.slice(lastIndexOfSlash + 1, url.lastIndexOf("."));
-
-    return {
-      id,
-      image: id,
-      imageUrl: url,
-    };
-  };
-
   const turnImageObjectIntoGatsbyNode = (imageObject, imageUrlData) => {
     const nodeId = createNodeId(`image-{${imageObject.id}}`);
 
@@ -53,6 +34,24 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
 
     return nodeData;
   };
+  const createImageObjectFromUrl = (url) => {
+    const lastIndexOfSlash = url.lastIndexOf("/");
+
+    const id = url.slice(lastIndexOfSlash + 1, url.lastIndexOf("."));
+
+    return {
+      id,
+      image: id,
+      imageUrl: url,
+    };
+  };
+
+  imageUrlData.forEach((imageUrlData) => {
+    const imageObject = createImageObjectFromUrl(imageUrlData.imageUrl);
+
+    const nodeData = turnImageObjectIntoGatsbyNode(imageObject, imageUrlData);
+    createNode(nodeData);
+  });
 };
 
 exports.onCreateNode = async ({
