@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 import ToggleButton from "../toggle-button";
-// this is fine
 import TabHeader from "../tabHeader";
 import BusinessBooking from "../businessBooking";
 import DeveloperBooking from "../developerBooking";
@@ -24,9 +23,6 @@ const LABELS = {
 };
 
 const Booking = () => {
-  // const [isVisible, setIsVisible] = useState(false);
-  // const showBookingForm = () => setIsVisible(!isVisible);
-
   const [isMounted, setIsMounted] = useState(true);
 
   const hasTransitionedIn = useMountTransition(isMounted, 1000);
@@ -41,9 +37,6 @@ const Booking = () => {
       return () => {
         clearTimeout(timeoutId);
       };
-      // } else {
-      //   setCurrentTab(id);
-      // }
     },
     [currentTab]
   );
@@ -66,7 +59,6 @@ const Booking = () => {
     <>
       <section className={styles.bookingContainer}>
         <article className="main-container">
-          {/* heading */}
           {currentTab === TabSelected.LEFT && (
             <TabHeader
               title={LABELS.TITLE_BUSINESS}
@@ -79,7 +71,7 @@ const Booking = () => {
               subTitle={LABELS.SUBTITLE_DEVELOPER}
             />
           )}
-          {/* buttons */}
+
           <div className={styles.flexContainer}>
             <div className={styles.flexChild}>
               <ToggleButton
@@ -106,7 +98,7 @@ const Booking = () => {
               />
             </div>
           </div>
-          {/* content */}
+
           {currentTab === TabSelected.LEFT && (
             <BusinessBooking
               hasTransitionedIn={hasTransitionedIn}
