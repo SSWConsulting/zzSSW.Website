@@ -1,18 +1,163 @@
 [
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/refact_asset_img_src/assets/images/thumbs/thumb-angular.png",
-    "exactMatch": ["angular", "angularjs"]
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-angular-icon.png",
+    "exactMatch": [
+      "angular",
+      "angularjs"
+    ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/refact_asset_img_src/assets/images/thumbs/thumb-react.png",
-    "exactMatch": ["react", "reactjs"]
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-azure-icon.jpg",
+    "exactMatch": [
+      "azure",
+      "service-azure"
+    ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/refact_asset_img_src/assets/images/thumbs/thumb-js.png",
-    "exactMatch": ["node", "js", "javascript"]
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-ms-azure-banner.png",
+    "exactMatch": [
+      "ms-azure"
+    ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/refact_asset_img_src/assets/images/thumbs/thumb-net.png",
-    "exactMatch": ["dotnet", "dotnet core"]
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-net-icon.png",
+    "exactMatch": [
+      "dotnet",
+      "dotnet-core"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-jquery-icon.png",
+    "exactMatch": [
+      "jquery"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-js-icon.png",
+    "exactMatch": [
+      "node-js"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-design-banner.jpg",
+    "exactMatch": [
+      "ui-ux-design"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-dynamics-icon.jpg",
+    "exactMatch": [
+      "dynamics"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-mobiles-apps-icon.jpg",
+    "exactMatch": [
+      "mobile-apps"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-sharepoint-icon.jpg",
+    "exactMatch": [
+      "sharepoint"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-web-mvc-icon.jpg",
+    "exactMatch": [
+      "web-application",
+      "mvc",
+      "asp.net mvc"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-sql-server-banner.png",
+    "exactMatch": [
+      "sql-server"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_chat-icon.png",
+    "exactMatch": [
+      "zendesk-chat"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_connect_outbound-icon.png",
+    "exactMatch": [
+      "zendesk-connect",
+      "zendesk-connect-outbound"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_explore-icon.png",
+    "exactMatch": [
+      "zendesk-explore"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_guide-icon.png",
+    "exactMatch": [
+      "zendesk-guide"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_support-icon.png",
+    "exactMatch": [
+      "zendesk-support"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_talk-icon.png",
+    "exactMatch": [
+      "zendesk-talk"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-react-banner.png",
+    "exactMatch": [
+      "react",
+      "reactjs"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-react-native-banner.png",
+    "exactMatch": [
+      "react-native",
+      "react native"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-dialogflow-googleassistant-icon.png",
+    "exactMatch": [
+      "dialogflow-googleassistant",
+      "google-dialogflow-assistant"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-sharepoint-icon.jpg",
+    "exactMatch": [
+      "sharepoint"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-design-banner.jpg",
+    "exactMatch": [
+      "ui-ux-design",
+      "web-design"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-sql-server-banner.png",
+    "exactMatch": [
+      "ms-sql-server"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-web-mvc-icon.jpg",
+    "exactMatch": [
+      "web-applications",
+      "mvc"
+    ]
   }
 ]

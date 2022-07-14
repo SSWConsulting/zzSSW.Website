@@ -7,6 +7,11 @@ export const useAllImagesUrlData = () => {
           imageUrl
           id
           exactMatch
+          image {
+            childImageSharp {
+              gatsbyImageData(height: 100)
+            }
+          }
         }
       }
     }

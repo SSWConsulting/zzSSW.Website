@@ -13,7 +13,6 @@ const Technology = (props) => {
   const { logoImage, readMoreSlug, key } = frontmatter;
   const imagesUrldata = useAllImagesUrlData();
 
-  let BaseImageURL = BASE_IMAGE_URL + `${key}`;
   let theReadMoreLink;
   let columnClass;
   if (techListLength % 2 != 0 && techListLength - 1 == index) {
@@ -29,7 +28,7 @@ const Technology = (props) => {
       </>
     );
   }
-
+  console.log(ImageToUrl(key, imagesUrldata));
   return (
     <div className={columnClass}>
       <article className={skill} data-aos="flip-left">
@@ -43,7 +42,10 @@ const Technology = (props) => {
           ></img> */}
           {ImageToUrl(key, imagesUrldata) ? (
             <>
-              <img src={ImageToUrl(key, imagesUrldata)} alt={key}></img>
+              <GatsbyImage
+                image={getImage(ImageToUrl(key, imagesUrldata))}
+                alt={key}
+              />
             </>
           ) : (
             <StaticImage
