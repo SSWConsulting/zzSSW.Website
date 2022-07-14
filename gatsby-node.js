@@ -9,31 +9,12 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
   let rawdata = fs.readFileSync("ImageUrlData.json");
   let imageUrlData = JSON.parse(rawdata);
 
-  const turnImageObjectIntoGatsbyNode = (imageObject, imageData) => {
-    const nodeId = createNodeId(`image-{${imageObject.id}}`);
+  imageUrlData.forEach((imageUrlData) => {
+    const imageObject = createImageObjectFromUrl(imageUrlData.imageUrl);
 
-    const nodeContent = JSON.stringify(imageObject);
-
-    const nodeContentDigest = crypto
-      .createHash("md5")
-      .update(nodeContent)
-      .digest("hex");
-
-    const nodeData = {
-      ...imageObject,
-      ...imageData,
-      id: nodeId,
-      parent: null,
-      children: [],
-      internal: {
-        type: "ImageUrls",
-        content: nodeContent,
-        contentDigest: nodeContentDigest,
-      },
-    };
-
-    return nodeData;
-  };
+    const nodeData = turnImageObjectIntoGatsbyNode(imageObject, imageUrlData);
+    createNode(nodeData);
+  });
 
   const createImageObjectFromUrl = (url) => {
     const lastIndexOfSlash = url.lastIndexOf("/");
@@ -47,12 +28,31 @@ exports.sourceNodes = async ({ actions, createNodeId }) => {
     };
   };
 
-  imageUrlData.forEach((imageUrlData) => {
-    const imageObject = createImageObjectFromUrl(imageUrlData.imageUrl);
+  const turnImageObjectIntoGatsbyNode = (imageObject, imageUrlData) => {
+    const nodeId = createNodeId(`image-{${imageObject.id}}`);
 
-    const nodeData = turnImageObjectIntoGatsbyNode(imageObject, imageUrlData);
-    createNode(nodeData);
-  });
+    const nodeContent = JSON.stringify(imageObject);
+
+    const nodeContentDigest = crypto
+      .createHash("md5")
+      .update(nodeContent)
+      .digest("hex");
+
+    const nodeData = {
+      ...imageObject,
+      ...imageUrlData,
+      id: nodeId,
+      parent: null,
+      children: [],
+      internal: {
+        type: "ImageUrls",
+        content: nodeContent,
+        contentDigest: nodeContentDigest,
+      },
+    };
+
+    return nodeData;
+  };
 };
 
 exports.onCreateNode = async ({
