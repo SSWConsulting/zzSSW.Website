@@ -10,6 +10,7 @@ import ImageToUrl from "../../helpers/imageToUrl";
 
 const Technology = (props) => {
   const { techListLength, frontmatter, body, index } = props;
+  //TODO: Delete logoImage once content is updated in ssw.website.content
   const { logoImage, readMoreSlug, key } = frontmatter;
   const imagesUrldata = useAllImagesUrlData();
 
@@ -33,13 +34,6 @@ const Technology = (props) => {
     <div className={columnClass}>
       <article className={skill} data-aos="flip-left">
         <figure>
-          {/* <img
-            src={__dirname + "/assets/images/azure.jpeg"}
-            onError={(e) => {
-              console.log("E", e);
-              onError();
-            }}
-          ></img> */}
           {ImageToUrl(key, imagesUrldata) ? (
             <>
               <GatsbyImage
@@ -53,8 +47,6 @@ const Technology = (props) => {
               alt="SSW Consulting"
             />
           )}
-
-          {/* <GatsbyImage image={getImage(logoImage)} alt={key} /> */}
         </figure>
         <MDXRenderer>{body}</MDXRenderer>
         {theReadMoreLink}
