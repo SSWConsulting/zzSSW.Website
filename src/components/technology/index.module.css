@@ -18,3 +18,7 @@
 .skill p a {
     margin-left: 1rem;
 }
+
+.skill img {
+    height: 100px;
+}

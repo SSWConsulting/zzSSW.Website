@@ -26,6 +26,15 @@ module.exports = {
     {
       resolve: "gatsby-source-git",
       options: {
+        name: "assets",
+        remote: process.env.CONTENT_REPO,
+        branch: process.env.CONTENT_BRANCH,
+        patterns: ["assets/**"],
+      },
+    },
+    {
+      resolve: "gatsby-source-git",
+      options: {
         name: "technologies",
         remote: process.env.CONTENT_REPO,
         branch: process.env.CONTENT_BRANCH,
