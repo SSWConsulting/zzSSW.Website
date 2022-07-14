@@ -6,7 +6,7 @@ import Technology from "../../../../components/technology";
 const Technologies = ({ technologies, techHeader }) => {
   const techList = technologies;
   const nodes = useTechnologyMdxData();
-  const [techComponents, setTechComponents] = useState([]);
+  const [techComponents, setTechComponents]: any = useState([]);
   let techListLength: number = techList.length;
   useEffect(() => {
     techList.map(({ name }, index) => {
