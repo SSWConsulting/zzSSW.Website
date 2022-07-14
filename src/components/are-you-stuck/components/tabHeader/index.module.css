@@ -1,11 +1,12 @@
-.container {
-    overflow: hidden;
-    color: white;
-    text-align: center;
-    min-height: 800px;
-    background: rgba(0, 0, 0, 0.75)
-        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
-}
+.headerContent {
+    opacity: 0;
+    transform: translateX(500px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .headerContent.tn.visibleHeader {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 .title {
     margin-top: 4em;
@@ -46,14 +47,9 @@
     animation: bounce 2s infinite;
 }
 
-section article ul {
-    margin-bottom: 4em;
-}
-
 section article ul li {
     display: block;
     margin-top: 2em;
-    font-weight: bold;
 }
 
 h5 {
@@ -67,9 +63,8 @@ h5 {
 }
 
 .play {
-    /* height: 72px;
-    width: 72px; */
-    padding-top: 30px;
+    height: 72px;
+    width: 72px;
     margin-left: -36px;
     margin-top: -36px;
     position: absolute;
@@ -86,17 +81,14 @@ h5 {
     color: #fff;
     width: 75%;
     margin: 0 auto;
+    padding: 20px 0;
     line-height: inherit;
-    /* padding-bottom: 8em; */
 }
 
 .videoContainer {
     position: relative;
-    /* embedded video height */
     width: 750px;
-    /* height: 386px; */
-    height: 450px;
-    padding-top: 5em;
+    height: 386px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 2rem auto;

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import classnames from "classnames";
 import { button, hoverable, anim, buttonAnim } from "./index.module.css";
-import BookingFormPopup from "../bookingFormPopup";
-import * as styles from "./index.module.css";
 
 const BookingButton = ({ children, ...props }) => {
   return (

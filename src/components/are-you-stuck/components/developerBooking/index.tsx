@@ -1,16 +1,26 @@
 import React, { useState } from "react";
-import Button from "../booking-button";
+import Button from "../bookingButton";
 import * as styles from "./index.module.css";
 import BookingFormPopup from "../../../bookingFormPopup";
 
-const DevBooking = () => {
+const DeveloperBooking = ({ hasTransitionedIn, isMounted }) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 
   return (
     <>
-      <div>
+      <section
+        className={
+          (hasTransitionedIn && isMounted) || (!hasTransitionedIn && !isMounted)
+            ? `${styles.headerContent}  ${
+                hasTransitionedIn && `${styles.tn}`
+              } ${isMounted && `${styles.visibleHeader}`}`
+            : `${styles.headerContent} `
+        }
+      >
         {/* rest of content component */}
+        <h5 className={styles.firstLine}></h5>
+        <h5 className={styles.firstLine}> See how SSW can help:</h5>
         <ul className={styles.uList}>
           <li>We can help you adopt best practices</li>
           <li>We can upskill you on the latest technologies</li>
@@ -48,9 +58,9 @@ const DevBooking = () => {
           easily hosted with any provider that supports containers, including
           Kubernetes and Azure Web Apps.
         </h5>
-      </div>
+      </section>
     </>
   );
 };
 
-export default DevBooking;
+export default DeveloperBooking;

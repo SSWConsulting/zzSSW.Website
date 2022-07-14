@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { container } from "./index.module.css";
-import { useTechnologyMdxData } from "../../../../hooks/use-technology-mdx-data";
+import { useTechnologyMdxData } from "../../../../hooks/useTechnologyMdxData";
 import Technology from "../../../../components/technology";
 
 const Technologies = ({ technologies, techHeader }) => {
@@ -26,6 +26,7 @@ const Technologies = ({ technologies, techHeader }) => {
           {...technologyNode}
           index={index}
           techListLength={techListLength}
+          key={index}
         />
       );
     } else {

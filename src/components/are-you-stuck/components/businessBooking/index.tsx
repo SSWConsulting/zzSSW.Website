@@ -1,21 +1,29 @@
-import React, { useState } from "react";
-import Button from "../booking-button";
+import React, { useEffect, useState } from "react";
+import Button from "../bookingButton";
 import * as styles from "./index.module.css";
 import BookingFormPopup from "../../../bookingFormPopup";
 
-const BusiBooking = () => {
+const BusinessBooking = ({ hasTransitionedIn, isMounted }) => {
   const [isVisible, setIsVisible] = useState(false);
   const showBookingForm = () => setIsVisible(!isVisible);
 
   return (
     <>
-      <section>
+      <section
+        className={
+          (hasTransitionedIn && isMounted) || (!hasTransitionedIn && !isMounted)
+            ? `${styles.headerContent}  ${
+                hasTransitionedIn && `${styles.tn}`
+              } ${isMounted && `${styles.visibleHeader}`}`
+            : `${styles.headerContent} `
+        }
+      >
         <h5 className={styles.firstLine}>
           We are enterprise software consultants who solve complex business
           problems and reduce risk, using best practices and the latest
           technologies.
         </h5>
-        <h5 className={styles.firstLine}>See how SSW can help:</h5>
+        <h5 className={styles.firstLine}> See how SSW can help:</h5>
         <ul>
           <li className={styles.theList}>Build it right the 1st time</li>
           <li className={styles.theList}>
@@ -55,4 +63,4 @@ const BusiBooking = () => {
   );
 };
 
-export default BusiBooking;
+export default BusinessBooking;

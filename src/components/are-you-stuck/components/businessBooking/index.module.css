@@ -1,8 +1,16 @@
+.headerContent {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  .headerContent.tn.visibleHeader {
+    opacity: 1;
+    transform: translateY(0);
+  }
 .container {
     overflow: hidden;
     color: white;
     text-align: center;
-    min-height: 800px;
     background: rgba(0, 0, 0, 0.75)
         url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
 }
