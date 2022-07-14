@@ -29,7 +29,6 @@ const Technology = (props) => {
       </>
     );
   }
-  console.log(ImageToUrl(key, imagesUrldata));
   return (
     <div className={columnClass}>
       <article className={skill} data-aos="flip-left">
