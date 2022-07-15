@@ -20,6 +20,9 @@ export const IMAGES_LINKS = {
   Azure: require("../assets/images/bg.jpg"),
 };
 
+//Base Image URL
+export const BASE_IMAGE_URL = `${process.env.CONTENT_REPO}/raw/${process.env.CONTENT_BRANCH}/assets/images/thumbs/thumb-`;
+
 //Color Schema
 export const WHITE_SMOKE = "#f5f5f5";
 export const WHITE = "#ffff";

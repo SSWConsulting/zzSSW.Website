@@ -3,11 +3,17 @@ import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import { skill } from "./index.module.css";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { BASE_URL } from "../../constants";
+import { BASE_IMAGE_URL, BASE_URL } from "../../constants";
+import ImageWithFallbacks from "../ImageWithFallbacks";
+import { useAllImagesUrlData } from "../../hooks/useAllImageData";
+import ImageToUrl from "../../helpers/imageToUrl";
 
 const Technology = (props) => {
   const { techListLength, frontmatter, body, index } = props;
+  //TODO: Delete logoImage once content is updated in ssw.website.content
   const { logoImage, readMoreSlug, key } = frontmatter;
+  const imagesUrldata = useAllImagesUrlData();
+
   let theReadMoreLink;
   let columnClass;
   if (techListLength % 2 != 0 && techListLength - 1 == index) {
@@ -23,12 +29,23 @@ const Technology = (props) => {
       </>
     );
   }
-
   return (
     <div className={columnClass}>
       <article className={skill} data-aos="flip-left">
         <figure>
-          <GatsbyImage image={getImage(logoImage)} alt={key} />
+          {ImageToUrl(key, imagesUrldata) ? (
+            <>
+              <GatsbyImage
+                image={getImage(ImageToUrl(key, imagesUrldata))}
+                alt={key}
+              />
+            </>
+          ) : (
+            <StaticImage
+              src="../../assets/images/ssw-logo.svg"
+              alt="SSW Consulting"
+            />
+          )}
         </figure>
         <MDXRenderer>{body}</MDXRenderer>
         {theReadMoreLink}
