@@ -71,44 +71,45 @@
     ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-sql-server-banner.png",
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-ms-sql-server-banner.png",
     "exactMatch": [
-      "sql-server"
+      "sql-server",
+      "ms-sql-server"
     ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_chat-icon.png",
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk-chat-icon.png",
     "exactMatch": [
       "zendesk-chat"
     ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_connect_outbound-icon.png",
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk-connect-outbound-icon.png",
     "exactMatch": [
       "zendesk-connect",
       "zendesk-connect-outbound"
     ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_explore-icon.png",
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk-connect-outbound-icon.png",
     "exactMatch": [
       "zendesk-explore"
     ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_guide-icon.png",
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk-guide-icon.png",
     "exactMatch": [
       "zendesk-guide"
     ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_support-icon.png",
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk-support-icon.png",
     "exactMatch": [
       "zendesk-support"
     ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk_talk-icon.png",
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk-talk-icon.png",
     "exactMatch": [
       "zendesk-talk"
     ]
@@ -145,12 +146,6 @@
     "exactMatch": [
       "ui-ux-design",
       "web-design"
-    ]
-  },
-  {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-sql-server-banner.png",
-    "exactMatch": [
-      "ms-sql-server"
     ]
   },
   {
