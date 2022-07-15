@@ -5,6 +5,9 @@ const TabHeader = ({ title, subTitle }) => {
   return (
     <>
       <div
+
+      //TODO: Enable animations in heading in future
+
       // className={
       //   (hasTransitionedIn && isMounted) || (!hasTransitionedIn && !isMounted)
       //     ? `${styles.headerContent}  ${
@@ -13,7 +16,6 @@ const TabHeader = ({ title, subTitle }) => {
       //     : `${styles.headerContent} `
       // }
       >
-        {/* title + subtitle component */}
         <InnerHTML tagName="h1" __html={title} />
 
         <h2 className={"subTitle"}>{subTitle}</h2>

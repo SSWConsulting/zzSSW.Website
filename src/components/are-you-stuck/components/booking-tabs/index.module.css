@@ -1,10 +1,10 @@
 .bookingContainer {
-    /* overflow: hidden; */
+
     color: white;
     text-align: center;
     min-height: 850px;
     background-image: url('../../../../assets/images/mvc-benefits-bg.jpg');
-    /* background:url('../../../../assets/images/mvc-benefits-bg.jpg') no-repeat center center fixed; */
+
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,16 +16,11 @@
 }
 
 .containerWrapper {
-     /* background:url('../../../../assets/images/mvc-benefits-bg.jpg') no-repeat center center fixed; */
+
     background-size: cover;
 
 }
 
-/* .backgroundImage {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-} */
 
 .title {
     margin-top: 4em;
@@ -86,8 +81,7 @@ h5 {
 }
 
 .play {
-    /* height: 72px;
-    width: 72px; */
+
     padding-top: 30px;
     margin-left: -36px;
     margin-top: -36px;
@@ -106,14 +100,14 @@ h5 {
     width: 75%;
     margin: 0 auto;
     line-height: inherit;
-    /* padding-bottom: 8em; */
+
 }
 
 .videoContainer {
     position: relative;
-    /* embedded video height */
+
     width: 750px;
-    /* height: 386px; */
+
     height: 450px;
     padding-top: 5em;
     padding-left: 15px;
@@ -122,10 +116,7 @@ h5 {
     text-align: center;
 }
 
-/* .toggleButtons {
-    flex-direction: row;
-    justify-content: space-between;   
-} */
+
 
 .flex-container {
     display: flex;
