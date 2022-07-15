@@ -4,7 +4,9 @@ import { useTechnologyMdxData } from "../../../../hooks/useTechnologyMdxData";
 import Technology from "../../../../components/technology";
 
 const Technologies = ({ technologies, techHeader }) => {
-  //TODO: change technologies to technologyCards after refactor ssw.website.content
+
+  //TODO: change technologies to technologyCards after refactor SSW.website.content
+
   const techList = technologies;
   const nodes = useTechnologyMdxData();
   const [techComponents, setTechComponents]: any = useState([]);
