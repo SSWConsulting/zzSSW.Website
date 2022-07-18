@@ -22,7 +22,7 @@ import { FormSubmissionData } from "./formData";
 
 const BookingFormFormik = ({ isShareForm }) => {
   //Show FormStates and Active label
-  const [host, setHost] = useState("");
+  const [contactSuccess, setContactSuccess] = useState(false);
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
 
@@ -42,11 +42,6 @@ const BookingFormFormik = ({ isShareForm }) => {
     ValidationSchema(isShowStates, isShareForm)
   );
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setHost(window.location.host);
-    }
-  }, []);
   useEffect(() => {
     // every time isShowState changes, recreate the schema and set it in the state
     setSchema(ValidationSchema(isShowStates, isShareForm));
@@ -83,18 +78,13 @@ const BookingFormFormik = ({ isShareForm }) => {
       .post(`/ssw/api/crm/createlead`, data, {
         headers: { "Content-Type": "application/json" },
       })
-      .then((response) => {
-        isShareForm
-          ? axios.post(`/ssw/api/share`, {
-              referredByFullName: values.fullName,
-              fullName: values.referredFullName,
-              email: values.referredEmail,
-            })
-          : // .then(() => {
-            //   navigate("/thankyou/");
-            // })
-            //.catch((err) => console.log(err))
-            navigate("/thankyou/");
+      .then(() => {
+        setContactSuccess(true);
+        setTimeout(function () {
+          setContactSuccess(false);
+          //redirect to thank you page
+          navigate("/thankyou/");
+        }, 1000);
       })
       .catch((err) => alert("Failed to create lead in CRM"));
   };
@@ -105,6 +95,13 @@ const BookingFormFormik = ({ isShareForm }) => {
         <div className="modal-body">
           <div className="get-started-form">
             <h2>{isShareForm ? SHARE_FORM_TITLE : CONTACT_FORM_TITLE}</h2>
+            {!!contactSuccess && (
+              <div className="alert alert-success" role="alert">
+                An email has been sent to the SSW Sales team and someone will be
+                in contact with you soon
+              </div>
+            )}
+
             <Formik
               validationSchema={schema}
               initialValues={InitialValues}
