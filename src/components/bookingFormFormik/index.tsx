@@ -48,7 +48,6 @@ const BookingFormFormik = ({ isShareForm }) => {
     }
   }, []);
   useEffect(() => {
-    console.log("HOST\n", host + `/ssw/api/crm/createlead`);
     // every time isShowState changes, recreate the schema and set it in the state
     setSchema(ValidationSchema(isShowStates, isShareForm));
   }, [isShowStates]);
@@ -87,7 +86,7 @@ const BookingFormFormik = ({ isShareForm }) => {
       .then((response) => {
         isShareForm
           ? axios
-              .post(host + `/ssw/api/share`, {
+              .post(`/ssw/api/share`, {
                 referredByFullName: values.fullName,
                 fullName: values.referredFullName,
                 email: values.referredEmail,
