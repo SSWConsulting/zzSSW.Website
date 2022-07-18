@@ -85,16 +85,15 @@ const BookingFormFormik = ({ isShareForm }) => {
       })
       .then((response) => {
         isShareForm
-          ? axios
-              .post(`/ssw/api/share`, {
-                referredByFullName: values.fullName,
-                fullName: values.referredFullName,
-                email: values.referredEmail,
-              })
-              .then(() => {
-                navigate("/thankyou/");
-              })
-          : //.catch((err) => console.log(err))
+          ? axios.post(`/ssw/api/share`, {
+              referredByFullName: values.fullName,
+              fullName: values.referredFullName,
+              email: values.referredEmail,
+            })
+          : // .then(() => {
+            //   navigate("/thankyou/");
+            // })
+            //.catch((err) => console.log(err))
             navigate("/thankyou/");
       })
       .catch((err) => alert("Failed to create lead in CRM"));
