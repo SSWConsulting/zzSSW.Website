@@ -94,10 +94,10 @@ const BookingFormFormik = ({ isShareForm }) => {
               .then(() => {
                 navigate("/thankyou/");
               })
-              .catch((err) => console.log(err))
-          : navigate("/thankyou/");
+          : //.catch((err) => console.log(err))
+            navigate("/thankyou/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => alert("Failed to create lead in CRM"));
   };
 
   return (
