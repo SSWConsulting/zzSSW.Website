@@ -48,6 +48,7 @@ const BookingFormFormik = ({ isShareForm }) => {
     }
   }, []);
   useEffect(() => {
+    console.log("HOST\n", host + `/ssw/api/crm/createlead`);
     // every time isShowState changes, recreate the schema and set it in the state
     setSchema(ValidationSchema(isShowStates, isShareForm));
   }, [isShowStates]);
