@@ -81,7 +81,7 @@ const BookingFormFormik = ({ isShareForm }) => {
     actions.setSubmitting(false);
 
     await axios
-      .post(host + `/ssw/api/crm/createlead`, data, {
+      .post(`/ssw/api/crm/createlead`, data, {
         headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
