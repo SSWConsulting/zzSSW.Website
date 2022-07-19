@@ -28,11 +28,11 @@ const BookingFormFormik = ({ isShareForm }) => {
   const [activeInputLabel, setActiveInputLabel] = useState({});
 
   //Condition to avoid SSR (Server-Side Rendering) for getting page path
-  let pathName;
+  let sourceWebPageURL;
   if (typeof window !== "undefined") {
-    pathName = useLocation().href;
+    sourceWebPageURL = useLocation().href;
   } else {
-    pathName = "";
+    sourceWebPageURL = "";
   }
   //ReCaptcha
   const [contactReCaptcha, setContactReCaptcha] = useState("");
@@ -83,7 +83,7 @@ const BookingFormFormik = ({ isShareForm }) => {
       values,
       isShareForm,
       contactReCaptcha,
-      pathName
+      sourceWebPageURL
     );
     actions.setSubmitting(false);
 

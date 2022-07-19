@@ -2,7 +2,7 @@ export const FormSubmissionData = (
   values,
   isShareForm,
   contactReCaptcha,
-  pathName
+  sourceWebPageURL
 ) => {
   console.log("values", values);
 
@@ -54,7 +54,7 @@ export const FormSubmissionData = (
     Email: isShareForm ? values.referredEmail : values.email,
     Phone: values.phone,
     Recaptcha: contactReCaptcha,
-    SourceWebPageURL: pathName,
+    SourceWebPageURL: sourceWebPageURL,
     EmailSubject: subject,
     EmailBody: body + "The associated CRM lead is ",
   };
