@@ -115,6 +115,12 @@
     ]
   },
   {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk-explore-icon.png",
+    "exactMatch": [
+      "zendesk-explore"
+    ]
+  },
+  {
     "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-react-banner.png",
     "exactMatch": [
       "react",

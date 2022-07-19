@@ -7,11 +7,6 @@ export const useTechnologyCardsMdxData = () => {
           frontmatter {
             type
             key
-            logoImage {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
             readMoreSlug
           }
           body
