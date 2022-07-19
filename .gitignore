@@ -4,4 +4,4 @@ public
 .env.development
 .env.production
 package-lock.json
-
+.DS_Store
