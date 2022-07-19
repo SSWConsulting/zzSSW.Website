@@ -8,7 +8,7 @@ import Testimonials from "../../../templates/consulting/components/testimonials"
 import Solution from "../../../components/are-you-stuck/components/solution";
 import BookingTabs from "../../../components/are-you-stuck/components/booking-tabs";
 import BuildPlatform from "../../../components/builtPlatform";
-import Technologies from "../../../templates/consulting/components/technologies";
+import TechnologyCards from "../../../templates/consulting/components/technologyCards";
 // import MainServices from "../../../components/are-you-stuck/components/main-services";
 
 import "./index.module.css";
@@ -68,7 +68,7 @@ const AreYouStuck = () => {
         <Clients />
 
         {/* <Technologies techList={techList}/> */}
-        <Technologies techHeader={techHeader} technologies={techList} />
+        <TechnologyCards techHeader={techHeader} technologies={techList} />
 
         <Solution project={solution} />
 

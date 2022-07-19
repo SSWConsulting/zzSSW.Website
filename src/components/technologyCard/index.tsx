@@ -3,12 +3,11 @@ import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import { skill } from "./index.module.css";
 import { Link } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { BASE_IMAGE_URL, BASE_URL } from "../../constants";
-import ImageWithFallbacks from "../ImageWithFallbacks";
+import { BASE_URL } from "../../constants";
 import { useAllImagesUrlData } from "../../hooks/useAllImageData";
 import ImageToUrl from "../../helpers/imageToUrl";
 
-const Technology = (props) => {
+const TechnologyCard = (props) => {
   const { techListLength, frontmatter, body, index } = props;
   //TODO: Delete logoImage once content is updated in ssw.website.content
   const { logoImage, readMoreSlug, key } = frontmatter;
@@ -54,4 +53,4 @@ const Technology = (props) => {
   );
 };
 
-export default Technology;
+export default TechnologyCard;

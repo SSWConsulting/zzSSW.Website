@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { container } from "./index.module.css";
-import { useTechnologyMdxData } from "../../../../hooks/useTechnologyMdxData";
-import Technology from "../../../../components/technology";
+import { useTechnologyCardsMdxData } from "../../../../hooks/useTechnologyCardsMdxData";
+import TechnologyCard from "../../../../components/technologyCard";
 
-const Technologies = ({ technologies, techHeader }) => {
+const TechnologCards = ({ technologyCards, techHeader }) => {
   //TODO: change technologies to technologyCards after refactor SSW.website.content
 
-  const techList = technologies;
-  const nodes = useTechnologyMdxData();
+  const techList = technologyCards;
+  console.log(technologyCards);
+  const nodes = useTechnologyCardsMdxData();
   const [techComponents, setTechComponents]: any = useState([]);
   let techListLength: number = techList.length;
   useEffect(() => {
@@ -19,13 +20,13 @@ const Technologies = ({ technologies, techHeader }) => {
     });
   }, []);
   function getComponent(name: string, index: number) {
-    const technologyNode = nodes.filter(
+    const technologyCardNode = nodes.filter(
       (node) => node.frontmatter.key === name
     )[0];
-    if (technologyNode) {
+    if (technologyCardNode) {
       return (
-        <Technology
-          {...technologyNode}
+        <TechnologyCard
+          {...technologyCardNode}
           index={index}
           techListLength={techListLength}
           key={index}
@@ -46,4 +47,4 @@ const Technologies = ({ technologies, techHeader }) => {
   );
 };
 
-export default Technologies;
+export default TechnologCards;

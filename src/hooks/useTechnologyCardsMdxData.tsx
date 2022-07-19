@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby";
-export const useTechnologyMdxData = () => {
+export const useTechnologyCardsMdxData = () => {
   const { allMdx } = useStaticQuery(graphql`
-    query technologyComponentQuery {
+    query technologyCardsComponentQuery {
       allMdx(filter: { fields: { source: { eq: "technologies" } } }) {
         nodes {
           frontmatter {
