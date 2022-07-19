@@ -6,7 +6,6 @@ const ImageToUrl = (imageKey, allImageUrls) => {
   );
 
   if (imageResult) {
-    console.log("imageResult.image", imageResult.image);
     return imageResult.image;
   }
   return null;

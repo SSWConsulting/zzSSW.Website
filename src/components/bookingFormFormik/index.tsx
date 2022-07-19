@@ -19,6 +19,7 @@ import FormGroupSelect from "./formGroupSelect";
 import FormGroupTextArea from "./formGroupTextArea";
 import { navigate } from "gatsby";
 import { FormSubmissionData } from "./formData";
+import { useLocation } from "@reach/router";
 
 const BookingFormFormik = ({ isShareForm }) => {
   //Show FormStates and Active label
@@ -26,6 +27,14 @@ const BookingFormFormik = ({ isShareForm }) => {
   const [country, setCountry] = useState("");
   const [activeInputLabel, setActiveInputLabel] = useState({});
 
+  //Condition to avoid SSR (Server-Side Rendering) for getting page path
+  let pageHref;
+  if (typeof window !== "undefined") {
+    pageHref = useLocation().href;
+  } else {
+    pageHref = "";
+  }
+  console.log(pageHref);
   //ReCaptcha
   const [contactReCaptcha, setContactReCaptcha] = useState("");
 
@@ -41,6 +50,15 @@ const BookingFormFormik = ({ isShareForm }) => {
   const [schema, setSchema] = useState(() =>
     ValidationSchema(isShowStates, isShareForm)
   );
+
+  // useEffect(() => {
+  //   if (typeof window !== "undefined") {
+  //     setPageLocation(useLocation());
+  //   } else {
+  //     setPageLocation({});
+  //   }
+  //   console.log("pagelocation\n", pagelocation);
+  // }, [pagelocation]);
 
   useEffect(() => {
     // every time isShowState changes, recreate the schema and set it in the state
@@ -71,7 +89,12 @@ const BookingFormFormik = ({ isShareForm }) => {
   };
 
   const handleOnSubmit = async (values, actions) => {
-    const data = FormSubmissionData(values, isShareForm, contactReCaptcha);
+    const data = FormSubmissionData(
+      values,
+      isShareForm,
+      contactReCaptcha,
+      pageHref
+    );
     actions.setSubmitting(false);
 
     await axios

@@ -4,7 +4,6 @@ import classNames from "classnames";
 import { container, image, link } from "./index.module.css";
 
 const BuildPlatform = ({ backgroundColor }) => {
-  console.log("backgroundColor-build", backgroundColor);
   return (
     <section className={container} style={{ backgroundColor: backgroundColor }}>
       <div className="main-container">

@@ -6,11 +6,11 @@ require("dotenv").config({
 const siteUrl =
   process.env.NODE_ENV === "development"
     ? "http://localhost:9000"
-    : "https://staging2.ssw.com.au";
+    : "https://tfs365.com/";
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://tfs365.com",
     title: "SSW Website",
   },
   plugins: [
