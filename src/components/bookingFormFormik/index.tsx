@@ -28,13 +28,12 @@ const BookingFormFormik = ({ isShareForm }) => {
   const [activeInputLabel, setActiveInputLabel] = useState({});
 
   //Condition to avoid SSR (Server-Side Rendering) for getting page path
-  let pageHref;
+  let pathName;
   if (typeof window !== "undefined") {
-    pageHref = useLocation().href;
+    pathName = useLocation().href;
   } else {
-    pageHref = "";
+    pathName = "";
   }
-  console.log(pageHref);
   //ReCaptcha
   const [contactReCaptcha, setContactReCaptcha] = useState("");
 
@@ -50,15 +49,6 @@ const BookingFormFormik = ({ isShareForm }) => {
   const [schema, setSchema] = useState(() =>
     ValidationSchema(isShowStates, isShareForm)
   );
-
-  // useEffect(() => {
-  //   if (typeof window !== "undefined") {
-  //     setPageLocation(useLocation());
-  //   } else {
-  //     setPageLocation({});
-  //   }
-  //   console.log("pagelocation\n", pagelocation);
-  // }, [pagelocation]);
 
   useEffect(() => {
     // every time isShowState changes, recreate the schema and set it in the state
@@ -93,7 +83,7 @@ const BookingFormFormik = ({ isShareForm }) => {
       values,
       isShareForm,
       contactReCaptcha,
-      pageHref
+      pathName
     );
     actions.setSubmitting(false);
 
