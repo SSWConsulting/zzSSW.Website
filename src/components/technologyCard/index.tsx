@@ -9,7 +9,6 @@ import ImageToUrl from "../../helpers/imageToUrl";
 
 const TechnologyCard = (props) => {
   const { techListLength, frontmatter, body, index } = props;
-  //TODO: Delete logoImage once content is updated in ssw.website.content
   const { readMoreSlug, key } = frontmatter;
   const imagesUrldata = useAllImagesUrlData();
 

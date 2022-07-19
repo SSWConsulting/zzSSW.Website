@@ -4,8 +4,6 @@ import { useTechnologyCardsMdxData } from "../../../../hooks/useTechnologyCardsM
 import TechnologyCard from "../../../../components/technologyCard";
 
 const TechnologCards = ({ technologyCards, techHeader }) => {
-  //TODO: change technologies to technologyCards after refactor SSW.website.content
-
   const techList = technologyCards;
   console.log(technologyCards);
   const nodes = useTechnologyCardsMdxData();
