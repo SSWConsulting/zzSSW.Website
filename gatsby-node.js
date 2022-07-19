@@ -6,7 +6,7 @@ const { createRemoteFileNode } = require("gatsby-source-filesystem");
 exports.sourceNodes = async ({ actions, createNodeId }) => {
   const { createNode } = actions;
 
-  let rawdata = fs.readFileSync("ImageUrlData.json");
+  let rawdata = fs.readFileSync("ImageToUrlConfig.json");
   let imageUrlData = JSON.parse(rawdata);
 
   const turnImageObjectIntoGatsbyNode = (imageObject, imageUrlData) => {
