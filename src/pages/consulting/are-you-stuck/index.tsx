@@ -68,7 +68,7 @@ const AreYouStuck = () => {
         <Clients />
 
         {/* <Technologies techList={techList}/> */}
-        <TechnologyCards techHeader={techHeader} technologies={techList} />
+        <TechnologyCards techHeader={techHeader} technologyCards={techList} />
 
         <Solution project={solution} />
 
