@@ -27,7 +27,7 @@ const ThankyouPage = () => {
       <div className="body-background-white">
         <div className="main-container body-content">
           <h1>
-            <span className="red Title">
+            <span className="red">
               <h1>Thank you!</h1>
             </span>
           </h1>
@@ -42,14 +42,14 @@ const ThankyouPage = () => {
           <div className="flex-between">
             <div>
               <p>SSW can help your business in many ways:</p>
-              <a href="https://www.ssw.com.au/ssw/Consulting/Default.aspx">
-                <button className="red done">SSW Consulting</button>
+              <a className="red done" href="https://www.ssw.com.au/ssw/Consulting/Default.aspx">
+                SSW Consulting
               </a>
             </div>
             <div>
               <p>Want to know more about our consultants:</p>{" "}
-              <a href="https://www.ssw.com.au/people/">
-                <button className="red done ">SSW People</button>
+              <a className="red done" href="https://www.ssw.com.au/people/">
+                SSW People
               </a>
             </div>
           </div>

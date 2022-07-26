@@ -1,5 +1,5 @@
 .body-background-white {
-  background-color: #ffff !important;
+  background-color: #fff !important;
   max-width: 100% !important;
 }
 .header-content {
@@ -27,7 +27,7 @@
   margin-top: 30px;
 }
 
-button {
+.done {
   margin-top: 5px;
   padding: 10px;
   width: 170px;
