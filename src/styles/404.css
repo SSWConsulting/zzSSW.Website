@@ -53,10 +53,7 @@ h1 {
   font-weight: 400;
 }
 
-div.bad-example,
-div.good-example,
-div.greybox,
-div.ok-example {
+div.greybox{
   display: block;
   margin-bottom: 1rem;
   margin-top: 1rem;
