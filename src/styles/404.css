@@ -12,7 +12,7 @@
   background-position: bottom;
   background-repeat: no-repeat;
   height: 55rem;
-  background-image: url("../assets/images/404/book.jpg");
+  background-image: url("../assets/images/404/Broken-Chain.png");
 }
 .not-found-page h1 {
   color: #cc4141;
@@ -53,10 +53,7 @@ h1 {
   font-weight: 400;
 }
 
-div.bad-example,
-div.good-example,
-div.greybox,
-div.ok-example {
+div.greybox{
   display: block;
   margin-bottom: 1rem;
   margin-top: 1rem;
