@@ -6,12 +6,14 @@ param appName string
 
 var storageAccountName = '${appName}storage'
 
+var tags = {
+  'cost-category': 'dev/test'
+}
+
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
   name: storageAccountName
   location: location
-  tags: {
-    'cost-category': 'dev/test'
-  }
+  tags: tags
   sku: {
     name: storageSKU
   }
@@ -47,8 +49,9 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
 }
 
 resource storageAccount_default 'Microsoft.Storage/storageAccounts/blobServices@2021-06-01' = {
-  parent: storageAccount
   name: 'default'
+  parent: storageAccount
+  tags: tags
   properties: {
     cors: {
       corsRules: []
@@ -71,34 +74,10 @@ resource storageAccount_default 'Microsoft.Storage/storageAccounts/blobServices@
   }
 }
 
-resource Microsoft_Storage_storageAccounts_fileServices_sswwebsitestorage_default 'Microsoft.Storage/storageAccounts/fileServices@2021-06-01' = {
-  parent: storageAccount
-  name: 'default'
-}
-
-resource Microsoft_Storage_storageAccounts_queueServices_sswwebsitestorage_default 'Microsoft.Storage/storageAccounts/queueServices@2021-06-01' = {
-  parent: storageAccount
-  name: 'default'
-  properties: {
-    cors: {
-      corsRules: []
-    }
-  }
-}
-
-resource Microsoft_Storage_storageAccounts_tableServices_sswwebsitestorage_default 'Microsoft.Storage/storageAccounts/tableServices@2021-06-01' = {
-  parent: storageAccount
-  name: 'default'
-  properties: {
-    cors: {
-      corsRules: []
-    }
-  }
-}
-
 resource sswwebsitestorage_default_web 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-06-01' = {
-  parent: storageAccount_default
   name: '$web'
+  parent: storageAccount_default
+  tags: tags
   properties: {
     immutableStorageWithVersioning: {
       enabled: false
