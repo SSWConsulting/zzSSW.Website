@@ -51,7 +51,6 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
 resource storageAccount_default 'Microsoft.Storage/storageAccounts/blobServices@2021-06-01' = {
   name: 'default'
   parent: storageAccount
-  tags: tags
   properties: {
     cors: {
       corsRules: []
@@ -77,7 +76,6 @@ resource storageAccount_default 'Microsoft.Storage/storageAccounts/blobServices@
 resource sswwebsitestorage_default_web 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-06-01' = {
   name: '$web'
   parent: storageAccount_default
-  tags: tags
   properties: {
     immutableStorageWithVersioning: {
       enabled: false
