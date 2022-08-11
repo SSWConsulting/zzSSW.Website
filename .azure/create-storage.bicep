@@ -9,6 +9,9 @@ var storageAccountName = '${appName}storage'
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
   name: storageAccountName
   location: location
+  tags: {
+    'cost-category': 'dev/test'
+  }
   sku: {
     name: storageSKU
   }
