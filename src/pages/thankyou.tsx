@@ -42,13 +42,13 @@ const ThankyouPage = () => {
           <div className="flex-between">
             <div>
               <p>SSW can help your business in many ways:</p>
-              <a className="red done" href="https://www.ssw.com.au/ssw/Consulting/Default.aspx">
+              <a className="red done thankyou-done" href="https://www.ssw.com.au/ssw/Consulting/Default.aspx">
                 SSW Consulting
               </a>
             </div>
             <div>
               <p>Want to know more about our consultants:</p>{" "}
-              <a className="red done" href="https://www.ssw.com.au/people/">
+              <a className="red done thankyou-done" href="https://www.ssw.com.au/people/">
                 SSW People
               </a>
             </div>
