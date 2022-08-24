@@ -25,7 +25,7 @@ const NotFoundPage = () => {
                 <button>go back</button>to the previous page.
               </div>
               <div className="not-found-greybox greybox">
-                This page is as per{" "}
+                This page is as per{""}&nbsp;
                 <a href="https://ssw.com.au/rules/404-useful-error-page">
                   Do you replace the 404 error with a useful error page?
                 </a>
