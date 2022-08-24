@@ -1,7 +1,5 @@
-import { Link } from "gatsby";
 import React from "react";
 import Breadcrumb from "../components/breadcrumb";
-import external from "../assets/images/external-link.gif";
 import Layout from "../components/layout";
 import "../styles/thankyou.css";
 import { BASE_URL, PAGE_TYPE, PAGE_TITLE, WHITE_SMOKE } from "../constants";
