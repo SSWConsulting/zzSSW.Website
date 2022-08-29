@@ -14,21 +14,21 @@ const NotFoundPage = () => {
               <h1 className="unselectable">404</h1>
               <div className="not-found-message">
                 <h2 className="unselectable">
-                  <span>PAGE NOT FOUND</span> <br />
+                  <span>PAGE NOT FOUND!</span> <br />
                   Sorry, we couldn't find the <br />
-                  page you were looking for<span> </span>
+                  page you were looking for...<span> </span>
                 </h2>
               </div>
               <div className="not-found-greybox greybox">
-                Visit <a href="https://www.ssw.com.au/ssw/">SSW homepage</a> for
-                details on our Services, Staff and more or
-                <button>go back</button>to the previous page.
+                Visit <a href="https://www.ssw.com.au/ssw/">SSW homepage</a> to
+                find out how we can help you.
               </div>
               <div className="not-found-greybox greybox">
-                This page is as per{""}&nbsp;
+                Learn more about{" "}
                 <a href="https://ssw.com.au/rules/404-useful-error-page">
-                  Do you replace the 404 error with a useful error page?
+                  having a useful 404 error page
                 </a>
+                .
               </div>
             </div>
           </div>
