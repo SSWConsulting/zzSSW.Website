@@ -1,6 +1,7 @@
 name: Build + Deploy to prod
 
 on:
+  workflow_dispatch:  
   push:
     branches:
       - release/* #on push to the release branch do the jobs below
