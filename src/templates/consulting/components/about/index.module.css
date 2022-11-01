@@ -11,6 +11,11 @@
     background-size: cover;
 }
 
+.h1 {
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
 .section {
     padding: 0 15px;
 }

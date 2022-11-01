@@ -4,8 +4,9 @@
     color: white;
     text-align: center;
     min-height: 800px;
-    background: rgba(0, 0, 0, 0.75)
-        url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+    background: rgba(0, 0, 0, 0.75) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+    display: flex;
+    align-items: center;
 }
 
 .title {
@@ -48,6 +49,7 @@
 }
 
 @keyframes bounce {
+
     0%,
     20%,
     50%,
@@ -55,13 +57,16 @@
     100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-30px);
     }
+
     60% {
         transform: translateY(-15px);
     }
 }
-.backgroud-video-wrapper{
+
+.backgroud-video-wrapper {
     position: relative;
 }
