@@ -6,13 +6,7 @@ on:
     inputs:
       ENVIRONMENT:
         required: true
-        type: string
-      UPLOAD_ARTIFACTS:
-        required: true
-        type: boolean
     secrets:
-      CONTENT_BRANCH:
-        required: true
       GOOGLE_GTM_ID:
         required: true
       ZENDESK_CHAT_KEY:
@@ -23,7 +17,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.ENVIRONMENT }}
+    env: ${{ inputs.ENVIRONMENT }}
     steps:
       - uses: actions/checkout@v2
       #TODO: Align my local node version (16.13.2) or latest lts with actions/setup-node@v2.5.0
@@ -44,15 +38,14 @@ jobs:
         run: yarn build
         env:
           CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
-          CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH }}
+          CONTENT_BRANCH: main
           GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID }}
           ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY }}
 
       # Upload build artifacts for deployment
       - name: Upload Artifacts
-        if: ${{ inputs.UPLOAD_ARTIFACTS }}
         uses: actions/upload-artifact@v2
         with:
-          name: gatsby-build
+          name: gatsby-build-${{ inputs.ENVIRONMENT }}
           path: public
           retention-days: 1

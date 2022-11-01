@@ -64,7 +64,7 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v2
         with:
-          name: gatsby-build
+          name: gatsby-build-${{ inputs.ENVIRONMENT }}
 
       # Log in to upload artifacts
       - uses: azure/login@v1
@@ -80,9 +80,3 @@ jobs:
         with:
           inlineScript: |
             az storage blob upload-batch --overwrite --account-name ${{ secrets.AZURE_APP_NAME }}storage -d '$web' -s .
-            
-      # Log out when finished
-      - name: logout
-        run: |
-          az logout
-        if: always()

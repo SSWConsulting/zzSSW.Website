@@ -4,13 +4,14 @@ name: Tests - CodeAuditor
 # Controls when the workflow will run
 # TODO: Run this workflow after Production - Deploy Gatsby in future
 on:
-  workflow_run:
-    workflows: [Staging - Deploy Gatsby]
-    types:
-      - completed
+  workflow_call:
+  # workflow_run:
+  #   workflows: [Staging - Deploy Gatsby]
+  #   types:
+  #     - completed
 
-    Schedule:
-      - cron: "0 14 * * 0"
+  #   Schedule:
+  #     - cron: "0 14 * * 0"
 
 jobs:
   codeauditor-test:
