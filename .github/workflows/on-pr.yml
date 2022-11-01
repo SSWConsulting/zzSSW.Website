@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Build
-    uses: SSWConsulting/SSW.Website/.github/workflows/build.yml@main
+    uses: ./.github/workflows/build.yml
     with:
       ENVIRONMENT: staging
     secrets:
