@@ -7,7 +7,6 @@ on:
 jobs:
   build:
     name: Build
-    environment: staging
     uses: ./.github/workflows/build.yml
     with:
       ENVIRONMENT: staging
