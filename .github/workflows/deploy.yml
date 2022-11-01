@@ -80,9 +80,3 @@ jobs:
         with:
           inlineScript: |
             az storage blob upload-batch --overwrite --account-name ${{ secrets.AZURE_APP_NAME }}storage -d '$web' -s .
-            
-      # Log out when finished
-      - name: logout
-        run: |
-          az logout
-        if: always()

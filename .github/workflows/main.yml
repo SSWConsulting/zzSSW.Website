@@ -13,6 +13,10 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       ENVIRONMENT: staging
+    secrets:
+      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
+      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
+      RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
 
   deploy_staging:
     needs: build_staging
@@ -21,9 +25,9 @@ jobs:
     with:
       ENVIRONMENT: staging
     secrets:
-      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
-      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
-      RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      AZURE_APP_NAME: ${{ secrets.AZURE_APP_NAME }}
 
   # requires a 2nd build because it replaces .env with prod values
   build_prod:
@@ -32,6 +36,10 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
       ENVIRONMENT: production
+    secrets:
+      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
+      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
+      RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
 
   deploy_prod:
     needs: build_prod
@@ -40,9 +48,9 @@ jobs:
     with:
       ENVIRONMENT: production
     secrets:
-      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
-      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
-      RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
+      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+      AZURE_RESOURCE_GROUP: ${{ secrets.AZURE_RESOURCE_GROUP }}
+      AZURE_APP_NAME: ${{ secrets.AZURE_APP_NAME }}
 
 
   # TODO: add tests after successfully deploying to production
