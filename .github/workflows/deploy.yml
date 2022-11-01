@@ -64,7 +64,7 @@ jobs:
       - name: Download Artifacts
         uses: actions/download-artifact@v2
         with:
-          name: gatsby-build
+          name: gatsby-build-${{ inputs.ENVIRONMENT }}
 
       # Log in to upload artifacts
       - uses: azure/login@v1

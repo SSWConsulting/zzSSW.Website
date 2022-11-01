@@ -5,13 +5,11 @@ on:
 
 jobs:
   build:
-    name: Build and upload artifacts
-    uses: SSWConsulting/SSW.Website/.github/workflows/build.yml@main
+    name: Build
+    uses: SSWConsulting/SSW.Website/.github/workflows/build.yml
     with:
       ENVIRONMENT: staging
-      UPLOAD_ARTIFACTS: false # Do not upload artifacts as this is simply a "does it build?" check
     secrets:
-      CONTENT_BRANCH: ${{ secrets.CONTENT_BRANCH}}
       GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
       ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
       RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}

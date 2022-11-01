@@ -1,0 +1,53 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - main # on push to the master branch do the jobs below
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  build_staging:
+    name: Build and upload artifacts for staging
+    uses: ./.github/workflows/build.yml
+    with:
+      ENVIRONMENT: staging
+
+  deploy_staging:
+    needs: build_staging
+    name: Deploy staging
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ENVIRONMENT: staging
+    secrets:
+      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
+      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
+      RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
+
+  # requires a 2nd build because it replaces .env with prod values
+  build_prod:
+    needs: deploy_staging
+    name: Build and upload artifacts for prod
+    uses: ./.github/workflows/build.yml
+    with:
+      ENVIRONMENT: production
+
+  deploy_prod:
+    needs: build_prod
+    name: Deploy prod
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ENVIRONMENT: production
+    secrets:
+      GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
+      ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
+      RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
+
+
+  # TODO: add tests after successfully deploying to production
+  # code-auditor:
+
+  # name: Codeauditor tests
+  # needs: deploy_prod
+  # uses: 'SSWConsulting/SSW.Website/.github/workflows/codeauditor-pipeline.yml'
