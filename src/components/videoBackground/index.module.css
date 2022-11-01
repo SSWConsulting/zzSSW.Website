@@ -2,11 +2,11 @@
 
 .video {
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
     object-fit: cover;
     min-width: 100%;
     z-index: -100;
-    transform: translateX(-50%) translateY(-50%); 
+    /* transform: translateX(-50%) translateY(-50%);  */
     transition: 1s opacity;
 }
 @media screen and (max-width: 1402px) {
