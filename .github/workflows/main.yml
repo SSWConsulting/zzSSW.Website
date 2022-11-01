@@ -10,6 +10,7 @@ on:
 jobs:
   build_staging:
     name: Build and upload artifacts for staging
+    environment: staging
     uses: ./.github/workflows/build.yml
     with:
       ENVIRONMENT: staging
@@ -21,6 +22,7 @@ jobs:
   deploy_staging:
     needs: build_staging
     name: Deploy staging
+    environment: staging
     uses: ./.github/workflows/deploy.yml
     with:
       ENVIRONMENT: staging
@@ -33,6 +35,7 @@ jobs:
   build_prod:
     needs: deploy_staging
     name: Build and upload artifacts for prod
+    environment: production
     uses: ./.github/workflows/build.yml
     with:
       ENVIRONMENT: production
@@ -44,6 +47,7 @@ jobs:
   deploy_prod:
     needs: build_prod
     name: Deploy prod
+    environment: production
     uses: ./.github/workflows/deploy.yml
     with:
       ENVIRONMENT: production

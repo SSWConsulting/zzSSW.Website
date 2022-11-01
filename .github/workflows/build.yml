@@ -19,7 +19,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.ENVIRONMENT }}
     steps:
       - uses: actions/checkout@v2
       #TODO: Align my local node version (16.13.2) or latest lts with actions/setup-node@v2.5.0
