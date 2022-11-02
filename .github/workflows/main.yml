@@ -1,6 +1,8 @@
 name: Build and deploy
 
 on:
+  repository_dispatch:
+    types: [content-deploy]
   push:
     branches:
       - main # on push to the master branch do the jobs below
