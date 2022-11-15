@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Header from "../header";
 import Footer from "../footer";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -7,6 +7,8 @@ import "../../styles/common.css";
 import Menu from "../../../lib/SSW.MegaMenu/menu/menu";
 import MobileMenu from "../../../lib/SSW.MegaMenu//mobile-menu/mobile-menu";
 import { navigate } from "gatsby";
+
+import * as styles from "./index.module.css";
 
 const Layout = ({ pageTitle, children, backgroundColor }) => {
   const node = useRef(null);
@@ -32,9 +34,11 @@ const Layout = ({ pageTitle, children, backgroundColor }) => {
         }}
       >
         <title>{pageTitle}</title>
-        <div className="main-container">
+        <div className="main-container">          
           <Header />
-          <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
+          <div className={styles.menu}>
+            <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
+          </div>
         </div>
         <main style={{ backgroundColor: backgroundColor }}>{children}</main>
 

@@ -8,7 +8,7 @@ import {
     faFacebookF,
     faInstagram,
     faTwitter,
-    faWeixin,
+    faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
 
 import SSWLogo from '../../../assets/images/ssw-logo.svg';
@@ -21,6 +21,7 @@ const TopBar = () => {
                 <a href="/ssw/">
                     <img
                         src={SSWLogo}
+                        className={styles.logo}
                         alt="SSW - Enterprise Software Development"
                     />
                 </a>
@@ -29,9 +30,9 @@ const TopBar = () => {
                 </div>
             </div>
             <div className={styles.contacts}>
-                <FontAwesomeIcon className={styles.phoneIcon} icon={faPhone} />
-                <a className={styles.phoneNumber} href="tel:+61299533000">
-                    +61 2 9953 3000
+                <a className={classNames('center', styles.phoneNumber)} href="tel:+61299533000">
+                    <FontAwesomeIcon className={styles.phoneIcon} icon={faPhone} color="white" />
+                    CALL US
                 </a>
                 <a
                     className={classNames('center', styles.youtube)}
@@ -40,7 +41,7 @@ const TopBar = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <FontAwesomeIcon icon={faYoutube} color="white" />
+                    <FontAwesomeIcon size="2x" icon={faYoutube} color="white" />
                 </a>
                 <a
                     className={classNames('center', styles.linkedin)}
@@ -49,7 +50,7 @@ const TopBar = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <FontAwesomeIcon icon={faLinkedinIn} color="white" />
+                    <FontAwesomeIcon  size="2x" icon={faLinkedinIn} color="white" />
                 </a>
                 <a
                     className={classNames('center', styles.facebook)}
@@ -58,7 +59,7 @@ const TopBar = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <FontAwesomeIcon icon={faFacebookF} color="white" />
+                    <FontAwesomeIcon  size="2x" icon={faFacebookF} color="white" />
                 </a>
                 <a
                     className={classNames('center', styles.instagram)}
@@ -67,7 +68,7 @@ const TopBar = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <FontAwesomeIcon icon={faInstagram} color="white" />
+                    <FontAwesomeIcon  size="2x" icon={faInstagram} color="white" />
                 </a>
                 <a
                     className={classNames('center', styles.twitter)}
@@ -76,25 +77,16 @@ const TopBar = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <FontAwesomeIcon icon={faTwitter} color="white" />
+                    <FontAwesomeIcon  size="2x" icon={faTwitter} color="white" />
                 </a>
                 <a
-                    className={classNames('center', styles.wechat)}
-                    title="SSW on WeChat"
-                    href="https://mp.weixin.qq.com/s/jL4zEmzWM5VSTRu9DUW6-Q"
+                    className={classNames('center', styles.tiktok)}
+                    title="SSW on TikTok"
+                    href="https://www.tiktok.com/@ssw_tv"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <FontAwesomeIcon icon={faWeixin} color="white" />
-                    <span className={styles.qrCode}>
-                        <img
-                            src="http://www.ssw.com.au/ssw/Images/QRcode.jpg"
-                            alt="SSW QR Code"
-                            title="SSW WeChat QR Code"
-                            width="100"
-                            height="100"
-                        />
-                    </span>
+                    <FontAwesomeIcon  size="2x" icon={faTiktok} color="white" />
                 </a>
             </div>
         </div>
