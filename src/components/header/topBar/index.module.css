@@ -2,7 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 0px;
 }
+
+
 
 .logoAndName {
     display: flex;
@@ -10,9 +13,23 @@
 }
 
 @media screen and (max-width: 900px) {
+
     .logoAndName {
-        margin-top: 35px;
+        margin-top: 40px;
     }
+
+}
+
+
+
+a{
+    border-bottom: 0px !important;
+    text-decoration: none !important;
+}
+
+
+@media screen and (max-width: 900px) {
+
     .youtube,.linkedin, .facebook, .instagram, .twitter,  .tiktok {
         display: none !important;
     }
@@ -25,7 +42,6 @@
 @media screen and (max-width: 800px) {
     .contacts {
         display: block !important;
-        margin-bottom: 10px;
     }
     .logoAndName {
         justify-content: center;
@@ -47,15 +63,15 @@
 }
 
 .logo {
-    height: 150px;
+    height: 100px;
 }
 
 .name {
     width: 100px;
     margin-left: 16px;
     text-transform: uppercase;
-    font-size: 1.3em;
-    line-height: 1.3em;
+    font-size: 1.0em;
+    line-height: 1.0em;
     color: #666;
 }
 
@@ -81,10 +97,11 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
 .phoneNumber:hover {
     color: white;
     border-bottom: none;
-    background-color: #b31217;
+    background-color: #333333;
 }
 
 .iconContainer {
@@ -98,14 +115,24 @@
     background-color: #b31217;
 }
 
+.youtube:hover{
+    background-color: #333333;
+}
+
 .linkedin {
     composes: iconContainer;
     background-color: #0077b5;
+}
+.linkedin:hover{
+    background-color: #333333;
 }
 
 .twitter {
     composes: iconContainer;
     background-color: #55acee;
+}
+.twitter:hover{
+    background-color: #333333;
 }
 
 .instagram {
@@ -118,17 +145,28 @@
         #cc2366 75%,
         #bc1888 100%
     );
+    background-color: #bc1888;
+}
+.instagram:hover{
+    background: #333333;
+    background-color:#333333;
 }
 
 .facebook {
     composes: iconContainer;
     background-color: #3b5998;
 }
+.facebook:hover{
+    background-color: #333333;
+}
 
 .tiktok {
     composes: iconContainer;
     position: relative;
     background-color: #000;
+}
+.tiktok:hover{
+    background-color: #333333;
 }
 
 /* .wechat:hover .qrCode {
@@ -154,3 +192,5 @@
     border: 5px solid transparent;
     border-bottom: 5px solid rgba(0, 0, 0, 0.65);
 } */
+
+
