@@ -42,3 +42,92 @@
 .buildLink {
     font-size: 0.8rem;
 }
+
+
+
+/* social media icons start */
+
+.iconContainer {
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+}
+
+.youtube {
+    composes: iconContainer;
+    background-color: #b31217;
+}
+
+.youtube:hover{
+    background-color: #333333;
+}
+
+.linkedin {
+    composes: iconContainer;
+    background-color: #0077b5;
+}
+.linkedin:hover{
+    background-color: #333333;
+}
+
+.twitter {
+    composes: iconContainer;
+    background-color: #55acee;
+}
+.twitter:hover{
+    background-color: #333333;
+}
+
+.instagram {
+    composes: iconContainer;
+    background: linear-gradient(
+        45deg,
+        #f09433 0%,
+        #e6683c 25%,
+        #dc2743 50%,
+        #cc2366 75%,
+        #bc1888 100%
+    );
+    background-color: #bc1888;
+}
+.instagram:hover{
+    background: #333333;
+    background-color:#333333;
+}
+
+.facebook {
+    composes: iconContainer;
+    background-color: #3b5998;
+}
+.facebook:hover{
+    background-color: #333333;
+}
+
+.tiktok {
+    composes: iconContainer;
+    position: relative;
+    background-color: #000;
+}
+.tiktok:hover{
+    background-color: #333333;
+}
+
+
+.footersocial{
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin-top: 30px;
+}
+
+@media (min-width: 1170px) {
+
+    .footersocial{
+        display: none;
+    }
+    
+}
+
+/* social media icons end */
