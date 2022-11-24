@@ -57,7 +57,7 @@
     ]
   },
   {
-    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-sharepoint-icon.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-sharepoint-banner.png",
     "exactMatch": [
       "sharepoint"
     ]
@@ -124,7 +124,8 @@
     "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-react-banner.png",
     "exactMatch": [
       "react",
-      "reactjs"
+      "reactjs",
+      "native-react"
     ]
   },
   {
@@ -159,6 +160,192 @@
     "exactMatch": [
       "web-applications",
       "mvc"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-access-banner.png",
+    "exactMatch": [
+      "ms-access"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-scrum-banner.png",
+    "exactMatch": [
+      "scrum"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-azure-devops-banner.png",
+    "exactMatch": [
+      "azure-devops"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-git-banner.png",
+    "exactMatch": [
+      "git"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-visual-studio-banner.png",
+    "exactMatch": [
+      "visual-studio"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-cortical-io-banner.png",
+    "exactMatch": [
+      "cortical-io"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-opencv-banner.png",
+    "exactMatch": [
+      "opencv"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-azure-bot-icon.jpg",
+    "exactMatch": [
+      "azure-bot"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-pytorch-banner.png",
+    "exactMatch": [
+      "pytorch"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-ms-azure-banner.png",
+    "exactMatch": [
+      "azure"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-power-bi-banner.png",
+    "exactMatch": [
+      "power-bi"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-cortana-icon.png",
+    "exactMatch": [
+      "ms-cortana"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-ms-layout-banner.png",
+    "exactMatch": [
+      "ms-layout"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-ms-teams-banner.png",
+    "exactMatch": [
+      "ms-teams"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-ms-remote-assist-banner.png",
+    "exactMatch": [
+      "ms-remote-assist"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-angular-banner.png",
+    "exactMatch": [
+      "native-angular"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-ionic-banner.png",
+    "exactMatch": [
+      "native-ionic"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-flutter-banner.png",
+    "exactMatch": [
+      "flutter"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-pwa-banner.png",
+    "exactMatch": [
+      "pwa"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-responsive-apps-icon.png",
+    "exactMatch": [
+      "responsive-websites"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-hardware-integration-icon.png",
+    "exactMatch": [
+      "hardware-integration"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-bots-ai-icon.png",
+    "exactMatch": [
+      "ai"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-apache-cordova-banner.png",
+    "exactMatch": [
+      "cordova"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-electron-icon.png",
+    "exactMatch": [
+      "electron"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-center-network-architecture-banner.png",
+    "exactMatch": [
+      "network-architecture"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zoom-banner.png",
+    "exactMatch": [
+      "zoom"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-power-platform-legacy-icon.png",
+    "exactMatch": [
+      "power-platform"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-jira-banner.png",
+    "exactMatch": [
+      "jira"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-ms-system-center-banner.png",
+    "exactMatch": [
+      "ms-system-center"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-office-365-banner.png",
+    "exactMatch": [
+      "office-365"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-zendesk-banner.png",
+    "exactMatch": [
+      "zendesk"
     ]
   }
 ]
