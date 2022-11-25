@@ -347,5 +347,41 @@
     "exactMatch": [
       "zendesk"
     ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-alexa-icon.png",
+    "exactMatch": [
+      "alexa"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-wpf-framework-banner.png",
+    "exactMatch": [
+      "wpf"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-kubernetes-banner.png",
+    "exactMatch": [
+      "kubernetes"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-net-maui-icon.png",
+    "exactMatch": [
+      "dotnet-maui"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-native-apps-icon.png",
+    "exactMatch": [
+      "native-app"
+    ]
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/SSWConsulting/SSW.Website.Content/main/assets/images/thumbs/thumb-skype-banner.png",
+    "exactMatch": [
+      "skype"
+    ]
   }
 ]

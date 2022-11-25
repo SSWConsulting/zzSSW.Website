@@ -136,7 +136,7 @@ const Footer = () => (
                                     <a
                                         className={styles.link}
                                         // TODO: Implementation
-                                        href="https://github.com/SSWConsulting/SSW.Website/issues/63"
+                                        href="https://www.ssw.com.au/ssw/MenuMap.aspx"
                                     >
                                         SITEMAP
                                     </a>
@@ -144,7 +144,7 @@ const Footer = () => (
                                     <a
                                         className={classNames(styles.link)}
                                         // TODO: Implementation
-                                        href="https://github.com/SSWConsulting/SSW.Website/issues/64"
+                                        href="https://www.ssw.com.au/ssw/HealthCheck"
                                     >
                                         HEALTH CHECK{' '}
                                         <StaticImage
