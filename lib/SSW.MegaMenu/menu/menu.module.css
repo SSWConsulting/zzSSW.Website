@@ -47,8 +47,9 @@
 
 @media (min-width: 992px) {
   .MegaMenu {
-    max-width: 960px;
+    max-width: 1140px;
     position: relative;
+    border-top: 4px solid #cc4141;
   }
 }
 
@@ -57,13 +58,15 @@
   .MegaMenu {
     max-width: 1140px;
     position: relative;
+    border-top: 4px solid #cc4141;
   }
 }
 
 @media (min-width: 1400px) {
   .MegaMenu {
-    max-width: 1320px;
+    max-width: 1140px;
     position: relative;
+    border-top: 4px solid #cc4141;
   }
 }
 

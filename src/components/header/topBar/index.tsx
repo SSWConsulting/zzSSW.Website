@@ -21,7 +21,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const TopBar = () => {
     return (
-
+        
+        <div className="main-container">
             <Container> 
             
                 <Row> 
@@ -110,6 +111,7 @@ const TopBar = () => {
                 </Row>                
 
          </Container>
+        </div>
 
     );
 };

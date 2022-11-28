@@ -9,19 +9,21 @@ import CoreServices from "../components/indexPage/coreServices";
 import TvContactMap from "../components/sswTvContactMap";
 import { WHITE, WHITE_SMOKE } from "../constants";
 
+
 const IndexPage = () => {
   return (
     <Layout
       backgroundColor={WHITE}
       pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics"
     >
-      <div className="top-section">
-        <Carousel />
+      
 
-        <ConsultingServices />
+          <Carousel />
 
-        <CoreServices />
-      </div>
+          <ConsultingServices />
+
+          <CoreServices />
+
 
       <AboutUsAndEvents />
 
