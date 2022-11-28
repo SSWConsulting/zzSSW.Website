@@ -20,8 +20,7 @@ import * as styles from './index.module.css';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const TopBar = () => {
-    return (
-        
+    return (       
         <div className="main-container">
             <Container> 
             

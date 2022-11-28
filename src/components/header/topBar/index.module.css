@@ -19,7 +19,10 @@ header > div > div {
 
 header > div > div > div{
     align-items: center;
+    padding: 20px 0px;
 }
+
+
 
 .logoAndName {
     display: flex;
@@ -154,6 +157,60 @@ a{
     height: 100px;
 }
 
+@media screen and (max-width: 900px) {
+
+    .logoAndName {
+        margin-top: 40px;
+    }
+
+}
+
+
+
+a{
+    border-bottom: 0px !important;
+    text-decoration: none !important;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .youtube,.linkedin, .facebook, .instagram, .twitter,  .tiktok {
+        display: none !important;
+    }
+    
+    .phoneNumber {
+        margin-top: 35px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contacts {
+        display: block !important;
+    }
+    .logoAndName {
+        justify-content: center;
+    }
+    .phoneNumber {
+        margin-left: 0px !important;
+        margin-top: 0px !important;
+    }
+    .container {
+        display: block;
+    }
+    .name {
+        font-size: 1em !important;
+    }
+    .logo {
+        height: 120px !important;
+        width: auto;
+    }
+}
+
+.logo {
+    height: 100px;
+}
+
 .name {
     width: 100px;
     margin-left: 16px;
@@ -163,15 +220,12 @@ a{
     color: #666;
 }
 
-
-
 .phoneIcon {
     margin-right: 0.75rem;
     font-size: 1.2rem !important;
 }
 
 .phoneNumber {
-
     font-size: 1.12rem;
     font-weight: 700;
     text-decoration: none;

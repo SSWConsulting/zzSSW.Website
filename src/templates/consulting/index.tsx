@@ -48,10 +48,12 @@ const ConsultingTemplate = ({ data }) => {
 
         <Clients />
 
-        <TechnologCards
+        {techHeader?.length > 0 && (
+          <TechnologCards
           technologyCards={technologyCards}
           techHeader={techHeader}
         />
+        )}
 
         <Solution {...solution} />
 
