@@ -22,20 +22,48 @@
   width: 100%;
   z-index: 0;
   background: none repeat scroll 0 0 #414141;
-  position: relative;
   z-index: 20;
   margin: auto;
+
+  /*position*/
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+
 }
 
-@media (min-width: 600px) and (max-width: 1279px) {
+@media (min-width: 576px) {
   .MegaMenu {
-    width: 100%
+    max-width: 100%;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .MegaMenu {
-    width: 100%
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .MegaMenu {
+    max-width: 960px;
+    position: relative;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .MegaMenu {
+    max-width: 1140px;
+    position: relative;
+  }
+}
+
+@media (min-width: 1400px) {
+  .MegaMenu {
+    max-width: 1320px;
+    position: relative;
   }
 }
 

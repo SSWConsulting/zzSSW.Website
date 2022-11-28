@@ -34,13 +34,14 @@ const Layout = ({ pageTitle, children, backgroundColor }) => {
         }}
       >
         <title>{pageTitle}</title>
-        <div className="main-container">          
+       
           <Header />
-          <div className={styles.menu}>
-            <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
-          </div>
-        </div>
-        <main style={{ backgroundColor: backgroundColor }}>{children}</main>
+          
+          
+          <Menu onClickToggle={() => actionOnToggleClick()}></Menu>
+
+
+          <main style={{ backgroundColor: backgroundColor }}>{children}</main>
 
         <Footer />
       </div>

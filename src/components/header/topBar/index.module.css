@@ -1,24 +1,119 @@
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0px;
+header{
+    margin-top: 60px;
 }
 
+header > div {
+    border-top: 4px solid #cc4141;
+    border-bottom: 0px none;
+}
 
+header > div > div{
+    align-items: center;
+}
 
 .logoAndName {
     display: flex;
     align-items: center;
+    padding: 15px 0px;
 }
 
-@media screen and (max-width: 900px) {
+.iconContainer {
+    width: 40px;
+    height: 40px;
+    margin-left: 8px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
 
-    .logoAndName {
-        margin-top: 40px;
+.contacts {
+    display: block;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    
+    header{
+      margin-top: 60px;
+    }
+
+    .contacts {
+        display: block;
+    }
+
+    .iconContainer{
+        display: none;
+    }
+
+  }
+
+@media (min-width: 992px) {
+    
+    header{
+        margin-top: 0px;
+      }
+
+    header > div {
+        border-bottom: 4px solid #cc4141;
+    }
+
+    .contacts {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .iconContainer{
+        display: flex;
     }
 
 }
+
+@media (min-width: 1200px) {
+    
+    header{
+        margin-top: 0px;
+      }
+    
+      header > div {
+        border-bottom: 4px solid #cc4141;
+    }
+
+    .contacts {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .iconContainer{
+
+    }
+
+
+  }
+  
+  @media (min-width: 1400px) {
+
+    header{
+        margin-top: 0px;
+      }
+    
+    header > div {
+        border-bottom: 4px solid #cc4141;
+    }
+
+    .contacts {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .iconContainer{
+
+    }
+
+
+  }
+
+
+
 
 
 
@@ -28,36 +123,25 @@ a{
 }
 
 
-@media screen and (max-width: 900px) {
 
-    .youtube,.linkedin, .facebook, .instagram, .twitter,  .tiktok {
-        display: none !important;
-    }
-    
-    .phoneNumber {
-        margin-top: 35px;
-    }
-}
+@media screen and (max-width: 992px) {
 
-@media screen and (max-width: 800px) {
-    .contacts {
-        display: block !important;
-    }
+
     .logoAndName {
         justify-content: center;
     }
     .phoneNumber {
-        margin-left: 0px !important;
-        margin-top: 0px !important;
+        margin-left: 0px;
+        margin-top: 0px ;
     }
     .container {
         display: block;
     }
     .name {
-        font-size: 1em !important;
+        font-size: 1em;
     }
     .logo {
-        height: 120px !important;
+        height: 120px;
         width: auto;
     }
 }
@@ -75,10 +159,7 @@ a{
     color: #666;
 }
 
-.contacts {
-    display: flex;
-    align-items: flex-end;
-}
+
 
 .phoneIcon {
     margin-right: 0.75rem;
@@ -104,11 +185,7 @@ a{
     background-color: #333333;
 }
 
-.iconContainer {
-    width: 40px;
-    height: 40px;
-    margin-left: 8px;
-}
+
 
 .youtube {
     composes: iconContainer;
