@@ -2,18 +2,18 @@
     font-size: 0.9rem;
 }
 
-
-
 .breadcrumb > ol{
     margin: 15px -15px;
 }
+
+
 
 .breadcrumb {
     max-width: 1140px;
     display: none;
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 991px) {
 
     .breadcrumb {
         display: flex;

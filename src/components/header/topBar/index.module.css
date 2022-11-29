@@ -5,6 +5,10 @@
     padding: 20px 0px;
 }
 
+main{
+    overflow: hidden;
+    width: 100%;
+}
 
 
 .logoAndName {
@@ -12,7 +16,7 @@
     align-items: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 991px) {
 
     .logoAndName {
         margin-top: 40px;
@@ -28,7 +32,7 @@ a{
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 991px) {
 
     .youtube,.linkedin, .facebook, .instagram, .twitter,  .tiktok {
         display: none !important;
@@ -39,7 +43,7 @@ a{
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 991px) {
     .contacts {
         display: block !important;
     }
