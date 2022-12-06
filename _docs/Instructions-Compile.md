@@ -5,10 +5,12 @@ After following the steps below, you will be able to run the SSW.Website locally
 ## Environment setup
 
 ### Install required tools 
+
 - Install nodejs from https://nodejs.org/en/ (>=v14.18.1 recommended)
 - Install yarn from https://classic.yarnpkg.com/en/ (>=v1.22.15 recommended)
 
 ### Set up for development
+
 1. Clone the GitHub repository https://github.com/SSWConsulting/SSW.Website.git
 2. Run `yarn install` to install the required packages
 3. Create environment files (.env.development and .env.production) copying key values from `.env.template`
