@@ -27,6 +27,8 @@ jobs:
       #TODO: Align my local node version (16.13.2) or latest lts with actions/setup-node@v2.5.0
       - name: Use Node.js
         uses: actions/setup-node@v2.5.0
+        with:
+          node-version: lts/*
 
       - name: Create env File
         run: |
