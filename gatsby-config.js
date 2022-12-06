@@ -3,10 +3,16 @@ require("dotenv").config({
 });
 
 // TODO: Change Staging url to Prod url after deploying to Prod
-const siteUrl =
-  process.env.NODE_ENV === "development"
+const siteUrl = process.env.NODE_ENV === "development"
     ? "http://localhost:9000"
     : "https://tfs365.com/";
+
+const sourceRepos = {
+  "content": ["consulting/**"],        
+  "assets": ["assets/**"],
+  "technologies": ["technologies/**"],
+  "legacy": ["legacy/**"],
+};
 
 module.exports = {
   siteMetadata: {
@@ -14,42 +20,18 @@ module.exports = {
     title: "SSW Website",
   },
   plugins: [
-    {
-      resolve: "gatsby-source-git",
-      options: {
-        name: "content",
-        remote: process.env.CONTENT_REPO,
-        branch: process.env.CONTENT_BRANCH,
-        patterns: ["consulting/**"],
-      },
-    },
-    {
-      resolve: "gatsby-source-git",
-      options: {
-        name: "assets",
-        remote: process.env.CONTENT_REPO,
-        branch: process.env.CONTENT_BRANCH,
-        patterns: ["assets/**"],
-      },
-    },
-    {
-      resolve: "gatsby-source-git",
-      options: {
-        name: "technologies",
-        remote: process.env.CONTENT_REPO,
-        branch: process.env.CONTENT_BRANCH,
-        patterns: ["technologies/**"],
-      },
-    },
-    {
-      resolve: "gatsby-source-git",
-      options: {
-        name: "legacy",
-        remote: process.env.CONTENT_REPO,
-        branch: process.env.CONTENT_BRANCH,
-        patterns: ["legacy/**"],
-      },
-    },
+    ...Object.keys(sourceRepos).map(name => {
+      return {
+        resolve: "gatsby-source-git",
+        options: {
+          name,
+          remote: process.env.CONTENT_REPO,
+          branch: process.env.CONTENT_BRANCH,
+          patterns: sourceRepos[name],
+          local: `tmp`
+        },
+      };
+    }),
     "gatsby-plugin-mdx-source-name",
     {
       resolve: "gatsby-plugin-mdx",
@@ -117,11 +99,11 @@ module.exports = {
         enableDuringDevelop: true, // Optional. Disables Zendesk chat widget when running Gatsby dev server. Defaults to true.
       },
     },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        resolveSiteUrl: () => siteUrl,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-sitemap`,
+    //   options: {
+    //     resolveSiteUrl: () => siteUrl,
+    //   },
+    // },
   ],
 };
