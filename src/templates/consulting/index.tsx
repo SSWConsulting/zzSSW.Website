@@ -100,3 +100,5 @@ export const consultingPagesQuery = graphql`
   }
 `;
 export default ConsultingTemplate;
+
+export { Head } from "../../components/head"

@@ -60,3 +60,5 @@ const ThankyouPage = () => {
 };
 
 export default ThankyouPage;
+
+export { Head } from "../components/head"

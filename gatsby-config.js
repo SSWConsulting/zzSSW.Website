@@ -99,11 +99,11 @@ module.exports = {
         enableDuringDevelop: true, // Optional. Disables Zendesk chat widget when running Gatsby dev server. Defaults to true.
       },
     },
-    {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        resolveSiteUrl: () => siteUrl,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-sitemap`,
+    //   options: {
+    //     resolveSiteUrl: () => siteUrl,
+    //   },
+    // },
   ],
 };
