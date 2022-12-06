@@ -31,7 +31,7 @@
     "dotenv": "^16.0.1",
     "formik": "^2.2.9",
     "gatsby": "^4.18.2",
-    "gatsby-plugin-google-tagmanager": "^4.18.1",
+    "gatsby-plugin-google-gtag": "^5.2.0",
     "gatsby-plugin-image": "^2.18.1",
     "gatsby-plugin-mdx": "^3.18.1",
     "gatsby-plugin-mdx-source-name": "^1.0.1",

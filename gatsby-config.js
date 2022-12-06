@@ -99,10 +99,15 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
-        id: process.env.GOOGLE_GTM_ID,
-        includeInDevelopment: true,
+        trackingIds: [
+          process.env.GOOGLE_ANALYTICS, // Tracking Id: UA-111111111-1
+          process.env.GOOGLE_GTM_ID, // Measurement Id: G-AB123AB12A
+        ],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     {
