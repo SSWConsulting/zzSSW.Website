@@ -10881,6 +10881,16 @@ sprintf-js@~1.0.2:
   resolved "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
 
+ssw.megamenu@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.npmmirror.com/ssw.megamenu/-/ssw.megamenu-2.2.8.tgz#f0b1721170d42439b98ca64527a7895910084851"
+  integrity sha512-wy8v9fyNLI2vSXTIy9NtXFa7Qs28YMZRUZnvgEyuqVFS6p4j503wJOQnZXXSJTCgeSIAleIcHfeT4/MYjAqzfQ==
+  dependencies:
+    "@fortawesome/fontawesome-svg-core" "^6.2.1"
+    "@fortawesome/free-solid-svg-icons" "^6.2.1"
+    "@fortawesome/react-fontawesome" "^0.2.0"
+    classnames "^2.3.2"
+
 st@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/st/-/st-2.0.0.tgz"

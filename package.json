@@ -52,6 +52,7 @@
     "react-responsive-modal": "^6.2.0",
     "react-transition-group": "^4.4.2",
     "sharp": "^0.30.7",
+    "ssw.megamenu": "^2.2.8",
     "yup": "^0.32.11"
   }
 }
