@@ -11,7 +11,7 @@ import {
     faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
 
-import SSWLogo from '../../../assets/images/ssw-logo.svg';
+import SSWLogo from '../../../assets/images/ssw-logo-Christmas.svg';
 import * as styles from './index.module.css';
 
 const TopBar = () => {
