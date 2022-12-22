@@ -186,3 +186,5 @@ const ConsultingOptions = () => {
 };
 
 export default ConsultingOptions;
+
+export { Head } from "../../components/head"

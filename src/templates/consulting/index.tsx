@@ -48,10 +48,12 @@ const ConsultingTemplate = ({ data }) => {
 
         <Clients />
 
-        <TechnologCards
+        {techHeader?.length > 0 && (
+          <TechnologCards
           technologyCards={technologyCards}
           techHeader={techHeader}
         />
+        )}
 
         <Solution {...solution} />
 
@@ -98,3 +100,5 @@ export const consultingPagesQuery = graphql`
   }
 `;
 export default ConsultingTemplate;
+
+export { Head } from "../../components/head"

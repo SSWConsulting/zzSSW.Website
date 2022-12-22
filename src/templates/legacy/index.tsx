@@ -83,3 +83,5 @@ export const legacyPageQuery = graphql`
   }
 `;
 export default LegacyTemplate;
+
+export { Head } from "../../components/head"

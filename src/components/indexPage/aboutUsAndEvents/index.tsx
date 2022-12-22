@@ -216,6 +216,7 @@ const Events = () => {
                                 <a href={Thumbnail.Url}>
                                     <img
                                         src={Thumbnail.Url}
+                                        alt="event logo"
                                         width={100}
                                         height={100}
                                     />
