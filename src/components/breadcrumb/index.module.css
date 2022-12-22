@@ -24,3 +24,15 @@
     }
     
 }
+
+@media (min-width: 991px) {
+
+    .breadcrumb {
+        display: flex;
+        overflow: hidden;
+        margin-top: 1rem;
+        width: 1170px;
+        margin: 0px auto;
+    }
+    
+}
