@@ -29,3 +29,5 @@ const ConsultingServices = () => {
 };
 
 export default ConsultingServices;
+
+export { Head } from "../components/head"

@@ -17,6 +17,7 @@ jobs:
       ENVIRONMENT: staging
     secrets:
       GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
+      GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS}}
       ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
       RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
 
@@ -40,6 +41,7 @@ jobs:
       ENVIRONMENT: production
     secrets:
       GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID}}
+      GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS}}
       ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY}}
       RECAPTCHA_KEY: ${{ secrets.RECAPTCHA_KEY}}
 

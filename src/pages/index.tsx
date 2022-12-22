@@ -7,7 +7,7 @@ import "../styles/index.css";
 import ConsultingServices from "../components/indexPage/consultingServices";
 import CoreServices from "../components/indexPage/coreServices";
 import TvContactMap from "../components/sswTvContactMap";
-import { WHITE, WHITE_SMOKE } from "../constants";
+import { WHITE } from "../constants";
 
 const IndexPage = () => {
   return (
@@ -33,3 +33,5 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export { Head } from "../components/head"

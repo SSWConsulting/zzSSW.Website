@@ -10,6 +10,8 @@ on:
     secrets:
       GOOGLE_GTM_ID:
         required: true
+      GOOGLE_ANALYTICS:
+        required: true
       ZENDESK_CHAT_KEY:
         required: true
       RECAPTCHA_KEY:
@@ -25,6 +27,8 @@ jobs:
       #TODO: Align my local node version (16.13.2) or latest lts with actions/setup-node@v2.5.0
       - name: Use Node.js
         uses: actions/setup-node@v2.5.0
+        with:
+          node-version: lts/*
 
       - name: Create env File
         run: |
@@ -42,6 +46,7 @@ jobs:
           CONTENT_REPO: https://github.com/SSWConsulting/SSW.Website.Content
           CONTENT_BRANCH: main
           GOOGLE_GTM_ID: ${{ secrets.GOOGLE_GTM_ID }}
+          GOOGLE_ANALYTICS: ${{ secrets.GOOGLE_ANALYTICS }}
           ZENDESK_CHAT_KEY: ${{ secrets.ZENDESK_CHAT_KEY }}
 
       # Upload build artifacts for deployment
