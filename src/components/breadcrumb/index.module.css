@@ -13,7 +13,7 @@
     display: none;
 }
 
-@media (min-width: 1170px) {
+@media (min-width: 991px) {
 
     .breadcrumb {
         display: flex;
@@ -22,5 +22,5 @@
         width: 1170px;
         margin: 0px auto;
     }
-    
+
 }
