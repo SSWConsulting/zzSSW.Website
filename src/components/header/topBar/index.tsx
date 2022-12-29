@@ -11,16 +11,22 @@ import {
     faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
 
-import SSWLogo from '../../../assets/images/SSW-logo-Christmas.svg';
+import SSWLogo from '../../../assets/images/ssw-logo.svg';
+import SSWXmasLogo from '../../../assets/images/SSW-logo-Christmas.svg';
+
 import * as styles from './index.module.css';
 
 const TopBar = () => {
+
+    // show the xmas logo for the month of December
+    const isChristmas = new Date().getMonth() === 11;
+
     return (
         <div className={styles.container}>
             <div className={styles.logoAndName}>
                 <a href="/ssw/">
                     <img
-                        src={SSWLogo}
+                        src={isChristmas ? SSWXmasLogo : SSWLogo}
                         className={styles.logo}
                         alt="SSW - Enterprise Software Development"
                     />
