@@ -14,6 +14,7 @@ import burndown from "../../assets/images/burndown.png";
 import speech_bubble from "../../assets/images/speech-bubble.png";
 import { WHITE } from "../../constants";
 import BookingFormFormik from "../../components/bookingFormFormik";
+import { SEO } from "../../components/seo";
 
 const ConsultingOptions = () => {
   const data = [
