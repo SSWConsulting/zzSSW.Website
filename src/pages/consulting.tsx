@@ -1,6 +1,7 @@
 import React from "react";
 import Breadcrumb from "../components/breadcrumb";
 import Layout from "../components/layout";
+import { SEO } from "../components/seo";
 import { WHITE, WHITE_SMOKE } from "../constants";
 
 const ConsultingServices = () => {
@@ -17,7 +18,6 @@ const ConsultingServices = () => {
   return (
     <Layout
       backgroundColor={WHITE_SMOKE}
-      pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics"
     >
       <div className="main-container">
         <Breadcrumb data={data} />
@@ -30,4 +30,6 @@ const ConsultingServices = () => {
 
 export default ConsultingServices;
 
-export { Head } from "../components/head"
+export const Head = () => (
+  <SEO />
+)

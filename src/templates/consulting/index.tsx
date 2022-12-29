@@ -14,6 +14,7 @@ import BuildPlatform from "../../components/builtPlatform";
 import "./index.module.css";
 import { graphql } from "gatsby";
 import { WHITE, WHITE_SMOKE } from "../../constants";
+import { SEO } from "../../components/seo";
 
 const ConsultingTemplate = ({ data }) => {
   const { title, booking, benefits, solution, techHeader, technologyCards } =
@@ -101,4 +102,6 @@ export const consultingPagesQuery = graphql`
 `;
 export default ConsultingTemplate;
 
-export { Head } from "../../components/head"
+export const Head = () => (
+  <SEO />
+)

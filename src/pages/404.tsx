@@ -1,5 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
+import { SEO } from "../components/seo";
 import { WHITE } from "../constants";
 import "../styles/404.css";
 
@@ -7,7 +8,7 @@ import "../styles/404.css";
 const NotFoundPage = () => {
   return (
     <>
-      <Layout backgroundColor={WHITE} pageTitle="Page not found">
+      <Layout backgroundColor={WHITE}>
         <div className="main-container">
           <div className="not-found-page">
             <div className="not-found-grid">
@@ -40,4 +41,6 @@ const NotFoundPage = () => {
 
 export default NotFoundPage;
 
-export { Head } from "../components/head"
+export const Head = () => (
+  <SEO title="Page not found" />
+)

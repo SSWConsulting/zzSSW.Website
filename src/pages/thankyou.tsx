@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import "../styles/thankyou.css";
 import { BASE_URL, PAGE_TYPE, PAGE_TITLE, WHITE_SMOKE } from "../constants";
 import BuildPlatform from "../components/builtPlatform";
+import { SEO } from "../components/seo";
 
 const ThankyouPage = () => {
   const data = [
@@ -17,7 +18,7 @@ const ThankyouPage = () => {
   ];
 
   return (
-    <Layout backgroundColor={WHITE_SMOKE} pageTitle={PAGE_TITLE.Thankyou}>
+    <Layout backgroundColor={WHITE_SMOKE}>
       <div className="main-container header-content ">
         <Breadcrumb data={data} />
       </div>
@@ -61,4 +62,6 @@ const ThankyouPage = () => {
 
 export default ThankyouPage;
 
-export { Head } from "../components/head"
+export const Head = () => (
+  <SEO title={PAGE_TITLE.Thankyou} />
+)

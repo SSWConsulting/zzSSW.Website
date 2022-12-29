@@ -10,6 +10,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Body from "./components/body";
 import Sidebar from "./components/sidebar";
 import BookingFormFormik from "../../components/bookingFormFormik";
+import { SEO } from "../../components/seo";
 
 const LegacyTemplate = ({ data }) => {
   const { title, subtitle, featureImage } = data.mdx.frontmatter;
@@ -84,4 +85,6 @@ export const legacyPageQuery = graphql`
 `;
 export default LegacyTemplate;
 
-export { Head } from "../../components/head"
+export const Head = () => (
+  <SEO />
+)

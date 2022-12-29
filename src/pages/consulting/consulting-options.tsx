@@ -29,7 +29,6 @@ const ConsultingOptions = () => {
   return (
     <Layout
       backgroundColor={WHITE}
-      pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics"
     >
       <div className="legacy-banner">
         <img src={speech_bubble} />
@@ -187,4 +186,6 @@ const ConsultingOptions = () => {
 
 export default ConsultingOptions;
 
-export { Head } from "../../components/head"
+export const Head = () => (
+  <SEO />
+)

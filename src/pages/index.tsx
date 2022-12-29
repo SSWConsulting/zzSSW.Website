@@ -8,12 +8,12 @@ import ConsultingServices from "../components/indexPage/consultingServices";
 import CoreServices from "../components/indexPage/coreServices";
 import TvContactMap from "../components/sswTvContactMap";
 import { WHITE } from "../constants";
+import { SEO } from "../components/seo";
 
 const IndexPage = () => {
   return (
     <Layout
       backgroundColor={WHITE}
-      pageTitle="SSW Consulting - .NET, Web, Mobile, CRM, SharePoint, Azure, Power BI, Angular, React, Office 365 and Dynamics"
     >
       <div className="top-section">
         <Carousel />
@@ -34,4 +34,6 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export { Head } from "../components/head"
+export const Head = () => (
+  <SEO />
+)

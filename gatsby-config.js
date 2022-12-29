@@ -16,8 +16,11 @@ const sourceRepos = {
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://tfs365.com",
-    title: "SSW Website",
+    siteUrl: "https://tfs365.com",    
+    title: `SSW Consulting - .NET, Azure, CRM, Angular, React, Dynamics`,
+    description: `30+ years of Microsoft software and web development experience in Australia, France and China. We build with Angular, React, .NET, Azure, Dynamics 365 CRM.`,
+    twitterUsername: `@ssw_tv`,
+    image: `/SSW_Squares.png`,
   },
   plugins: [
     ...Object.keys(sourceRepos).map(name => {

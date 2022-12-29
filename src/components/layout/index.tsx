@@ -10,7 +10,7 @@ import { navigate } from "gatsby";
 
 import * as styles from "./index.module.css";
 
-const Layout = ({ pageTitle, children, backgroundColor }) => {
+const Layout = ({ children, backgroundColor }) => {
   const node = useRef(null);
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
@@ -33,7 +33,6 @@ const Layout = ({ pageTitle, children, backgroundColor }) => {
           backgroundColor: backgroundColor,
         }}
       >
-        <title>{pageTitle}</title>
         <div className="main-container">          
           <Header />
           <div className={styles.menu}>
