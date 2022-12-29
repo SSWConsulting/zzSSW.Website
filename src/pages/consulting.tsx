@@ -2,7 +2,7 @@ import React from "react";
 import Breadcrumb from "../components/breadcrumb";
 import Layout from "../components/layout";
 import { SEO } from "../components/seo";
-import { WHITE, WHITE_SMOKE } from "../constants";
+import { WHITE_SMOKE } from "../constants";
 
 const ConsultingServices = () => {
   const data = [
