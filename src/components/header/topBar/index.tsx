@@ -18,8 +18,9 @@ import * as styles from './index.module.css';
 
 const TopBar = () => {
 
-    // show the xmas logo for the month of December
-    const isChristmas = new Date().getMonth() === 11;
+    // show the xmas logo for 1-25 December
+    const date = new Date();
+    const isChristmas = date.getMonth() === 11 && date.getDate() <= 25;
 
     return (
         <div className={styles.container}>
