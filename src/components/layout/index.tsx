@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "../../styles/global.css";
 import "../../styles/common.css";
 import Menu from "../../../lib/SSW.MegaMenu/menu/menu";
-import { MobileMenu } from 'ssw.megamenu';
+import MobileMenu from "../../../lib/SSW.MegaMenu//mobile-menu/mobile-menu";
 import { navigate } from "gatsby";
 
 import * as styles from "./index.module.css";
