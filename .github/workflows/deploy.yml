@@ -15,7 +15,6 @@ on:
       AZURE_APP_NAME:
         required: true
 
-
 jobs:
   # TODO: March 2022 - Ideally this would be in its own file, but GitHub has a hard limit of 2-deep called workflows.
   deploy-infrastructure:
@@ -80,3 +79,18 @@ jobs:
         with:
           inlineScript: |
             az storage blob upload-batch --overwrite --account-name ${{ secrets.AZURE_APP_NAME }}storage -d '$web' -s .
+
+  purge-cache:
+    steps:
+      - name: Set variable based on condition
+        if: ${{ inputs.ENVIRONMENT == 'staging' }}
+        run: echo "::set-env name=FrontDoorName::SSWFrontDoorStaging"
+        if: ${{ inputs.ENVIRONMENT == 'production' }}
+        run: echo "::set-env name=FrontDoorName::SSWFrontDoor"
+
+      - name: Call purge cache workflow from SSWFrontDoor repo
+        uses: SSWConsulting/SSW.FrontDoor/.github/workflows/purge-cache.yml@main
+        with:
+          ENVIRONMENT: ${{ inputs.ENVIRONMENT }}
+          FRONT_DOOR_NAME: ${{ env.FrontDoorName }}
+        secrets: inherit
