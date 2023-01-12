@@ -80,17 +80,18 @@ jobs:
           inlineScript: |
             az storage blob upload-batch --overwrite --account-name ${{ secrets.AZURE_APP_NAME }}storage -d '$web' -s .
 
-  purge-cache:
+  set-front-door-name:
+    runs-on: ubuntu-latest
     steps:
-      - name: Set variable based on condition
-        if: ${{ inputs.ENVIRONMENT == 'staging' }}
-        run: echo "::set-env name=FrontDoorName::SSWFrontDoorStaging"
-        if: ${{ inputs.ENVIRONMENT == 'production' }}
-        run: echo "::set-env name=FrontDoorName::SSWFrontDoor"
+      if: ${{ inputs.ENVIRONMENT == 'staging' }}
+      run: echo "::set-env name=FrontDoorName::SSWFrontDoorStaging"
+      if: ${{ inputs.ENVIRONMENT == 'production' }}
+      run: echo "::set-env name=FrontDoorName::SSWFrontDoor"
 
-      - name: Call purge cache workflow from SSWFrontDoor repo
-        uses: SSWConsulting/SSW.FrontDoor/.github/workflows/purge-cache.yml@main
-        with:
-          ENVIRONMENT: ${{ inputs.ENVIRONMENT }}
-          FRONT_DOOR_NAME: ${{ env.FrontDoorName }}
-        secrets: inherit
+  purge-cache:
+    needs: [deploy-site, set-front-door-name]
+    uses: SSWConsulting/SSW.FrontDoor/.github/workflows/purge-cache.yml@main
+    with:
+      ENVIRONMENT: ${{ inputs.ENVIRONMENT }}
+      FRONT_DOOR_NAME: ${{ env.FrontDoorName }}
+    secrets: inherit
