@@ -16,12 +16,12 @@
 }
 .not-found-page h1 {
   color: #cc4141;
-  font-size: 224px;
+  font-size: 14rem;
 
   font-weight: 700;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font: bolder;
-  line-height: 268.8px;
+  line-height: 110px;
   grid-column: 1;
   margin: -0.3rem 0 -2rem;
   margin-top: 16px;
@@ -73,4 +73,34 @@ div.greybox{
 .not-found-page button {
   color: #cc4141 !important;
   border: none;
+}
+
+/* responsivness */
+@media (max-width: 850px) {
+  .not-found-grid {
+    grid-template-columns: auto;
+    grid-template-rows: unset;
+    display: grid;
+  }
+  .not-found-grid h1 {
+    font-size: 8rem; 
+    padding-right: 0;
+    margin: auto;
+    text-align: center;
+    grid-row: 1;
+  }
+  .not-found-message {
+    grid-row: 2;
+    grid-column: 1;
+    padding-top: 0;
+    margin: 0.5rem 0.5rem;
+    text-align: center;
+  }
+  .not-found-message h2 {
+    font-size: 2rem;
+  }
+  .not-found-greybox {
+    grid-row: unset;
+    text-align: center;
+  }
 }
