@@ -282,7 +282,7 @@ const BookingForm = ({ isShareForm }) => {
                 handleInput(ACTIVE_INPUT.Note, e.currentTarget.value);
               }}
             />
-            <small>Maximium 2000 characters</small>
+            <small>Maximum 2000 characters</small>
             <Form.Control.Feedback type="invalid">
               Please provide note.
             </Form.Control.Feedback>
