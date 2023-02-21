@@ -28,10 +28,7 @@ const AboutUs = () => (
         <article>
             <h1>Australia's Leading .NET and Azure Consultants</h1>
             <p>
-                SSW Consulting has over 25 years of Microsoft software and web
-                development experience. We build on top of Angular, React, Vue,
-                Azure, Azure DevOps (was TFS), SharePoint, Office 365, Blazor,
-                .NET, WebAPI, Dynamics 365, and SQL Server.{' '}
+                SSW Consulting has over 30 years of experience developing awesome Microsoft solutions that today build on top of Angular, React, Vue, Azure, Azure DevOps (was TFS), SharePoint, Office 365, Blazor, .NET, WebAPI, Dynamics 365, and SQL Server. {' '}
                 {/*  TODO: Update link after implement this page */}
                 <a href="https://www.ssw.com.au/SSW/Company/AboutUs.aspx">
                     Know more
