@@ -25,7 +25,7 @@ const FormGroupTextArea = ({
           isValid={isValid}
           isInvalid={!!isErrors}
         />
-        <small>Maximium 2000 characters</small>
+        <small>Maximum 2000 characters</small>
         <Form.Control.Feedback type="valid">
           {VALIDATION_SUCCESS_MESSAGE}
         </Form.Control.Feedback>
